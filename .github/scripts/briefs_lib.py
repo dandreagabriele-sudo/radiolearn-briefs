@@ -60,64 +60,193 @@ from typing import Optional
 # PubMed queries: one per focus area. Use PubMed search syntax.
 # The date range is added programmatically by fetch_pubmed().
 PUBMED_QUERIES = {
+    # ─────────────────────────────────────────────────────────────
+    # Focus 1: ILD clinica
+    # Backbone ontologico: ATS/ERS 2025 update of IIP classification
+    # (European Respiratory Journal, December 2025).
+    # Covers all major interstitial patterns + alveolar filling
+    # disorders + secondary ILDs (CTDs, sarcoid, drug-induced).
+    # ─────────────────────────────────────────────────────────────
     "ild_clinica": (
         '('
+        # MeSH core ILD
         '"Idiopathic Pulmonary Fibrosis"[MeSH Terms] OR '
         '"Hypersensitivity Pneumonitis"[MeSH Terms] OR '
         '"Lung Diseases, Interstitial"[MeSH Terms] OR '
         '"Sarcoidosis, Pulmonary"[MeSH Terms] OR '
+        '"Sarcoidosis"[MeSH Terms] OR '
         '"Pulmonary Fibrosis"[MeSH Terms] OR '
+        '"Pulmonary Alveolar Proteinosis"[MeSH Terms] OR '
+        '"Pulmonary Eosinophilia"[MeSH Terms] OR '
+        # MeSH connective tissue diseases with pulmonary involvement
+        '"Scleroderma, Systemic"[MeSH Terms] OR '
+        '"Arthritis, Rheumatoid"[MeSH Terms] OR '
+        '"Sjogren\'s Syndrome"[MeSH Terms] OR '
+        '"Dermatomyositis"[MeSH Terms] OR '
+        '"Polymyositis"[MeSH Terms] OR '
+        '"Mixed Connective Tissue Disease"[MeSH Terms] OR '
+        # 2025 ATS/ERS patterns — interstitial
+        '"UIP"[Title/Abstract] OR '
+        '"usual interstitial pneumonia"[Title/Abstract] OR '
+        '"NSIP"[Title/Abstract] OR '
+        '"nonspecific interstitial pneumonia"[Title/Abstract] OR '
+        '"COP"[Title/Abstract] OR '
+        '"cryptogenic organizing pneumonia"[Title/Abstract] OR '
+        '"organizing pneumonia"[Title/Abstract] OR '
+        '"AIP"[Title/Abstract] OR '
+        '"acute interstitial pneumonia"[Title/Abstract] OR '
+        '"LIP"[Title/Abstract] OR '
+        '"lymphoid interstitial pneumonia"[Title/Abstract] OR '
+        '"PPFE"[Title/Abstract] OR '
+        '"pleuroparenchymal fibroelastosis"[Title/Abstract] OR '
+        '"DIP"[Title/Abstract] OR '
+        '"desquamative interstitial pneumonia"[Title/Abstract] OR '
+        '"RB-ILD"[Title/Abstract] OR '
+        '"respiratory bronchiolitis"[Title/Abstract] OR '
+        # NEW in 2025: bronchiolocentric pattern
+        '"BIP"[Title/Abstract] OR '
+        '"bronchiolocentric interstitial pneumonia"[Title/Abstract] OR '
+        # 2025 ATS/ERS — alveolar filling disorders
+        '"PAP"[Title/Abstract] OR '
+        '"pulmonary alveolar proteinosis"[Title/Abstract] OR '
+        '"AEP"[Title/Abstract] OR '
+        '"acute eosinophilic pneumonia"[Title/Abstract] OR '
+        '"CEP"[Title/Abstract] OR '
+        '"chronic eosinophilic pneumonia"[Title/Abstract] OR '
+        '"alveolar macrophage pneumonia"[Title/Abstract] OR '
+        # General ILD terms
         '"progressive pulmonary fibrosis"[Title/Abstract] OR '
         '"PPF"[Title/Abstract] OR '
         '"fibrosing ILD"[Title/Abstract] OR '
         '"fibrotic ILD"[Title/Abstract] OR '
         '"unclassifiable ILD"[Title/Abstract] OR '
+        '"interstitial lung disease"[Title/Abstract] OR '
+        # Clinical events specific to ILD
+        '"acute exacerbation IPF"[Title/Abstract] OR '
+        '"AE-IPF"[Title/Abstract] OR '
+        '"acute exacerbation interstitial"[Title/Abstract] OR '
+        '"lung transplant interstitial"[Title/Abstract] OR '
+        # Therapy — contextualize antifibrotic with lung context to avoid
+        # cardiac/hepatic/renal fibrosis false positives
         '"nintedanib"[Title/Abstract] OR '
         '"pirfenidone"[Title/Abstract] OR '
-        '"antifibrotic"[Title/Abstract] OR '
         '"BI 1015550"[Title/Abstract] OR '
-        '"nerandomilast"[Title/Abstract]'
-        ') AND '
+        '"nerandomilast"[Title/Abstract] OR '
         '('
-        'Clinical Trial[Publication Type] OR '
-        'Randomized Controlled Trial[Publication Type] OR '
-        'Review[Publication Type] OR '
-        'Meta-Analysis[Publication Type] OR '
-        'Practice Guideline[Publication Type] OR '
-        'Observational Study[Publication Type] OR '
-        'Comparative Study[Publication Type]'
+        '"antifibrotic"[Title/Abstract] AND '
+        '('
+        '"lung"[Title/Abstract] OR "pulmonary"[Title/Abstract] OR '
+        '"interstitial"[Title/Abstract] OR "IPF"[Title/Abstract] OR '
+        '"ILD"[Title/Abstract] OR "PPF"[Title/Abstract]'
+        ')'
+        ')'
         ') NOT ('
         'Editorial[Publication Type] OR Letter[Publication Type] OR '
-        'Comment[Publication Type] OR Errata[Publication Type]'
+        'Comment[Publication Type] OR Errata[Publication Type] OR '
+        'Retraction of Publication[Publication Type]'
         ')'
     ),
 
+    # ─────────────────────────────────────────────────────────────
+    # Focus 2: Imaging toracico
+    # Scope ALLARGATO oltre ILD: include anche lung cancer screening,
+    # gestione del nodulo polmonare, e tutto il chest imaging clinico.
+    # Mantenuto nome interno "ild_imaging" per compatibilità test.
+    # ─────────────────────────────────────────────────────────────
     "ild_imaging": (
         '('
+        # ── ARM 1: ILD imaging classico ────────────────────────
         '('
-        '("Tomography, X-Ray Computed"[MeSH Terms] OR '
+        '('
+        # Imaging modality
+        '"Tomography, X-Ray Computed"[MeSH Terms] OR '
         '"Magnetic Resonance Imaging"[MeSH Terms] OR '
+        '"Positron Emission Tomography Computed Tomography"[MeSH Terms] OR '
+        '"Lung/diagnostic imaging"[MeSH Terms] OR '
         '"HRCT"[Title/Abstract] OR '
         '"high-resolution computed tomography"[Title/Abstract] OR '
         '"quantitative CT"[Title/Abstract] OR '
-        '"radiomics"[Title/Abstract])'
-        ' AND '
-        '("Lung Diseases, Interstitial"[MeSH Terms] OR '
+        '"qCT"[Title/Abstract] OR '
+        '"radiomics"[Title/Abstract] OR '
+        '"texture analysis"[Title/Abstract] OR '
+        '"CALIPER"[Title/Abstract] OR '
+        '"FDG-PET"[Title/Abstract] OR '
+        '"lung ultrasound"[Title/Abstract] OR '
+        '"pattern recognition"[Title/Abstract]'
+        ') AND ('
+        # ILD context — aligned with 2025 ATS/ERS
+        '"Lung Diseases, Interstitial"[MeSH Terms] OR '
         '"Idiopathic Pulmonary Fibrosis"[MeSH Terms] OR '
         '"Pulmonary Fibrosis"[MeSH Terms] OR '
+        '"Hypersensitivity Pneumonitis"[MeSH Terms] OR '
+        '"Sarcoidosis, Pulmonary"[MeSH Terms] OR '
         '"interstitial lung"[Title/Abstract] OR '
         '"ILD"[Title/Abstract] OR '
+        '"IPF"[Title/Abstract] OR '
         '"UIP pattern"[Title/Abstract] OR '
-        '"fibrosing"[Title/Abstract])'
-        ') OR ('
-        '("deep learning"[Title/Abstract] OR '
+        '"NSIP"[Title/Abstract] OR '
+        '"COP"[Title/Abstract] OR '
+        '"BIP"[Title/Abstract] OR '
+        '"PPFE"[Title/Abstract] OR '
+        '"fibrosing"[Title/Abstract] OR '
+        '"pulmonary fibrosis"[Title/Abstract] OR '
+        '"sarcoidosis"[Title/Abstract] OR '
+        '"alveolar proteinosis"[Title/Abstract]'
+        ')'
+        ')'
+        ' OR '
+        # ── ARM 2: Lung cancer screening + nodule management ──
+        '('
+        '('
+        '"Mass Screening"[MeSH Terms] OR '
+        '"Early Detection of Cancer"[MeSH Terms] OR '
+        '"low-dose CT"[Title/Abstract] OR '
+        '"LDCT"[Title/Abstract] OR '
+        '"lung cancer screening"[Title/Abstract] OR '
+        '"Lung-RADS"[Title/Abstract] OR '
+        '"LungRADS"[Title/Abstract] OR '
+        '"Fleischner Society"[Title/Abstract] OR '
+        '"pulmonary nodule"[Title/Abstract] OR '
+        '"lung nodule"[Title/Abstract] OR '
+        '"solitary pulmonary nodule"[Title/Abstract] OR '
+        '"subsolid nodule"[Title/Abstract] OR '
+        '"ground glass nodule"[Title/Abstract] OR '
+        '"GGN"[Title/Abstract] OR '
+        '"NLST"[Title/Abstract] OR '
+        '"NELSON trial"[Title/Abstract] OR '
+        '"I-ELCAP"[Title/Abstract]'
+        ') AND ('
+        '"Lung Neoplasms"[MeSH Terms] OR '
+        '"Tomography, X-Ray Computed"[MeSH Terms] OR '
+        '"lung cancer"[Title/Abstract] OR '
+        '"pulmonary"[Title/Abstract] OR '
+        '"thoracic"[Title/Abstract] OR '
+        '"lung"[Title/Abstract]'
+        ')'
+        ')'
+        ' OR '
+        # ── ARM 3: AI/ML in chest imaging, ILD or screening context ──
+        '('
+        '('
+        '"deep learning"[Title/Abstract] OR '
         '"machine learning"[Title/Abstract] OR '
         '"artificial intelligence"[Title/Abstract] OR '
-        '"convolutional neural network"[Title/Abstract])'
-        ' AND '
-        '("lung"[Title/Abstract] OR "pulmonary"[Title/Abstract] OR "thoracic"[Title/Abstract])'
-        ' AND '
-        '("CT"[Title/Abstract] OR "HRCT"[Title/Abstract] OR "imaging"[Title/Abstract])'
+        '"convolutional neural network"[Title/Abstract]'
+        ') AND ('
+        '"HRCT"[Title/Abstract] OR "CT"[Title/Abstract] OR '
+        '"chest imaging"[Title/Abstract] OR "thoracic imaging"[Title/Abstract]'
+        ') AND ('
+        '"interstitial lung"[Title/Abstract] OR '
+        '"ILD"[Title/Abstract] OR '
+        '"IPF"[Title/Abstract] OR '
+        '"pulmonary fibrosis"[Title/Abstract] OR '
+        '"fibrosing"[Title/Abstract] OR '
+        '"sarcoidosis"[Title/Abstract] OR '
+        '"lung nodule"[Title/Abstract] OR '
+        '"pulmonary nodule"[Title/Abstract] OR '
+        '"lung cancer"[Title/Abstract] OR '
+        '"lung cancer screening"[Title/Abstract]'
+        ')'
         ')'
         ') NOT ('
         'Editorial[Publication Type] OR Letter[Publication Type] OR '
@@ -125,34 +254,68 @@ PUBMED_QUERIES = {
         ')'
     ),
 
+    # ─────────────────────────────────────────────────────────────
+    # Focus 3: Cardio imaging
+    # Coverage: CMR, cardiac CT, photon-counting, strain,
+    # stress imaging, T1/T2/T2* mapping, LGE.
+    # Clinica: cardiomiopatie, amiloidosi, sarcoidosi cardiaca,
+    # ischemia, pericardio, ARVD/ARVC.
+    # ─────────────────────────────────────────────────────────────
     "cardio_imaging": (
         '('
         '('
+        # Imaging modality
         '"Magnetic Resonance Imaging, Cine"[MeSH Terms] OR '
         '"Cardiac Imaging Techniques"[MeSH Terms] OR '
         '"Computed Tomography Angiography"[MeSH Terms] OR '
+        '"Multidetector Computed Tomography"[MeSH Terms] OR '
+        '"Heart/diagnostic imaging"[MeSH Terms] OR '
         '"cardiac MRI"[Title/Abstract] OR '
+        '"cardiac MR"[Title/Abstract] OR '
         '"CMR"[Title/Abstract] OR '
         '"cardiac CT"[Title/Abstract] OR '
         '"coronary CT angiography"[Title/Abstract] OR '
+        '"CCTA"[Title/Abstract] OR '
         '"FFR-CT"[Title/Abstract] OR '
+        '"photon counting CT"[Title/Abstract] OR '
         '"T1 mapping"[Title/Abstract] OR '
+        '"T2 mapping"[Title/Abstract] OR '
+        '"T2* mapping"[Title/Abstract] OR '
         '"LGE"[Title/Abstract] OR '
-        '"late gadolinium enhancement"[Title/Abstract]'
+        '"late gadolinium enhancement"[Title/Abstract] OR '
+        '"strain imaging"[Title/Abstract] OR '
+        '"feature tracking"[Title/Abstract] OR '
+        '"stress CMR"[Title/Abstract] OR '
+        '"stress CT"[Title/Abstract] OR '
+        '"perfusion CMR"[Title/Abstract]'
         ') AND ('
+        # Clinical context
         '"Cardiomyopathies"[MeSH Terms] OR '
+        '"Cardiomyopathy, Hypertrophic"[MeSH Terms] OR '
+        '"Cardiomyopathy, Dilated"[MeSH Terms] OR '
+        '"Arrhythmogenic Right Ventricular Dysplasia"[MeSH Terms] OR '
         '"Myocardial Infarction"[MeSH Terms] OR '
         '"Coronary Artery Disease"[MeSH Terms] OR '
+        '"Myocardial Ischemia"[MeSH Terms] OR '
         '"Cardiac Amyloidosis"[MeSH Terms] OR '
         '"Heart Failure"[MeSH Terms] OR '
         '"Myocarditis"[MeSH Terms] OR '
+        '"Pericarditis"[MeSH Terms] OR '
+        '"Pericardial Effusion"[MeSH Terms] OR '
+        '"Heart Diseases"[MeSH Major Topic] OR '
         '"ischemic heart disease"[Title/Abstract] OR '
         '"amyloid cardiomyopathy"[Title/Abstract] OR '
-        '"hypertrophic cardiomyopathy"[Title/Abstract]'
+        '"hypertrophic cardiomyopathy"[Title/Abstract] OR '
+        '"dilated cardiomyopathy"[Title/Abstract] OR '
+        '"arrhythmogenic"[Title/Abstract] OR '
+        '"ARVD"[Title/Abstract] OR '
+        '"ARVC"[Title/Abstract] OR '
+        '"cardiac sarcoidosis"[Title/Abstract] OR '
+        '"pericardial disease"[Title/Abstract] OR '
+        '"iron overload"[Title/Abstract]'
         ')'
         ') NOT ('
-        '"Echocardiography"[MeSH Major Topic] OR '
-        '"echocardiogram"[Title] OR '
+        '"echocardiography"[Title] OR '
         'Editorial[Publication Type] OR Letter[Publication Type] OR '
         'Comment[Publication Type] OR Errata[Publication Type]'
         ')'
@@ -164,8 +327,9 @@ PUBMED_QUERIES = {
 ARXIV_CATEGORIES = ["eess.IV", "q-bio.QM", "cs.CV"]  # imaging + biomed + computer vision
 
 ARXIV_KEYWORDS = {
-    "ild_clinica": [],  # arXiv is mostly methodological, skipping pure clinical
+    "ild_clinica": [],  # arXiv è metodologico, salta clinica pura
     "ild_imaging": [
+        # ILD imaging
         "interstitial lung",
         "pulmonary fibrosis",
         "ILD",
@@ -173,6 +337,16 @@ ARXIV_KEYWORDS = {
         "IPF",
         "lung fibrosis",
         "UIP pattern",
+        "sarcoidosis",
+        # Lung cancer screening / nodule detection (new scope)
+        "lung cancer screening",
+        "lung nodule detection",
+        "pulmonary nodule",
+        "Lung-RADS",
+        "lung cancer CT",
+        # Generic chest imaging methods
+        "chest CT segmentation",
+        "thoracic imaging deep learning",
     ],
     "cardio_imaging": [
         "cardiac MRI",
@@ -183,43 +357,91 @@ ARXIV_KEYWORDS = {
         "cardiomyopathy",
         "late gadolinium",
         "T1 mapping",
+        "strain imaging",
+        "feature tracking",
     ],
 }
 
 # medRxiv keywords for client-side filtering (the API doesn't support queries).
 # We download all recent papers and keep only those matching any keyword.
 MEDRXIV_KEYWORDS = [
+    # ILD clinica — 2025 ATS/ERS classification patterns
     "interstitial lung",
     "pulmonary fibrosis",
     "ILD",
     "IPF",
-    "HRCT",
     "UIP",
+    "NSIP",
     "PPF",
+    "COP",
+    "organizing pneumonia",
+    "AIP",
+    "LIP",
+    "PPFE",
+    "pleuroparenchymal fibroelastosis",
+    "DIP",
+    "RB-ILD",
+    "BIP",
+    "bronchiolocentric",
+    "PAP",
+    "alveolar proteinosis",
+    "eosinophilic pneumonia",
+    "AEP",
+    "CEP",
+    # ILD secondary
+    "sarcoidosis",
+    "hypersensitivity pneumonitis",
+    "scleroderma lung",
+    "rheumatoid lung",
+    "systemic sclerosis",
+    # ILD therapy
     "nintedanib",
     "pirfenidone",
     "antifibrotic",
-    "sarcoidosis",
-    "hypersensitivity pneumonitis",
+    # ILD imaging extras
+    "HRCT",
+    "radiomics",
+    "CALIPER",
+    "FDG-PET sarcoid",
+    "lung ultrasound",
+    # Lung cancer screening (NEW scope)
+    "lung cancer screening",
+    "low-dose CT",
+    "LDCT",
+    "Lung-RADS",
+    "lung nodule",
+    "pulmonary nodule",
+    "Fleischner",
+    "subsolid nodule",
+    # Cardio imaging
     "cardiac MRI",
+    "cardiac MR",
     "cardiac CT",
     "CMR",
     "coronary CT angiography",
+    "CCTA",
     "FFR-CT",
+    "photon counting CT",
     "late gadolinium enhancement",
     "T1 mapping",
+    "T2 mapping",
+    "strain imaging",
+    "feature tracking",
     "cardiomyopathy",
     "cardiac amyloid",
     "myocarditis",
+    "cardiac sarcoidosis",
+    "arrhythmogenic",
+    "pericardial",
 ]
 
 # RSS feeds: high-quality radiology and pulmonology journals.
 # Format: list of (url, source_label, focus_hint)
+# NOTE: After first diagnostic, RSNA and JACC feed URLs returned 404 and
+# Springer's old URL returned 400. Removed those. Remaining feeds are
+# "best effort" — if some still fail, PubMed queries cover the same content
+# with 1-3 day latency, so it's not critical.
 RSS_FEEDS = [
-    ("https://pubs.rsna.org/action/showFeed?ui=0&mi=3fndc3&ai=2a&jc=radiology&type=etoc&feed=rss",
-     "Radiology (RSNA)", "mixed"),
-    ("https://link.springer.com/journal/330.rss",
-     "European Radiology", "mixed"),
     ("https://www.atsjournals.org/feed/ajrccm/recent",
      "AJRCCM", "ild_clinica"),
     ("https://erj.ersjournals.com/rss/current.xml",
@@ -228,8 +450,6 @@ RSS_FEEDS = [
      "Chest", "ild_clinica"),
     ("https://insightsimaging.springeropen.com/articles/most-recent/rss.xml",
      "Insights into Imaging", "mixed"),
-    ("https://www.jacc.org/action/showFeed?ui=0&mi=ehikzz&ai=hpp&jc=jaccim&type=etoc&feed=rss",
-     "JACC: Cardiovascular Imaging", "cardio_imaging"),
 ]
 
 # Guideline source pages (HTML pages to scrape lightly for recent updates).
@@ -287,10 +507,22 @@ def init_briefs(gh_token: str,
 def _http_get(url: str, headers: Optional[dict] = None,
               timeout: int = 60, max_retries: int = 2) -> bytes:
     """GET request with basic retry logic. Returns raw response bytes."""
+    # Default headers: include browser-like User-Agent to avoid WAF blocks.
+    # Many academic/industry sites return 403 to default Python user-agent.
+    base_headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Accept": "*/*",
+    }
+    if headers:
+        base_headers.update(headers)
+
     last_exc = None
     for attempt in range(max_retries + 1):
         try:
-            req = urllib.request.Request(url, headers=headers or {})
+            req = urllib.request.Request(url, headers=base_headers)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read()
         except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
@@ -755,15 +987,20 @@ def fetch_medrxiv(days_back: int = 10, max_papers: int = 5000) -> list:
 
         time.sleep(0.3)  # be nice to medRxiv server
 
-    # Client-side keyword filter (case-insensitive)
+    # Client-side keyword filter using word boundaries to avoid false positives.
+    # Without \b boundaries, "ILD" matches inside "child", "PAP" inside "Pappilon",
+    # etc. — which is exactly the bug we saw in the first diagnostic run.
     filtered = []
-    keywords_lower = [kw.lower() for kw in MEDRXIV_KEYWORDS]
+    keyword_patterns = [
+        re.compile(r"\b" + re.escape(kw) + r"\b", re.IGNORECASE)
+        for kw in MEDRXIV_KEYWORDS
+    ]
 
     for item in all_papers:
         title = item.get("title", "") or ""
         abstract = item.get("abstract", "") or ""
-        searchable = (title + " " + abstract).lower()
-        if any(kw in searchable for kw in keywords_lower):
+        searchable = title + " " + abstract
+        if any(p.search(searchable) for p in keyword_patterns):
             filtered.append(_medrxiv_item_to_paper(item))
 
     return filtered
