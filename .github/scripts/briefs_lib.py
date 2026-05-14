@@ -159,6 +159,10 @@ PUBMED_QUERIES = {
         'Comment[Publication Type] OR Errata[Publication Type] OR '
         'Retraction of Publication[Publication Type]'
         ')'
+        # Humans filter: excludes animal models, pure basic science, in vitro
+        # studies. To produce a "translational" brief that INCLUDES preclinical,
+        # remove this AND clause.
+        ' AND "Humans"[MeSH Terms]'
     ),
 
     # ─────────────────────────────────────────────────────────────
@@ -266,6 +270,7 @@ PUBMED_QUERIES = {
         'Editorial[Publication Type] OR Letter[Publication Type] OR '
         'Comment[Publication Type] OR Errata[Publication Type]'
         ')'
+        ' AND "Humans"[MeSH Terms]'
     ),
 
     # ─────────────────────────────────────────────────────────────
@@ -333,6 +338,7 @@ PUBMED_QUERIES = {
         'Editorial[Publication Type] OR Letter[Publication Type] OR '
         'Comment[Publication Type] OR Errata[Publication Type]'
         ')'
+        ' AND "Humans"[MeSH Terms]'
     ),
 }
 
