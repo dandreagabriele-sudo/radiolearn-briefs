@@ -64,70 +64,84 @@ PUBMED_QUERIES = {
     # Focus 1: ILD clinica
     # Backbone ontologico: ATS/ERS 2025 update of IIP classification
     # (European Respiratory Journal, December 2025).
-    # Covers all major interstitial patterns + alveolar filling
-    # disorders + secondary ILDs (CTDs, sarcoid, drug-induced).
+    #
+    # Structure (rigid for false-positive control):
+    #   ARM_1: ILD-direct MeSH (already pulmonary-bounded)
+    #   ARM_2: ILD pattern full names (no 2-3 letter ambiguous acronyms
+    #          like LIP/AIP/DIP/PAP/BIP — they match "lip", "AIP" abbreviations
+    #          etc. in non-ILD studies)
+    #   ARM_3: Connective tissue diseases AND pulmonary context (forced)
+    #   ARM_4: ILD-specific therapy
     # ─────────────────────────────────────────────────────────────
     "ild_clinica": (
         '('
-        # MeSH core ILD
+        # ─── ARM 1: ILD-direct MeSH ─────────────────────────────
         '"Idiopathic Pulmonary Fibrosis"[MeSH Terms] OR '
         '"Hypersensitivity Pneumonitis"[MeSH Terms] OR '
         '"Lung Diseases, Interstitial"[MeSH Terms] OR '
         '"Sarcoidosis, Pulmonary"[MeSH Terms] OR '
-        '"Sarcoidosis"[MeSH Terms] OR '
         '"Pulmonary Fibrosis"[MeSH Terms] OR '
         '"Pulmonary Alveolar Proteinosis"[MeSH Terms] OR '
         '"Pulmonary Eosinophilia"[MeSH Terms] OR '
-        # MeSH connective tissue diseases with pulmonary involvement
+        # ─── ARM 2: Pattern full names (no acronyms) ───────────
+        '"usual interstitial pneumonia"[Title/Abstract] OR '
+        '"nonspecific interstitial pneumonia"[Title/Abstract] OR '
+        '"cryptogenic organizing pneumonia"[Title/Abstract] OR '
+        '"organizing pneumonia"[Title/Abstract] OR '
+        '"acute interstitial pneumonia"[Title/Abstract] OR '
+        '"lymphoid interstitial pneumonia"[Title/Abstract] OR '
+        '"pleuroparenchymal fibroelastosis"[Title/Abstract] OR '
+        '"PPFE"[Title/Abstract] OR '
+        '"desquamative interstitial pneumonia"[Title/Abstract] OR '
+        '"respiratory bronchiolitis-associated"[Title/Abstract] OR '
+        '"bronchiolocentric interstitial pneumonia"[Title/Abstract] OR '
+        '"pulmonary alveolar proteinosis"[Title/Abstract] OR '
+        '"acute eosinophilic pneumonia"[Title/Abstract] OR '
+        '"chronic eosinophilic pneumonia"[Title/Abstract] OR '
+        '"alveolar macrophage pneumonia"[Title/Abstract] OR '
+        # ─── ARM 3: General ILD terms ──────────────────────────
+        '"progressive pulmonary fibrosis"[Title/Abstract] OR '
+        '"fibrosing interstitial lung"[Title/Abstract] OR '
+        '"fibrotic interstitial lung"[Title/Abstract] OR '
+        '"unclassifiable interstitial lung"[Title/Abstract] OR '
+        '"interstitial lung disease"[Title/Abstract] OR '
+        # ─── ARM 4: Acute events / transplant ──────────────────
+        '"acute exacerbation interstitial"[Title/Abstract] OR '
+        '"acute exacerbation IPF"[Title/Abstract] OR '
+        '"acute exacerbation idiopathic pulmonary fibrosis"[Title/Abstract] OR '
+        # ─── ARM 5: CTD-related ILD (forced pulmonary AND) ─────
+        '('
+        '('
         '"Scleroderma, Systemic"[MeSH Terms] OR '
         '"Arthritis, Rheumatoid"[MeSH Terms] OR '
         '"Sjogren\'s Syndrome"[MeSH Terms] OR '
         '"Dermatomyositis"[MeSH Terms] OR '
         '"Polymyositis"[MeSH Terms] OR '
-        '"Mixed Connective Tissue Disease"[MeSH Terms] OR '
-        # 2025 ATS/ERS patterns — interstitial
-        '"UIP"[Title/Abstract] OR '
-        '"usual interstitial pneumonia"[Title/Abstract] OR '
-        '"NSIP"[Title/Abstract] OR '
-        '"nonspecific interstitial pneumonia"[Title/Abstract] OR '
-        '"COP"[Title/Abstract] OR '
-        '"cryptogenic organizing pneumonia"[Title/Abstract] OR '
-        '"organizing pneumonia"[Title/Abstract] OR '
-        '"AIP"[Title/Abstract] OR '
-        '"acute interstitial pneumonia"[Title/Abstract] OR '
-        '"LIP"[Title/Abstract] OR '
-        '"lymphoid interstitial pneumonia"[Title/Abstract] OR '
-        '"PPFE"[Title/Abstract] OR '
-        '"pleuroparenchymal fibroelastosis"[Title/Abstract] OR '
-        '"DIP"[Title/Abstract] OR '
-        '"desquamative interstitial pneumonia"[Title/Abstract] OR '
-        '"RB-ILD"[Title/Abstract] OR '
-        '"respiratory bronchiolitis"[Title/Abstract] OR '
-        # NEW in 2025: bronchiolocentric pattern
-        '"BIP"[Title/Abstract] OR '
-        '"bronchiolocentric interstitial pneumonia"[Title/Abstract] OR '
-        # 2025 ATS/ERS — alveolar filling disorders
-        '"PAP"[Title/Abstract] OR '
-        '"pulmonary alveolar proteinosis"[Title/Abstract] OR '
-        '"AEP"[Title/Abstract] OR '
-        '"acute eosinophilic pneumonia"[Title/Abstract] OR '
-        '"CEP"[Title/Abstract] OR '
-        '"chronic eosinophilic pneumonia"[Title/Abstract] OR '
-        '"alveolar macrophage pneumonia"[Title/Abstract] OR '
-        # General ILD terms
-        '"progressive pulmonary fibrosis"[Title/Abstract] OR '
-        '"PPF"[Title/Abstract] OR '
-        '"fibrosing ILD"[Title/Abstract] OR '
-        '"fibrotic ILD"[Title/Abstract] OR '
-        '"unclassifiable ILD"[Title/Abstract] OR '
-        '"interstitial lung disease"[Title/Abstract] OR '
-        # Clinical events specific to ILD
-        '"acute exacerbation IPF"[Title/Abstract] OR '
-        '"AE-IPF"[Title/Abstract] OR '
-        '"acute exacerbation interstitial"[Title/Abstract] OR '
-        '"lung transplant interstitial"[Title/Abstract] OR '
-        # Therapy — contextualize antifibrotic with lung context to avoid
-        # cardiac/hepatic/renal fibrosis false positives
+        '"Mixed Connective Tissue Disease"[MeSH Terms]'
+        ')'
+        ' AND '
+        '('
+        '"Lung"[MeSH Terms] OR '
+        '"lung"[Title/Abstract] OR '
+        '"pulmonary"[Title/Abstract] OR '
+        '"interstitial"[Title/Abstract] OR '
+        '"respiratory"[Title/Abstract] OR '
+        '"HRCT"[Title/Abstract] OR '
+        '"thoracic"[Title/Abstract]'
+        ')'
+        ') OR '
+        # ─── ARM 6: Sarcoidosis with explicit pulmonary AND ───
+        '('
+        '"Sarcoidosis"[MeSH Terms] AND '
+        '('
+        '"Lung"[MeSH Terms] OR '
+        '"lung"[Title/Abstract] OR '
+        '"pulmonary"[Title/Abstract] OR '
+        '"respiratory"[Title/Abstract] OR '
+        '"thoracic"[Title/Abstract]'
+        ')'
+        ') OR '
+        # ─── ARM 7: Therapy (specific drug names always safe) ──
         '"nintedanib"[Title/Abstract] OR '
         '"pirfenidone"[Title/Abstract] OR '
         '"BI 1015550"[Title/Abstract] OR '
@@ -987,6 +1001,9 @@ def fetch_medrxiv(days_back: int = 10, max_papers: int = 5000) -> list:
 
         time.sleep(0.3)  # be nice to medRxiv server
 
+    print(f"  [medRxiv debug] downloaded {len(all_papers)} raw papers, "
+          f"filtering against {len(MEDRXIV_KEYWORDS)} keywords...")
+
     # Client-side keyword filter using word boundaries to avoid false positives.
     # Without \b boundaries, "ILD" matches inside "child", "PAP" inside "Pappilon",
     # etc. — which is exactly the bug we saw in the first diagnostic run.
@@ -1003,6 +1020,7 @@ def fetch_medrxiv(days_back: int = 10, max_papers: int = 5000) -> list:
         if any(p.search(searchable) for p in keyword_patterns):
             filtered.append(_medrxiv_item_to_paper(item))
 
+    print(f"  [medRxiv debug] {len(filtered)} papers passed keyword filter")
     return filtered
 
 
