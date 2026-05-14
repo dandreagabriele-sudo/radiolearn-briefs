@@ -1,0 +1,14 @@
+{
+  "id": "test-001",
+  "created_at": "2026-05-14T18:00:00+02:00",
+  "messages": [
+    {
+      "method": "sendMessage",
+      "params": {
+        "chat_id": "8538175163",
+        "text": "🧪 *RadioLearn Briefs* — test infrastruttura\n\nSe ricevi questo messaggio, l'infrastruttura del nuovo repo funziona correttamente: il Sender consegna outbox e il bot risponde nella chat condivisa.",
+        "parse_mode": "Markdown"
+      }
+    }
+  ]
+}
