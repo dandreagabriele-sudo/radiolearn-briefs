@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{BRIEF_TITLE}}</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · {{BRIEF_WEEK}}</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">{{BRIEF_HEADLINE}}</h1>
+  <p class="ui text-sm text-slate-500 mt-3">{{BRIEF_DATE}} · {{BRIEF_ITEM_COUNT}} selezionati su {{BRIEF_CANDIDATES_COUNT}} candidati · finestra {{BRIEF_DAYS_BACK}} giorni</p>
+</header>
+
+<!-- HIGHLIGHTS (top 3 items with full multidisciplinary anchor) -->
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2">
+    <span>✨</span> Highlights
+  </h2>
+  {{HIGHLIGHTS_HTML}}
+</section>
+
+<!-- FOCUS 1: Polmonologia clinica -->
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2">
+    <span>🫁</span> Polmonologia clinica
+  </h2>
+  {{ILD_CLINICA_HTML}}
+</section>
+
+<!-- FOCUS 2: Imaging toracico -->
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2">
+    <span>🫁🖥️</span> Imaging toracico
+  </h2>
+  {{ILD_IMAGING_HTML}}
+</section>
+
+<!-- FOCUS 3: Cardio imaging -->
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2">
+    <span>❤️🖥️</span> Cardio imaging
+  </h2>
+  {{CARDIO_IMAGING_HTML}}
+</section>
+
+<!-- CONDITIONAL SECTIONS (only rendered if content exists) -->
+{{CONDITIONAL_GUIDELINES}}
+{{CONDITIONAL_INDUSTRY}}
+{{CONDITIONAL_ITALIA}}
+{{CONDITIONAL_FILO}}
+
+<!-- FOOTER -->
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il {{BRIEF_TIMESTAMP}}.</p>
+  <p class="mt-2">Sorgenti consultate: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  <p class="mt-2">Curation editoriale: priorità a breakthrough, rilevanza clinica immediata, esclusione di aneddoti e speculazione senza dati duri.</p>
+  {{SOURCES_UNAVAILABLE}}
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<!-- ITEM TEMPLATE REFERENCE (commented examples — the routine fills these patterns) -->
+<!--
+
+EXAMPLE OF A HIGHLIGHT ITEM (full anchor):
+
+<article class="mb-8">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/EXAMPLE" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Title of the paper as in the original
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Journal of X · 14 May 2026 · Authors et al.
+  </p>
+  <p class="mb-3">
+    Il punto in 2-3 frasi italiane su <em>cosa</em> è stato fatto e <em>cosa</em> cambia clinicamente.
+    La <span class="anchor">finding più importante</span> evidenziata.
+  </p>
+  <p class="mb-2">
+    🧠 <strong>L'ancora multidisciplinare:</strong> ragionamento di 4-7 righe che collega il paper a un
+    concetto storico, letterario, scientifico fuori dalla radiologia. Esempio: il principio di induzione
+    di Tucidide, il principio di Cézanne sulla composizione multipunto, la curva di Pareto.
+    Quattro o sette righe, ricco ma non sovraccarico. Termini specialistici come
+    <details class="inline"><summary><span class="chip">PPF</span></summary><span class="chip-content">Progressive Pulmonary Fibrosis — criterio diagnostico ATS/ERS 2022 che identifica le ILD non-IPF con peggioramento documentato in 12 mesi.</span></details>
+    si chiariscono inline sui chip.
+  </p>
+</article>
+
+
+EXAMPLE OF A REGULAR ITEM (with brief "Aggancio"):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Title of the paper
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Radiology · 12 May 2026
+  </p>
+  <p class="mb-2 text-sm">
+    Riassunto puntuale in 1-2 frasi italiane. Include il bottom-line clinico.
+  </p>
+  <p class="text-sm text-slate-600">
+    🧠 <strong>Aggancio:</strong> una riga di contesto multidisciplinare leggera, oppure il "perché ti riguarda".
+  </p>
+</article>
+
+
+EXAMPLE OF "FILO DELLA SETTIMANA" SECTION:
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900">
+    Quando emerge un pattern trasversale tra paper di focus diversi — es. "tre paper in tre riviste diverse
+    convergono sul ruolo del macrofago alveolare nella patogenesi della fibrosi" — questa sezione lo nomina
+    esplicitamente, ~3-5 righe. Compare in ~1 brief su 4.
+  </p>
+</section>
+
+-->
+
+</body>
+</html>
