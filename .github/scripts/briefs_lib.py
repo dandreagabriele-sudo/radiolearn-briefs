@@ -462,13 +462,13 @@ MEDRXIV_KEYWORDS = [
 
 # RSS feeds: high-quality radiology and pulmonology journals.
 # Format: list of (url, source_label, focus_hint)
-# NOTE: After first diagnostic, RSNA and JACC feed URLs returned 404 and
-# Springer's old URL returned 400. Removed those. Remaining feeds are
-# "best effort" — if some still fail, PubMed queries cover the same content
-# with 1-3 day latency, so it's not critical.
+# NOTE: ATS journals migrated from atsjournals.org to Oxford Academic in 2026.
+# The Oxford-hosted feed URL was discovered manually by the user during Phase 2
+# iteration. Other ATS feeds (Annals ATS, ATS Scholar) likely exist on Oxford
+# with similar URL patterns but are not yet added.
 RSS_FEEDS = [
-    ("https://www.atsjournals.org/feed/ajrccm/recent",
-     "AJRCCM", "ild_clinica"),
+    ("https://academic.oup.com/rss/site_6755/4230.xml",
+     "AJRCCM (Oxford)", "ild_clinica"),
     ("https://erj.ersjournals.com/rss/current.xml",
      "European Respiratory Journal", "ild_clinica"),
     ("https://journal.chestnet.org/action/showFeed?type=etoc&feed=rss&jc=chest",
@@ -491,7 +491,7 @@ GUIDELINE_SOURCES = [
 INDUSTRY_SOURCES = [
     ("https://www.boehringer-ingelheim.com/feed", "Boehringer Ingelheim"),
     ("https://www.siemens-healthineers.com/press-room", "Siemens Healthineers"),
-    ("https://www.gehealthcare.com/about/newsroom", "GE HealthCare"),
+    ("https://www.ge.com/news/subscribe/all/rss.xml", "GE HealthCare"),
     ("https://www.usa.philips.com/healthcare/about/news", "Philips Healthcare"),
 ]
 
@@ -976,106 +976,150 @@ def _parse_arxiv_atom(atom_bytes: bytes, focus_hint: str,
 
 
 # ════════════════════════════════════════════════════════════════════
-# MEDRXIV
+# MEDRXIV (via Subject Collection RSS feeds)
 # ════════════════════════════════════════════════════════════════════
+# Old approach: api.biorxiv.org JSON details endpoint, which only returned
+# ~30 papers per 14-day range (mystery never resolved — pagination or
+# semantics issue). New approach: medRxiv's pre-filtered RSS feeds by
+# Subject Collection, which are curated by medRxiv editorial staff.
+# Three relevant collections cover our three focuses with minimal noise.
 
-_MEDRXIV_BASE = "https://api.biorxiv.org/details/medrxiv"
+MEDRXIV_RSS_FEEDS = [
+    ("https://connect.medrxiv.org/medrxiv_xml.php?subject=Respiratory_Medicine",
+     "Respiratory Medicine"),
+    ("https://connect.medrxiv.org/medrxiv_xml.php?subject=Radiology_and_Imaging",
+     "Radiology and Imaging"),
+    ("https://connect.medrxiv.org/medrxiv_xml.php?subject=Cardiovascular_Medicine",
+     "Cardiovascular Medicine"),
+]
 
 
 def fetch_medrxiv(days_back: int = 14, max_papers: int = 5000) -> list:
-    """Fetch recent medRxiv preprints. API doesn't support search queries,
-    so we fetch all in the date range and filter client-side by keywords.
-    """
-    end = _iso_back(0)
-    start = _iso_back(days_back)
-    all_papers = []
-    cursor = 0
+    """Fetch recent medRxiv preprints via Subject Collection RSS feeds.
 
-    while len(all_papers) < max_papers:
-        url = f"{_MEDRXIV_BASE}/{start}/{end}/{cursor}/json"
+    medRxiv's RSS feeds are pre-classified by editorial staff into Subject
+    Collections. We fetch from three relevant collections (Respiratory,
+    Radiology/Imaging, Cardiovascular) and filter further by keyword to
+    eliminate the residual noise (asthma, TB, COPD, etc. that aren't in our
+    three focuses).
+    """
+    cutoff = datetime.now(timezone.utc) - timedelta(days=days_back)
+    all_items = []
+
+    for url, collection_label in MEDRXIV_RSS_FEEDS:
         try:
             raw = _http_get(url, timeout=60)
         except RuntimeError as e:
-            print(f"  ⚠ medRxiv fetch error at cursor={cursor}: {e}")
-            break
+            print(f"  ⚠ medRxiv RSS fetch error for {collection_label}: {e}")
+            continue
 
         try:
-            data = json.loads(raw)
-        except json.JSONDecodeError:
-            print(f"  ⚠ medRxiv JSON decode error at cursor={cursor}")
-            break
+            root = ET.fromstring(raw)
+        except ET.ParseError as e:
+            print(f"  ⚠ medRxiv RSS parse error for {collection_label}: {e}")
+            continue
 
-        collection = data.get("collection", [])
-        if not collection:
-            break
+        # The feed uses RDF/RSS 1.0 namespace
+        ns = {
+            "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "rss": "http://purl.org/rss/1.0/",
+            "dc": "http://purl.org/dc/elements/1.1/",
+            "prism": "http://purl.org/rss/1.0/modules/prism/",
+        }
 
-        all_papers.extend(collection)
-        cursor += len(collection)
+        # Items are at top level of <rdf:RDF>, not inside <channel>
+        items = root.findall("rss:item", ns)
+        if not items:
+            # Fallback: try without namespace
+            items = root.findall(".//item")
 
-        # Stop if we got fewer than 100 (end of results)
-        if len(collection) < 100:
-            break
+        for item in items:
+            try:
+                paper = _medrxiv_rss_item_to_paper(item, collection_label, ns, cutoff)
+                if paper:
+                    all_items.append(paper)
+            except Exception as e:
+                print(f"  ⚠ medRxiv item parse error: {e}")
+                continue
 
-        time.sleep(0.3)  # be nice to medRxiv server
+        time.sleep(0.5)  # be polite between feeds
 
-    print(f"  [medRxiv debug] downloaded {len(all_papers)} raw papers, "
+    print(f"  [medRxiv debug] collected {len(all_items)} papers from RSS subjects, "
           f"filtering against {len(MEDRXIV_KEYWORDS)} keywords...")
 
-    # Client-side keyword filter using word boundaries to avoid false positives.
-    # Without \b boundaries, "ILD" matches inside "child", "PAP" inside "Pappilon",
-    # etc. — which is exactly the bug we saw in the first diagnostic run.
-    filtered = []
+    # Apply keyword filter as a second pass to cut residual noise
+    # (asthma/TB/COPD/OSA papers from Respiratory_Medicine that don't fit
+    # our focuses). Word boundary regex avoids substring false positives.
     keyword_patterns = [
         re.compile(r"\b" + re.escape(kw) + r"\b", re.IGNORECASE)
         for kw in MEDRXIV_KEYWORDS
     ]
 
-    for item in all_papers:
-        title = item.get("title", "") or ""
-        abstract = item.get("abstract", "") or ""
-        searchable = title + " " + abstract
+    filtered = []
+    for paper in all_items:
+        searchable = (paper.title or "") + " " + (paper.abstract or "")
         if any(p.search(searchable) for p in keyword_patterns):
-            filtered.append(_medrxiv_item_to_paper(item))
+            filtered.append(paper)
 
     print(f"  [medRxiv debug] {len(filtered)} papers passed keyword filter")
     return filtered
 
 
-def _medrxiv_item_to_paper(item: dict) -> Paper:
-    """Convert a medRxiv API item to Paper."""
-    doi = item.get("doi", "")
-    title = item.get("title", "").strip()
-    abstract = item.get("abstract", "").strip()
-    authors_str = item.get("authors", "")
-    authors = [a.strip() for a in authors_str.split(";") if a.strip()] if authors_str else []
-    pub_date = item.get("date", "")
-    pdf_url = f"https://www.medrxiv.org/content/{doi}v{item.get('version', 1)}.full.pdf"
-    abs_url = f"https://www.medrxiv.org/content/{doi}v{item.get('version', 1)}"
+def _medrxiv_rss_item_to_paper(item: ET.Element, collection_label: str,
+                               ns: dict, cutoff: datetime) -> Optional[Paper]:
+    """Parse a single <rss:item> from medRxiv Subject Collection RSS into Paper."""
+    title = (item.findtext("rss:title", "", ns) or "").strip()
+    title = re.sub(r"\s+", " ", title)
 
-    # Naive focus_hint inference based on keywords in title
+    description = (item.findtext("rss:description", "", ns) or "").strip()
+    description = re.sub(r"\s+", " ", description)
+
+    link = (item.findtext("rss:link", "", ns) or "").strip()
+    doi = (item.findtext("dc:identifier", "", ns) or "").replace("doi:", "").strip()
+
+    creators = (item.findtext("dc:creator", "", ns) or "").strip()
+    authors = [a.strip() for a in creators.split(",") if a.strip()] if creators else []
+
+    date_str = (item.findtext("dc:date", "", ns) or
+                item.findtext("prism:publicationDate", "", ns) or "").strip()
+    pub_date = None
+    if date_str:
+        try:
+            pub_date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+            if pub_date.tzinfo is None:
+                pub_date = pub_date.replace(tzinfo=timezone.utc)
+        except ValueError:
+            pub_date = None
+
+    if pub_date and pub_date < cutoff:
+        return None  # outside time window
+
+    # Infer focus_hint from title content (cheap heuristic)
     title_lower = title.lower()
     focus = ""
-    if any(k in title_lower for k in ["cardiac", "coronary", "ffr-ct", "cmr", "myocardial"]):
+    if any(k in title_lower for k in ["cardiac", "coronary", "ffr-ct", "cmr",
+                                       "myocard", "amyloid", "pericard"]):
         focus = "cardio_imaging"
-    elif any(k in title_lower for k in ["hrct", "imaging", "radiomics", "deep learning", "ct"]):
+    elif any(k in title_lower for k in ["hrct", "imaging", "radiomic",
+                                         "deep learning", "ct ", "tomography"]):
         focus = "ild_imaging"
-    elif any(k in title_lower for k in ["interstitial", "ipf", "fibrosis", "ild", "ppf"]):
+    elif any(k in title_lower for k in ["interstitial", "ipf", "fibrosis",
+                                         "ild", "ppf", "pulmonary fibrosis"]):
         focus = "ild_clinica"
 
     return Paper(
         title=title,
         authors=authors,
-        journal="medRxiv preprint",
-        publication_date=pub_date,
+        journal=f"medRxiv ({collection_label})",
+        publication_date=pub_date.strftime("%Y-%m-%d") if pub_date else date_str[:10],
         doi=doi,
         pmid="",
         pmcid="",
-        abstract=abstract,
-        url=abs_url,
+        abstract=description[:3000],  # cap abstracts
+        url=link,
         source="medRxiv",
         focus_hint=focus,
         open_access=True,
-        raw={"pdf_url": pdf_url, "version": item.get("version")},
     )
 
 
