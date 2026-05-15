@@ -11,9 +11,9 @@ on:
         required: false
         default: 'all'
       days_back:
-        description: 'Days back to fetch'
+        description: 'Days back to fetch (default 14 = biweekly cadence)'
         required: false
-        default: '10'
+        default: '14'
 
 jobs:
   test:
