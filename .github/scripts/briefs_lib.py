@@ -550,7 +550,16 @@ def _http_get(url: str, headers: Optional[dict] = None,
             req = urllib.request.Request(url, headers=base_headers)
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.read()
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
+        except urllib.error.HTTPError as e:
+            last_exc = e
+            # HTTP 429 Too Many Requests: wait longer than usual.
+            # arXiv responds with 429 if we beat their 1 req / 3 sec budget.
+            if e.code == 429 and attempt < max_retries:
+                time.sleep(15)
+                continue
+            if attempt < max_retries:
+                time.sleep(2 ** attempt)
+        except (urllib.error.URLError, TimeoutError) as e:
             last_exc = e
             if attempt < max_retries:
                 time.sleep(2 ** attempt)
@@ -882,8 +891,9 @@ def fetch_arxiv(focus_name: str, days_back: int = 14,
     NOTE: arXiv enforces 1 request per 3 seconds. We sleep before each call
     to avoid HTTP 429 Too Many Requests.
     """
-    # arXiv rate limit: 1 req / 3 sec. Always sleep before the call.
-    time.sleep(3)
+    # arXiv rate limit: 1 req / 3 sec. We sleep 5 seconds to leave margin
+    # for response time variability (first run with 3 sec was insufficient).
+    time.sleep(5)
 
     keywords = ARXIV_KEYWORDS.get(focus_name, [])
     if not keywords:
