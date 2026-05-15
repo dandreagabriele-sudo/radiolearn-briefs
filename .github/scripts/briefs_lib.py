@@ -1,7 +1,12 @@
 """
 briefs_lib.py — RadioLearn Briefs library
 
-Imported by the weekly Cloud Routine at bootstrap via exec(). Exposes:
+CADENCE: biweekly (every 14 days, Saturday). The default `days_back` for
+all fetchers is 14. The cloud routine cron fires every Saturday but checks
+state.json/last_brief_at and exits unless ≥13 days have passed since the
+previous brief — making the system self-recovering if a run is skipped.
+
+Imported by the biweekly Cloud Routine at bootstrap via exec(). Exposes:
   - Source fetchers for 6 different sources
   - Full text enrichment
   - GitHub Contents API helpers (mirror of radiolearn-state pattern)
@@ -687,7 +692,7 @@ def _ncbi_params() -> dict:
     return p
 
 
-def fetch_pubmed(focus_name: str, days_back: int = 10,
+def fetch_pubmed(focus_name: str, days_back: int = 14,
                  max_results: int = 200) -> list:
     """Fetch recent PubMed papers for a given focus.
 
@@ -867,13 +872,19 @@ def _month_to_num(month: str) -> str:
 _ARXIV_BASE = "http://export.arxiv.org/api/query"
 
 
-def fetch_arxiv(focus_name: str, days_back: int = 10,
+def fetch_arxiv(focus_name: str, days_back: int = 14,
                 max_results: int = 100) -> list:
     """Fetch recent arXiv preprints matching a focus.
 
     Builds a query: (cat:X OR cat:Y) AND (all:keyword1 OR all:keyword2...)
     Filters client-side by submitted date.
+
+    NOTE: arXiv enforces 1 request per 3 seconds. We sleep before each call
+    to avoid HTTP 429 Too Many Requests.
     """
+    # arXiv rate limit: 1 req / 3 sec. Always sleep before the call.
+    time.sleep(3)
+
     keywords = ARXIV_KEYWORDS.get(focus_name, [])
     if not keywords:
         return []  # no keywords for this focus
@@ -971,7 +982,7 @@ def _parse_arxiv_atom(atom_bytes: bytes, focus_hint: str,
 _MEDRXIV_BASE = "https://api.biorxiv.org/details/medrxiv"
 
 
-def fetch_medrxiv(days_back: int = 10, max_papers: int = 5000) -> list:
+def fetch_medrxiv(days_back: int = 14, max_papers: int = 5000) -> list:
     """Fetch recent medRxiv preprints. API doesn't support search queries,
     so we fetch all in the date range and filter client-side by keywords.
     """
@@ -1073,7 +1084,7 @@ def _medrxiv_item_to_paper(item: dict) -> Paper:
 # ════════════════════════════════════════════════════════════════════
 
 def fetch_rss(feed_url: str, source_label: str, focus_hint: str = "",
-              days_back: int = 10, max_items: int = 50) -> list:
+              days_back: int = 14, max_items: int = 50) -> list:
     """Parse an RSS feed and return Paper objects for items within date window."""
     try:
         raw = _http_get(feed_url, timeout=30)
