@@ -1,0 +1,30 @@
+name: Send Brief to Telegram
+
+# Triggered when the routine commits a notification file to outbox/.
+# Delivers the message to Telegram and cleans up the outbox file.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'outbox/*.json'
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Deliver outbox messages
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 .github/scripts/deliver_outbox.py
