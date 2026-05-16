@@ -1,0 +1,29 @@
+name: Fetch and Stage Candidates
+
+# Runs Saturday 12:30 UTC (= 14:30 CEST) — 30 min before the routine wakes up.
+# Manual trigger also supported for testing.
+on:
+  schedule:
+    - cron: '30 12 * * 6'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Run fetch and stage
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_REPO: ${{ github.repository }}
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+        run: python3 .github/scripts/fetch_sources.py
