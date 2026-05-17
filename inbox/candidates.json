@@ -1,16 +1,16 @@
 {
   "version": "1.0",
-  "staged_at": "2026-05-16T15:42:53.743296+00:00",
+  "staged_at": "2026-05-17T08:13:08.127924+00:00",
   "week_iso": "2026-W20",
-  "date_it": "16 maggio 2026",
-  "candidates_count": 167,
+  "date_it": "17 maggio 2026",
+  "candidates_count": 156,
   "days_back": 14,
   "sources_status": {
     "pubmed_ild_clinica": "ok",
     "pubmed_ild_imaging": "ok",
     "pubmed_cardio_imaging": "ok",
-    "arxiv_ild_imaging": "ok",
-    "arxiv_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "failed: RuntimeError",
+    "arxiv_cardio_imaging": "failed: RuntimeError",
     "medrxiv": "ok",
     "rss_AJRCCM (Oxford)": "ok",
     "rss_European Respiratory Journal": "ok",
@@ -1627,28 +1627,6 @@
       "fulltext": ""
     },
     {
-      "title": "Regulated Cell Death in Idiopathic Pulmonary Fibrosis.",
-      "authors": [
-        "Pan X",
-        "Yang L",
-        "Zhao M",
-        "Zhou Y",
-        "Xia C"
-      ],
-      "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
-      "date": "2026-05",
-      "doi": "10.1096/fj.202600494R",
-      "pmid": "42068211",
-      "pmcid": "PMC13135236",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42068211/",
-      "source": "PubMed",
-      "focus": "ild_clinica",
-      "open_access": true,
-      "abstract": "Idiopathic pulmonary fibrosis (IPF) is a chronic, progressive interstitial lung disease characterized by deregulated cell death programs that drive epithelial injury, fibroblast activation, and irreversible tissue remodeling. Multiple regulated cell death (RCD) modalities, including apoptosis, autophagy, necrosis, ferroptosis, pyroptosis, and cuproptosis, are implicated in IPF pathogenesis across epithelial cells, fibroblasts, macrophages, and endothelial cells. Apoptosis leads to alveolar epithelial cell loss and fibrosis initiation, whereas autophagy modulates fibroblast proliferation and extracellular matrix turnover. Necrosis amplifies inflammation; ferroptosis promotes epithelial dysfunction through lipid peroxidation; and pyroptosis activates the inflammasome pathway. Emerging evidence links cuproptosis, a copper-dependent death mode, to fibrotic remodeling. These pathways are interconnected: apoptosis and autophagy can shift within the same cell, and epithelial apoptosis may induce macrophage pyroptosis, amplifying the profibrotic cascade. Emerging evidence indicates that these RCD modalities are coordinated through shared stress signals and regulatory nodes. Therapeutically, targeting RCD offers promising opportunities, with Bcl-2 inhibitors for apoptosis, mTOR inhibitors for autophagy, iron chelators for ferroptosis, and early interventions for pyroptosis and cuproptosis. Targeting shared regulatory mechanisms or combining pathway-directed strategies may further enhance efficacy. By balancing cell death and survival, these strategies could attenuate inflammation, restrict fibroblast-driven scarring, and restore repair capacity. This review underscores the complexity and crosstalk of RCD in IPF, and proposes a conceptual framework for their coordinated regulation, highlighting its potential for therapeutic innovation.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
       "title": "CT-based immune radiomic signature for prognosis and prediction of immunotherapy and anticancer drug response in NSCLC.",
       "authors": [
         "Ma J",
@@ -1984,28 +1962,6 @@
       "focus": "ild_imaging",
       "open_access": true,
       "abstract": "RATIONALE: Epstein-Barr virus-related posttransplant lymphoproliferative disorder (EBV-PTLD) is a serious and potentially fatal complication following allogeneic hematopoietic stem cell transplantation (allo-HSCT).\nPATIENT CONCERNS: We report a case of a 46-year-old male who developed EBV-PTLD 3 months after haploidentical HSCT for refractory acute myeloid leukemia. The patient presented with a persistent cough and a pulmonary nodule that increased in size from 8 mm × 5 mm to 27 mm × 25 mm over 4 weeks. Increased EBV loads were also detected (peripheral blood EBV sorting: EBV-T DNA 2.09E+03, EBV-B DNA 1.16E+03, EBV-NK DNA 7.89E+02 copies/mL; alveolar lavage fluid: 114 sequences; later rising to 3304).\nDIAGNOSES: Diagnosis was confirmed by biopsy which showed EBV-positive pleomorphic lymphoproliferative disorder with extensive necrosis.\nINTERVENTIONS: Treatment consisted of an oral regimen of chidamide (5 mg once daily) and valganciclovir (450 mg twice daily).\nOUTCOMES: After 8 weeks of therapy, the pulmonary lesion decreased to 19 mm × 16 mm, and peripheral blood EBV-DNA levels declined significantly.\nLESSONS: The patient achieved clinical remission with manageable side effects, including neutropenia and thrombocytopenia.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "CT-based body composition and its change through time in relation to outcomes in participants screened for lung cancer.",
-      "authors": [
-        "Bunk S",
-        "Bennink E",
-        "Sidorenkov G",
-        "Heuvelmans MA",
-        "Groen HJM"
-      ],
-      "journal": "EBioMedicine",
-      "date": "2026-04-30",
-      "doi": "10.1016/j.ebiom.2026.106276",
-      "pmid": "42066437",
-      "pmcid": "PMC13145877",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/42066437/",
-      "source": "PubMed",
-      "focus": "ild_imaging",
-      "open_access": true,
-      "abstract": "BACKGROUND: Computed Tomography (CT) scans allow opportunistic evaluation of body composition. We investigated whether body composition and change through time are associated with lung cancer incidence and all-cause/lung cancer-specific mortality in a lung cancer screening cohort.\nMETHODS: A machine learning segmentation method was used in this retrospective cohort study to measure skeletal muscle area and density, and subcutaneous adipose tissue area (SAT) on repeated chest CTs from the Dutch-Belgian lung cancer screening trial. Hazard ratios by sex adjusted for age, smoking status, and smoking pack-years (aHR) were calculated for each outcome.\nFINDINGS: During median follow-up of 12.2 (interquartile range, 1.2) years, 4.1% of 6187 subjects (85.5% male, mean age ± SD, 58.6 ± 5.5 years, smoking pack-years 41.2 ± 18.3) developed lung cancer, 12.2% died, and 2.1% died due to lung cancer. For males, SAT loss was associated with lung cancer incidence (aHR 1.19, 95% CI 1.02-1.39) and lung cancer-specific mortality (aHR 1.26, 95% CI 1.03-1.55), and less baseline muscle and muscle loss with all-cause mortality (aHR 1.20, 95% CI 1.10-1.31 and 1.17, 1.07-1.27). For females, less baseline SAT and SAT loss was associated with all-cause mortality (aHR 1.44, 95% CI 1.06-1.97 and 1.48, 1.13-1.94) and lung cancer-specific mortality (aHR 2.85, 95% CI 1.50-5.39 and aHR 1.96, 1.11-3.44). Models improved by including body composition trends for all-cause mortality (males: p < 0.001; females: p = 0.012) and for lung cancer-specific mortality (males: p = 0.102; females: p = 0.005).\nINTERPRETATION: Body composition trends based on automated analysis of chest CT are associated with worse outcomes in participants screened for lung cancer.\nFUNDING: Dutch Cancer Society, Health Holland, Siemens Healthineers.",
       "has_fulltext": false,
       "fulltext": ""
     },
@@ -3324,177 +3280,6 @@
       "fulltext": ""
     },
     {
-      "title": "A Comparative Analysis of CT Degradation for LDCT Nodule Classification using Radiomics",
-      "authors": [
-        "Jiaying Liu",
-        "Anna Corti",
-        "Valentina D. A. Corino",
-        "Luca Mainardi"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-12",
-      "doi": "",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.12164v1",
-      "source": "arXiv",
-      "focus": "ild_imaging",
-      "open_access": true,
-      "abstract": "Low-dose computed tomography (LDCT) is the standard modality for lung cancer screening, known for its low radiation dose but high noise levels. While existing literature focuses on denoising LDCT images, comparative research on simulating LDCT characteristics to directly use these images for model development is lacking. This study shifts the focus from denoising images to degrading available standard-dose CT (SDCT) data, generating synthetic images for data augmentation to train classifiers for screening-detected nodules. We compare three degradation methods: (1) a sinogram domain statistical noise insertion; (2) replicate a validated physics-based simulation using Pix2Pix; and (3) unpaired CycleGAN. The generated images were utilized to simulate LDCT screening scenario replacing 695 SDCT cases from the LIDC-IDRI dataset, from which radiomic features were extracted to train machine learning models for lung nodule classification. Regarding image quality, CycleGAN achieved the best Fréchet inception distance (0.1734) and kernel inception distance (0.0813; 0.1002) scores, indicating distributional alignment with the target low-dose domain. In the nodule classification task, results confirmed the necessity of domain adaptation since a baseline model trained on non-degraded SDCT data failed to generalize to the real LDCT set (AUC 0.789) with a low sensitivity (0.571). Degraded images generated using CycleGAN approach led to the most balanced performance on the classification task using Adam Booster classifier, achieving an AUC of 0.861, sensitivity of 0.743 and specificity of 0.858 in the independent test. Our findings confirm that generating synthetic LDCT data from standard-dose scans is a viable strategy for training robust nodule classifiers for screening detected nodules.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "M3Net: A Macro-to-Meso-to-Micro Clinical-inspired Hierarchical 3D Network for Pulmonary Nodule Classification",
-      "authors": [
-        "Jinyue Li",
-        "Yuzhou Yu",
-        "Jingjing Yang",
-        "Meng Fu",
-        "Yani Zhang"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-12",
-      "doi": "10.1016/j.inffus.2026.104334",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.12570v1",
-      "source": "arXiv",
-      "focus": "ild_imaging",
-      "open_access": true,
-      "abstract": "The accurate classification of benign and malignant pulmonary nodules in CT scans is critical for early lung cancer screening, yet remains challenging due to the multi-scale and heterogeneous nature of pulmonary nodules. While deep learning offers potential for auxiliary diagnosis, most existing models act as \"black boxes\", lacking the transparency and explainability required for trustworthy clinical integration. To address this issue, we propose M3Net, a novel 3D network for pulmonary nodule classification inspired by the hierarchical diagnostic workflow of radiologists, which integrates multi-scale contextual information from fine-grained structures to global anatomical relationships. Our framework constructs a progressive multi-scale input, from fine-grained nodule structures to local semantics and global spatial relationships. M3Net employs scale-specific encoders and ensures cross-scale semantic consistency through latent space projection and mutual information maximization. Extensive experiments on the public LIDC-IDRI dataset and a self-collected clinical dataset (USTC-FHLN) demonstrate that our method achieves state-of-the-art performance, with accuracies of 86.96% and 84.24% respectively, outperforming the best baseline by 3.26% and 2.17%. The results validate that M3Net provides a more robust and clinically relevant solution for pulmonary nodule classification. The code is available at https://github.com/jylEcho/M3-Net.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "EchoTracker2: Enhancing Myocardial Point Tracking by Modeling Local Motion",
-      "authors": [
-        "Md Abulkalam Azad",
-        "Vegard Holmstrøm",
-        "John Nyberg",
-        "Lasse Lovstakken",
-        "Håvard Dalen"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-12",
-      "doi": "",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.12140v1",
-      "source": "arXiv",
-      "focus": "cardio_imaging",
-      "open_access": true,
-      "abstract": "Myocardial point tracking (MPT) has recently emerged as a promising direction for motion estimation in echocardiography, driven by advances in general-purpose point tracking methods. However, myocardial motion fundamentally differs from motion encountered in natural videos, as it arises from physiologically constrained deformation that is spatially and temporally continuous throughout the cardiac cycle. Consequently, motion trajectories typically remain locally confined despite substantial tissue deformation. Motivated by these properties, we revisit the architectural design for MPT and find that coarse initialization in commonly used two-stage coarse-to-fine architectures may be unnecessary in this domain. In this work, we propose a fine-stage-only architecture, \\textbf{EchoTracker2}, which enriches pixel-precise features with local spatiotemporal context and integrates them with long-range joint temporal reasoning for robust tracking. Experimental results across in-distribution, out-of-distribution (OOD), and public synthetic datasets show that our model improves position accuracy by $6.5\\%$ and reduces median trajectory error by $12.2\\%$ relative to a domain-specific state-of-the-art (SOTA) model. Compared to the best general-purpose point tracking method, the improvements are $2.0\\%$ and $5.3\\%$, respectively. Moreover, EchoTracker2 shows better agreement with expert-derived global longitudinal strain (GLS) and enhances test-rest reproducibility. Source code will be available at: https://github.com/riponazad/ptecho.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "Set-Based Groupwise Registration for Variable-Length, Variable-Contrast Cardiac MRI",
-      "authors": [
-        "Yi Zhang",
-        "Yidong Zhao",
-        "Tijmen Toxopeus",
-        "Maša Božić-Iven",
-        "Sebastian Weingärtner"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-11",
-      "doi": "",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.10571v1",
-      "source": "arXiv",
-      "focus": "cardio_imaging",
-      "open_access": true,
-      "abstract": "Quantitative cardiac magnetic resonance imaging (MRI) enables non-invasive myocardial tissue characterization but relies on robust motion correction within these variable-length, variable-contrast image sequences. Groupwise registration, which simultaneously aligns all images, has shown greater robustness than pairwise registration for motion correction. However, current deep-learning-based groupwise registration methods cannot generalize across MRI sequences: the architecture typically encodes input data as a fixed-length channel stack, which rigidly couples network design to protocol-specific sequence length, input ordering, and contrast dynamics. At inference time, any change in imaging protocols will render the network unusable. In this work, we introduce \\emph{\\AnyTwoReg}, a new set-based groupwise registration framework that takes a quantitative MRI sequence as an unordered set. This set formulation fundamentally decouples network design from sequence length and input ordering. By utilizing a shared encoder and correlation-guided feature aggregation, \\emph{\\AnyTwoReg} constructs a permutation-invariant canonical reference for registration, and learns a permutation-equivariant mapping from images to deformation fields. Additionally, we extract contrast-insensitive image features from an existing foundation model to handle extreme contrast variations. Trained exclusively on a single public $T_1$ mapping dataset (STONE, sequence length $L=11$), \\AnyTwoReg generalizes to two unseen quantitative MRI datasets (MOLLI, ASL) with variable lengths ($L \\in [11, 60]$) and different contrast dynamics. It achieves strong cross-protocol generalization in a zero-shot manner, and consistently improves downstream quantitative mapping quality. Notably, while designed for quantitative MRI sequences, our framework is directly applicable to Cine MRI sequences for inter-cardiac-phase registration.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "Model-based Dynamic 3D MRI Reconstructions using Neural Fields and Tensor Product Expansions",
-      "authors": [
-        "Ray Sheombarsing",
-        "Max van Riel",
-        "David Heesterbeek",
-        "Nico van den Berg",
-        "Alessandro Sbrizzi"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-08",
-      "doi": "",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.08275v1",
-      "source": "arXiv",
-      "focus": "cardio_imaging",
-      "open_access": true,
-      "abstract": "Conventional MRI reconstruction methods treat images and coil sensitivities as discrete objects, leading to high memory demands and limited structural awareness that hamper effective regularization. These limitations hinder accurate reconstruction in highly undersampled scenarios, such as dynamic 3D cardiac magnetic resonance (CMR). We introduce a discretization-free, memory-efficient, model-based framework for dynamic 2D and 3D MRI reconstruction from highly undersampled data. We represent magnetization and coil sensitivities as continuous objects -- differentiable functions -- using tensor products of univariate neural fields. This tensor product structure enables scalable optimization in high-dimensional spatiotemporal settings. Our method outperforms state-of-the-art model-based reconstructions in dynamic 2D and 3D MR settings, preserving structure and motion even under aggressive undersampling (e.g., acceleration factor 16).",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "Resource-Aware Evolutionary Neural Architecture Search for Cardiac MRI Segmentation",
-      "authors": [
-        "Farhana Yasmin",
-        "Mahade Hasan",
-        "Haipeng Liu",
-        "Amjad Ali",
-        "Ghulam Muhammad"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-07",
-      "doi": "10.1109/ICCIT68739.2025.11491084",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.08238v1",
-      "source": "arXiv",
-      "focus": "cardio_imaging",
-      "open_access": true,
-      "abstract": "Cardiac magnetic resonance (CMR) segmentation underpins quantitative assessment of ventricular structure and function, yet reliable delineation remains difficult due to low tissue contrast, fuzzy boundaries, and inter scan variability. We present CardiacNAS, an evolutionary neural architecture search (NAS) framework that couples a UNet like supernet with a cardiac aware search space spanning depth width, kernel size, filter size, attention, fusion, activation, dropout, and residual scaling. The search is explicitly resource aware, jointly optimizing dice similarity coefficient (DSC) and 95th percentile Hausdorff distance (HD95) versus model size and floating point operations (FLOPs) under fixed compute budgets. Candidate architectures are instantiated from the supernet, trained with proxy budgets, and evolved through crossover, mutation, and elitist selection. We evaluate on the ACDC dataset and compare against six state of the art methods, using qualitative comparisons, learning curve analyses, and design factor correlation studies. The resulting model attains 93.22% average DSC and 4.73 mm HD95 with 3.58M parameters and 14.56 GFLOPs, demonstrating a favorable accuracy efficiency trade off. Analyses indicate that searched attention and fusion choices, together with residual scaling, contribute to improved boundary fidelity and stability. CardiacNAS offers a principled, resource aware approach to deployable CMR segmentation with transparent reporting of architectural complexity and compute budgets.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "EchoXFlow: A Beamspace Echocardiography Dataset for Cardiac Motion, Flow, and Function",
-      "authors": [
-        "Elias Stenhede",
-        "Joanna Sulkowska",
-        "Eivind Bjørkan Orstad",
-        "Henrik Schirmer",
-        "Arian Ranjbar"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-06",
-      "doi": "",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.05447v1",
-      "source": "arXiv",
-      "focus": "cardio_imaging",
-      "open_access": true,
-      "abstract": "We introduce EchoXFlow, a clinical echocardiography dataset for learning from ultrasound in its native acquisition geometry rather than from scan-converted Cartesian videos. Existing public datasets offer limited opportunities to study cross-modal relationships between cardiac anatomy, myocardial motion, and blood flow, as Doppler is typically absent or fused as RGB overlays, and acquisitions are released after lossy vendor display processing. EchoXFlow comprises 37125 recordings from 666 routine-care examinations, preserving the timing, geometry, and modality relationships needed for physically grounded echo learning. Each recording is retained as separable modality-specific streams: temporally resolved 1D, 2D, and 3D data alongside multiple Doppler modalities, paired with a synchronized ECG. Clinical annotations span guideline-based measurements to dense 2D myocardial contours and 3D left-ventricular endocardial meshes. With its associated open-source tooling, EchoXFlow enables cross-modal, acquisition-aware learning tasks that cannot be formulated from conventional scan-converted videos alone, and serves as a testbed for 4D vision and physically grounded multi-modal learning more broadly.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "RD-ViT: Recurrent-Depth Vision Transformer for Semantic Segmentation with Reduced Data Dependence Extending the Recurrent-Depth Transformer Architecture to Dense Prediction",
-      "authors": [
-        "Renjie He"
-      ],
-      "journal": "arXiv preprint",
-      "date": "2026-05-05",
-      "doi": "",
-      "pmid": "",
-      "pmcid": "",
-      "url": "http://arxiv.org/abs/2605.03999v1",
-      "source": "arXiv",
-      "focus": "cardio_imaging",
-      "open_access": true,
-      "abstract": "Vision Transformers (ViTs) achieve state-of-the-art segmentation accuracy but require large training datasets because each layer has unique parameters that must be learned independently. We present RD-ViT, a Recurrent-Depth Vision Transformer that adapts the Recurrent-Depth Transformer (RDT) architecture to dense prediction tasks, supporting both 2D and 3D inputs. RD-ViT replaces the deep stack of unique transformer blocks with a single shared block looped T times, augmented with LTI-stable state injection for guaranteed convergence, Adaptive Computation Time (ACT) for spatial compute allocation, depth-wise LoRA adaptation, and optional Mixture-of-Experts (MoE) feed-forward networks for category-specific specialization. We evaluate on the ACDC cardiac MRI segmentation benchmark in both 2D slice-level and 3D volumetric settings with exclusively real experiments executed in Google Colab. In 2D, RD-ViT outperforms standard ViT at 10% training data (Dice 0.774 vs 0.762) and at full data (0.882 vs 0.872). In 3D, RD-ViT with MoE achieves Dice 0.812 with 3.0M parameters, reaching 99.4% of standard ViT performance (0.817) at 53% of the parameter count. MoE expert utilization analysis reveals that different experts spontaneously specialize for different cardiac structures (RV, MYO, LV) without explicit routing supervision. ACT halting maps show higher compute allocation at cardiac boundaries, and the mean ponder time decreases from 2.6 to 1.4 iterations during training, demonstrating learned computational efficiency. Depth extrapolation enables inference with more loops than training without degradation. All code, notebooks, and results are publicly released.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
       "title": "Pulmonary arteriovenous malformation risks: Single-centre hybrid study of 1,149 cases re-emphasises hypoxaemia without pulmonary hypertension, and paradoxical embolic/infective stroke aetiologies",
       "authors": [
         "Shovlin",
@@ -3513,28 +3298,6 @@
       "focus": "",
       "open_access": true,
       "abstract": "ABSTRACT/SUMMARYPulmonary arteriovenous malformations (PAVMs) larger than 4mm in size are estimated to affect 38 per 100,000 individuals [95% confidence intervals 18-76]. They provide an anatomical right-to-left shunt such that each heartbeat, a proportion of the cardiac output bypasses the pulmonary capillary bed, preventing essential processing functions such as gas exchange and filtration of blood-borne emboli. Although large cohort series were published in earlier decades, more recent data series have been scant. To support modern educational platforms, here we report features of 1149 consecutive patients with imaging-proven PAVMs, reviewed at a single UK centre between 1984-2026, including 813 (71%) with clinical and/or genetically confirmed hereditary haemorrhagic telangiectasia (HHT). The median age was 47y, and 735 (64%) were female. We report 4348 oxygen saturation measurements at presentation and follow-up, and 810 pulmonary artery pressure (PAP) measurements made at angiography prior to treatment of PAVMs by embolisation. Together, these confirm that there is no risk of hypoxic pulmonary hypertension, with PAP measurements higher in patients with higher SaO2. Massive haemoptysis or haemothorax occurred in 18 patients [0.009, 0.023], of which 7/18 [95% CI 0.01, 0.64] events were pregnancy-associated. Ischaemic strokes affected 125 patients [0.09, 0.13], brain abscess 107 patients [0.08, 0.11] patients, and haemorrhagic strokes 29 patients [0.02, 0.03] patients. These data will inform design of future work to evaluate aetiologies, associations and implications for clinical practice.",
-      "has_fulltext": false,
-      "fulltext": ""
-    },
-    {
-      "title": "Increased structural lung changes in adults with a history of bronchopulmonary dysplasia",
-      "authors": [
-        "Pourbazargan",
-        "M.",
-        "Piontkovskaya",
-        "K.",
-        "Um-Bergstroem"
-      ],
-      "journal": "medRxiv (Respiratory Medicine)",
-      "date": "2026-05-03",
-      "doi": "10.64898/2026.05.01.26352222",
-      "pmid": "",
-      "pmcid": "",
-      "url": "https://www.medrxiv.org/content/10.64898/2026.05.01.26352222v1?rss=1",
-      "source": "medRxiv",
-      "focus": "",
-      "open_access": true,
-      "abstract": "Bronchopulmonary dysplasia (BPD) in infancy is a risk factor for obstructive lung disease in adults. We hypothesized that adults born preterm and diagnosed with BPD have an altered lung architecture which is correlated to lung function impairment. Individuals from the LUNAPRE cohort (clinicaltrials.gov/ct2/show/NCT02923648) were included: preterm born (gestational week <32) with (n=24) or without (n=23) a previous diagnosis of BPD, full term born with allergic asthma (n=22) and healthy volunteers (n=24). Inspiratory and expiratory HRCT scans were performed and interpreted by two expert reviewers in a blinded manner. Structural changes were scored and quantitative density measurements were analysed automatically using a dedicated post-processing workstation. The HRCT scores were significantly higher in the BPD group compared to the other groups (p<0.001) and had highest numbers in subjects diagnosed with severe BPD. Most common HRCT changes were small peripheral opacities. Hypoattenuation during inspiration was only observed in the BPD group. Architectural distortion was observed in 6/24 BPD and 2/23 premature without BPD. HRCT scores correlated to FEV1 in a negative manner for preterm (p<0.001) and BPD (p<0.05) groups. Oxygen supplementation during the neonatal period correlated with HRCT score in a positive manner for preterm group (p<0.001). No differences in lung density were observed between the groups. Young adults previously diagnosed with BPD have structural changes on CT which correlate with airway obstruction. Severity of BPD at the diagnosis was associated with CT abnormalities in adulthood. HRCT changes in adults with BPD were correlated with spirometry findings.",
       "has_fulltext": false,
       "fulltext": ""
     },
@@ -3603,7 +3366,7 @@
     {
       "title": "Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders: Fleischner Society Position Paper",
       "source": "Fleischner Society",
-      "date_seen": "2026-05-16",
+      "date_seen": "2026-05-17",
       "url": "https://fleischner.memberclicks.net/assets/docs/WhitePapers/Fleischner%20MR%20paper.pdf",
       "summary": "",
       "raw": {}
@@ -3611,7 +3374,7 @@
     {
       "title": "Guidelines for Management of Incidental Pulmonary Nodules Detected on CT Images: From the Fleischner Society 2017. MacMahon, H, et al.",
       "source": "Fleischner Society",
-      "date_seen": "2026-05-16",
+      "date_seen": "2026-05-17",
       "url": "https://www.ncbi.nlm.nih.gov/pubmed/28240562",
       "summary": "",
       "raw": {}
@@ -3619,7 +3382,7 @@
     {
       "title": "Recommendations for Measuring Pulmonary Nodules at CT: A Statement from the Fleischner Society. Bankier, AA, et al.",
       "source": "Fleischner Society",
-      "date_seen": "2026-05-16",
+      "date_seen": "2026-05-17",
       "url": "https://www.ncbi.nlm.nih.gov/pubmed/28650738",
       "summary": "",
       "raw": {}
@@ -3629,7 +3392,7 @@
     {
       "title": "Reports & presentations",
       "source": "Siemens Healthineers",
-      "date_seen": "2026-05-16",
+      "date_seen": "2026-05-17",
       "url": "https://www.siemens-healthineers.com/investor-relations/presentations-financial-publications",
       "summary": "",
       "raw": {}
