@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 20 (17 maggio 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 20</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">MRI polmonare, biopsie e la biologia del fibroblasto</h1>
+  <p class="ui text-sm text-slate-500 mt-3">17 maggio 2026 · 14 selezionati su 156 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  <!-- HIGHLIGHT 1: Fleischner Society Pulmonary MRI Position Paper -->
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://fleischner.memberclicks.net/assets/docs/WhitePapers/Fleischner%20MR%20paper.pdf" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Fleischner Society Position Paper · 2026 · Hatabu H, Nishino M, Ohno Y et al.
+  </p>
+  <p class="mb-3">
+    La Fleischner Society pubblica un position paper di consenso che ridisegna il perimetro clinico della <span class="anchor-text">RM polmonare</span>: non più orfana del torace adulto ma modalità complementare a HRCT in scenari selezionati. Le indicazioni si articolano su tre assi: protezione dalle radiazioni (paziente giovane, gravidanza, follow-up seriato in fibrosi cistica), caratterizzazione tissutale (massa mediastinica, lesione di parete) e valutazione funzionale (perfusione, ventilazione, flusso vascolare polmonare). Bottom line clinico: la RM polmonare non sostituisce la HRCT nella diagnosi pattern delle <details class="inline"><summary><span class="chip">ILD</span></summary><span class="chip-content">Interstitial Lung Disease — termine ombrello per le patologie del compartimento interstiziale polmonare.</span></details>, ma diventa first-line quando l'esposizione cumulativa diventa critica e quando serve un dato funzionale che la CT non offre.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Quando Linneo nel 1735 pubblica il <em>Systema Naturae</em> non aggiunge specie: cambia il principio di classificazione. Smette di ordinare per apparenza (forma, colore, taglia) e ordina per funzione riproduttiva. È un'inversione epistemologica. La Fleischner fa qualcosa di simile col torace: per cinquant'anni la RM polmonare è stata derubricata "perché il polmone non ha protoni utili e si muove troppo". Ora il panel riconosce che la domanda giusta non è "che pattern vedo?" ma "che fenomeno fisiologico voglio misurare?". È un cambio kuhniano di paradigma a costo zero — l'hardware c'era già, mancava la grammatica. Quello che il radiologo del Mont Sainte-Victoire di Cézanne aveva intuito: la struttura emerge dall'accumulo di sguardi diversi sullo stesso oggetto, non dalla rinuncia ad alcuni.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — indicazioni operative del panel</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indicazioni proposte dal panel Fleischner:</p>
+      <table>
+        <thead><tr>
+          <th>Scenario clinico</th><th>RM polmonare</th><th>Razionale</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Fibrosi cistica, monitoraggio seriato</td><td><strong>Prima linea</strong></td><td class="text-slate-600">Riduce esposizione cumulativa in paziente giovane</td></tr>
+          <tr><td>Gravidanza con sospetto TEP</td><td><strong>Prima linea</strong></td><td class="text-slate-600">PC-MRA contrast-free, niente radiazione</td></tr>
+          <tr><td>Massa mediastinica</td><td><strong>Complementare a CT</strong></td><td class="text-slate-600">Tissue characterization (cistico vs solido, grasso, sangue)</td></tr>
+          <tr><td>Ipertensione polmonare</td><td><strong>Complementare</strong></td><td class="text-slate-600">Funzione ventricolare destra + flusso polmonare in un esame</td></tr>
+          <tr><td>ILD pattern diagnosis</td><td>HRCT resta gold standard</td><td class="text-slate-600">Risoluzione spaziale e CT-pattern recognition insostituibili</td></tr>
+          <tr><td>Nodulo polmonare incidentale</td><td>No</td><td class="text-slate-600">LDCT/Fleischner 2017 restano riferimento</td></tr>
+          <tr><td>Follow-up post-RT polmonare</td><td><strong>Da considerare</strong></td><td class="text-slate-600">Distingue fibrosi residua da recidiva con DWI/DCE</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">La RM polmonare entra in modo ragionato nei protocolli del centro radiologico maturo: serve un team dedicato (tecnico + radiologo + fisico) per i protocolli, ma il payoff è alto in pediatria, gravidanza, e nel paziente che farà molti esami nella vita. Non aspettare di "avere tempo": il primo paziente ti insegna il workflow.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — flowchart decisionale e protocolli</summary>
+    <div>
+      <p class="font-medium mb-2">Algoritmo decisionale ispirato al position paper Fleischner 2026:</p>
+      <div class="mermaid">
+flowchart TB
+    Start["Indicazione clinica<br/>polmonare/vascolare"] --> Q1{"Età ≤40<br/>o gravidanza<br/>o follow-up seriato?"}
+    Q1 -->|Sì| MRI1["RM polmonare<br/>prima linea"]
+    Q1 -->|No| Q2{"Quesito clinico<br/>dominante?"}
+    Q2 -->|"Pattern parenchimale<br/>(ILD, nodulo)"| HRCT["HRCT<br/>gold standard"]
+    Q2 -->|"Massa mediastinica<br/>o di parete"| MRI2["RM complementare<br/>a CT"]
+    Q2 -->|"Vascolare<br/>(TEP, IP)"| Q3{"eGFR > 30<br/>e niente allergie iodio?"}
+    Q3 -->|Sì| CTPA["CTPA<br/>standard"]
+    Q3 -->|No| MRI3["PC-MRA<br/>senza mdc"]
+    Q2 -->|"Funzione/perfusione<br/>quantitativa"| MRI4["RM con DCE<br/>o V/Q SPECT"]
+    classDef mri fill:#dbeafe,stroke:#1e40af,color:#1e293b
+    classDef ct fill:#fee2e2,stroke:#991b1b,color:#1e293b
+    class MRI1,MRI2,MRI3,MRI4 mri
+    class HRCT,CTPA ct
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Protocollo RM polmonare consigliato:</strong> T2-HASTE assiale + coronale, T1-3D-VIBE pre e post-mdc, DWI b=800, PC-MRA del tronco polmonare, opzionale DCE per perfusione quantitativa. <strong>Tempo macchina target:</strong> 25-35 minuti con apnee inspiratorie corte (o respiro libero con triggering navigatore). <strong>Bobina:</strong> cardiac/torso array a 1.5T o 3T; 3T preferito per parenchima, 1.5T più tollerante agli artefatti di suscettibilità in pazienti con piccoli volumi tidalici.
+      </p>
+    </div>
+  </details>
+</article>
+
+
+<!-- HIGHLIGHT 2: NEJM Inflammatory Myopathies -->
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1056/NEJMra2415426" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Inflammatory Myopathies
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    The New England Journal of Medicine · maggio 2026 · Allenbach Y, Benveniste O.
+  </p>
+  <p class="mb-3">
+    Review NEJM che cristallizza una tassonomia in <strong>cinque sottotipi</strong> di miopatia infiammatoria — IBM, IMNM, sindrome antisintetasica, miosite overlap, dermatomiosite — guidata dal pattern di <span class="anchor-text">autoanticorpi miosite-specifici</span> (MSA). Il messaggio per il radiologo: dietro un quadro di ILD apparentemente "idiopatica" può nascondersi un'antisintetasica anti-Jo-1 o una dermatomiosite anti-MDA5, e l'imaging toracico è spesso il primo segnale silente. Bottom line: davanti a un pattern NSIP/OP con bias basale e periferico, soprattutto se associato a paniculite o rash digitale, la richiesta di pannello MSA è da pretendere prima del board MDT.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Pirandello scrive <em>Uno, nessuno e centomila</em> nel 1926: l'identità non è una sostanza, è la collezione delle maschere che gli altri ci attribuiscono. Le miopatie infiammatorie sono lo stesso problema in immunologia. Per cinquant'anni si è discusso se "polimiosite" fosse una malattia, una sindrome, o un nome di comodo per casi non classificati. La svolta non è venuta dalla biopsia muscolare ma dalla sierologia: gli MSA hanno trasformato un'entità unica e ambigua in cinque entità distinte e operative. È il rovesciamento di Wittgenstein: <em>i limiti del mio linguaggio sono i limiti del mio mondo</em>. Senza l'anti-MDA5 il fenotipo "rapidamente progressivo con ulcere digitali" non esisteva come categoria — eppure i pazienti morivano lo stesso. Per il radiologo del MDT respiratorio: il pattern HRCT non è più sufficiente, il sierotipo è il completamento sintattico della diagnosi.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — quale autoanticorpo guarda quale organo</summary>
+    <div>
+      <p class="text-sm mb-3">Tassonomia operativa con punti di attenzione per imaging toracico:</p>
+      <table>
+        <thead><tr><th>Sottotipo</th><th>MSA tipici</th><th>Pattern HRCT atteso</th><th>Allarmi</th></tr></thead>
+        <tbody>
+          <tr><td>Dermatomiosite</td><td>anti-Mi-2, anti-TIF1γ, anti-NXP2</td><td>NSIP, OP</td><td class="text-slate-600">TIF1γ → screening neoplastico</td></tr>
+          <tr><td>Antisintetasica</td><td>anti-Jo-1, anti-PL-7, anti-PL-12</td><td>NSIP/OP basale, "mechanic's hands"</td><td class="text-slate-600">ILD spesso primo segno</td></tr>
+          <tr><td>DM anti-MDA5</td><td>anti-MDA5</td><td>OP rapidamente progressiva</td><td class="text-slate-600">RP-ILD: mortalità >50% a 6 mesi</td></tr>
+          <tr><td>IMNM</td><td>anti-SRP, anti-HMGCR</td><td>raro coinvolgimento polmonare</td><td class="text-slate-600">Statin-induced (HMGCR)</td></tr>
+          <tr><td>Overlap myositis</td><td>anti-PM/Scl, anti-Ku, anti-U1RNP</td><td>NSIP, sovrapposizione SSc-like</td><td class="text-slate-600">Cercare pattern misti</td></tr>
+          <tr><td>Inclusion-body myositis</td><td>anti-cN1A (in 30-40%)</td><td>Generalmente assente</td><td class="text-slate-600">Disfagia → polmonite ab ingestis</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line per la refertazione</span></p>
+        <p class="mt-1">Davanti a un quadro NSIP/OP con bias basale e periferico in adulto non fumatore, scrivere esplicitamente nella conclusione: "<em>pattern compatibile con CTD-ILD; suggerito pannello MSA/MAA prima della classificazione IIP idiopatica</em>". È un favore al clinico che evita di etichettare come idiopatica una forma con bersaglio terapeutico immunosoppressivo.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+
+<!-- HIGHLIGHT 3: ERR Biopsy yield/safety meta-analysis -->
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1183/16000617.0044-2026" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Yield and safety of different biopsy types in interstitial lung disease: a systematic review and meta-analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    European Respiratory Review · 13 maggio 2026 · Mor E, Belmonte LA, Degrassi M et al.
+  </p>
+  <p class="mb-3">
+    Revisione sistematica di <strong>143 studi</strong> che confronta i tre approcci principali alla biopsia polmonare nelle ILD. Yield diagnostico multidisciplinare: <span class="anchor-text">TBB 35.3%</span> (IC 95% 21.3-52.5), <strong>TBLC 84.3%</strong> (81.7-86.5), <strong>SLB 88.6%</strong> (83.4-92.3). La criobiopsia transbronchiale chiude quasi del tutto il gap con la chirurgica, con un profilo di sicurezza che la rende la prima scelta nel paziente ILD candidato a biopsia, riservando la SLB ai casi in cui TBLC ha fallito o l'anatomia la sconsiglia. Bottom line: il MDT ILD italiano dovrebbe smettere di considerare la TBLC come "alternativa minore" e iniziare a pretenderla come modalità diagnostica di prima scelta nei centri con expertise.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Karl Popper sostiene che una teoria scientifica vale per la sua falsificabilità, non per il suo potere di spiegare. Applicato alla diagnostica ILD: una biopsia ha valore se può <em>cambiare</em> la diagnosi MDT, non se la conferma. La TBB con yield 35% genera un numero altissimo di "esami inconcludenti" che lasciano il MDT nella zona di incertezza popperiana — né corroborazione né falsificazione, solo costo, rischio e attesa. La TBLC sposta il bayesiano del MDT: prima della biopsia P(IPF) = 0.6, dopo TBLC positiva P(IPF) ≥ 0.95. È la stessa rivoluzione che Galileo fa con il cannocchiale: lo strumento di osservazione cambia, ma più di tutto cambia il rapporto segnale/rumore. Per Gabriele al MDT regionale, la domanda non è "fare biopsia sì o no" ma "qual è il valore predittivo posteriore atteso di questo specifico paziente, con questa specifica modalità?". Il paper offre i numeri per fare il calcolo.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — quale biopsia in quale paziente</summary>
+    <div>
+      <table>
+        <thead><tr><th>Modalità</th><th>Yield multidisciplinare</th><th>Mortalità a 30 gg</th><th>Pneumotorace</th><th>Indicazione preferenziale</th></tr></thead>
+        <tbody>
+          <tr><td>TBB (forceps)</td><td>35.3%</td><td>~0%</td><td>1-3%</td><td class="text-slate-600">Sospetto sarcoidosi, granulomatosi infettiva</td></tr>
+          <tr><td><strong>TBLC (cryobiopsy)</strong></td><td><strong>84.3%</strong></td><td>0.4-0.7%</td><td>9-12%</td><td class="text-slate-600"><strong>Pattern fibrotico non classificabile in MDT</strong></td></tr>
+          <tr><td>SLB (surgical)</td><td>88.6%</td><td>2-3%</td><td>n.a. (chirurgia)</td><td class="text-slate-600">TBLC fallita, anatomia ostile, paziente giovane</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Per il radiologo del MDT</span></p>
+        <p class="mt-1">Quando il pattern HRCT è "probabile UIP" o "indeterminato per UIP" (criteri ATS/ERS/JRS/ALAT 2022), il MDT deve poter decidere se la TBLC cambia la gestione clinica. Numero da ricordare: <strong>NNT ≈ 2</strong> per ottenere una diagnosi specifica con TBLC vs TBB in fibrotic ILD non classificabile. Il radiologo aiuta il pneumologo identificando le aree target (zone di transizione tra parenchima normale e patologico, evitando honeycomb conclamato).</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — algoritmo decisionale e selezione del target</summary>
+    <div>
+      <p class="font-medium mb-2">Decisione MDT su modalità bioptica:</p>
+      <div class="mermaid">
+flowchart TB
+    HRCT["Pattern HRCT in MDT"] --> Q1{"UIP tipica<br/>(criteri 2022)?"}
+    Q1 -->|Sì| NoBx["Niente biopsia<br/>diagnosi clinico-radiologica"]
+    Q1 -->|No| Q2{"Probabile UIP<br/>o indeterminato?"}
+    Q2 -->|Sì| Q3{"Centro con<br/>expertise TBLC?"}
+    Q3 -->|Sì| TBLC["TBLC<br/>prima scelta"]
+    Q3 -->|No| Q4{"Paziente candidato<br/>a chirurgia?"}
+    Q4 -->|Sì| SLB["SLB"]
+    Q4 -->|No| Empiric["Trattamento empirico<br/>+ riferimento centro terziario"]
+    Q2 -->|"Alternative diagnosi<br/>(NSIP, OP, HP, sarcoid)"| TBB_Q{"Sospetto sarcoidosi<br/>o granuloma?"}
+    TBB_Q -->|Sì| TBB["TBB + EBUS-TBNA<br/>se linfoadenomegalia"]
+    TBB_Q -->|No| TBLC2["TBLC"]
+    TBLC -.fallimento.-> SLB
+    classDef preferred fill:#dcfce7,stroke:#166534,color:#1e293b
+    classDef ok fill:#dbeafe,stroke:#1e40af,color:#1e293b
+    classDef caution fill:#fef3c7,stroke:#92400e,color:#1e293b
+    class TBLC,TBLC2,NoBx preferred
+    class SLB,TBB ok
+    class Empiric caution
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Selezione del target TBLC (ruolo del radiologo):</strong> identificare 2-3 zone di transizione attiva tra parenchima conservato e fibrosi precoce, evitando aree di honeycomb conclamato (non aumentano yield, aumentano sanguinamento) e bolle subpleuriche (rischio pneumotorace). Per la SLB segnalare due lobi diversi (tipicamente lingula + lobo inferiore) per cogliere eterogeneità temporale.
+      </p>
+    </div>
+  </details>
+</article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  <!-- 1. Sci Transl Med — NK senescent fibroblasts -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1126/scitranslmed.adq5442" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Natural killer cell immunotherapy reverses lung fibrosis by eliminating senescent fibroblasts
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Science Translational Medicine · 13 maggio 2026 · Merkt W, Rodon L, Deicher FS et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Nell'IPF i fibroblasti senescenti HAS1+ espongono <span class="anchor-text">HLA-E</span>, il ligando del checkpoint inibitorio NKG2A, e disattivano le NK che dovrebbero clearance-arle. Il blocco di NKG2A o l'infusione di NK ex vivo expanse riducono il carico di fibroblasti senescenti e la fibrosi in modello pre-clinico — la prima dimostrazione che la fibrosi polmonare risponde a un'immunoterapia bersaglio-specifica. Bottom line: l'IPF entra nel territorio concettuale dell'oncologia checkpoint, con il NKG2A come candidato pratico per trial early-phase.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Le NK che si rifiutano di lavorare contro i fibroblasti senescenti sono il dipendente pubblico kafkiano: l'istruzione operativa esiste, ma l'azienda blocca l'esecuzione con un timbro inibitorio. L'immunoterapia checkpoint rimuove il timbro, non riassume nuove NK.
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Oggi nessun trial clinico NKG2A-bloccante in IPF, ma il monalizumab (anti-NKG2A) ha già fase I/II in oncologia: la traslazione è breve. Per il radiologo: i prossimi 18-24 mesi vedranno trial early-phase su IPF con endpoint imaging-based (qCT, volumetria honeycomb). Aspettarsi richieste di reading centralizzato standardizzato.</p>
+    </div>
+  </details>
+</article>
+
+<!-- 2. Sci Transl Med — Lactate MCT -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1126/scitranslmed.ads2673" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Lactate transport inhibition therapeutically reprograms fibroblast metabolism in experimental pulmonary fibrosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Science Translational Medicine · 6 maggio 2026 · Ziehr DR, Li F, Parnell KM et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Il myofibroblasto polmonare per differenziarsi ha bisogno di esportare lattato — bloccare i trasportatori <strong>MCT1/MCT4</strong> con piccole molecole riduce la differenziazione myofibroblastica TGFβ-stimolata in fibroblasti umani IPF e attenua la fibrosi bleomicina-indotta nel topo. Bottom line: il metabolismo del lattato emerge come bersaglio antifibrotico alternativo all'asse TGFβ canonico — una via che potrebbe ridurre la tossicità sistemica degli antifibrotici attuali.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Otto Warburg nel 1924 osserva che le cellule tumorali fermentano glucosio anche in presenza di ossigeno. Cento anni dopo, lo stesso "spreco" energetico è il marcatore della trasformazione myofibroblastica. Il polmone fibrotico è metabolicamente più simile a un tumore solido che a un polmone sano — un'intuizione che chiude un cerchio di un secolo.
+    </p>
+  </div>
+</article>
+
+<!-- 3. Cancer Control — T-DXd ILD meta-analysis -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1177/10732748261451083" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Trastuzumab Deruxtecan-Induced Interstitial Lung Disease: A Systematic Review and Meta-Analysis of Clinical Trials and Real-World Evidence
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Cancer Control · 9 maggio 2026 · Güren AK, Demircan NC, Sarı M et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi di 35 studi (trial + real-world) sull'ILD indotta da T-DXd: incidenza globale clinicamente rilevante, con differenza sistematica tra trial registrativi (incidenza riportata più bassa) e dato real-world (incidenza più alta, grado 3+ non trascurabile). Bottom line: la HRCT non è "opzione" nel follow-up del paziente T-DXd ma timing concordato a priori con l'oncologo; il pattern atteso evolve da GGO bilaterali precoci a quadri NSIP-like organizzati tardivi.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Gli ADC sono le frecce di Robin Hood — colpiscono il bersaglio ma l'arco vibra. Il deruxtecan è un'arma chimica ben mirata, l'ILD è il rinculo. Il radiologo del paziente oncologico vive in questa dialettica continua tra efficacia mirata e danno collaterale strutturato.
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — scheda di sorveglianza</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Fase</th><th>Timing HRCT</th><th>Pattern atteso</th><th>Azione</th></tr></thead>
+        <tbody>
+          <tr><td>Baseline</td><td>Pre-T-DXd</td><td>Reference per follow-up</td><td>Documentare GGO/fibrosi preesistenti</td></tr>
+          <tr><td>Early (0-12 sett.)</td><td>Sintomo o ogni 6-9 sett.</td><td>GGO bilaterali periferici</td><td>Sospensione + steroide se G≥2</td></tr>
+          <tr><td>Subacuta (>12 sett.)</td><td>Trimestrale</td><td>Crazy paving, consolidamento</td><td>Steroide ad alta dose, valutare permanenza</td></tr>
+          <tr><td>Tardiva</td><td>Annuale post-fine terapia</td><td>NSIP-like fibrotic residual</td><td>Pneumologo, follow-up funzionale</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+<!-- 4. Respiratory Investigation — CTD-ILD Japanese guide 2025 -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.resinv.2026.101412" target="_blank" rel="noopener" class="hover:text-blue-700">
+      The guide for the diagnosis and treatment of connective tissue disease-associated interstitial lung disease 2025
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Respiratory Investigation · 4 maggio 2026 · Kondoh Y, Bando M, Kawahito Y, Ogura T.
+  </p>
+  <p class="mb-2 text-sm">
+    Sintesi inglese della guida giapponese JRS/Japanese College of Rheumatology aggiornata al 2025 per la CTD-ILD: include un framework concettuale di screening, criteri pratici per identificare la riacutizzazione acuta, e algoritmi terapeutici aggiornati con antifibrotici. Bottom line: utile come complemento operativo alle linee guida ATS/ERS perché esplicita i passi MDT mese per mese, dove il documento ATS resta a livello di principio.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      I giapponesi nella linee guida fanno l'opposto di Heidegger: niente filosofia, solo procedure. Quando ATS scrive "consider", JRS scrive "alla settimana 4 fai HRCT e PFT". È la differenza tra la prosa di Borges e quella di un manuale Toyota — entrambe utili, in scenari diversi.
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Quando consultarla?</summary>
+    <div class="text-sm">
+      <p>Quando il MDT respiratorio-reumatologico locale è in fase di costruzione del proprio percorso CTD-ILD, la guida JRS è un'ottima base operativa da adattare. Particolarmente utile la sezione su acute exacerbations CTD-ILD, che ATS 2024 non sviluppa in dettaglio. Da abbinare ai documenti ATS/ERS per le raccomandazioni farmacologiche standard.</p>
+    </div>
+  </details>
+</article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  <!-- 1. J Thorac Oncol — 20-Year Perspective -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jtho.2026.103563" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Advances in Radiological Imaging for Thoracic Oncology: A 20-Year Perspective
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Journal of Thoracic Oncology · maggio 2026 · Erasmus JJ, Vlahos I.
+  </p>
+  <p class="mb-2 text-sm">
+    Review a vent'anni: la CT si trasforma da modalità anatomica a piattaforma multiparametrica (multidetector → dual-energy → <span class="anchor-text">photon-counting</span>), il PET/CT con FDG diventa standard di stadiazione e si arricchisce di traccianti per ipossia, proliferazione e biomarcatori immunitari, la RM cresce in caratterizzazione tissutale e nei sistemi ibridi PET/MR. Bottom line: lo specialista toracico oggi non sceglie "tra modalità" ma compone una <em>policy diagnostica</em> per ogni paziente.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Lo storico Marc Bloch chiamava "duration de longue durée" i cambiamenti silenti che si vedono solo dall'alto, su vent'anni. La radiologia toracica ha attraversato la sua: dalla lastra al cubo di voxel quantitativi. Il radiologo di oggi non vede meglio il polmone — lo legge in una lingua diversa.
+    </p>
+  </div>
+  <details class="deepdive">
+    <summary>🔬 Deep dive — timeline delle inflessioni tecnologiche</summary>
+    <div>
+      <div class="mermaid">
+timeline
+    title Imaging toracico oncologico — 20 anni di inflessioni
+    2005 : Multidetector CT 64-slice mainstream
+         : FDG-PET/CT diventa standard staging NSCLC
+    2010 : LDCT (NLST) come screening polmone
+         : Dual-energy CT in pratica clinica
+    2015 : Reading CAD per noduli polmonari
+         : PET/MR ibrido (centri selezionati)
+    2018 : Radiomica come campo identificato
+         : IA per detection di noduli (FDA)
+    2020 : Deep learning per stadiazione automatica
+         : Traccianti PET immune (CD8, PD-L1)
+    2023 : Photon-counting CT (PCCT) commerciale
+         : Foundation models radiologici
+    2026 : PCCT in routine oncologica
+         : Reading multimodale AI-augmented
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Inflessione attuale (2024-26):</strong> PCCT con risoluzione spaziale subliminale per noduli &lt;3 mm e PET/MR per caratterizzazione tissutale post-RT spostano la frontiera della stadiazione e del follow-up oncologico. Per la pratica: chi non ha PCCT in casa, deve almeno conoscerne i limiti per spiegarli al MDT.
+      </p>
+    </div>
+  </details>
+</article>
+
+<!-- 2. Frontiers Immunology — CT radiomic for NSCLC immunotherapy -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.3389/fimmu.2026.1767389" target="_blank" rel="noopener" class="hover:text-blue-700">
+      CT-based immune radiomic signature for prognosis and prediction of immunotherapy and anticancer drug response in NSCLC
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Frontiers in Immunology · 29 aprile 2026 · Ma J, Guo K, Gao Y et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Firma <span class="anchor-text">radiomica</span> CT ancorata biologicamente a marker immuni del microambiente tumorale del NSCLC, validata per prognosi e predizione di risposta a checkpoint inhibitor e chemioterapia. Il valore aggiunto rispetto alla radiomica "agnostica" è il grounding biologico, che riduce il rischio di overfitting cieco. Bottom line: paradigma da seguire — la radiomica clinicamente utile è quella che pre-specifica la biologia che vuole catturare, non quella che cerca pattern dopo aver visto gli esiti.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Borges nel <em>Funes el memorioso</em> immagina un uomo che ricorda tutto e per questo non sa pensare — il pensiero richiede astrazione, cioè dimenticanza selettiva. La radiomica senza grounding biologico è Funes: troppi pattern, nessun significato. Questa firma immune-informata è il contrario, parte dalla domanda biologica e cerca i pattern che la rappresentano.
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarla nella pratica?</summary>
+    <div class="text-sm">
+      <p>Non ancora — è una signature validata su coorti retrospettive, non un tool clinico commerciale. Ma è il modello concettuale giusto. Quando in 2-3 anni arriveranno tool radiomici certificati IVDR per NSCLC, sapere se hanno backbone biologico (come questo) o sono "black box" addestrate end-to-end sarà la prima domanda da fare al vendor.</p>
+    </div>
+  </details>
+</article>
+
+<!-- 3. Science Advances — PPFE atlas -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1126/sciadv.aeb5967" target="_blank" rel="noopener" class="hover:text-blue-700">
+      The pleuroparenchymal fibroelastosis atlas reveals aberrant cell states and their zonation as an alternate roadmap to lung fibrosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Science Advances · 8 maggio 2026 · Ruwisch J, Cazes A, Leiber LM et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Atlante single-nucleus della <span class="anchor-text">PPFE</span> su 40 polmoni espiantati, integrato con micro-CT e HiP (hierarchical phase-contrast) synchrotron CT per il riferimento spaziale 3D. Identificati fibroblasti elastofibrotici adventiziali come driver del rimodellamento elastotico, con strutture linfoidi terziarie che mantengono il microambiente infiammatorio in zonazione caratteristica. Bottom line: la PPFE non è "fibrosi apicale rara" ma una traiettoria patologica distinta da UIP — il pattern HRCT apicale subpleurico con perdita di volume lobare superiore è la firma di un programma cellulare specifico, non un'aspecificità.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      L'HiP synchrotron CT è il microscopio di Newton del 2026 — risoluzione subcellulare a volumi macroscopici. Per la prima volta si vede la PPFE come un sistema architettonico (zonazione, gerarchia), non come "macchia bianca apicale". Il pattern radiologico è la cima di un iceberg molecolare ora visibile.
+    </p>
+  </div>
+</article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  <!-- 1. Radiographics — Cardiac MRI for myocardial edema -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/rg.250052" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Cardiac MRI in Depiction of Myocardial Edema: A Comprehensive Review
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    RadioGraphics (RSNA) · giugno 2026 · Onder O, Kosanovich C, Kirshenboim ZE, Duman E.
+  </p>
+  <p class="mb-2 text-sm">
+    Review didattica RadioGraphics sull'<span class="anchor-text">edema miocardico</span> in CMR: definizione fisiopatologica, sequenze chiave (T2-STIR, <details class="inline"><summary><span class="chip">T2 mapping</span></summary><span class="chip-content">Sequenza quantitativa che misura il T2 in millisecondi pixel-per-pixel: valori &gt;55 ms a 1.5T indicano edema interstiziale.</span></details>, T1 mapping nativo, ECV), trabocchetti diagnostici e mapping su scenari clinici dall'IMA all'ICI-myocarditis. Bottom line: il radiologo cardiaco oggi referta in numeri (T1/T2 in ms, ECV%, strain) — il pattern qualitativo è solo la cornice; la diagnosi differenziale si fa con i valori quantitativi.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il mapping CMR è la termocoppia di Galileo: misura ciò che prima era impressione. Vermeer nel <em>Lattaia</em> non dipinge "latte" ma valori di luce graduati — la CMR moderna fa lo stesso col cuore, valori di T1/T2 al posto di "edematoso/normale". Refertare in chiaroscuro qualitativo è ormai un atto di artigianato pre-quantitativo.
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — quale pattern per quale eziologia</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Eziologia</th><th>T2 (ms)</th><th>T1 nativo</th><th>LGE pattern</th><th>Distribuzione</th></tr></thead>
+        <tbody>
+          <tr><td>Miocardite acuta</td><td>↑↑</td><td>↑</td><td>Subepicardico, patchy</td><td>Pareti laterale/inferiore</td></tr>
+          <tr><td>IMA acuto</td><td>↑ (area a rischio)</td><td>↑↑</td><td>Subendocardico/transmurale</td><td>Territorio vascolare</td></tr>
+          <tr><td>Takotsubo</td><td>↑↑ apicale</td><td>↑</td><td>Spesso assente</td><td>Apicale/midventricolare</td></tr>
+          <tr><td>ICI-myocarditis</td><td>↑ variabile</td><td>↑</td><td>Multifocale, eterogeneo</td><td>Diffusa, asimmetrica</td></tr>
+          <tr><td>Sarcoidosi cardiaca</td><td>↑ regionale</td><td>↑↑</td><td>Setto interventricolare, mid-wall</td><td>Patchy multifocale</td></tr>
+          <tr><td>Amiloidosi</td><td>Solo lieve</td><td>↑↑↑ (diff.)</td><td>Diffuso subendocardico</td><td>Globale, ECV >40%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+<!-- 2. Eur Radiol Experimental — Gd K-edge PCCT -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1186/s41747-026-00720-3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Lumen imaging in calcified coronary arteries using high-resolution Gd-enhanced color K-edge imaging with spectral photon-counting CT: a phantom study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    European Radiology Experimental · 6 maggio 2026 · Dobrolinska MM, van der Werf N, Greuter M, Robert A.
+  </p>
+  <p class="mb-2 text-sm">
+    Studio fantasmatico su prototipo SPCCT clinico: usando <strong>gadolinio</strong> (invece di iodio) come mezzo di contrasto coronarico e sfruttando l'imaging K-edge spettrale, si separa il lume dal calcio anche su placche fino a 800 mg/cm³ di idrossiapatite. Bottom line: la promessa più concreta della <span class="anchor-text">PCCT spettrale</span> per il "tallone d'Achille" della CCTA — il paziente con calcium score alto in cui oggi la stenosi resta non valutabile.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Tucidide dice che il presente sarà chiaro al futuro <em>solo se</em> distinguiamo i fatti dalle interpretazioni. La CCTA con iodio confonde calcio e lume perché entrambi sono "bianco": una metafora di Tucidide nello scanner. Il K-edge del gadolinio è la differenziazione storica che restituisce il fatto.
+    </p>
+  </div>
+</article>
+
+<!-- 3. JACC Cardiovasc Interv — Phenotypic Diversity TMVR COAPT/MITRA-FR -->
+<article class="mb-6 pb-6 border-b border-slate-100">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jcin.2026.02.030" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Phenotypic Diversity and Outcomes of Transcatheter Mitral Repair for Secondary Mitral Regurgitation: Insights From the COAPT and MITRA-FR Trials
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC Cardiovascular Interventions · maggio 2026 · Bonnet G, Rommel KP, Redfors B et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Clustering gerarchico non-supervisionato su 22 parametri baseline dei trial COAPT e MITRA-FR identifica fenotipi distinti di insufficienza mitralica secondaria che rispondono in modo eterogeneo al <span class="anchor-text">M-TEER</span>. Il dato che spiega l'apparente conflitto storico tra i due trial non è "COAPT giusto vs MITRA-FR sbagliato" ma <em>popolazioni diverse</em> selezionate dagli stessi criteri di inclusione. Bottom line: l'imaging baseline (rapporto EROA/EDV ventricolare, vena contracta, geometria mitralica) è il vero predittore di risposta — la riga del clinico "candidato a MitraClip" non basta.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      In economia si chiama paradosso di Simpson: aggregati dicono il contrario dei sottogruppi. COAPT e MITRA-FR sono il caso clinico più puro di Simpson nella cardiologia interventistica. Il fenotipo (cluster) batte la categoria diagnostica — l'imaging ecocardiografico e la risonanza fanno la differenza tra "responder" e "no benefit".
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Per il referto pre-TEER</summary>
+    <div class="text-sm">
+      <p>Refertare sempre: EROA con vena contracta multipla, volume rigurgitante, EDV/ESV indicizzati, rapporto EROA/EDV (proporzionalità della rigurgitazione), geometria coaptazione (tenting height/area), TAPSE/strain VD. Una nota sintetica al referto: "<em>profilo geometrico/volumetrico compatibile con [responder pattern stile COAPT] / [pattern overfilled stile MITRA-FR]</em>" aiuta il MDT a prendere la decisione informata.</p>
+    </div>
+  </details>
+</article>
+
+<!-- 4. EuroIntervention — FAVOR III Europe 2y -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.4244/EIJ-D-25-01255" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Quantitative flow ratio versus fractional flow reserve: 2-year follow-up of the FAVOR III Europe trial
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    EuroIntervention · 4 maggio 2026 · Andersen BK, Holm NR, Sejr-Hansen M et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Follow-up a 2 anni del trial FAVOR III Europe (n=2000): la <span class="anchor-text">QFR</span> (angio-derived) non aveva raggiunto la non-inferiorità rispetto alla FFR invasiva a 12 mesi sul composito di morte/IMA/rivascolarizzazione, e i dati a 2 anni confermano e consolidano questo risultato. Bottom line: per la decisione di rivascolarizzazione in stenosi intermedie, la FFR (o iFR) resta il riferimento — la QFR è uno strumento utile, ma non un sostituto invasivo-free al momento. Per la cardio-imaging non invasiva (CT-FFR) la conclusione è simmetrica: validare contro endpoint duri, non solo contro FFR.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Goodhart dice: quando una metrica diventa target, smette di essere una buona metrica. La QFR validata contro FFR rischia di replicare i bias dell'FFR, non di superarli. La FAVOR III dice che la scorciatoia angiografica non chiude il cerchio. Per il radiologo che fa CT-FFR vale la stessa cautela ermeneutica.
+    </p>
+  </div>
+</article>
+</section>
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Sei paper di questa quindicina convergono su una stessa idea: la fibrosi polmonare non si combatte più sull'asse TGFβ canonico. Si attaccano il <strong>fibroblasto come unità computazionale</strong> — la sua senescenza, il suo metabolismo, la sua memoria epigenetica, le sue zonazioni spaziali. È un cambio di scala interpretativa che, finalmente, comincia a riflettersi sui bersagli farmacologici.
+  </p>
+  <div class="mermaid">
+mindmap
+  root((Fibroblasto polmonare<br/>come sistema operativo))
+    Senescenza
+      NK + NKG2A/HLA-E
+        Sci Transl Med Merkt
+      ID1/ID3 cell-cycle
+        Theranostics Antar
+    Metabolismo
+      Lattato MCT1/MCT4
+        Sci Transl Med Ziehr
+      Lipo-vs-myofibroblasti
+        Nat Commun Zabihi
+    Memoria immune
+      Trained immunity
+        Front Immunol Pham
+      ADAMTS4+ persistenza
+        Nat Commun Zabihi
+    Architettura
+      PPFE elastofibrotic
+        Sci Adv Ruwisch
+      HiP synchrotron CT
+        Sci Adv Ruwisch
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione per il radiologo del MDT ILD:</strong> il pattern HRCT è ancora la lingua del referto, ma sta diventando una <em>proiezione</em> di programmi cellulari distinti. Quando in 24-36 mesi arriveranno trial con anti-NKG2A o inibitori MCT1/MCT4 in IPF e progressive fibrosing ILD, l'endpoint imaging non sarà più "stabilità del FVC" ma marker di rimodellamento microstrutturale — qCT/CALIPER, photon-counting CT a risoluzione subliminale, possibilmente HiP synchrotron per validazione. Allenare oggi il proprio occhio ai parametri quantitativi è investimento sul prossimo decennio.
+  </p>
+</section>
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 17/05/2026 alle 10:53 (ora italiana).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+<!-- ──────────────────────────────────────────────────────────────────────
+     REFERENCE: structure of an article (the routine fills these patterns)
+     ────────────────────────────────────────────────────────────────────── -->
+<!--
+
+────────── L1: Always visible (titolo, badge, sintesi, aggancio) ──────────
+────────── L2 (optional): "Posso usarlo?" — applicabilità clinica ─────────
+────────── L3 (optional): Deep dive — dati, diagrammi Mermaid, schemi ────
+
+EXAMPLE — HIGHLIGHT PAPER WITH ALL 3 LEVELS:
+
+<article class="mb-10">
+  <!-- L1: ALWAYS VISIBLE -->
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/EXAMPLE" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Fleischner Society Position Paper · 2026 · Hatabu H, Nishino M et al.
+  </p>
+  <p class="mb-3">
+    La Fleischner Society aggiorna le indicazioni per l'imaging RM polmonare, estendendole oltre il
+    dominio pediatrico tradizionale. Tre aree principali: fibrosi cistica, monitoraggio
+    post-trattamento, e <span class="anchor-text">patologie vascolari polmonari</span>.
+  </p>
+
+  <!-- AGGANCIO MULTIDISCIPLINARE: SEMPRE VISIBILE -->
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      La Fleischner Society fa quello che il consesso medievale faceva con i bestiari: espande il
+      catalogo riconoscendo che l'imaging polmonare non è più solo "lesione → pattern radiografico"
+      ma "fenomeno fisiologico → sequenza adatta". Un cambio epistemologico simile a quello di Linneo:
+      tassonomia per funzione, non per apparenza. La MRI come Linneo del polmone fisiologico.
+      I termini specialistici come
+      <details class="inline"><summary><span class="chip">PC-MRA</span></summary><span class="chip-content">Phase-Contrast Magnetic Resonance Angiography — sequenza che mappa il flusso senza mezzo di contrasto.</span></details>
+      diventano accessibili inline.
+    </p>
+  </div>
+
+  <!-- L2: "POSSO USARLO?" — OPTIONAL BASED ON COMPLEXITY -->
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — indicazioni operative</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indicazioni proposte dal panel Fleischner:</p>
+      <table>
+        <thead><tr>
+          <th>Scenario</th><th>MRI preferita?</th><th>Razionale</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>CF pediatrica monitoring</td><td><strong>Sì</strong></td><td class="text-slate-600">Evita radiazioni ripetute</td></tr>
+          <tr><td>Vascolarizzazione/perfusione</td><td><strong>Sì</strong></td><td class="text-slate-600">PC-MRA contrast-free</td></tr>
+          <tr><td>ILD diagnosi pattern</td><td>No</td><td class="text-slate-600">HRCT resta gold standard</td></tr>
+          <tr><td>Massa mediastinica</td><td><strong>Sì, complementare a CT</strong></td><td class="text-slate-600">Tissue characterization</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">MRI polmonare non sostituisce HRCT per ILD, ma diventa first-line in casi selezionati
+        (pediatrico, gravidanza, monitoraggio seriale). Implementazione richiede protocolli dedicati.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- L3: DEEP DIVE — OPTIONAL, REASON: PAPER HA UN FLOWCHART DECISIONALE ESPLICITO -->
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — flowchart decisionale e protocolli</summary>
+    <div>
+      <p class="font-medium mb-2">Flowchart decisionale Fleischner 2026:</p>
+      <div class="mermaid">
+flowchart TB
+    Indication["Indicazione clinica polmonare"] --> Q1{"Radiazione critica?<br/>(età ≤40, CF, gravidanza)"}
+    Q1 -->|Sì| MRI1["MRI prima linea"]
+    Q1 -->|No| Q2{"Pattern parenchimale<br/>o vascolare?"}
+    Q2 -->|Parenchimale| HRCT["HRCT standard"]
+    Q2 -->|Vascolare| Q3{"eGFR > 30?"}
+    Q3 -->|Sì| CTPA["CTPA con mdc iodato"]
+    Q3 -->|No| MRI2["PC-MRA senza mdc"]
+    classDef mri fill:#dbeafe,stroke:#1e40af
+    classDef ct fill:#fee2e2,stroke:#991b1b
+    class MRI1,MRI2 mri
+    class HRCT,CTPA ct
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Sequenze raccomandate:</strong> T2-HASTE, T1-3D-GRE, PC-MRA, opzionale DCE.
+        Tempo esame target: 25-35 minuti.
+      </p>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 + L2 (no L3 because paper meno tecnico):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Trastuzumab Deruxtecan-Induced Interstitial Lung Disease: Meta-Analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Cancer Control · 9 May 2026 · Güren AK, Demircan NC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi (n studi=27, n pazienti=2840) su ILD/polmonite indotta da T-DXd. Incidenza globale
+    15.2% (IC 95% 12.8-17.9), significativamente più alta nel real-world rispetto ai trial.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Quando il farmaco antitumorale "colpisce" il polmone, l'imaging diventa biomarker di tossicità.
+      È il rovescio della medaglia degli ADC: efficacia mirata, danno collaterale strutturato.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Ogni follow-up T-DXd merita HRCT con basso sospetto per pattern ground-glass o crazy paving.
+      L'incidenza real-world (15.2%) è circa il doppio di quella riportata nei trial originali —
+      utile per il counseling preventivo del paziente.</p>
+      <table class="mt-3">
+        <thead><tr><th>Tempo</th><th>Pattern HRCT</th><th>Management</th></tr></thead>
+        <tbody>
+          <tr><td>0-12 sett.</td><td>GGO bilaterali</td><td>Sospensione + steroidi</td></tr>
+          <tr><td>>12 sett.</td><td>Crazy paving</td><td>Sospensione + steroidi alti dose</td></tr>
+          <tr><td>Tardivo</td><td>NSIP-like</td><td>Pneumologo + considera permanente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 (paper di facile assimilazione, niente L2/L3):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Acute Myocarditis: 10-year Follow-up Cohort
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Heart Journal · 14 May 2026
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte multicentrica (n=687) con CMR-confirmed myocarditis acuta. A 10 anni: 12% cardiomiopatia
+    dilatativa, 4% morte cardiovascolare. LGE basale persistente predittore indipendente.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il LGE che non scompare è la cicatrice di Pirandello: maschera che diventa volto. L'evento acuto
+      è solo l'incipit narrativo — la prognosi a 10 anni si decide nel pattern di scar che resta.
+    </p>
+  </div>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — FILO DELLA SETTIMANA WITH MERMAID MINDMAP:
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di questa settimana convergono su un'idea: la fibrosi polmonare non è più una malattia
+    singola che evolve, ma una <em>convergenza fenotipica</em> di processi eterogenei. PPFE single-nucleus
+    atlas (Sci Adv), IIM-ILD nerandomilast (RMD Open), e SSc sieronegativa (RMD Open) mostrano vie
+    molecolari distinte che producono lo stesso pattern radiologico.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Fibrosi polmonare<br/>come convergenza fenotipica(
+    PPFE
+      Single-nucleus atlas
+      Aberrant basaloid cells
+      Mitocondriopatia genetica
+    IIM-ILD
+      Nerandomilast PDE4B
+      cAMP-PKA-RhoA pathway
+      Anti-MDA5 fenotipo
+    SSc-ILD
+      Sieronegativa subgroup
+      NSIP/UIP overlap
+      Imaging-pattern decision
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> stratificare la fibrosi non solo per pattern HRCT ma per
+    meccanismo molecolare diventa rilevante per la scelta antifibrotic. Il radiologo del board MDT
+    è il primo a vedere il pattern, ma la decisione terapeutica ora richiede il dato sierologico.
+  </p>
+</section>
+-->
+
+</body>
+</html>
