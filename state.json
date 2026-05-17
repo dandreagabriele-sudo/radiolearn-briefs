@@ -1,8 +1,30 @@
 {
   "version": "1.0",
-  "last_brief_at": null,
-  "last_brief_url": null,
-  "last_brief_item_count": 0,
-  "processed_dois": [],
-  "briefs_archive": []
+  "last_brief_at": "2026-05-17T08:55:21.442759+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W20.html",
+  "last_brief_item_count": 14,
+  "processed_dois": [
+    "10.1056/NEJMra2415426",
+    "10.1183/16000617.0044-2026",
+    "10.1126/scitranslmed.adq5442",
+    "10.1126/scitranslmed.ads2673",
+    "10.1177/10732748261451083",
+    "10.1016/j.resinv.2026.101412",
+    "10.1016/j.jtho.2026.103563",
+    "10.3389/fimmu.2026.1767389",
+    "10.1126/sciadv.aeb5967",
+    "10.1148/rg.250052",
+    "10.1186/s41747-026-00720-3",
+    "10.1016/j.jcin.2026.02.030",
+    "10.4244/EIJ-D-25-01255"
+  ],
+  "briefs_archive": [
+    {
+      "id": "2026-W20",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W20.html",
+      "date": "2026-05-17",
+      "items": 14,
+      "headline": "MRI polmonare, biopsie e la biologia del fibroblasto"
+    }
+  ]
 }
