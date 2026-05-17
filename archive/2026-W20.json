@@ -1,0 +1,36 @@
+{
+  "brief_id": "2026-W20",
+  "generated_at": "2026-05-17T08:55:21.442759+00:00",
+  "candidates_count": 156,
+  "selected_count": 14,
+  "selected_dois": [
+    "10.1056/NEJMra2415426",
+    "10.1183/16000617.0044-2026",
+    "10.1126/scitranslmed.adq5442",
+    "10.1126/scitranslmed.ads2673",
+    "10.1177/10732748261451083",
+    "10.1016/j.resinv.2026.101412",
+    "10.1016/j.jtho.2026.103563",
+    "10.3389/fimmu.2026.1767389",
+    "10.1126/sciadv.aeb5967",
+    "10.1148/rg.250052",
+    "10.1186/s41747-026-00720-3",
+    "10.1016/j.jcin.2026.02.030",
+    "10.4244/EIJ-D-25-01255"
+  ],
+  "headline": "MRI polmonare, biopsie e la biologia del fibroblasto",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "failed: RuntimeError",
+    "arxiv_cardio_imaging": "failed: RuntimeError",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}
