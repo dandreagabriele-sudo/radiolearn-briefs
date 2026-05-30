@@ -1,0 +1,15 @@
+{
+  "brief_id": "2026-W22",
+  "created_at": "2026-05-30T14:20:09.217644+00:00",
+  "messages": [
+    {
+      "method": "sendMessage",
+      "params": {
+        "chat_id": "8538175163",
+        "text": "📰 <b>RadioLearn Briefs — 2026-W22</b>\n<i>Funzione oltre la forma: imaging che misura, non solo descrive</i>\n\n<b>2026-05-30</b> · 10 paper selezionati su 164 candidati · finestra 14 giorni\n\n✨ Highlights\n• RadioGraphics — Smoking-related pulmonary parenchymal disease\n• JACC Cardiovasc Interv — Sede della stenosi coronarica e morte improvvisa (n=22.495)\n• Radiology — DCR per pulmonary regurgitation in ToF riparata\n\n🫁 Polmonologia clinica: CoughRetrain, ILD-PRO productivity loss, recidiva sarcoidosi\n🫁🖥 Imaging toracico: AI noduli real-world (FDA-cleared ≠ concordanza)\n❤️🖥 Cardio imaging: PCAT/EAT ratio, cardiotossicità RT a 24 mesi, ECV regionale in AS severa\n\n🧩 Filo: <i>imaging come misura della fisiologia, non solo della forma</i>\n\n🔗 <a href=\"https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W22.html\">Apri il brief</a>",
+        "parse_mode": "HTML",
+        "disable_web_page_preview": false
+      }
+    }
+  ]
+}
