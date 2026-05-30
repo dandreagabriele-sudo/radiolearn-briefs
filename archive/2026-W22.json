@@ -1,0 +1,33 @@
+{
+  "brief_id": "2026-W22",
+  "generated_at": "2026-05-30T14:20:09.217644+00:00",
+  "candidates_count": 164,
+  "selected_count": 10,
+  "selected_dois": [
+    "10.1148/rg.250167",
+    "10.1016/j.jcin.2026.03.023",
+    "10.1148/radiol.252344",
+    "10.1007/s00408-026-00895-x",
+    "10.1007/s00408-026-00899-7",
+    "10.1016/j.rmed.2026.108894",
+    "10.2196/86416",
+    "10.1148/ryct.250404",
+    "10.1148/ryct.250342",
+    "10.1136/openhrt-2025-003583"
+  ],
+  "headline": "Funzione oltre la forma: imaging che misura, non solo descrive",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "failed: RuntimeError",
+    "arxiv_cardio_imaging": "failed: RuntimeError",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}
