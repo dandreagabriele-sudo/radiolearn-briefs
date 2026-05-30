@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-05-17T08:55:21.442759+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W20.html",
-  "last_brief_item_count": 14,
+  "last_brief_at": "2026-05-30T14:20:09.217644+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W22.html",
+  "last_brief_item_count": 10,
   "processed_dois": [
     "10.1056/NEJMra2415426",
     "10.1183/16000617.0044-2026",
@@ -16,7 +16,17 @@
     "10.1148/rg.250052",
     "10.1186/s41747-026-00720-3",
     "10.1016/j.jcin.2026.02.030",
-    "10.4244/EIJ-D-25-01255"
+    "10.4244/EIJ-D-25-01255",
+    "10.1148/rg.250167",
+    "10.1016/j.jcin.2026.03.023",
+    "10.1148/radiol.252344",
+    "10.1007/s00408-026-00895-x",
+    "10.1007/s00408-026-00899-7",
+    "10.1016/j.rmed.2026.108894",
+    "10.2196/86416",
+    "10.1148/ryct.250404",
+    "10.1148/ryct.250342",
+    "10.1136/openhrt-2025-003583"
   ],
   "briefs_archive": [
     {
@@ -25,6 +35,13 @@
       "date": "2026-05-17",
       "items": 14,
       "headline": "MRI polmonare, biopsie e la biologia del fibroblasto"
+    },
+    {
+      "id": "2026-W22",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W22.html",
+      "date": "2026-05-30",
+      "items": 10,
+      "headline": "Funzione oltre la forma: imaging che misura, non solo descrive"
     }
   ]
 }
