@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — 2026-W22 (30 maggio 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · 2026-W22</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Funzione oltre la forma: imaging che misura, non solo descrive</h1>
+  <p class="ui text-sm text-slate-500 mt-3">30 maggio 2026 · 10 selezionati su 164 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1148/rg.250167" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Imaging Findings of Smoking-related Pulmonary Parenchymal Disease
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    RadioGraphics · giugno 2026 · Dulcich G, Mestas Nuñez M, Bang TJ
+  </p>
+  <p class="mb-3">
+    Review didattica RSNA che riordina lo spettro delle malattie parenchimali fumo-correlate: COPD,
+    <details class="inline"><summary><span class="chip">SR-ILD</span></summary><span class="chip-content">Smoking-Related Interstitial Lung Disease — gruppo che include RB-ILD, DIP, PLCH e fibrosi smoking-related, con overlap radiologico frequente nello stesso paziente.</span></details>
+    e nuove forme da e-cigarette e cannabis. Il messaggio è duro: gli SR-ILD spesso coesistono e si
+    confondono con altre ILD, ma il <span class="anchor-text">management è diverso</span> e parte
+    dalla cessazione del fumo, non dall'antifibrotico.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Pattern o storia?</strong> Davanti a una HRCT con overlap RB-ILD/DIP/UIP la tentazione è
+      classificare per immagine. Ma in queste forme la radiologia da sola sbaglia: lo stesso pattern
+      cambia diagnosi e prognosi a seconda della pack-history. La fibrosi smoking-related <em>imita</em>
+      la UIP idiopatica ma risponde alla cessazione del fumo, non al nintedanib. La regola è clinica:
+      pattern + esposizione + tempo, mai pattern da solo.
+      ❓ Domanda di rottura: davanti a un pattern UIP-like in un fumatore attivo, quale variabile
+      sposta più la probabilità post-test fra SR-ILD e IPF, le bronchiectasie da trazione o la storia di
+      pack-years sopra una soglia critica?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — quando sospettare SR-ILD invece di altra ILD</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indizi che spostano il sospetto verso smoking-related:</p>
+      <table>
+        <thead><tr><th>Reperto HRCT</th><th>Sospetto principale</th><th>Cosa cambia in pratica</th></tr></thead>
+        <tbody>
+          <tr><td>GGO centrolobulari + bronchiolite</td><td><strong>RB-ILD</strong></td><td class="text-slate-600">Cessazione fumo prima di steroidi</td></tr>
+          <tr><td>GGO diffuso a "vetro smerigliato denso" pan-lobulare</td><td><strong>DIP</strong></td><td class="text-slate-600">Steroidi + cessazione, prognosi migliore di UIP</td></tr>
+          <tr><td>Cisti irregolari upper-lung + noduli</td><td><strong>PLCH</strong></td><td class="text-slate-600">Cessazione spesso sufficiente, no antifibrotici</td></tr>
+          <tr><td>UIP-like + storia fumo importante</td><td><strong>SR-fibrosi</strong></td><td class="text-slate-600">Cessazione + valuta antifibrotico solo se progressivo</td></tr>
+          <tr><td>GGO acuto + vape recente</td><td><strong>EVALI</strong></td><td class="text-slate-600">Sospensione vape, steroidi, reversibile</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Nel referto chiedi sempre pack-years prima di scrivere "pattern UIP". Un UIP-like
+        in fumatore attivo cambia management: cessazione prima, antifibrotico solo se progredisce.
+        L'overlap fra entità SR-ILD nello stesso paziente è la regola, non l'eccezione.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — mappa diagnostica dei pattern smoking-related</summary>
+    <div>
+      <p class="font-medium mb-2">Flowchart di lettura HRCT del fumatore:</p>
+      <div class="mermaid">
+flowchart TB
+    Start["HRCT in fumatore<br/>o ex-fumatore"] --> Q1{"GGO o cisti<br/>dominante?"}
+    Q1 -->|GGO centrilobulare| Q2{"Bronchiolite<br/>associata?"}
+    Q1 -->|Cisti irregolari upper| PLCH["PLCH"]
+    Q1 -->|GGO acuto + vape| EVALI["EVALI"]
+    Q1 -->|Reticolare + bronchiectasie traz.| Q3{"Pack-years<br/>elevati?"}
+    Q2 -->|Sì| RBILD["RB-ILD"]
+    Q2 -->|No, GGO denso| DIP["DIP"]
+    Q3 -->|Sì + UIP-like| SRfib["SR-fibrosi"]
+    Q3 -->|No| IPF["IPF (rivaluta cause)"]
+    classDef sr fill:#fef3c7,stroke:#d97706
+    classDef other fill:#fee2e2,stroke:#991b1b
+    class RBILD,DIP,PLCH,EVALI,SRfib sr
+    class IPF other
+      </div>
+      <p class="mt-3 text-sm">
+        Schema da ricordare: nel fumatore il primo bivio non è "fibrotico vs non fibrotico" ma
+        "GGO/cisti vs reticolo" — perché RB-ILD, DIP e PLCH spesso regrediscono con la cessazione.
+      </p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1016/j.jcin.2026.03.023" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Coronary Stenosis Location, Revascularization Strategy, and Sudden Cardiac Death in Chronic and Acute Coronary Syndromes
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC Cardiovascular Interventions · maggio 2026 · Rankinen J, Hernesniemi J, Uimonen M et al.
+  </p>
+  <p class="mb-3">
+    Registro consecutivo di <strong>22.495 pazienti</strong> sottoposti a coronarografia (Tampere
+    Heart Hospital, 2007-2018), follow-up mediano 8.1 anni, 1.048 morti improvvise. La sede della
+    stenosi conta: la <span class="anchor-text">coronaria destra è la più aritmogena</span> (HR 1.53,
+    IC 95% 1.31-1.80), anche dopo aggiustamento per anatomia completa e strategia di rivascolarizzazione.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Quanto, oppure dove?</strong> La cultura del cateterismo ha insegnato a misurare il
+      grado di stenosi (FFR, iFR) e a contare i vasi malati. Questo registro sposta l'asse: a parità
+      di trattamento, è la sede della lesione che predice la morte improvvisa. La RCA non è "il vaso
+      meno importante": è il vaso più aritmogeno, probabilmente perché irrora il nodo AV e larga parte
+      della parete inferiore.
+      ❓ Domanda di rottura: se la sede pesa più del grado, quale informazione il referto CCTA deve
+      portare al cardiologo che ancora non considera nel suo modello di rischio aritmico?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — referto CCTA e stratificazione del rischio</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Per il radiologo cardio-imager:</p>
+      <ul class="list-disc pl-5 space-y-2 text-sm">
+        <li>Una stenosi <strong>RCA prossimale</strong> non è la "stenosi del vaso piccolo": va
+        segnalata con priorità clinica almeno pari a una LAD prossimale, perché correla con SCD.</li>
+        <li>Il rischio aritmico non è catturato solo dal CAD-RADS: aggiungi un commento sulla sede
+        e sulla relazione con territori di conduzione/parete inferiore.</li>
+        <li>Per i pazienti con CAD multivasale, la <strong>persistenza di stenosi RCA dopo PCI</strong>
+        è il pattern residuo più rilevante per il rischio di SCD.</li>
+      </ul>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Numero che resta</span></p>
+        <p class="mt-1">RCA: HR 1.53 per SCD a 8 anni, dopo aggiustamento completo. La sede della
+        stenosi è una variabile prognostica indipendente, non un dettaglio anatomico.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1148/radiol.252344" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Novel Dynamic Chest Radiography Technique for Assessing Pulmonary Regurgitation in Repaired Tetralogy of Fallot
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology · maggio 2026 · Yamasaki Y, Sagiyama K, Hida T et al.
+  </p>
+  <p class="mb-3">
+    Studio retrospettivo (58 ToF riparate + 14 sani) che valuta la
+    <details class="inline"><summary><span class="chip">DCR</span></summary><span class="chip-content">Dynamic Chest Radiography — radiografia dinamica a basso dosaggio che registra il torace in più fasi del ciclo cardiaco, permettendo analisi quantitativa del flusso vascolare polmonare.</span></details>
+    come surrogato di phase-contrast CMR per la
+    <details class="inline"><summary><span class="chip">PR</span></summary><span class="chip-content">Pulmonary Regurgitation — rigurgito polmonare; la frazione di rigurgito (PRF) misurata con CMR è il riferimento per indicare il re-intervento valvolare polmonare nei ToF riparati.</span></details>.
+    Le variazioni dei pixel sull'arteria polmonare correlano con la PR fraction CMR e separano PR grave
+    da non grave. Bottom line: in chi non può fare CMR (claustrofobia, PM/ICD incompatibili,
+    indisponibilità), DCR diventa un'opzione quantitativa.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Sostituto o complemento?</strong> Il dilemma classico delle tecniche nuove. La DCR non è
+      una CMR low-cost: misura un fenomeno diverso (variazione di attenuazione pixel-wise nel ciclo)
+      e lo correla a un parametro fluidodinamico (PRF). La domanda non è "DCR vale come CMR?", ma
+      "DCR misura abbastanza bene la PR fraction da spostare la decisione di re-intervento valvolare,
+      in chi alla CMR non può andare?".
+      ❓ Domanda di rottura: se accetti la DCR come decisione-grade in chi non può fare CMR, quale
+      soglia clinica della Max PV Slope ti convince a indicare il re-intervento valvolare polmonare?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — scenari in cui la DCR vale</summary>
+    <div>
+      <table>
+        <thead><tr><th>Scenario clinico</th><th>DCR utile?</th><th>Razionale</th></tr></thead>
+        <tbody>
+          <tr><td>ToF riparata + PM/ICD non MR-conditional</td><td><strong>Sì</strong></td><td class="text-slate-600">Alternativa quantitativa quando la CMR è preclusa</td></tr>
+          <tr><td>ToF riparata + claustrofobia severa</td><td><strong>Sì</strong></td><td class="text-slate-600">Esame breve, in piedi, senza tunnel</td></tr>
+          <tr><td>Monitoraggio seriale post PVR percutanea</td><td>Forse</td><td class="text-slate-600">Promettente, ma soglie decisionali ancora non validate</td></tr>
+          <tr><td>Prima valutazione di PR severa</td><td>No</td><td class="text-slate-600">CMR resta gold standard quando disponibile</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Messaggio che resta</span></p>
+        <p class="mt-1">DCR non sostituisce la CMR: la <em>sblocca</em> nei pazienti che la CMR non
+        può raggiungere. Il valore non è la risoluzione spaziale, è l'accessibilità quantitativa.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1007/s00408-026-00895-x" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Workplace Productivity Loss in Patients with Progressive Pulmonary Fibrosis: Data from the ILD-PRO Registry
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Lung · 27 maggio 2026 · Shetty S, Swaminathan AC, Li P et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Registro multicentrico US ILD-PRO: 597 pazienti con
+    <details class="inline"><summary><span class="chip">PPF</span></summary><span class="chip-content">Progressive Pulmonary Fibrosis — fibrosi polmonare progressiva non-IPF; definita da peggioramento clinico, funzionale o radiologico in 12 mesi nonostante terapia.</span></details>
+    non-IPF, 175 ancora occupati. Perdita media del <strong>24% delle ore lavorate</strong> a settimana
+    (4 h assenteismo + 8 h presenteismo), costo annuo medio ~$24.800 per chi lavora con productivity loss.
+    Predittori: FVC più bassa, peggior St. George's, peggior tosse.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Tosse o cuore?</strong> Quando un radiologo guarda la FVC, vede un numero spirometrico.
+      Questo registro ricorda che la stessa FVC pesa due volte: una sulla prognosi, l'altra sul reddito
+      del paziente. Il presenteismo (chi va in ufficio ma rende meno) costa il doppio dell'assenteismo:
+      è una voce invisibile in clinica.
+      ❓ Domanda di rottura: quale variabile dell'imaging hai per stimare il presenteismo, e perché
+      la FVC isolata non basta?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Nei MDT ILD, il discorso sull'idoneità al lavoro e sull'invalidità ha basi quantitative ora:
+      circa <strong>1 paziente su 4 perde un quarto delle ore lavorate</strong>, e la voce dominante
+      è il presenteismo (8 h) non l'assenteismo (4 h). Per la pratica radiologica: la diminuzione
+      seriale di FVC <em>combinata</em> con scoring sintomatico (cough, SGRQ) è il predittore migliore
+      di productivity loss, più di un singolo timepoint.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Numero che resta</span></p>
+        <p class="mt-1">$24.815/anno: il costo medio della perdita di produttività per un paziente con
+        PPF che lavora. È la dimensione economica del "follow-up HRCT a 6 mesi".</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1007/s00408-026-00899-7" target="_blank" rel="noopener" class="hover:text-blue-700">
+      The CoughRetrain Program: Restoring Control Through a Non-pharmacological Intervention
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Lung · 28 maggio 2026 · Oliveira A, Quach S, Newman ANL et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Pilota di fattibilità (n=12, 11 completi) di un programma telesalute strutturato in 5 sessioni per
+    <details class="inline"><summary><span class="chip">RCC</span></summary><span class="chip-content">Refractory Chronic Cough — tosse cronica refrattaria che persiste oltre 8 settimane nonostante trattamento delle cause; spesso accompagna ILD e IPF.</span></details>
+    e ILD: educazione, soppressione graduata, motivational interviewing, goal setting. Sviluppato secondo
+    MRC framework. Aderenza alta, due AE non gravi (orticaria, cefalea). Bottom line: training cognitivo-comportamentale
+    sulla tosse è fattibile da remoto, anche nel paziente ILD.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Riflesso o apprendimento?</strong> La tosse cronica è spesso trattata come riflesso da
+      bloccare con farmaco. Qui viene riletta come comportamento appreso, modificabile con
+      auto-efficacia e soppressione volontaria. È un cambio di livello: dal sintomo da spegnere alla
+      competenza da allenare.
+      ❓ Domanda di rottura: in un paziente con UIP confermata, quale evidenza distingue una tosse
+      "puramente meccanica" da una tosse refrattaria modificabile con intervento comportamentale?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.rmed.2026.108894" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Prevalence of relapse in pulmonary sarcoidosis: A systematic review and meta-analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Respiratory Medicine · 16 maggio 2026 · Hashim Z, Baughman RP, Agarwal R et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi di 51 studi, 6.093 pazienti con sarcoidosi polmonare. Recidiva dopo
+    riduzione/sospensione terapia: <strong>39%</strong> (IC 95% 33-45%). Predittori: stadio
+    radiografico avanzato (OR 1.7-2.8 vs stadio I) e razza nera (OR 2.5). Solo 45% degli studi
+    definiva esplicitamente la "recidiva".
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Definizione o dato?</strong> Il vero limite di questa meta-analisi non è statistico, è
+      semantico: "recidiva" cambia significato fra clinico, radiologico, funzionale e biomarker.
+      Il dato del 39% nasconde una eterogeneità di definizioni più che di fenomeni.
+      ❓ Domanda di rottura: nel tuo MDT, quale definizione operativa di "recidiva" stai usando
+      implicitamente quando rileggi la HRCT di follow-up — peggioramento radiologico, sintomatico
+      o funzionale?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Quando consigli al pneumologo una riduzione di steroidi in sarcoidosi polmonare, il numero
+      da tenere a mente è circa <strong>4 su 10</strong>. Stadio avanzato e fattori demografici
+      modulano ulteriormente questa probabilità. Per il follow-up imaging: la finestra di rischio
+      maggiore è nei primi 12 mesi dopo riduzione.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Errore da evitare</span></p>
+        <p class="mt-1">Refertare "stabile" senza una definizione operativa di "recidiva" condivisa
+        con il MDT. Senza definizione non c'è confronto serio fra controlli successivi.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.2196/86416" target="_blank" rel="noopener" class="hover:text-blue-700">
+      AI in Lung Nodules on Chest CT: Retrospective, Real-World Assessment of AI in Clinical Practice
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JMIR Formative Research · 28 maggio 2026 · Sodhi-Kalra H, Jha S, Digumarthy S et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Valutazione real-world su CT del torace di uno strumento AI FDA-cleared per noduli polmonari:
+    <strong>discordanza frequente</strong> con i referti radiologici. Bottom line: l'autorizzazione
+    regolatoria non equivale a concordanza clinica nel mondo reale.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>FDA-cleared o utile?</strong> Il marchio regolatorio dice "non danneggia significativamente",
+      non "concorda con il radiologo del tuo ospedale". Il gap tra performance da pivotal study e
+      performance real-world è il vero terreno del cardio/thoracic imaging AI nel 2026.
+      ❓ Domanda di rottura: quale workflow del tuo dipartimento decide se la discordanza AI-radiologo
+      sui noduli viene riconciliata, ignorata, o usata come trigger di seconda lettura?
+    </p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250404" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Pericoronary-to-Epicardial Fat Attenuation Ratio for Detecting Impaired Myocardial Flow Reserve at Coronary CT Angiography
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology: Cardiothoracic Imaging · giugno 2026 · Fukuyama M, Nishii T, Okura Y et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte 74 pazienti con CCTA + ¹³N-ammonia PET. Il rapporto
+    <details class="inline"><summary><span class="chip">PCAT/EAT</span></summary><span class="chip-content">Pericoronary Adipose Tissue / Epicardial Adipose Tissue — rapporto fra attenuazione del grasso peri-coronarico e del grasso epicardico, proposto come normalizzazione robusta del segnale infiammatorio coronarico.</span></details>
+    normalizza l'attenuazione peri-coronarica e azzera la dipendenza dal kV. È associato a
+    <details class="inline"><summary><span class="chip">MFR</span></summary><span class="chip-content">Myocardial Flow Reserve — riserva di flusso miocardico misurata con PET, riflette la capacità di vasodilatazione e la salute microvascolare.</span></details>
+    impaired al PET (cutoff &lt;2) e a stenosi coronarica. Predice anche MACE in analisi esplorativa.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Segnale o artefatto?</strong> Il PCAT assoluto in CCTA è promettente ma sensibile al kV
+      (70-120). Normalizzare al grasso epicardico — che dovrebbe essere "infiammatoriamente neutro" —
+      separa il segnale dal rumore di acquisizione. È la stessa logica del calcio-score riferito a un
+      fantoccio standard.
+      ❓ Domanda di rottura: se il rapporto PCAT/EAT funziona perché EAT è davvero "infiammazione di
+      base", in quali condizioni cliniche questa assunzione cade — obesità severa, diabete,
+      malattia infiammatoria sistemica?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Per il radiologo che fa CCTA su macchine eterogenee (kV diversi, gating diversi): se vuoi
+      provare il PCAT come marker infiammatorio, usa il <strong>rapporto PCAT/EAT</strong> invece del
+      PCAT assoluto. Riduce la varianza tecnica e migliora la associazione con MFR ridotta. Il dato è
+      ancora preliminare (n=74), non un cambio standard di referto.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Soglia che resta</span></p>
+        <p class="mt-1">PCAT/EAT correla con MFR &lt;2 al PET — la soglia funzionale che separa
+        microcircolazione sana da disfunzionale, indipendentemente dalla stenosi anatomica.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250342" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Cardiac Radiation Dose and Subclinical Coronary Artery Disease Progression after Breast Cancer Radiotherapy: 24-Month Follow-up
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology: Cardiothoracic Imaging · giugno 2026 · Mousseaux E, Craiem D, Vliegenthart R et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Analisi secondaria dello studio multicentrico prospettico EARLY-HEART (NCT03297346): 224 donne con
+    tumore mammario trattate con RT post-lumpectomia, cardiac CT a T0 e a 24 mesi. Il CAC score sale
+    già a 24 mesi (P&lt;0.001). La dose cardiaca correla con la progressione di CAD subclinica anche
+    fuori dal LAD.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Dose massima o dose distribuita?</strong> La cardiotossicità da RT mammaria è stata
+      raccontata per anni come "dose al LAD". Qui la progressione CAD si vede anche con dose media
+      al cuore intero, e in soli 24 mesi: la latenza è più breve di quanto si pensasse.
+      ❓ Domanda di rottura: dato che la progressione del CAC compare già a 24 mesi, qual è il primo
+      timepoint in cui una cardiac CT post-RT mammaria diventa decisionalmente rilevante per la
+      tua oncologia?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Nei programmi di sorveglianza post-RT mammaria, il CAC score a 24 mesi è già discriminante.
+      Per il referto: segnala l'aumento del CAC anche piccolo se il T0 era zero — la progressione
+      relativa, non solo assoluta, è informativa. Pensa al cuore intero, non solo al LAD.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Messaggio che resta</span></p>
+        <p class="mt-1">La cardiotossicità da RT mammaria parla già a 24 mesi attraverso il CAC. La
+        finestra di prevenzione cardiovascolare non è "anni dopo": è "subito dopo".</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/openhrt-2025-003583" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Distribution of diffuse myocardial fibrosis is uneven and associated with left ventricular function in severe aortic stenosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Open Heart · 20 maggio 2026 · Holmberg E, Engvall J, Nylander E et al.
+  </p>
+  <p class="mb-2 text-sm">
+    43 pazienti con stenosi aortica severa: CMR (T1 mapping, ECV) + biopsie endomiocardiche entro
+    1 settimana dal SAVR. <strong>Mediana CVF 19%</strong>, distribuzione disomogenea: picco al
+    segmento 1 (basale anterosettale) e al 16 (apicale). ECV correla con CVF nei segmenti dove la
+    <details class="inline"><summary><span class="chip">DMF</span></summary><span class="chip-content">Diffuse Myocardial Fibrosis — fibrosi miocardica diffusa potenzialmente reversibile dopo SAVR, distinta dalla fibrosi focale (LGE) irreversibile.</span></details>
+    è massima.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Globale o regionale?</strong> L'ECV è spesso refertato come valore medio. Questo studio
+      mostra che la DMF in AS severa è regionale, non uniforme: campionare solo un segmento può
+      sottostimare o sovrastimare. La CMR rivela una geografia, non un singolo numero.
+      ❓ Domanda di rottura: quando refertate un ECV "elevato" in AS severa, state misurando una
+      proprietà del miocardio o un artefatto di campionamento regionale?
+    </p>
+  </div>
+</article>
+
+</section>
+
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Quattro paper di questa settimana convergono su un'idea sola: nell'imaging cardio-toracico maturo,
+    il valore aggiunto non è più la <em>forma</em> (stenosi, valvola, pattern parenchimale) ma una
+    <strong>variabile funzionale derivata</strong>. PCAT/EAT misura infiammazione perivascolare oltre
+    il lume, la sede della stenosi predice la SCD oltre il grado, la DCR estrae frazione di rigurgito
+    da un radiogramma, l'ECV-T1 mapping mappa fibrosi diffusa dove l'eco non arriva. È lo stesso movimento
+    epistemico: dall'immagine come fotografia alla immagine come misura fisiologica.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Imaging come misura<br/>della fisiologia(
+    CCTA oltre il lume
+      PCAT/EAT ratio
+      Riserva di flusso (MFR)
+      Sede coronarica e SCD
+    CMR funzionale
+      ECV regionale
+      T1 mapping
+      Fibrosi diffusa reversibile
+    DCR cardio-polmonare
+      Pixel value su PA
+      PR fraction surrogato
+      Alternativa quando CMR preclusa
+    Cardiotossicità RT
+      Dose cuore intero
+      CAC a 24 mesi
+      Progressione subclinica
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> il referto cardio-imaging del 2026 non si chiude più con
+    "stenosi del 70%" o "ECV elevato". La domanda corretta da porre alla metodica è
+    <em>quale fenomeno fisiopatologico stai misurando che il gold standard anatomico non vede</em>?
+    Chi referta deve sapere quale misura è clinicamente decisionale, e quale invece è ancora ricerca.
+  </p>
+</section>
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 30/05/2026 14:18 UTC.</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+<!-- ──────────────────────────────────────────────────────────────────────
+     REFERENCE: structure of an article (the routine fills these patterns)
+     ────────────────────────────────────────────────────────────────────── -->
+<!--
+
+────────── L1: Always visible (titolo, badge, sintesi, aggancio) ──────────
+────────── L2 (optional): "Posso usarlo?" — applicabilità clinica ─────────
+────────── L3 (optional): Deep dive — dati, diagrammi Mermaid, schemi ────
+
+EXAMPLE — HIGHLIGHT PAPER WITH ALL 3 LEVELS:
+
+<article class="mb-10">
+  <!-- L1: ALWAYS VISIBLE -->
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/EXAMPLE" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Fleischner Society Position Paper · 2026 · Hatabu H, Nishino M et al.
+  </p>
+  <p class="mb-3">
+    La Fleischner Society aggiorna le indicazioni per l'imaging RM polmonare, estendendole oltre il
+    dominio pediatrico tradizionale. Tre aree principali: fibrosi cistica, monitoraggio
+    post-trattamento, e <span class="anchor-text">patologie vascolari polmonari</span>.
+  </p>
+
+  <!-- AGGANCIO MULTIDISCIPLINARE: SEMPRE VISIBILE -->
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      La Fleischner Society fa quello che il consesso medievale faceva con i bestiari: espande il
+      catalogo riconoscendo che l'imaging polmonare non è più solo "lesione → pattern radiografico"
+      ma "fenomeno fisiologico → sequenza adatta". Un cambio epistemologico simile a quello di Linneo:
+      tassonomia per funzione, non per apparenza. La MRI come Linneo del polmone fisiologico.
+      I termini specialistici come
+      <details class="inline"><summary><span class="chip">PC-MRA</span></summary><span class="chip-content">Phase-Contrast Magnetic Resonance Angiography — sequenza che mappa il flusso senza mezzo di contrasto.</span></details>
+      diventano accessibili inline.
+    </p>
+  </div>
+
+  <!-- L2: "POSSO USARLO?" — OPTIONAL BASED ON COMPLEXITY -->
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — indicazioni operative</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indicazioni proposte dal panel Fleischner:</p>
+      <table>
+        <thead><tr>
+          <th>Scenario</th><th>MRI preferita?</th><th>Razionale</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>CF pediatrica monitoring</td><td><strong>Sì</strong></td><td class="text-slate-600">Evita radiazioni ripetute</td></tr>
+          <tr><td>Vascolarizzazione/perfusione</td><td><strong>Sì</strong></td><td class="text-slate-600">PC-MRA contrast-free</td></tr>
+          <tr><td>ILD diagnosi pattern</td><td>No</td><td class="text-slate-600">HRCT resta gold standard</td></tr>
+          <tr><td>Massa mediastinica</td><td><strong>Sì, complementare a CT</strong></td><td class="text-slate-600">Tissue characterization</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">MRI polmonare non sostituisce HRCT per ILD, ma diventa first-line in casi selezionati
+        (pediatrico, gravidanza, monitoraggio seriale). Implementazione richiede protocolli dedicati.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- L3: DEEP DIVE — OPTIONAL, REASON: PAPER HA UN FLOWCHART DECISIONALE ESPLICITO -->
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — flowchart decisionale e protocolli</summary>
+    <div>
+      <p class="font-medium mb-2">Flowchart decisionale Fleischner 2026:</p>
+      <div class="mermaid">
+flowchart TB
+    Indication["Indicazione clinica polmonare"] --> Q1{"Radiazione critica?<br/>(età ≤40, CF, gravidanza)"}
+    Q1 -->|Sì| MRI1["MRI prima linea"]
+    Q1 -->|No| Q2{"Pattern parenchimale<br/>o vascolare?"}
+    Q2 -->|Parenchimale| HRCT["HRCT standard"]
+    Q2 -->|Vascolare| Q3{"eGFR > 30?"}
+    Q3 -->|Sì| CTPA["CTPA con mdc iodato"]
+    Q3 -->|No| MRI2["PC-MRA senza mdc"]
+    classDef mri fill:#dbeafe,stroke:#1e40af
+    classDef ct fill:#fee2e2,stroke:#991b1b
+    class MRI1,MRI2 mri
+    class HRCT,CTPA ct
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Sequenze raccomandate:</strong> T2-HASTE, T1-3D-GRE, PC-MRA, opzionale DCE.
+        Tempo esame target: 25-35 minuti.
+      </p>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 + L2 (no L3 because paper meno tecnico):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Trastuzumab Deruxtecan-Induced Interstitial Lung Disease: Meta-Analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Cancer Control · 9 May 2026 · Güren AK, Demircan NC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi (n studi=27, n pazienti=2840) su ILD/polmonite indotta da T-DXd. Incidenza globale
+    15.2% (IC 95% 12.8-17.9), significativamente più alta nel real-world rispetto ai trial.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Quando il farmaco antitumorale "colpisce" il polmone, l'imaging diventa biomarker di tossicità.
+      È il rovescio della medaglia degli ADC: efficacia mirata, danno collaterale strutturato.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Ogni follow-up T-DXd merita HRCT con basso sospetto per pattern ground-glass o crazy paving.
+      L'incidenza real-world (15.2%) è circa il doppio di quella riportata nei trial originali —
+      utile per il counseling preventivo del paziente.</p>
+      <table class="mt-3">
+        <thead><tr><th>Tempo</th><th>Pattern HRCT</th><th>Management</th></tr></thead>
+        <tbody>
+          <tr><td>0-12 sett.</td><td>GGO bilaterali</td><td>Sospensione + steroidi</td></tr>
+          <tr><td>>12 sett.</td><td>Crazy paving</td><td>Sospensione + steroidi alti dose</td></tr>
+          <tr><td>Tardivo</td><td>NSIP-like</td><td>Pneumologo + considera permanente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 (paper di facile assimilazione, niente L2/L3):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Acute Myocarditis: 10-year Follow-up Cohort
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Heart Journal · 14 May 2026
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte multicentrica (n=687) con CMR-confirmed myocarditis acuta. A 10 anni: 12% cardiomiopatia
+    dilatativa, 4% morte cardiovascolare. LGE basale persistente predittore indipendente.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il LGE che non scompare è la cicatrice di Pirandello: maschera che diventa volto. L'evento acuto
+      è solo l'incipit narrativo — la prognosi a 10 anni si decide nel pattern di scar che resta.
+    </p>
+  </div>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — FILO DELLA SETTIMANA WITH MERMAID MINDMAP:
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di questa settimana convergono su un'idea: la fibrosi polmonare non è più una malattia
+    singola che evolve, ma una <em>convergenza fenotipica</em> di processi eterogenei. PPFE single-nucleus
+    atlas (Sci Adv), IIM-ILD nerandomilast (RMD Open), e SSc sieronegativa (RMD Open) mostrano vie
+    molecolari distinte che producono lo stesso pattern radiologico.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Fibrosi polmonare<br/>come convergenza fenotipica(
+    PPFE
+      Single-nucleus atlas
+      Aberrant basaloid cells
+      Mitocondriopatia genetica
+    IIM-ILD
+      Nerandomilast PDE4B
+      cAMP-PKA-RhoA pathway
+      Anti-MDA5 fenotipo
+    SSc-ILD
+      Sieronegativa subgroup
+      NSIP/UIP overlap
+      Imaging-pattern decision
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> stratificare la fibrosi non solo per pattern HRCT ma per
+    meccanismo molecolare diventa rilevante per la scelta antifibrotic. Il radiologo del board MDT
+    è il primo a vedere il pattern, ma la decisione terapeutica ora richiede il dato sierologico.
+  </p>
+</section>
+-->
+
+</body>
+</html>
