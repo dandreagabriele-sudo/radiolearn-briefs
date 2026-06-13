@@ -1,0 +1,37 @@
+{
+  "brief_id": "2026-W24",
+  "generated_at": "2026-06-13T12:14:01.990639+00:00",
+  "candidates_count": 130,
+  "selected_count": 14,
+  "selected_dois": [
+    "10.1126/scitranslmed.adw1028",
+    "10.1016/j.jcin.2026.04.015",
+    "10.1136/bmjresp-2025-003761",
+    "10.1136/bmjresp-2025-004035",
+    "10.1136/bmjresp-2025-003694",
+    "10.1172/JCI204544",
+    "10.1148/rg.250049",
+    "arXiv:2606.06950",
+    "10.64898/2026.05.31.26354565",
+    "10.1148/radiol.252250",
+    "10.1111/eci.70235",
+    "10.1111/ctr.70586",
+    "10.1053/j.semnuclmed.2026.05.006",
+    "10.1016/j.jcin.2026.03.033"
+  ],
+  "headline": "Quando la complessità si guadagna il posto",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "ok",
+    "arxiv_cardio_imaging": "ok",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-05-30T14:20:09.217644+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W22.html",
-  "last_brief_item_count": 10,
+  "last_brief_at": "2026-06-13T12:14:01.990639+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W24.html",
+  "last_brief_item_count": 14,
   "processed_dois": [
     "10.1056/NEJMra2415426",
     "10.1183/16000617.0044-2026",
@@ -26,7 +26,21 @@
     "10.2196/86416",
     "10.1148/ryct.250404",
     "10.1148/ryct.250342",
-    "10.1136/openhrt-2025-003583"
+    "10.1136/openhrt-2025-003583",
+    "10.1126/scitranslmed.adw1028",
+    "10.1016/j.jcin.2026.04.015",
+    "10.1136/bmjresp-2025-003761",
+    "10.1136/bmjresp-2025-004035",
+    "10.1136/bmjresp-2025-003694",
+    "10.1172/JCI204544",
+    "10.1148/rg.250049",
+    "arXiv:2606.06950",
+    "10.64898/2026.05.31.26354565",
+    "10.1148/radiol.252250",
+    "10.1111/eci.70235",
+    "10.1111/ctr.70586",
+    "10.1053/j.semnuclmed.2026.05.006",
+    "10.1016/j.jcin.2026.03.033"
   ],
   "briefs_archive": [
     {
@@ -42,6 +56,13 @@
       "date": "2026-05-30",
       "items": 10,
       "headline": "Funzione oltre la forma: imaging che misura, non solo descrive"
+    },
+    {
+      "id": "2026-W24",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W24.html",
+      "date": "2026-06-13",
+      "items": 14,
+      "headline": "Quando la complessità si guadagna il posto"
     }
   ]
 }

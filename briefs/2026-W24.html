@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 24 (13 giugno 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 24</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Quando la complessit&agrave; si guadagna il posto</h1>
+  <p class="ui text-sm text-slate-500 mt-3">13 giugno 2026 · 14 selezionati su 130 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42234773/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Toll-like receptor 5 protects against murine lung fibrosis through reduced dysbiosis, and TLR5 deficiency is associated with human IPF
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Science Translational Medicine · 3 giu 2026 · Sakamachi Y, Wiley E, Trempus CS et al.
+  </p>
+  <p class="mb-3">
+    In modello murino la perdita di <span class="anchor-text">TLR5</span> aumenta la suscettibilit&agrave; alla fibrosi da bleomicina
+    favorendo la disbiosi; l'attivazione epiteliale di TLR5 (flagellina sintetica) protegge ripristinando geni antimicrobici.
+    Il dato che fa la differenza: il deficit di TLR5 &egrave; associato anche all'IPF <em>umana</em>. Bottom-line: il microbioma
+    polmonare diventa un asse potenzialmente modificabile, non un epifenomeno.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Causa o conseguenza? La fibrosi &egrave; sempre stata letta come danno epiteliale → mesenchima; qui si inserisce un terzo
+      attore, la flora che colonizza un polmone tutt'altro che sterile. La traduzione clinica &egrave; che l'IPF potrebbe avere
+      una componente disbiotica trattabile a monte del fibroblasto.
+      ❓ Domanda di rottura: quale assunzione stai facendo quando consideri il polmone fibrotico un ambiente sterile, e quale meccanismo misureresti per smentirla?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — stato della prova</summary>
+    <div>
+      <table>
+        <thead><tr><th>Livello</th><th>Cosa &egrave; dimostrato</th><th>Cosa NON &egrave; (ancora) dimostrato</th></tr></thead>
+        <tbody>
+          <tr><td>Topo</td><td>TLR5 protegge; agonista riduce fibrosi</td><td class="text-slate-600">Trasferibilit&agrave; di dose/timing all'uomo</td></tr>
+          <tr><td>Uomo</td><td>Deficit TLR5 associato a IPF</td><td class="text-slate-600">Nesso causale e beneficio terapeutico</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Niente da cambiare oggi al letto del malato. Ma il messaggio epistemico &egrave; forte:
+        nell'IPF il microbioma &egrave; un bersaglio plausibile, e questo riapre la riflessione sull'antibiotico-terapia mirata negli studi.</p>
+      </div>
+    </div>
+  </details>
+  <p class="mt-3 text-sm text-slate-600 ui">
+    <strong>Messaggio che resta:</strong> nell'IPF il polmone non &egrave; sterile — la disbiosi &egrave; un asse, non un dettaglio.
+  </p>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42264632/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      CT-Based Risk Stratification of Coronary Obstruction During TAVR: Clinical Utility and a New Volumetric Parameter
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC: Cardiovascular Interventions · giu 2026 · Abdelhafez A, Lankisch N, Iannopollo G et al.
+  </p>
+  <p class="mb-3">
+    Studio prospettico (n=164 a rischio di ostruzione coronarica in TAVR). L'algoritmo TC stratifica in 3 classi:
+    tutti e 7 gli eventi di ostruzione si sono verificati nel gruppo ad alto rischio. Il nuovo parametro volumetrico
+    <span class="chip">VTCV</span> (valve-to-coronary volume) predice l'ostruzione meglio della sola distanza VTC
+    (AUC 0.841), con validazione esterna su 11 centri europei.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Distanza o volume? La distanza valvola-coronaria &egrave; una misura lineare di un problema tridimensionale; il VTCV
+      cattura lo spazio reale che il lembo spinto pu&ograve; obliterare. La traduzione clinica: si passa da "quanto &egrave; vicino?"
+      a "quanto volume di fuga rimane?".
+      ❓ Domanda di rottura: quale grandezza fisica stai realmente cercando di stimare quando misuri il rischio di ostruzione — una distanza o un volume di clearance?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — chi protegge e chi no</summary>
+    <div>
+      <table>
+        <thead><tr><th>Classe TC</th><th>Quota coorte</th><th>Protezione coronarica usata</th></tr></thead>
+        <tbody>
+          <tr><td>Basso rischio</td><td>58.5%</td><td class="text-slate-600">12.8%</td></tr>
+          <tr><td>Rischio intermedio</td><td>24.4%</td><td class="text-slate-600">52.8%</td></tr>
+          <tr><td>Alto rischio</td><td>17.1%</td><td class="text-slate-600"><strong>93.9% — e qui tutti i 7 eventi</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Il VTCV aggiunge potere discriminante in chi &egrave; gi&agrave; etichettato ad alto rischio: utile per decidere
+        protezione coronarica o tecniche di modifica del lembo. Parametro nuovo, da incorporare nel planning TC pre-TAVR.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli — il percorso decisionale TC pre-TAVR</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    CT["TC pre-TAVR"] --> Algo{"Algoritmo rischio CO"}
+    Algo -->|Basso 58.5%| Std["TAVR standard"]
+    Algo -->|Intermedio 24.4%| VTCVa["Calcola VTCV"]
+    Algo -->|Alto 17.1%| VTCVb["Calcola VTCV"]
+    VTCVb --> Q{"VTCV basso?"}
+    Q -->|S&igrave;| Prot["Protezione / modifica lembo"]
+    Q -->|No| Watch["Sorveglianza ravvicinata"]
+    classDef hi fill:#fee2e2,stroke:#991b1b
+    classDef lo fill:#dbeafe,stroke:#1e40af
+    class VTCVb,Prot hi
+    class Std lo
+      </div>
+      <p class="mt-3 text-sm">Schema da ricordare: il rischio non &egrave; binario vicino/lontano — &egrave; il volume di fuga residuo (VTCV) a separare chi protegge da chi osserva.</p>
+    </div>
+  </details>
+  <p class="mt-3 text-sm text-slate-600 ui">
+    <strong>Numero che resta:</strong> 7 ostruzioni coronariche su 7, tutte nel gruppo TC ad alto rischio.
+  </p>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42230301/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Integrating interstitial lung abnormality detection into lung cancer screening: a mixed methods approach for care pathway development
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    BMJ Open Respiratory Research · 2 giu 2026 · Kim DH, Dinculescu V, Tremblay A et al.
+  </p>
+  <p class="mb-3">
+    Le <span class="chip">ILA</span> compaiono nel 4–17% delle coorti di screening del cancro polmonare e una quota delle forme
+    fibrotiche progredisce verso ILD conclamata: un'occasione di diagnosi precoce. Ma lo studio (survey + interviste, Alberta)
+    fotografa il vuoto: il 61% dei medici di base non conosceva il termine ILA e solo il 13% si sentiva a proprio agio nel gestirle.
+    Bottom-line: il reperto esiste, il percorso no.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Reperto vs percorso. Trovare un'ILA in TC a basso dosaggio non vale nulla se non esiste una via che la converta in
+      sorveglianza o diagnosi precoce di ILD. La traduzione clinica: il valore di un reperto incidentale &egrave; pari alla
+      qualit&agrave; del percorso che lo segue, non alla sensibilit&agrave; con cui lo si scova.
+      ❓ Domanda di rottura: quale definizione operativa separa un'ILA che merita sorveglianza da un rumore di fondo che genera solo ansia e TC ripetute?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — costruire il percorso ILA</summary>
+    <div class="text-sm">
+      <p>Il messaggio non &egrave; "cerca pi&ugrave; ILA" ma "chiudi l'anello": refertazione standardizzata, soglia di
+      progressione fibrotica esplicita, e un destinatario chiaro (ambulatorio ILD). Barriere identificate: refertazione
+      eterogenea, lacune sulla storia naturale, vincoli di risorse.</p>
+      <table class="mt-3">
+        <thead><tr><th>Anello</th><th>Gap attuale</th><th>Azione</th></tr></thead>
+        <tbody>
+          <tr><td>Refertazione</td><td>Eterogenea</td><td>Linguaggio ILA strutturato in TC LCS</td></tr>
+          <tr><td>Triage</td><td>61% MMG ignora il termine</td><td>Criterio fibrotico → invio</td></tr>
+          <tr><td>Presa in carico</td><td>64% pneumologi senza approccio standard</td><td>Percorso ILD dedicato</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p class="mt-3 text-sm text-slate-600 ui">
+    <strong>Errore da evitare:</strong> refertare un'ILA senza un percorso che la trasformi in diagnosi precoce di ILD.
+  </p>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42242833/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      BAL lymphocytosis as a predictive marker for drug response and long-term outcome in fibrotic ILD: systematic review
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    BMJ Open Respiratory Research · 4 giu 2026 · Suter P, Buechi AE, Roa-Diaz ZM et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Revisione sistematica (30 studi, 3083 pazienti). Una <span class="chip">linfocitosi del BAL</span> elevata si associa
+    a migliore risposta agli steroidi e migliore sopravvivenza nelle ILD fibrosanti — soprattutto polmonite da
+    ipersensibilit&agrave; e NSIP. Ma le soglie variano da studio a studio e l'eterogeneit&agrave; ha impedito la meta-analisi.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Segnale vs soglia. Il dato biologico (pi&ugrave; linfociti = pi&ugrave; infiammazione = pi&ugrave; reversibilit&agrave;) &egrave; coerente,
+      ma senza un cut-off validato resta un'indicazione qualitativa, non un test.
+      ❓ Domanda di rottura: quale cut-off di linfocitosi sposterebbe davvero la tua probabilit&agrave; pre-test di risposta agli steroidi, e su quali dati lo fonderesti?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Numero che resta:</strong> 3083 pazienti che concordano sul segnale, 0 soglie validate per usarlo.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42230300/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Humidifier lung and summer-type hypersensitivity pneumonitis in Japan: a nationwide retrospective observational study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    BMJ Open Respiratory Research · 2 giu 2026 · Sakamoto S, Kitamura A, Iijima Y et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Survey nazionale giapponese (430 humidifier lung vs 784 summer-type HP). Il polmone da umidificatore colpisce
+    soggetti pi&ugrave; anziani e maschi, con CRP pi&ugrave; alta ma <span class="chip">KL-6</span> e SP-D pi&ugrave; bassi; alla TC d&agrave;
+    pi&ugrave; consolidazioni e meno noduli centrolobulari, fino a quadri ARDS-like o organizing-pneumonia-like con KL-6 normale.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Stesso nome, due volti. Sottotipi della stessa HP si comportano in modo opposto sui biomarcatori: fidarsi del KL-6
+      come rete di sicurezza pu&ograve; far perdere proprio il humidifier lung acuto.
+      ❓ Domanda di rottura: quando un biomarcatore "normale" rassicura erroneamente, stai misurando l'assenza di malattia o solo l'assenza di quel pattern biologico?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Errore da evitare:</strong> escludere l'HP perch&eacute; il KL-6 &egrave; normale — il humidifier lung pu&ograve; presentarsi ARDS-like con KL-6 nella norma.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42222885/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Interstitial lung disease and the STING pathway
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Journal of Clinical Investigation · 1 giu 2026 · Velu PP, Zhu G, Mackenzie KJ
+  </p>
+  <p class="mb-2 text-sm">
+    Review mirata: le forme monogeniche ultrarare <span class="chip">SAVI</span> e <span class="chip">COPA</span> hanno
+    rivelato il ruolo della via STING (interferone di tipo I) nella ILD. La domanda aperta &egrave; quanto questo meccanismo
+    conti nelle ILD comuni.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La malattia rara come lente. Un difetto monogenico isola un singolo meccanismo (STING) che nelle forme comuni resta
+      confuso nel rumore: la rarit&agrave; &egrave; un esperimento naturale di patogenesi.
+      ❓ Domanda di rottura: quanta della via STING osservata nelle forme monogeniche puoi estrapolare a una ILD poligenica prima che l'analogia diventi un errore di scala?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Domanda giusta:</strong> quanto della ILD comune condivide davvero la via STING di SAVI e COPA?
+  </p>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42241322/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Imaging Spectrum of Childhood Interstitial Lung Diseases: Focus on Disorders Not Specific to Infancy
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    RadioGraphics · lug 2026 · Ikeda O, Tsujioka Y, Nishimura G et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Rassegna sulle <span class="chip">chILD</span> oltre l'et&agrave; neonatale: sintomi aspecifici, classificazione del chILD
+    Research Network e HRCT come fulcro diagnostico in un approccio multidisciplinare (clinica + radiologia + patologia + genetica).
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Pattern adulto, polmone in crescita. Gli stessi pattern HRCT vanno riletti su un parenchima che si sta sviluppando:
+      trasferire automaticamente i criteri dell'adulto &egrave; il primo errore.
+      ❓ Domanda di rottura: quale assunzione sul polmone adulto smette di valere quando il pattern compare in un polmone ancora in crescita?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Messaggio che resta:</strong> nella chILD i sintomi sono aspecifici — &egrave; la HRCT a reggere la diagnosi.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="http://arxiv.org/abs/2606.06950v1" target="_blank" rel="noopener" class="hover:text-blue-700">
+      When is 3D Worth It? A Resource-Performance Frontier for CNNs and Transformers in Lung CT
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text (preprint)</span>
+    arXiv · 5 giu 2026 · Hoq ME, Hossain S, Emmaka I et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Su coorte NLST leakage-free (n=1977), confronto 2D / 2.5D / 3D per CNN e ViT a protocollo fisso. Il 2.5D-CNN offre il
+    miglior compromesso discriminazione-stabilit&agrave; (ROC-AUC 0.682); il 3D mostra instabilit&agrave; di soglia e i transformer
+    predizioni degeneri. Bottom-line: pi&ugrave; dimensioni non significano pi&ugrave; valore.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Complessit&agrave; vs guadagno. Aggiungere la terza dimensione triplica il costo ma non garantisce stabilit&agrave;: la scelta
+      architetturale va giustificata dal guadagno, non dall'estetica del "3D &egrave; meglio".
+      ❓ Domanda di rottura: quando confronti due modelli con intervalli di confidenza ampi e sovrapposti, quale prova ti autorizzerebbe a dichiarare superiore quello pi&ugrave; complesso?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Numero che resta:</strong> 2.5D &gt; 3D — stabile a ROC-AUC 0.682, mentre il 3D &egrave; instabile di soglia.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://www.medrxiv.org/content/10.64898/2026.05.31.26354565v1" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Performance of Vision-Language Models for Zero-Shot Lung Nodule Detection on Chest Radiographs
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text (preprint)</span>
+    medRxiv · 3 giu 2026 · Nishio M, Matsuo H et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Sei VLM testati in zero-shot su 247 radiografie JSRT. Prestazioni complessivamente scarse: il migliore (RadVLM) raggiunge
+    specificit&agrave; 100% ma sensibilit&agrave; solo 11%; altri ribaltano il trade-off. I noduli sottili restano invisibili.
+    Bottom-line: oggi i VLM non sono detector autonomi.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Fluente non vuol dire accurato. Un modello che "parla" da radiologo pu&ograve; mancare l'11&deg; nodulo su 100: la competenza
+      linguistica non &egrave; competenza percettiva.
+      ❓ Domanda di rottura: quando un modello descrive bene ma vede poco, quale capacit&agrave; stai realmente misurando con la sua sensibilit&agrave;?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Numero che resta:</strong> 11% di sensibilit&agrave; zero-shot — utile come assistente, non come detector autonomo.
+  </p>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42227866/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      AI-based Histologic Heterogeneity of Microvascular Obstruction at Cardiac MRI for Predicting MACEs: A Multicenter Study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology · giu 2026 · Chen BH, Li SL, Xiang JY et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Multicentrico, 843 STEMI con <span class="chip">MVO</span> alla CMR. Un modello AI segmenta l'MVO ed estrae 1595 feature
+    radiomiche; LASSO le riduce a 6, costruendo un radscore che cattura l'<em>eterogeneit&agrave;</em> del danno microvascolare
+    e separa chi avr&agrave; MACE (radscore pi&ugrave; alto, p&lt;0.001) meglio della quantificazione manuale.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Volume vs tessitura. La quantificazione manuale misura <em>quanto</em> MVO; la radiomica misura <em>com'&egrave; fatto</em>:
+      &egrave; l'eterogeneit&agrave; interna, non il volume, a portare il segnale prognostico.
+      ❓ Domanda di rottura: quando la radiomica batte la misura del volume, quale propriet&agrave; fisica del danno stai effettivamente catturando in pi&ugrave;?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Numero che resta:</strong> 6 feature radiomiche dell'MVO bastano a battere la quantificazione manuale sui MACE.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42227645/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Association of Mitral Annular Disjunction on Magnetic Resonance Imaging With Cardiovascular Outcomes
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Journal of Clinical Investigation · giu 2026 · Mascherbauer K, Nantschev N, Kronberger C et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Registro CMR prospettico (n=1969). La <span class="chip">MAD</span> &egrave; comune (25.9% in end-sistole) ma, dopo aggiustamento
+    multivariabile, <strong>non</strong> &egrave; associata alla mortalit&agrave; (HR 0.95). Solo la disgiunzione ampia (≥5 mm) si lega a
+    un T1 nativo pi&ugrave; alto, segno di rimaneggiamento tissutale.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Presente non vuol dire pericoloso. La MAD si vede sempre meglio, ma frequenza non &egrave; prognosi: a contare &egrave;
+      l'entit&agrave; (≥5 mm) e il suo correlato tissutale, non il reperto in s&eacute;.
+      ❓ Domanda di rottura: quale soglia trasforma un reperto anatomico frequente in un fattore di rischio, e stai usando quella soglia o solo la sua presenza?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Errore da evitare:</strong> chiamare la MAD un marcatore di rischio — &egrave; prevalente (25.9%) ma prognosticamente neutra dopo aggiustamento.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42257486/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Coronary Artery Calcium Score Predicts Cardiovascular and Transplant-Related Outcomes in Lung Transplant Recipients
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Clinical Transplantation · giu 2026 · Cook DN, Ravindran A, O'Connor S et al.
+  </p>
+  <p class="mb-2 text-sm">
+    146 riceventi di trapianto polmonare. Il <span class="chip">CAC score</span> da TC torace non gated/non contrasto aggiunge
+    accuratezza predittiva sui MACE post-trapianto (AUC 0.734 vs 0.696 dell'angiografia invasiva): nessun paziente con
+    CAC &lt;100 aveva coronaropatia ostruttiva.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il dato che era gi&agrave; nell'immagine. La TC del torace del candidato ILD contiene gi&agrave; un calcium score sfruttabile,
+      senza esame dedicato: il rischio coronarico &egrave; un sottoprodotto della stadiazione polmonare.
+      ❓ Domanda di rottura: quanta informazione prognostica cardiologica stai gettando via ogni volta che referti una TC torace senza guardare il calcio coronarico?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Numero che resta:</strong> CAC &lt;100 → 0 pazienti con coronaropatia ostruttiva nella lista trapianto polmone.
+  </p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42225514/" target="_blank" rel="noopener" class="hover:text-blue-700">
+      18F-FDG-PET/CT in cardiac sarcoidosis: Diagnosis, therapy monitoring, and future directions
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Seminars in Nuclear Medicine · 2 giu 2026 · Sovani B, Ravindra SG, Javidan C et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Review: circa 1 sarcoidosi su 4 ha interessamento cardiaco, anche isolato, con prognosi peggiore. La FDG-PET individua
+    l'<em>infiammazione</em> attiva prima della comparsa di fibrosi/cicatrice e guida l'avvio e il monitoraggio della terapia immunosoppressiva.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Funzione prima della forma. La RM mostra la cicatrice (LGE) quando il danno &egrave; fatto; la FDG-PET coglie il metabolismo
+      infiammatorio quando &egrave; ancora reversibile. Sono domande diverse: dov'&egrave; il danno vs dov'&egrave; ancora attivo.
+      ❓ Domanda di rottura: quale informazione fisiopatologica cerchi nella FDG-PET che la RM con LGE, per sua natura, non pu&ograve; darti?
+    </p>
+  </div>
+  <p class="mt-2 text-sm text-slate-600 ui">
+    <strong>Messaggio che resta:</strong> la FDG-PET vede l'infiammazione sarcoidea prima della cicatrice.
+  </p>
+</article>
+
+</section>
+
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>📋</span> Linee guida &amp; position paper</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42264628/" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Aortic Valve Leaflet Modification: A Working Group Position Statement on Best Practices and Step-by-Step Guide
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      JACC: Cardiovascular Interventions · giu 2026 · Rogers T, Halaby RN, Greenbaum AB et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Position statement di working group sulla modifica del lembo aortico (<span class="chip">BASILICA</span>) per prevenire
+      l'ostruzione coronarica in TAVR native, valve-in-valve e redo. Codifica principi dell'elettrochirurgia transcatetere,
+      selezione TC del rischio e guida passo-passo per superare la barriera della complessit&agrave; tecnica.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        Standardizzare per diffondere. Una tecnica salvavita ma temuta resta sotto-utilizzata finch&eacute; non diventa procedura
+        riproducibile: il position paper trasforma l'expertise di pochi centri in pratica trasferibile.
+        ❓ Domanda di rottura: quale passaggio della selezione TC pre-procedura decide davvero chi &egrave; candidato a BASILICA, prima ancora della manualit&agrave; operatoria?
+      </p>
+    </div>
+    <p class="mt-2 text-sm text-slate-600 ui">
+      <strong>Messaggio che resta:</strong> la modifica del lembo rende prevenibile un'ostruzione coronarica altrimenti fatale — se la si standardizza.
+    </p>
+  </article>
+</section>
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Quattro lavori di focus diversi convergono su una domanda sola: <em>quando l'AI e la quantificazione si guadagnano davvero il posto?</em>
+    La radiomica dell'MVO (Radiology) vince perch&eacute; misura un'eterogeneit&agrave; che l'occhio non quantifica; i VLM sui noduli
+    (medRxiv) e il 3D nella TC polmonare (arXiv) perdono perch&eacute; aggiungono complessit&agrave; senza guadagno stabile; la meta-analisi
+    sull'AI nel rigurgito tricuspidalico (AUROC 0.89, ma I&sup2;&gt;90%) ricorda che un'accuratezza alta su dati eterogenei non &egrave; ancora prova.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)AI in imaging:<br/>quando vale il costo?(
+    Si guadagna il posto
+      Radiomica MVO
+        Misura l'eterogeneita
+        Batte la quantificazione manuale
+    Non ancora
+      VLM noduli zero-shot
+        Sensibilita 11%
+      3D in TC polmonare
+        Instabile vs 2.5D
+    Prudenza
+      Meta-analisi tricuspide
+        AUROC 0.89
+        Eterogeneita oltre 90%
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> il criterio non &egrave; "&egrave; AI / &egrave; 3D / &egrave; nuovo", ma "misura qualcosa che prima non
+    quantificavi, in modo stabile e validato?". Davanti a un modello chiedi prima cosa aggiunge, poi quanto costa.
+    <br><strong>Schema da ricordare:</strong> la complessit&agrave; si paga sempre; il valore va dimostrato.
+  </p>
+</section>
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 13 giugno 2026, ore 14:12 CEST.</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+<!-- ──────────────────────────────────────────────────────────────────────
+     REFERENCE: structure of an article (the routine fills these patterns)
+     ────────────────────────────────────────────────────────────────────── -->
+<!--
+
+────────── L1: Always visible (titolo, badge, sintesi, aggancio) ──────────
+────────── L2 (optional): "Posso usarlo?" — applicabilità clinica ─────────
+────────── L3 (optional): Deep dive — dati, diagrammi Mermaid, schemi ────
+
+EXAMPLE — HIGHLIGHT PAPER WITH ALL 3 LEVELS:
+
+<article class="mb-10">
+  <!-- L1: ALWAYS VISIBLE -->
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/EXAMPLE" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Fleischner Society Position Paper · 2026 · Hatabu H, Nishino M et al.
+  </p>
+  <p class="mb-3">
+    La Fleischner Society aggiorna le indicazioni per l'imaging RM polmonare, estendendole oltre il
+    dominio pediatrico tradizionale. Tre aree principali: fibrosi cistica, monitoraggio
+    post-trattamento, e <span class="anchor-text">patologie vascolari polmonari</span>.
+  </p>
+
+  <!-- AGGANCIO MULTIDISCIPLINARE: SEMPRE VISIBILE -->
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      La Fleischner Society fa quello che il consesso medievale faceva con i bestiari: espande il
+      catalogo riconoscendo che l'imaging polmonare non è più solo "lesione → pattern radiografico"
+      ma "fenomeno fisiologico → sequenza adatta". Un cambio epistemologico simile a quello di Linneo:
+      tassonomia per funzione, non per apparenza. La MRI come Linneo del polmone fisiologico.
+      I termini specialistici come
+      <details class="inline"><summary><span class="chip">PC-MRA</span></summary><span class="chip-content">Phase-Contrast Magnetic Resonance Angiography — sequenza che mappa il flusso senza mezzo di contrasto.</span></details>
+      diventano accessibili inline.
+    </p>
+  </div>
+
+  <!-- L2: "POSSO USARLO?" — OPTIONAL BASED ON COMPLEXITY -->
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — indicazioni operative</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indicazioni proposte dal panel Fleischner:</p>
+      <table>
+        <thead><tr>
+          <th>Scenario</th><th>MRI preferita?</th><th>Razionale</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>CF pediatrica monitoring</td><td><strong>Sì</strong></td><td class="text-slate-600">Evita radiazioni ripetute</td></tr>
+          <tr><td>Vascolarizzazione/perfusione</td><td><strong>Sì</strong></td><td class="text-slate-600">PC-MRA contrast-free</td></tr>
+          <tr><td>ILD diagnosi pattern</td><td>No</td><td class="text-slate-600">HRCT resta gold standard</td></tr>
+          <tr><td>Massa mediastinica</td><td><strong>Sì, complementare a CT</strong></td><td class="text-slate-600">Tissue characterization</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">MRI polmonare non sostituisce HRCT per ILD, ma diventa first-line in casi selezionati
+        (pediatrico, gravidanza, monitoraggio seriale). Implementazione richiede protocolli dedicati.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- L3: DEEP DIVE — OPTIONAL, REASON: PAPER HA UN FLOWCHART DECISIONALE ESPLICITO -->
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — flowchart decisionale e protocolli</summary>
+    <div>
+      <p class="font-medium mb-2">Flowchart decisionale Fleischner 2026:</p>
+      <div class="mermaid">
+flowchart TB
+    Indication["Indicazione clinica polmonare"] --> Q1{"Radiazione critica?<br/>(età ≤40, CF, gravidanza)"}
+    Q1 -->|Sì| MRI1["MRI prima linea"]
+    Q1 -->|No| Q2{"Pattern parenchimale<br/>o vascolare?"}
+    Q2 -->|Parenchimale| HRCT["HRCT standard"]
+    Q2 -->|Vascolare| Q3{"eGFR > 30?"}
+    Q3 -->|Sì| CTPA["CTPA con mdc iodato"]
+    Q3 -->|No| MRI2["PC-MRA senza mdc"]
+    classDef mri fill:#dbeafe,stroke:#1e40af
+    classDef ct fill:#fee2e2,stroke:#991b1b
+    class MRI1,MRI2 mri
+    class HRCT,CTPA ct
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Sequenze raccomandate:</strong> T2-HASTE, T1-3D-GRE, PC-MRA, opzionale DCE.
+        Tempo esame target: 25-35 minuti.
+      </p>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 + L2 (no L3 because paper meno tecnico):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Trastuzumab Deruxtecan-Induced Interstitial Lung Disease: Meta-Analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Cancer Control · 9 May 2026 · Güren AK, Demircan NC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi (n studi=27, n pazienti=2840) su ILD/polmonite indotta da T-DXd. Incidenza globale
+    15.2% (IC 95% 12.8-17.9), significativamente più alta nel real-world rispetto ai trial.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Quando il farmaco antitumorale "colpisce" il polmone, l'imaging diventa biomarker di tossicità.
+      È il rovescio della medaglia degli ADC: efficacia mirata, danno collaterale strutturato.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Ogni follow-up T-DXd merita HRCT con basso sospetto per pattern ground-glass o crazy paving.
+      L'incidenza real-world (15.2%) è circa il doppio di quella riportata nei trial originali —
+      utile per il counseling preventivo del paziente.</p>
+      <table class="mt-3">
+        <thead><tr><th>Tempo</th><th>Pattern HRCT</th><th>Management</th></tr></thead>
+        <tbody>
+          <tr><td>0-12 sett.</td><td>GGO bilaterali</td><td>Sospensione + steroidi</td></tr>
+          <tr><td>>12 sett.</td><td>Crazy paving</td><td>Sospensione + steroidi alti dose</td></tr>
+          <tr><td>Tardivo</td><td>NSIP-like</td><td>Pneumologo + considera permanente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 (paper di facile assimilazione, niente L2/L3):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Acute Myocarditis: 10-year Follow-up Cohort
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Heart Journal · 14 May 2026
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte multicentrica (n=687) con CMR-confirmed myocarditis acuta. A 10 anni: 12% cardiomiopatia
+    dilatativa, 4% morte cardiovascolare. LGE basale persistente predittore indipendente.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il LGE che non scompare è la cicatrice di Pirandello: maschera che diventa volto. L'evento acuto
+      è solo l'incipit narrativo — la prognosi a 10 anni si decide nel pattern di scar che resta.
+    </p>
+  </div>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — FILO DELLA SETTIMANA WITH MERMAID MINDMAP:
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di questa settimana convergono su un'idea: la fibrosi polmonare non è più una malattia
+    singola che evolve, ma una <em>convergenza fenotipica</em> di processi eterogenei. PPFE single-nucleus
+    atlas (Sci Adv), IIM-ILD nerandomilast (RMD Open), e SSc sieronegativa (RMD Open) mostrano vie
+    molecolari distinte che producono lo stesso pattern radiologico.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Fibrosi polmonare<br/>come convergenza fenotipica(
+    PPFE
+      Single-nucleus atlas
+      Aberrant basaloid cells
+      Mitocondriopatia genetica
+    IIM-ILD
+      Nerandomilast PDE4B
+      cAMP-PKA-RhoA pathway
+      Anti-MDA5 fenotipo
+    SSc-ILD
+      Sieronegativa subgroup
+      NSIP/UIP overlap
+      Imaging-pattern decision
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> stratificare la fibrosi non solo per pattern HRCT ma per
+    meccanismo molecolare diventa rilevante per la scelta antifibrotic. Il radiologo del board MDT
+    è il primo a vedere il pattern, ma la decisione terapeutica ora richiede il dato sierologico.
+  </p>
+</section>
+-->
+
+</body>
+</html>
