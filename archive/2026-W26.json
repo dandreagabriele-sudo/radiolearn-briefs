@@ -1,0 +1,36 @@
+{
+  "brief_id": "2026-W26",
+  "generated_at": "2026-06-27T13:10:00.137429+00:00",
+  "candidates_count": 173,
+  "selected_count": 12,
+  "selected_dois": [
+    "10.1148/radiol.253357",
+    "10.1016/j.jacc.2026.02.5137",
+    "10.1080/25310429.2026.2693393",
+    "10.1002/ppul.71707",
+    "10.1371/journal.pone.0351862",
+    "10.1111/1756-185x.70737",
+    "10.1080/13696998.2026.2682681",
+    "10.7717/peerj.21353",
+    "10.1016/j.jacc.2026.03.169",
+    "10.1016/j.jacc.2026.03.170",
+    "10.1148/ryct.250235",
+    "10.1148/radiol.252706",
+    "10.3760/cma.j.cn112148-20251215-00875"
+  ],
+  "headline": "Il decimo anno: durabilità e rischio predetto",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "ok",
+    "arxiv_cardio_imaging": "ok",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}
