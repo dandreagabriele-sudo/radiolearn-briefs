@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-06-13T12:14:01.990639+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W24.html",
-  "last_brief_item_count": 14,
+  "last_brief_at": "2026-06-27T13:10:00.137429+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W26.html",
+  "last_brief_item_count": 12,
   "processed_dois": [
     "10.1056/NEJMra2415426",
     "10.1183/16000617.0044-2026",
@@ -40,7 +40,20 @@
     "10.1111/eci.70235",
     "10.1111/ctr.70586",
     "10.1053/j.semnuclmed.2026.05.006",
-    "10.1016/j.jcin.2026.03.033"
+    "10.1016/j.jcin.2026.03.033",
+    "10.1148/radiol.253357",
+    "10.1016/j.jacc.2026.02.5137",
+    "10.1080/25310429.2026.2693393",
+    "10.1002/ppul.71707",
+    "10.1371/journal.pone.0351862",
+    "10.1111/1756-185x.70737",
+    "10.1080/13696998.2026.2682681",
+    "10.7717/peerj.21353",
+    "10.1016/j.jacc.2026.03.169",
+    "10.1016/j.jacc.2026.03.170",
+    "10.1148/ryct.250235",
+    "10.1148/radiol.252706",
+    "10.3760/cma.j.cn112148-20251215-00875"
   ],
   "briefs_archive": [
     {
@@ -63,6 +76,13 @@
       "date": "2026-06-13",
       "items": 14,
       "headline": "Quando la complessità si guadagna il posto"
+    },
+    {
+      "id": "2026-W26",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W26.html",
+      "date": "2026-06-27",
+      "items": 12,
+      "headline": "Il decimo anno: durabilità e rischio predetto"
     }
   ]
 }
