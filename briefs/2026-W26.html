@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs &mdash; Settimana 26 (27 giugno 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 26</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Il decimo anno: durabilit&agrave; e rischio predetto</h1>
+  <p class="ui text-sm text-slate-500 mt-3">27 giugno 2026 · 12 selezionati su 173 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1148/radiol.253357" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Extending the PREVENT Equations with Cardiac MRI: Prediction of 10-year Heart Failure Risk
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    Radiology &middot; giugno 2026 &middot; Zhu M, Dai Y, Pan Y et al.
+  </p>
+  <p class="mb-2">
+    Su 39.069 partecipanti UK Biobank, aggiungere 16 parametri di
+    <details class="inline"><summary><span class="chip">CMR</span></summary><span class="chip-content">Cardiac Magnetic Resonance &mdash; risonanza cardiaca, riferimento per volumi, funzione e caratterizzazione tissutale del miocardio.</span></details>
+    selezionati con LASSO alle equazioni
+    <details class="inline"><summary><span class="chip">PREVENT</span></summary><span class="chip-content">Equazioni AHA 2023 che stimano il rischio cardiovascolare e di scompenso a 10 e 30 anni da soli fattori clinici.</span></details>
+    porta il C-index per lo scompenso a 10 anni da 0.753 a 0.812. L'imaging qui non descrive il cuore: <span class="anchor-text">riposiziona la probabilit&agrave; pre-test</span> su un orizzonte decennale.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Confronto che resta: C-index 0.753 vs 0.812 (clinica vs clinica + CMR).</p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">&#129504; L'aggancio:</span>
+      <strong>Descrivere o predire?</strong> Misurare massa e volumi &egrave; un atto descrittivo; spostare di 0.06 il C-index a dieci anni &egrave; un atto predittivo. La CMR guadagna il posto nel modello solo quando porta informazione che i fattori clinici non contengono gi&agrave;, non quando ne &egrave; il riflesso.
+      <br>&#10067; Domanda di rottura: quali dei 16 parametri CMR aggiungono informazione indipendente dai fattori PREVENT, e quali sono solo loro surrogati collineari?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>&#128203; Posso usarlo nella pratica? &mdash; quando la CMR cambia la stratificazione</summary>
+    <div>
+      <table>
+        <thead><tr><th>Scenario</th><th>CMR aggiunge?</th><th>Razionale</th></tr></thead>
+        <tbody>
+          <tr><td>Rischio PREVENT intermedio, indeterminato</td><td><strong>S&igrave;</strong></td><td class="text-slate-600">Riclassifica verso alto o basso rischio a 10 anni</td></tr>
+          <tr><td>Rischio clinico gi&agrave; molto alto o molto basso</td><td>Poco</td><td class="text-slate-600">L'esito &egrave; gi&agrave; definito dalla clinica</td></tr>
+          <tr><td>Screening di popolazione asintomatica</td><td>Non dimostrato</td><td class="text-slate-600">Coorte UK Biobank selezionata, serve validazione esterna</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Guadagno reale ma incrementale e interno a UK Biobank: utile come riclassificatore nei casi intermedi, non come nuovo gold standard di screening finch&eacute; manca la validazione esterna.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>&#128300; Dettagli &mdash; come la CMR entra nel modello</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    A["Fattori clinici PREVENT"] --> M["Modello base<br/>C-index 0.753"]
+    B["82 parametri CMR<br/>volumi, funzione, mapping, strain"] --> L{"Selezione LASSO<br/>+ bootstrap"}
+    L --> S["16 parametri CMR ritenuti"]
+    S --> F["Fine-Gray sesso-specifico<br/>rischio competitivo"]
+    M --> F
+    F --> R["Rischio HF a 10 anni<br/>C-index 0.812"]
+    classDef hi fill:#dbeafe,stroke:#1e40af
+    class R hi
+      </div>
+      <p class="mt-3 text-sm">Modello a rischi competitivi di Fine-Gray, training 70% / test interno 30%. Il salto di C-index (+0.059 nel training) quantifica il valore aggiunto dell'imaging oltre la clinica.</p>
+      <p class="mt-2 text-sm"><strong>Schema da ricordare:</strong> clinica = punto di partenza, CMR = riclassificatore, non sostituto.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1016/j.jacc.2026.02.5137" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Population Prevalence of Valvular Heart Disease in the United States: The PREVUE-VALVE Study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    J Am Coll Cardiol &middot; giugno 2026 &middot; Brener MI, Chuang ML, Nishimura R et al.
+  </p>
+  <p class="mb-2">
+    Studio decentralizzato su 3.000 americani di 65-85 anni, con ecocardiogramma transtoracico eseguito a domicilio: prevalenza pesata di valvulopatia &ge; moderata 8.2%, che sale al 18.4% includendo la malattia clinicamente significativa. La lesione pi&ugrave; comune non &egrave; la stenosi aortica ma <span class="anchor-text">l'insufficienza tricuspidalica</span>.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: circa 1 anziano su 5 (18.4%) ha una valvulopatia clinicamente significativa.</p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">&#129504; L'aggancio:</span>
+      <strong>La punta dell'iceberg.</strong> La prevalenza "ospedaliera" misura chi arriva all'eco, non chi ha la malattia; lo screening domiciliare svela il sommerso, e a sorpresa &egrave; la tricuspide la lesione pi&ugrave; frequente. In refertazione, la TR liquidata come "fisiologica" merita un secondo sguardo.
+      <br>&#10067; Domanda di rottura: la prevalenza che conta per il tuo reparto &egrave; quella di popolazione o quella condizionata a chi &egrave; gi&agrave; stato inviato all'imaging?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>&#128203; Posso usarlo nella pratica? &mdash; ricalibrare l'attesa pre-test</summary>
+    <div class="text-sm">
+      <p>La gerarchia delle lesioni nella popolazione (TR &gt; SA &gt; IM &gt; IA &gt; SM) ribalta l'intuizione costruita sui pazienti sintomatici inviati per stenosi aortica. Conseguenze operative:</p>
+      <ul class="list-disc ml-5 mt-2 space-y-1">
+        <li>non sottostimare la TR funzionale dell'anziano: spesso &egrave; il marcatore, non il rumore di fondo;</li>
+        <li>una prevalenza dell'8.2% &ge; moderata giustifica attenzione opportunistica alle valvole in ogni eco/TC toracica dell'over-65;</li>
+        <li>il dato &egrave; di popolazione, non un mandato di screening sistematico: serve per tarare il sospetto, non per programmare esami di massa.</li>
+      </ul>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1080/25310429.2026.2693393" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Association between smoking and prognosis in idiopathic pulmonary fibrosis: a systematic review and meta-analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    Pulmonology &middot; 24 giugno 2026 &middot; Kim K, Seok J, Yoon HY et al.
+  </p>
+  <p class="mb-2">
+    Meta-analisi di 49 studi (32.974 pazienti con IPF): il fumo non si associa alla mortalit&agrave; complessiva, ma l'effetto si <span class="anchor-text">capovolge per regione</span> &mdash; ex/fumatori con mortalit&agrave; pi&ugrave; alta fuori dall'Asia orientale (HR 1.17) e pi&ugrave; bassa in Asia orientale (HR 0.75; p-interazione &lt; 0.001). I fumatori correnti hanno per&ograve; pi&ugrave; cancro polmonare (HR 1.88).
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Errore da evitare: citare una sola HR globale del fumo nell'IPF.</p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">&#129504; L'aggancio:</span>
+      <strong>L'effetto che si capovolge.</strong> Una media globale nulla nasconde due coorti opposte: la direzione dell'effetto dipende dalla popolazione, non solo dalla sua ampiezza. Candidati confondenti: healthy-smoker effect, sopravvivenza differenziale, definizione di "ever smoker", rischi competitivi.
+      <br>&#10067; Domanda di rottura: l'interazione regionale riflette una vera diversit&agrave; biologica o un confondente di selezione e sopravvivenza tra coorti?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>&#128203; Posso usarlo nella pratica? &mdash; cosa dire al paziente</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Esito</th><th>Associazione col fumo</th><th>Uso clinico</th></tr></thead>
+        <tbody>
+          <tr><td>Mortalit&agrave; globale</td><td>Nessuna (ma interazione regionale)</td><td class="text-slate-600">Non usare come predittore prognostico univoco</td></tr>
+          <tr><td>Cancro polmonare</td><td><strong>HR 1.88</strong> (fumatori correnti)</td><td class="text-slate-600">Rafforza l'indicazione alla cessazione e alla sorveglianza</td></tr>
+          <tr><td>Esacerbazioni acute / FVC basale</td><td>Nessuna significativa</td><td class="text-slate-600">Il fumo non &egrave; il driver da incolpare qui</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Il fumo resta un nemico (cancro), ma non &egrave; un marcatore prognostico affidabile sulla mortalit&agrave; nell'IPF: la cessazione si difende sull'oncologia, non su una promessa di sopravvivenza dalla fibrosi.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1002/ppul.71707" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Continued Nintedanib Treatment in Children and Adolescents With Fibrosing ILDs: Data From InPedILD-ON
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">&#128214; Full text</span>
+    Pediatric Pulmonology &middot; giugno 2026 &middot; Deterding R, Young LR, DeBoer EM et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Estensione in aperto su 48 bambini e adolescenti (6-17 anni) con ILD fibrosante (FVC media 59% pred.): a 52 settimane la variazione media di FVC %pred &egrave; &minus;1.0, cio&egrave; sostanziale stabilit&agrave;. La diarrea &egrave; l'evento pi&ugrave; frequente (50.4 per 100 pazienti-anno); 7 sospensioni, tutte per cause eterogenee.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Messaggio che resta: nel bambino il nintedanib stabilizza la FVC, con la diarrea come prezzo atteso.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Stabilizzare non &egrave; guarire.</strong> In pediatria l'obiettivo antifibrotico non &egrave; far salire la FVC ma fermarne la discesa: una variazione di &minus;1.0% a un anno &egrave; un successo, non un fallimento.
+      <br>&#10067; Domanda di rottura: in un polmone che dovrebbe crescere, qual &egrave; il vero comparatore &mdash; lo zero, o la traiettoria attesa di crescita che la malattia ha gi&agrave; sottratto?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1371/journal.pone.0351862" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Inhaled nitric oxide in fibrotic and advanced interstitial lung disease: a meta-analysis of RCTs
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">&#128214; Full text</span>
+    PLoS One &middot; 22 giugno 2026 &middot; Nakahara S, Hirao Y, Fujiuchi B et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Quattro RCT, 274 pazienti con ILD fibrosante/avanzata: l'ossido nitrico inalato non migliora la distanza al test del cammino di 6 minuti rispetto al placebo (differenza media +1.83 m; IC 95% &minus;12.98 a +16.64) n&eacute; gli eventi avversi. Un razionale emodinamico forte che non diventa beneficio funzionale.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: +1.8 m al 6MWD, cio&egrave; nessun beneficio.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Razionale non &egrave; risultato.</strong> Abbassare la pressione arteriosa polmonare &egrave; plausibile, ma nel ILD i metri percorsi sono limitati dal parenchima e dalla meccanica, non solo dall'emodinamica.
+      <br>&#10067; Domanda di rottura: stai trattando la pressione polmonare o la dispnea &mdash; e quale dei due limita davvero i metri del paziente?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1111/1756-185x.70737" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Interstitial Lung Disease in Rheumatoid Arthritis: Incidence and Outcomes in Western Australia
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">&#128214; Full text</span>
+    Int J Rheum Dis &middot; giugno 2026 &middot; Prasanna H, Inderjeeth C, Preen DB et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte statale (5.971 RA vs 20.830 controlli, 1985-2014): incidenza di ILD circa 8 volte superiore ai controlli (IR ratio 8.02), stabile su 30 anni. Fattori indipendenti: fumo (OR 1.97) e <span class="anchor-text">sclerite (OR 3.84)</span>. Mortalit&agrave; quasi doppia nei RA-ILD rispetto ai RA senza ILD (99.9 vs 50.8 per 1000 anni-persona).
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: rischio di ILD circa 8&times; nell'artrite reumatoide.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>La sclerite che parla del polmone.</strong> Un segno oculare (OR 3.84) lega l'infiammazione di superficie al rischio polmonare: la RA-ILD si annuncia in distretti lontani prima che nell'HRCT.
+      <br>&#10067; Domanda di rottura: davanti a una sclerite, quale soglia di sospetto giustifica gi&agrave; una HRCT basale invece dell'attesa?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>&#128203; Posso usarlo nella pratica? &mdash; chi sorvegliare</summary>
+    <div class="text-sm">
+      <p>Fenotipo a rischio ILD nella RA da intercettare precocemente con imaging del torace:</p>
+      <table class="mt-2">
+        <thead><tr><th>Fattore</th><th>OR</th><th>Azione</th></tr></thead>
+        <tbody>
+          <tr><td>Sclerite</td><td>3.84</td><td class="text-slate-600">Soglia bassa per HRCT basale</td></tr>
+          <tr><td>Fumo</td><td>1.97</td><td class="text-slate-600">Cessazione + sorveglianza</td></tr>
+          <tr><td>Et&agrave; avanzata</td><td>1.02/anno</td><td class="text-slate-600">Pesa nel rischio cumulativo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1080/13696998.2026.2682681" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Budget impact of AI-enabled chest X-ray based incidental pulmonary nodule detection for early lung cancer
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    J Med Econ &middot; 24 giugno 2026 &middot; Sloof AC, Sheveleva S, Pawar S et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Modelli di budget impact in 5 paesi (Colombia, Costa Rica, Messico, Thailandia, Vietnam): un'IA sulla radiografia del torace che segnala il nodulo incidentale e invia a TC a basse dosi &egrave; stimata evitare 24.763 morti premature in 5 anni, con <span class="anchor-text">pareggio di bilancio al 3&deg; anno</span> (4&deg; in Costa Rica). Il guadagno nasce dallo stage-shift verso diagnosi precoci.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: pareggio di bilancio al 3&deg; anno.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Il torace come setaccio opportunistico.</strong> La radiografia non &egrave; uno strumento di screening del cancro, ma usata come trigger sul nodulo incidentale sposta lo stadio alla diagnosi: il valore qui &egrave; economico-organizzativo, non diagnostico in senso stretto.
+      <br>&#10067; Domanda di rottura: la metrica che giustifica l'IA &egrave; la sua accuratezza sul nodulo o la sua capacit&agrave; di anticipare lo stadio &mdash; e quale stai davvero validando?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>&#128203; Posso usarlo nella pratica? &mdash; limiti del dato</summary>
+    <div class="text-sm">
+      <p>&Egrave; un'analisi di <em>modellizzazione</em> dal punto di vista del payer pubblico, non un trial clinico: lo stage-shift &egrave; assunto, non misurato prospetticamente. Utile per decisori di sistema sanitario, da non leggere come prova di outcome individuale. Il segnale forte &mdash; pareggio in 3 anni e mortalit&agrave; evitata &mdash; regge nelle analisi di sensibilit&agrave;, ma dipende dal volume di radiografie e dall'accesso alla TC di conferma.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.7717/peerj.21353" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Establishment of a prediction model for malignant probability of pulmonary nodules in an adenocarcinoma-predominant cohort
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">&#128214; Full text</span>
+    PeerJ &middot; 18 giugno 2026 &middot; Li F, Yu X, Xu K et al.
+  </p>
+  <p class="mb-2 text-sm">
+    568 noduli resecati (422 maligni, in larga maggioranza adenocarcinomi). Segni TC indipendenti di malignit&agrave;: <span class="anchor-text">vascular bundle sign (OR 6.72)</span>, spiculazione/burr (OR 2.97), lobulazione (OR 2.25), nodulo a vetro smerigliato misto (OR 2.63); il nodulo solido riduce invece la probabilit&agrave; (OR 0.17) in questa coorte adeno-dominante.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: vascular bundle sign, OR 6.7 per malignit&agrave;.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Coorte chirurgica = specchio deformante.</strong> Un modello costruito solo su noduli operati eredita lo spectrum bias del bisturi: una prevalenza di malignit&agrave; del 74% non &egrave; quella dell'ambulatorio, e l'OR 0.17 del nodulo solido &egrave; un artefatto di selezione, non una rassicurazione.
+      <br>&#10067; Domanda di rottura: questi OR misurano la biologia del nodulo o la soglia decisionale del chirurgo che ha selezionato la coorte?
+    </p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jacc.2026.03.169" target="_blank" rel="noopener" class="hover:text-blue-700">
+      10-Year Randomized Outcomes of Transcatheter or Surgical Aortic Valve Replacement in Intermediate-Risk Aortic Stenosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    J Am Coll Cardiol &middot; giugno 2026 &middot; Thourani VH, von Stein P, Mack MJ et al.
+  </p>
+  <p class="mb-2 text-sm">
+    PARTNER 2A: 1.910 pazienti a rischio intermedio randomizzati (2011-13) a TAVR balloon-expandable SAPIEN XT o chirurgia, ora con follow-up clinico ed ecocardiografico <span class="anchor-text">core-lab a 10 anni</span>; il registro gemello P2S3i (SAPIEN 3, propensity-matched) porta la stessa domanda alla valvola di terza generazione. &Egrave; la prima durabilit&agrave; della TAVR misurata su orizzonte decennale randomizzato.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Domanda giusta: la TAVR di prima generazione regge davvero a 10 anni quanto la chirurgia?</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>La durabilit&agrave; &egrave; una variabile lenta.</strong> A 1-2 anni TAVR e chirurgia sembrano equivalenti, ma la degenerazione strutturale ha cinetica lunga e solo il decimo anno la rivela: qui il giudice &egrave; l'ecocardiografia core-lab, non il sintomo.
+      <br>&#10067; Domanda di rottura: per un intermedio relativamente giovane, quale dato pesa di pi&ugrave; &mdash; la mortalit&agrave; precoce o il gradiente che comparir&agrave; all'ottavo anno?
+    </p>
+  </div>
+  <details class="deepdive">
+    <summary>&#128300; Dettagli &mdash; l'orizzonte decennale del disegno</summary>
+    <div>
+      <div class="mermaid">
+timeline
+    title PARTNER 2A / P2S3i &mdash; verso il decimo anno
+    2011-2013 : Randomizzazione rischio intermedio : TAVR SAPIEN XT vs chirurgia
+    2014 : Registro P2S3i SAPIEN 3 : propensity-matched alla chirurgia
+    Anno 5 : Riconsenso : sweep dello stato vitale
+    Anno 10 : Mortalita totale, reintervento, eco core-lab
+      </div>
+      <p class="mt-3 text-sm"><strong>Schema da ricordare:</strong> la scelta protesica di oggi si valida su una scala temporale che il singolo trial a breve termine non vede.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250235" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Association of Deep Learning-based Myocardial Infarction Size Quantification in Cardiac MRI with Cardiac Biomarker Levels
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    Radiology: Cardiothoracic Imaging &middot; giugno 2026 &middot; Schwab M, Pamminger M, Kremser C et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Su 800 pazienti con STEMI, una CNN che quantifica la dimensione dell'infarto su CMR stima volumi maggiori della segmentazione manuale (26.5 vs 20.1 mL) ma correla <span class="anchor-text">meglio con il picco di CK</span> (r 0.76 vs 0.68) e di troponina T (r 0.66 vs 0.57). "Pi&ugrave; grande" qui significa "pi&ugrave; vicino al danno biologico".
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Messaggio che resta: l'IA misura pi&ugrave; infarto del rater manuale, e correla meglio con la troponina.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Quando il disaccordo &egrave; un segnale.</strong> Di fronte a una IA che misura pi&ugrave; dell'esperto l'istinto &egrave; chiamarla imprecisa; ma se il suo numero predice meglio il biomarcatore, &egrave; il riferimento manuale a essere conservativo.
+      <br>&#10067; Domanda di rottura: qual &egrave; il vero gold standard della dimensione d'infarto &mdash; la mano dell'esperto o l'esito biologico che vuoi predire?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/radiol.252706" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Hybrid Cardiac 68Ga-FAPI-4 PET/MRI in Dilated Cardiomyopathy: A Feasibility and Pilot Study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    Radiology &middot; giugno 2026 &middot; Zhou Y, Lin H, Huang C et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Studio pilota prospettico (37 partecipanti): un protocollo ibrido
+    <details class="inline"><summary><span class="chip">FAPI</span></summary><span class="chip-content">Fibroblast Activation Protein Inhibitor &mdash; tracciante PET che marca i fibroblasti attivati, indice di fibrosi in corso.</span></details>
+    PET/MRI in cardiomiopatia dilatativa non ischemica coregistra in un solo esame l'attivazione fibroblastica, la funzione, il T1/T2 mapping e il LGE. L'uptake FAPI distingue i pazienti dai controlli.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: un solo esame per fibrosi attiva, funzione e cicatrice.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Cicatrice contro cantiere.</strong> Il LGE mostra la fibrosi gi&agrave; depositata; la FAPI mostra i fibroblasti ancora attivi &mdash; due tempi diversi della stessa malattia. Distinguere fibrosi "finita" da fibrosi "in corso" potrebbe identificare chi ha ancora margine terapeutico.
+      <br>&#10067; Domanda di rottura: quale decisione cambieresti sapendo che la fibrosi &egrave; attiva, e non solo presente?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.3760/cma.j.cn112148-20251215-00875" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Incremental value of CMR for the 2025 appropriate use criteria of ICD implantation in dilated cardiomyopathy
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">&#128196; Solo abstract</span>
+    Zhonghua Xin Xue Guan Bing Za Zhi &middot; giugno 2026 &middot; Zhou D, Wang LL, Lian XQ et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte monocentrica (741 DCM, Fuwai): rispetto ai nuovi criteri di appropriatezza ICD 2025 ACC/AHA, la caratterizzazione tissutale CMR stratificata per estensione del <span class="anchor-text">LGE (soglia 7.2%)</span> ed ECV (soglia 31.8%) ridefinisce il rischio di morte cardiaca improvvisa oltre i soli criteri clinici.
+  </p>
+  <p class="ui text-sm font-semibold text-slate-700 mb-1">Numero che resta: LGE &ge; 7.2% riclassifica il rischio aritmico nella DCM.</p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">&#129504; Aggancio:</span>
+      <strong>Oltre la frazione d'eiezione.</strong> I criteri ICD storici guardano la FE, ma nella DCM sono la cicatrice (LGE) e l'ECV a identificare chi morir&agrave; improvvisamente anche con FE non severamente depressa.
+      <br>&#10067; Domanda di rottura: la FE misura la pompa, ma &egrave; il substrato aritmico che uccide &mdash; quale dei due stai correggendo impiantando il defibrillatore?
+    </p>
+  </div>
+  <details class="deepdive">
+    <summary>&#128300; Dettagli &mdash; come la CMR riclassifica oltre i criteri</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    DCM["DCM con CMR<br/>LGE + T1/ECV"] --> AUC{"Criteri ICD 2025"}
+    AUC -->|Appropriato| Q1{"LGE >= 7,2%?"}
+    AUC -->|Maybe appropriato| Q2{"ECV >= 31,8%?"}
+    Q1 -->|Si| H["Rischio SCD piu alto<br/>ICD favorito"]
+    Q1 -->|No| Lo["Rischio piu basso<br/>rivaluta indicazione"]
+    Q2 -->|Si| H
+    Q2 -->|No| Lo
+    classDef hi fill:#fee2e2,stroke:#991b1b
+    class H hi
+      </div>
+      <p class="mt-3 text-sm"><strong>Schema da ricordare:</strong> nella DCM la FE apre la porta, LGE ed ECV decidono chi entra.</p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>&#129513;</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di focus diversi convergono su una stessa esigenza: spostare lo sguardo al <strong>decimo anno</strong>. La CMR estende la previsione dello scompenso a 10 anni, la TAVR mette finalmente alla prova la propria durabilit&agrave; su un orizzonte decennale randomizzato, e la prognosi del fumo nell'IPF si chiarisce solo su coorti seguite a lungo. L'evidenza precoce rassicura; quella tardiva decide.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Il decimo anno(
+    Predire
+      CMR piu PREVENT
+      Scompenso a 10 anni
+      C-index da 0.753 a 0.812
+    Durare
+      TAVR PARTNER 2A
+      Eco core-lab a 10 anni
+      Degenerazione lenta
+    Prognosticare
+      Fumo e IPF
+      Effetto che si capovolge
+      49 studi 32974 pazienti
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> le decisioni di oggi &mdash; impiantare, antifibrosare, stratificare &mdash; si giudicano su scale temporali che superano il singolo studio a breve termine. Chiedere "e al decimo anno?" diventa una disciplina, non un dettaglio.
+  </p>
+</section>
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 27 giugno 2026, 15:08 (CEST).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+<!-- ──────────────────────────────────────────────────────────────────────
+     REFERENCE: structure of an article (the routine fills these patterns)
+     ────────────────────────────────────────────────────────────────────── -->
+<!--
+
+────────── L1: Always visible (titolo, badge, sintesi, aggancio) ──────────
+────────── L2 (optional): "Posso usarlo?" — applicabilità clinica ─────────
+────────── L3 (optional): Deep dive — dati, diagrammi Mermaid, schemi ────
+
+EXAMPLE — HIGHLIGHT PAPER WITH ALL 3 LEVELS:
+
+<article class="mb-10">
+  <!-- L1: ALWAYS VISIBLE -->
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/EXAMPLE" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Fleischner Society Position Paper · 2026 · Hatabu H, Nishino M et al.
+  </p>
+  <p class="mb-3">
+    La Fleischner Society aggiorna le indicazioni per l'imaging RM polmonare, estendendole oltre il
+    dominio pediatrico tradizionale. Tre aree principali: fibrosi cistica, monitoraggio
+    post-trattamento, e <span class="anchor-text">patologie vascolari polmonari</span>.
+  </p>
+
+  <!-- AGGANCIO MULTIDISCIPLINARE: SEMPRE VISIBILE -->
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      La Fleischner Society fa quello che il consesso medievale faceva con i bestiari: espande il
+      catalogo riconoscendo che l'imaging polmonare non è più solo "lesione → pattern radiografico"
+      ma "fenomeno fisiologico → sequenza adatta". Un cambio epistemologico simile a quello di Linneo:
+      tassonomia per funzione, non per apparenza. La MRI come Linneo del polmone fisiologico.
+      I termini specialistici come
+      <details class="inline"><summary><span class="chip">PC-MRA</span></summary><span class="chip-content">Phase-Contrast Magnetic Resonance Angiography — sequenza che mappa il flusso senza mezzo di contrasto.</span></details>
+      diventano accessibili inline.
+    </p>
+  </div>
+
+  <!-- L2: "POSSO USARLO?" — OPTIONAL BASED ON COMPLEXITY -->
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — indicazioni operative</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indicazioni proposte dal panel Fleischner:</p>
+      <table>
+        <thead><tr>
+          <th>Scenario</th><th>MRI preferita?</th><th>Razionale</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>CF pediatrica monitoring</td><td><strong>Sì</strong></td><td class="text-slate-600">Evita radiazioni ripetute</td></tr>
+          <tr><td>Vascolarizzazione/perfusione</td><td><strong>Sì</strong></td><td class="text-slate-600">PC-MRA contrast-free</td></tr>
+          <tr><td>ILD diagnosi pattern</td><td>No</td><td class="text-slate-600">HRCT resta gold standard</td></tr>
+          <tr><td>Massa mediastinica</td><td><strong>Sì, complementare a CT</strong></td><td class="text-slate-600">Tissue characterization</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">MRI polmonare non sostituisce HRCT per ILD, ma diventa first-line in casi selezionati
+        (pediatrico, gravidanza, monitoraggio seriale). Implementazione richiede protocolli dedicati.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- L3: DEEP DIVE — OPTIONAL, REASON: PAPER HA UN FLOWCHART DECISIONALE ESPLICITO -->
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — flowchart decisionale e protocolli</summary>
+    <div>
+      <p class="font-medium mb-2">Flowchart decisionale Fleischner 2026:</p>
+      <div class="mermaid">
+flowchart TB
+    Indication["Indicazione clinica polmonare"] --> Q1{"Radiazione critica?<br/>(età ≤40, CF, gravidanza)"}
+    Q1 -->|Sì| MRI1["MRI prima linea"]
+    Q1 -->|No| Q2{"Pattern parenchimale<br/>o vascolare?"}
+    Q2 -->|Parenchimale| HRCT["HRCT standard"]
+    Q2 -->|Vascolare| Q3{"eGFR > 30?"}
+    Q3 -->|Sì| CTPA["CTPA con mdc iodato"]
+    Q3 -->|No| MRI2["PC-MRA senza mdc"]
+    classDef mri fill:#dbeafe,stroke:#1e40af
+    classDef ct fill:#fee2e2,stroke:#991b1b
+    class MRI1,MRI2 mri
+    class HRCT,CTPA ct
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Sequenze raccomandate:</strong> T2-HASTE, T1-3D-GRE, PC-MRA, opzionale DCE.
+        Tempo esame target: 25-35 minuti.
+      </p>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 + L2 (no L3 because paper meno tecnico):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Trastuzumab Deruxtecan-Induced Interstitial Lung Disease: Meta-Analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Cancer Control · 9 May 2026 · Güren AK, Demircan NC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi (n studi=27, n pazienti=2840) su ILD/polmonite indotta da T-DXd. Incidenza globale
+    15.2% (IC 95% 12.8-17.9), significativamente più alta nel real-world rispetto ai trial.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Quando il farmaco antitumorale "colpisce" il polmone, l'imaging diventa biomarker di tossicità.
+      È il rovescio della medaglia degli ADC: efficacia mirata, danno collaterale strutturato.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Ogni follow-up T-DXd merita HRCT con basso sospetto per pattern ground-glass o crazy paving.
+      L'incidenza real-world (15.2%) è circa il doppio di quella riportata nei trial originali —
+      utile per il counseling preventivo del paziente.</p>
+      <table class="mt-3">
+        <thead><tr><th>Tempo</th><th>Pattern HRCT</th><th>Management</th></tr></thead>
+        <tbody>
+          <tr><td>0-12 sett.</td><td>GGO bilaterali</td><td>Sospensione + steroidi</td></tr>
+          <tr><td>>12 sett.</td><td>Crazy paving</td><td>Sospensione + steroidi alti dose</td></tr>
+          <tr><td>Tardivo</td><td>NSIP-like</td><td>Pneumologo + considera permanente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 (paper di facile assimilazione, niente L2/L3):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Acute Myocarditis: 10-year Follow-up Cohort
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Heart Journal · 14 May 2026
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte multicentrica (n=687) con CMR-confirmed myocarditis acuta. A 10 anni: 12% cardiomiopatia
+    dilatativa, 4% morte cardiovascolare. LGE basale persistente predittore indipendente.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il LGE che non scompare è la cicatrice di Pirandello: maschera che diventa volto. L'evento acuto
+      è solo l'incipit narrativo — la prognosi a 10 anni si decide nel pattern di scar che resta.
+    </p>
+  </div>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — FILO DELLA SETTIMANA WITH MERMAID MINDMAP:
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di questa settimana convergono su un'idea: la fibrosi polmonare non è più una malattia
+    singola che evolve, ma una <em>convergenza fenotipica</em> di processi eterogenei. PPFE single-nucleus
+    atlas (Sci Adv), IIM-ILD nerandomilast (RMD Open), e SSc sieronegativa (RMD Open) mostrano vie
+    molecolari distinte che producono lo stesso pattern radiologico.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Fibrosi polmonare<br/>come convergenza fenotipica(
+    PPFE
+      Single-nucleus atlas
+      Aberrant basaloid cells
+      Mitocondriopatia genetica
+    IIM-ILD
+      Nerandomilast PDE4B
+      cAMP-PKA-RhoA pathway
+      Anti-MDA5 fenotipo
+    SSc-ILD
+      Sieronegativa subgroup
+      NSIP/UIP overlap
+      Imaging-pattern decision
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> stratificare la fibrosi non solo per pattern HRCT ma per
+    meccanismo molecolare diventa rilevante per la scelta antifibrotic. Il radiologo del board MDT
+    è il primo a vedere il pattern, ma la decisione terapeutica ora richiede il dato sierologico.
+  </p>
+</section>
+-->
+
+</body>
+</html>
