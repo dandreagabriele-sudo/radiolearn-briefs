@@ -1,6 +1,19 @@
 """
 briefs_lib.py — RadioLearn Briefs library
 
+EXECUTION CONTEXTS (important — see docs/github-mcp-migration.md):
+  The GitHub Contents helpers below (gh_get/gh_put/gh_delete/gh_list) use the
+  REST API via urllib. They are intended for code running on GitHub Actions
+  runners (fetch_sources.py, deliver_outbox.py), which reach api.github.com
+  directly and are NOT subject to the Anthropic agent proxy.
+
+  The Cloud Routine runs inside the proxied agent environment, where the proxy
+  may return 403 for api.github.com. The routine must therefore perform its
+  GitHub I/O with the GitHub MCP tools (mcp__github__*), NOT these REST helpers.
+  MCP tools are agent tool-calls and cannot be invoked from Python, so this
+  module stays REST-only by design. The REST→MCP mapping and the routine's
+  MCP procedure live in docs/github-mcp-migration.md.
+
 CADENCE: biweekly (every 14 days, Saturday). The default `days_back` for
 all fetchers is 14. The cloud routine cron fires every Saturday but checks
 state.json/last_brief_at and exits unless ≥13 days have passed since the
@@ -623,7 +636,12 @@ class Document:
 
 
 # ════════════════════════════════════════════════════════════════════
-# GITHUB CONTENTS API
+# GITHUB CONTENTS API  (REST — GitHub Actions runner context only)
+# ────────────────────────────────────────────────────────────────────
+# These helpers are for fetch_sources.py / deliver_outbox.py, which run on
+# GitHub Actions runners (no Anthropic proxy). The Cloud Routine must NOT use
+# them — in the proxied agent environment api.github.com may return 403. The
+# routine uses GitHub MCP tools instead; see docs/github-mcp-migration.md.
 # ════════════════════════════════════════════════════════════════════
 
 def gh_get(path: str):
