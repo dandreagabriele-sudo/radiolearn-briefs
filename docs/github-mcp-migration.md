@@ -63,6 +63,9 @@ Sostituisce il blocco *Bootstrap* + *Read inbox* + i blocchi *Commit/Outbox/Clea
 del prompt v3.1. **In modalità MCP la routine non fa più `exec()` di `briefs_lib`
 e non usa più `GH_TOKEN`.**
 
+> I blocchi del prompt riscritti e pronti da incollare sono in
+> [`routine-mcp-blocks.md`](routine-mcp-blocks.md).
+
 1. **Leggi inbox** — `get_file_contents(path="inbox/candidates.json", ref="main")`.
    Se assente o `staged_at` più vecchio di 60 min → esci (come oggi).
 2. **Leggi stato** — `get_file_contents(path="state.json")`; conserva il `sha`
