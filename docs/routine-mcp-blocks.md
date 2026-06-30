@@ -21,19 +21,31 @@ Costanti:
 In modalità MCP **non c'è bootstrap Python**. La routine non scarica né esegue
 `briefs_lib.py` e non usa alcun token. Procede direttamente con i tool MCP.
 
-## Read inbox + state + template (MCP)
+## Gate di cadenza + Read inbox/state/template (MCP), con self-dispatch del fetch
+
+Prima il gate di cadenza (settimana di pausa → esci), poi — se è settimana di
+pubblicazione ma l'inbox manca/è stale — lancia tu il fetch e aspetta, senza
+dipendere dalla puntualità del cron Actions.
 
 ```
-# 1) inbox
-mcp__github__get_file_contents(owner, repo, path="inbox/candidates.json", ref="main")
-#    → se 404/assente: "No candidates.json in inbox. Exiting." e TERMINA
-#    → parse JSON; se NOW - staged_at > 60 min: stale, TERMINA
+# 0) STATO + GATE DI CADENZA
+state = mcp__github__get_file_contents(owner, repo, path="state.json", ref="main")
+#    → se assente, default {version, last_brief_at:null, processed_dois:[], briefs_archive:[], ...}
+days_since = (NOW - last_brief_at).days  se last_brief_at  altrimenti 9999
+if days_since < 13: TERMINA            # off-week
 
-# 2) stato (da riscrivere aggiornato dopo la curation)
-mcp__github__get_file_contents(owner, repo, path="state.json", ref="main")
-#    → se assente, usa il default {version, last_brief_at:null, processed_dois:[], briefs_archive:[], ...}
+# 1) INBOX, con self-dispatch del fetch se manca/stale
+cand  = mcp__github__get_file_contents(owner, repo, path="inbox/candidates.json", ref="main")
+fresh = cand esiste AND (NOW - cand.staged_at) <= 60 min
+if not fresh:
+    mcp__github__actions_run_trigger(method="run_workflow", owner, repo,
+        workflow_id="fetch-and-stage.yml", ref="main")
+    ripeti fino a ~20 min (ricontrolla ~ogni 90 s):
+        cand = mcp__github__get_file_contents(owner, repo, path="inbox/candidates.json", ref="main")
+        if cand esiste AND (NOW - cand.staged_at) <= 60 min: break
+    altrimenti: TERMINA   # fetch fallito entro il timeout; segnala l'anomalia
 
-# 3) template
+# 2) template
 mcp__github__get_file_contents(owner, repo, path="templates/brief_template.html", ref="main")
 ```
 
@@ -125,3 +137,5 @@ mcp__github__delete_file(
 | `gh_put` (outbox, file nuovo) | `create_or_update_file(...)` senza SHA |
 | `gh_delete(path, sha, msg)` | `delete_file(path, message, branch)` (no SHA) |
 | `init_briefs` + `GH_TOKEN` | — (rimossi; auth gestita dall'host MCP) |
+
+Comportamento nuovo (non un mapping): `mcp__github__actions_run_trigger(method="run_workflow", workflow_id="fetch-and-stage.yml", ref="main")` per lanciare il fetch dal vivo quando l'inbox è vuoto/stale in settimana di pubblicazione.
