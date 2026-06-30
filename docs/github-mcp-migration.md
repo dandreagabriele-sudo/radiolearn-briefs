@@ -64,7 +64,9 @@ del prompt v3.1. **In modalità MCP la routine non fa più `exec()` di `briefs_l
 e non usa più `GH_TOKEN`.**
 
 > I blocchi del prompt riscritti e pronti da incollare sono in
-> [`routine-mcp-blocks.md`](routine-mcp-blocks.md).
+> [`routine-mcp-blocks.md`](routine-mcp-blocks.md). Il **prompt completo della
+> routine** già in modalità MCP (v3.2, senza `GH_TOKEN`), da incollare interamente
+> nella config, è in [`routine-prompt-mcp.md`](routine-prompt-mcp.md).
 
 1. **Leggi inbox** — `get_file_contents(path="inbox/candidates.json", ref="main")`.
    Se assente o `staged_at` più vecchio di 60 min → esci (come oggi).
