@@ -22,7 +22,11 @@ jobs:
 
       - name: Run fetch and stage
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          # Built-in token — valid for the whole run and scoped by the
+          # job's `permissions: contents: write` above. Replaces the
+          # removed/expired GH_PAT that caused HTTP 401 from the Contents
+          # API (same pattern already used by test-briefs-lib.yml).
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
