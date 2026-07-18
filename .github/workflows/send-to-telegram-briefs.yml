@@ -25,6 +25,8 @@ jobs:
       - name: Deliver outbox messages
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          # Built-in GITHUB_TOKEN is authorized for repo contents (permissions.contents: write).
+          # Previously used secrets.GH_PAT, but that PAT expired and returned HTTP 401.
+          GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: python3 .github/scripts/deliver_outbox.py
