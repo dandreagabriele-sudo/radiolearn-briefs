@@ -1,0 +1,14 @@
+{
+  "brief_id": "2026-W29",
+  "created_at": "2026-07-18T15:31:00+00:00",
+  "messages": [
+    {
+      "method": "sendMessage",
+      "params": {
+        "chat_id": "8538175163",
+        "text": "📚 RadioLearn Briefs — Settimana 29\nLa misura batte lo sguardo: imaging che quantifica il rischio\n\n13 paper selezionati su 173 candidati.\n\n✨ Highlights:\n• Entropia CMR → MACE nella miocardite acuta (n=492)\n• HRCT automatica batte l'occhio nella progressione SSc-ILD\n• Position statement TAVR: il framework CODE\n\n🧩 Filo della settimana: la quantificazione del tessuto supera il giudizio visivo — dal polmone al cuore.\n\n👉 https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W29.html",
+        "disable_web_page_preview": false
+      }
+    }
+  ]
+}
