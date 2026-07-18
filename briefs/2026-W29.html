@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 29 (18 luglio 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 29</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">La misura batte lo sguardo: imaging che quantifica il rischio</h1>
+  <p class="ui text-sm text-slate-500 mt-3">18 luglio 2026 · 13 selezionati su 173 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+
+  <article class="mb-10">
+    <h3 class="article-title text-lg mb-1">
+      <a href="https://doi.org/10.1148/radiol.251932" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Entropy for Prediction of MACEs in Myocarditis: A Cardiac MRI-based Biomarker of Myocardial Tissue Heterogeneity
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-3">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      Radiology · lug 2026 · Wang Y, Li L, Teng F et al.
+    </p>
+    <p class="mb-3">
+      Su 492 pazienti con miocardite acuta (discovery 319 + validazione esterna 173), l'<span class="anchor-text">entropia globale del ventricolo sinistro</span> alla CMR — una misura di disomogeneità del segnale miocardico — predice gli eventi cardiovascolari maggiori (MACE) in modo indipendente da frazione d'eiezione, estensione del LGE ed ECV. Un'entropia ≥8.5 individua il gruppo ad alto rischio.
+    </p>
+    <div class="anchor-block">
+      <p>
+        <span class="anchor-label">🧠 L'aggancio:</span>
+        <strong>Ordine e disordine.</strong> Il LGE risponde a «quanta cicatrice»; l'entropia risponde a «quanto disordinato è il tessuto» — due domande diverse sullo stesso miocardio. Clinicamente aggiunge prognosi proprio dove la frazione d'eiezione è ancora conservata e rassicurante.
+        <br>❓ Domanda di rottura: quale proprietà fisica del miocardio misura davvero l'entropia, che l'estensione del LGE non cattura?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica clinica? — chi stratificare</summary>
+      <div>
+        <div class="takeaway-card">
+          <p><span class="takeaway-label">Bottom line</span></p>
+          <p class="mt-1">Nel paziente con miocardite acuta e FE conservata, l'eterogeneità del segnale è un secondo asse di rischio: non sostituisce il LGE, lo affianca dove il LGE «piccolo» non tranquillizza.</p>
+        </div>
+        <table class="mt-3">
+          <thead><tr><th>Variabile</th><th>Cosa misura</th><th>Segnale d'allarme</th></tr></thead>
+          <tbody>
+            <tr><td>FE ventricolo sx</td><td>Pompa globale</td><td>Bassa (ma può essere normale)</td></tr>
+            <tr><td>Estensione LGE</td><td>Quantità di scar</td><td>Ampia</td></tr>
+            <tr><td>Entropia globale VS</td><td>Disomogeneità del tessuto</td><td><strong>≥ 8.5 → HR 3.33</strong></td></tr>
+          </tbody>
+        </table>
+        <p class="mt-3 text-sm text-slate-600">Limite: studio retrospettivo, coorte prevalentemente giovane (età media 32 anni); soglia da confermare in coorti a diverso case-mix.</p>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>🔬 Deep dive — come l'entropia si aggiunge al modello di rischio</summary>
+      <div>
+        <div class="mermaid">
+flowchart TB
+    CMR["Miocardite acuta<br/>alla CMR"] --> Base["Modello base:<br/>FE + estensione LGE + ECV"]
+    Base --> Q{"Entropia globale VS?"}
+    Q -->|"&lt; 8.5"| Low["Rischio inferiore"]
+    Q -->|"&ge; 8.5"| High["Alto rischio<br/>HR 3.33 per MACE"]
+    High --> FU["Follow-up più stretto"]
+    classDef hi fill:#fee2e2,stroke:#991b1b
+    classDef lo fill:#dcfce7,stroke:#166534
+    class High,FU hi
+    class Low lo
+        </div>
+        <p class="mt-3 text-sm">L'aggiunta dell'entropia globale al modello aggiustato migliora il fit incrementale per l'endpoint primario (χ² 66.9 → 77.5; P &lt; .001). MACE = morte cardiaca, ricovero per scompenso, trapianto, recidiva, aritmia ventricolare sostenuta.</p>
+        <p class="mt-3 text-sm text-purple-800"><strong>Schema da ricordare:</strong> stesso scar, diversa tessitura → diverso destino.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-10">
+    <h3 class="article-title text-lg mb-1">
+      <a href="https://doi.org/10.1093/rheumatology/keag346" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Automated high-resolution CT analysis outperforms visual assessment in predicting interstitial lung disease progression in SSc
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-3">
+      <span class="badge-fulltext">📖 Full text</span>
+      Rheumatology (Oxford) · giu 2026 · Motta F, Tonutti A, Catapano F et al.
+    </p>
+    <p class="mb-3">
+      In 33 pazienti con <span class="anchor-text">SSc-ILD</span> seguiti con HRCT e prove di funzionalità respiratoria, solo l'analisi quantitativa automatica (Thoracic VCAR) — non lo scoring visivo — coglie l'aumento precoce di ground-glass e la perdita di parenchima normale, e predice il declino funzionale successivo. Un aumento di GGO &gt;50 ml (8.2%) fra baseline e 1 anno anticipa la progressione.
+    </p>
+    <div class="anchor-block">
+      <p>
+        <span class="anchor-label">🧠 L'aggancio:</span>
+        <strong>L'occhio si stanca, il voxel no.</strong> Lo score visivo cattura bene la fibrosi conclamata; il software coglie il ground-glass che la precede, quando la finestra terapeutica è ancora aperta. La domanda passa da «vedo progressione?» a «la misuro prima di vederla?».
+        <br>❓ Domanda di rottura: il ground-glass che il software quantifica è infiammazione ancora reversibile o fibrosi precoce — e questo cambia cosa fai con quel numero?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica clinica? — quando pesare il quantitativo</summary>
+      <div>
+        <table>
+          <thead><tr><th>Metodo</th><th>Coglie la fibrosi?</th><th>Coglie il GGO precoce?</th><th>Predice il declino?</th></tr></thead>
+          <tbody>
+            <tr><td>Scoring visivo</td><td>Sì</td><td>No</td><td>No (correlazioni deboli)</td></tr>
+            <tr><td>Quantitativo automatico</td><td>Sì</td><td><strong>Sì</strong></td><td><strong>Sì — ΔGGO &gt;50 ml: sens 81% / spec 77%</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="takeaway-card mt-4">
+          <p><span class="takeaway-label">Bottom line</span></p>
+          <p class="mt-1">Nel monitoraggio SSc-ILD, un incremento quantitativo di GGO all'HRCT di controllo merita attenzione anche se «a occhio» il quadro sembra stabile. Attenzione al numero: coorte piccola (n=33), single-center — segnale forte, conferma prospettica ancora necessaria.</p>
+        </div>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>🔬 Deep dive — dove il quantitativo aggiunge informazione</summary>
+      <div>
+        <div class="mermaid">
+flowchart LR
+    HRCT["HRCT di follow-up<br/>SSc-ILD"] --> V["Lettura visiva"] & S["Analisi quantitativa"]
+    V --> Vf["Fibrosi: rilevata"]
+    S --> Sf["Fibrosi: rilevata"]
+    S --> Sg["ΔGGO + Δparenchima normale"]
+    Sg --> Pred["Predice declino funzionale<br/>a 12 mesi"]
+    classDef ok fill:#dbeafe,stroke:#1e40af
+    class Sg,Pred ok
+        </div>
+        <p class="mt-3 text-sm">I parametri software correlano forte con le variazioni di funzione respiratoria; lo score visivo mostra correlazioni più deboli e non predice il declino a distanza.</p>
+        <p class="mt-3 text-sm text-purple-800"><strong>Schema da ricordare:</strong> il GGO che aumenta oggi è la funzione che scenderà domani.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-10">
+    <h3 class="article-title text-lg mb-1">
+      <a href="https://doi.org/10.1016/j.jcin.2026.04.049" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Procedural Strategies for Optimal Transcatheter Aortic Valve Replacement: An International Position Statement
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-3">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      JACC: Cardiovascular Interventions · lug 2026 · Maznyczka A, Pilgrim T, Hildick-Smith D et al.
+    </p>
+    <p class="mb-3">
+      Con l'estensione della TAVR a pazienti più giovani e con lunga aspettativa di vita, l'obiettivo si sposta dall'impianto «riuscito» all'impianto <span class="anchor-text">ottimale e durevole</span>. Il position statement propone il framework
+      <details class="inline"><summary><span class="chip">TAVR CODE</span></summary><span class="chip-content">Quattro parametri fluoroscopici per standardizzare l'impianto ottimale: Coaxiality, Orientation, Depth, Expansion.</span></details>
+      per standardizzare la valutazione intraprocedurale, con l'ipotesi che migliori performance e durabilità della protesi.
+    </p>
+    <div class="anchor-block">
+      <p>
+        <span class="anchor-label">🧠 L'aggancio:</span>
+        <strong>Riuscito vs ottimale.</strong> Il successo procedurale è una valvola che funziona oggi; la durabilità è una valvola che funziona fra 15 anni, con accesso coronarico preservato e senza pacemaker. Coaxialità, orientamento, profondità ed espansione sono i quattro assi che separano i due esiti.
+        <br>❓ Domanda di rottura: quale dei quattro assi, se sbagliato, compromette non l'emodinamica di oggi ma l'accesso coronarico di domani?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica clinica? — i quattro assi del CODE</summary>
+      <div>
+        <table>
+          <thead><tr><th>Asse</th><th>Obiettivo</th><th>Rischio se sub-ottimale</th></tr></thead>
+          <tbody>
+            <tr><td><strong>C</strong>oaxiality</td><td>Allineamento con l'asse aortico</td><td>Leak paravalvolare, malapposizione</td></tr>
+            <tr><td><strong>O</strong>rientation</td><td>Allineamento commissurale</td><td>Accesso coronarico futuro difficile</td></tr>
+            <tr><td><strong>D</strong>epth</td><td>Profondità d'impianto</td><td>Pacemaker permanente (troppo bassa)</td></tr>
+            <tr><td><strong>E</strong>xpansion</td><td>Espansione simmetrica</td><td>Degenerazione precoce, mismatch</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-3 text-sm text-slate-600">Le raccomandazioni derivano soprattutto da studi meccanicistici e retrospettivi; trial randomizzati su pre/post-dilatazione, allineamento commissurale e guida IVUS sono in corso.</p>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>🔬 Deep dive — dal CODE all'esito clinico</summary>
+      <div>
+        <div class="mermaid">
+mindmap
+  root)TAVR CODE(
+    Coaxiality
+      Asse aortico
+      Riduce leak
+    Orientation
+      Allineamento commissurale
+      Accesso coronarico
+    Depth
+      Evita il pacemaker
+      Reverse remodeling
+    Expansion
+      Simmetria
+      Durabilita
+        </div>
+        <p class="mt-3 text-sm">Impianto ottimale → migliore riduzione dell'afterload → reverse remodeling ventricolare → beneficio clinico più ampio e duraturo. IVUS in studio per guidare la post-dilatazione sull'espansione.</p>
+        <p class="mt-3 text-sm text-purple-800"><strong>Schema da ricordare:</strong> quattro lettere separano «valvola aperta» da «valvola che dura».</p>
+      </div>
+    </details>
+  </article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1136/bmjresp-2026-004221" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Prognostic value of ventilatory efficiency in hypersensitivity pneumonitis
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      BMJ Open Respiratory Research · 9 lug 2026 · Chumpagern W, Spagnolo P, Ratanawatkul P et al.
+    </p>
+    <p class="mb-2 text-sm">
+      In 164 pazienti (polmonite da ipersensibilità non-fibrotica e fibrotica, con IPF come confronto), l'efficienza ventilatoria al test da sforzo cardiopolmonare
+      (<details class="inline"><summary><span class="chip">VE/VCO2</span></summary><span class="chip-content">Slope ventilazione/produzione di CO₂ al CPET: indice di efficienza ventilatoria; sale con ipertensione polmonare e mismatch V/Q.</span></details>)
+      cresce col peggiorare della DLCO e con l'ipertensione polmonare, ma non con la caduta della FVC. Uno slope ≥42 predice mortalità (HR 3.65; nel solo HP HR 5.49).
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>DLCO parla, FVC tace.</strong> La VE/VCO2 segue la diffusione e il letto vascolare, non il volume: un HP «stabile» alla spirometria può essere instabile al CPET.
+        <br>❓ Domanda di rottura: quando l'efficienza ventilatoria crolla, stai misurando il polmone che fibrosa o il letto vascolare che si chiude?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Nel HP con DLCO ridotta o sospetta ipertensione polmonare, uno slope VE/VCO2 ≥42 è un marcatore prognostico pratico per stratificare il rischio oltre la FVC. Utile a selezionare chi indirizzare a valutazione emodinamica/PH.</p>
+        <div class="takeaway-card mt-3">
+          <p><span class="takeaway-label">Soglia operativa</span></p>
+          <p class="mt-1">VE/VCO2 slope ≥42 → mortalità aumentata. La FVC può ingannare; la diffusione no.</p>
+        </div>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://pubmed.ncbi.nlm.nih.gov/42402053/" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Diagnostic performance of lung ultrasound for the detection of interstitial lung disease in rheumatoid arthritis: comparison with risk scoring systems
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      ARP Rheumatology · 2026 · Recalde Reyes J, Cortés JS, Cajas LJ
+    </p>
+    <p class="mb-2 text-sm">
+      In 147 pazienti con artrite reumatoide (68 con ILD confermata all'HRCT), l'ecografia polmonare (protocollo a 14 punti; anomala se &gt;5 B-lines o irregolarità pleuriche in ≥2 finestre) supera i punteggi di rischio clinici, anche negli asintomatici (sensibilità 95.4%, specificità 77.7%). Combinare ecografia e score porta la sensibilità al 100%.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Le B-lines prima del sintomo.</strong> I risk score pesano ciò che sai del paziente; le B-lines mostrano ciò che il polmone già rivela. Nei RA asintomatici questo cambia il triage pre-HRCT.
+        <br>❓ Domanda di rottura: una B-line è specifica per interstiziopatia o solo per acqua/ispessimento — cosa stai davvero escludendo prima della HRCT?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Come filtro pre-HRCT nel RA asintomatico: un'ecografia polmonare negativa ha un rapporto di verosimiglianza negativo basso (−LR 0.06), utile per rassicurare; una positiva indirizza alla HRCT. Limite: le B-lines non sono specifiche per fibrosi — vanno lette nel contesto (crackles velcro, dispnea, sesso maschile).</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1183/16000617.0076-2026" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Fibrotic chronic eosinophilic pneumonia: from inflammation to fibrosis and therapeutic implications
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      European Respiratory Review · 8 lug 2026 · Previtero D, Castelli G, Padrin Y et al.
+    </p>
+    <p class="mb-2 text-sm">
+      La
+      <details class="inline"><summary><span class="chip">CEP</span></summary><span class="chip-content">Chronic Eosinophilic Pneumonia — infiltrati eosinofili periferici, tipicamente steroido-responsivi; distretto sub-pleurico dei campi superiori.</span></details>
+      non è sempre reversibile: una quota sviluppa fibrosi progressiva. I biologici anti-IL-5/IL-5Rα emergono come steroid-sparing nelle forme recidivanti; la review propone un approccio fenotipo-adattato, con controllo precoce dell'infiammazione per prevenire la fibrosi e antifibrotici nelle forme già fibrosanti.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Reversibile finché dura.</strong> Il dogma «CEP = steroido-responsiva» si incrina davanti alla quota che fibrosa: l'infiammazione eosinofila e la fibrosi sono un continuum, non due mondi.
+        <br>❓ Domanda di rottura: quale segno HRCT distingue l'eosinofilo che regredirà dalla fibrosi che resterà — e a che punto smetti di aspettarti reversibilità?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <table>
+          <thead><tr><th>Fase</th><th>Bersaglio</th><th>Strategia proposta</th></tr></thead>
+          <tbody>
+            <tr><td>Infiammatoria / recidivante</td><td>Eosinofilo (IL-5)</td><td>Anti-IL-5/IL-5Rα steroid-sparing</td></tr>
+            <tr><td>Fibrosante stabilita/progressiva</td><td>Rimodellamento</td><td>Considera antifibrotico (nintedanib)</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-3 text-slate-600">Nessuno studio prospettico dedicato ancora: framework razionale, non evidenza di trial.</p>
+      </div>
+    </details>
+  </article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1183/16000617.0295-2025" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Risk prediction for lung cancer screening: a systematic review and meta-regression
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      European Respiratory Review · 8 lug 2026 · Rezaeianzadeh R, Leung C, Kim SJ et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Revisione sistematica di 91 modelli di rischio per lo screening del tumore polmonare sviluppati dopo il 2020 (56 per la selezione, 35 per la classificazione dei noduli post-screening). La discriminazione va da moderata (AUC ~0.70) a eccellente (&gt;0.90), con i modelli arricchiti da biomarcatori/imaging spesso migliori — ma la calibrazione è riportata male e meno della metà è validata esternamente.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Tanti modelli, poche prove.</strong> Un AUC alto in derivazione racconta quanto un modello ha imparato la sua coorte, non quanto reggerà nella tua. La maturità clinica è la validazione esterna, non la performance interna.
+        <br>❓ Domanda di rottura: un AUC di 0.90 nella coorte originale ti dice quanto il modello funzionerà nel tuo programma — o solo quanto ha memorizzato chi lo ha addestrato?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Prima di adottare un modello di rischio per lo screening, chiedi: è stato validato esternamente? La calibrazione è riportata (non solo la discriminazione)? Esiste un confronto testa-a-testa con i criteri correnti? Se la risposta è no, resta sui criteri validati.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1183/16000617.0299-2025" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Prediction of PD-L1 expression in non-small cell lung cancer using AI models based on radiomics: a systematic review and meta-analysis
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      European Respiratory Review · 8 lug 2026 · Zhang P, Zhang B, Liu N et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Meta-analisi di 35 studi: i modelli AI radiomici stimano l'espressione di PD-L1 nel NSCLC con AUC aggregata ~0.78 (TPS≥1) e ~0.80 (TPS≥50). PET/CT e CT con contrasto rendono meglio alle soglie alte; modalità e algoritmo sono i fattori chiave della performance.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Il fenotipo nell'immagine.</strong> La biopsia misura l'espressione, la radiomica la stima: un'AUC di 0.80 è un buon strumento di orientamento, non un verdetto che sostituisce il patologo.
+        <br>❓ Domanda di rottura: cosa «vede» davvero la texture che correla con PD-L1 — l'espressione immunitaria o un confondente come istotipo o necrosi?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Oggi utile come complemento esplorativo, non come alternativa alla determinazione istologica del PD-L1 richiesta per l'immunoterapia. Se usato, preferire input PET/CT o CT con contrasto per le soglie di espressione elevate.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://www.medrxiv.org/content/10.64898/2026.06.29.26356713v1" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Whole-lung CT radiomics-based machine learning classification of nontuberculous mycobacteria lung disease across geographically distinct cohorts
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      medRxiv · preprint (non peer-reviewed) · 9 lug 2026 · Kanagala A, Garcia B, Dutt et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Radiomica whole-lung con segmentazione automatica (nessuna annotazione manuale della lesione) per distinguere la malattia da micobatteri non tubercolari: addestramento su coorte cinese (871 TB / 429 NTM), validazione esterna su coorte statunitense (173 NTM). AUC esterna 0.94, con 16 feature texture ricorrenti tra le popolazioni.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>La firma senza il contorno.</strong> La radiomica classica richiede segmentare la lesione; qui basta il polmone intero, e la firma regge tra coorti distanti — segno di un pattern parenchimale, non di un artefatto locale.
+        <br>❓ Domanda di rottura: se non segmenti la malattia, la feature che discrimina viene dal pattern NTM o dal contesto polmonare che lo accompagna?
+      </p>
+    </div>
+  </article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1080/07853890.2026.2696028" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Determinants, risk score, and prognostic implications of left ventricular thrombus in ischemic cardiomyopathy assessed by cardiac MR
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      Annals of Medicine · 15 lug 2026 · Aramcharoen C, Buraphat P, Wanitanantakun T et al.
+    </p>
+    <p class="mb-2 text-sm">
+      In 790 pazienti con cardiomiopatia ischemica cronica (FE &lt;50%, &gt;40 giorni post-infarto) studiati con CMR, il trombo ventricolare sinistro si associa in modo indipendente ad aneurisma apicale, LGE apicale ed estensione del LGE. Il CMR-LVT Score discrimina bene (AUC 0.73 in derivazione, 0.79 in validazione) e il trombo basale predice gli eventi (HR 2.38).
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Non la FE, ma dove.</strong> La frazione d'eiezione dice quanto il cuore pompa male; l'LGE apicale dice dove il sangue ristagna e nidifica il trombo. Il rischio è locale, non solo globale.
+        <br>❓ Domanda di rottura: è l'acinesia apicale o la cicatrice transmurale a creare il nido del trombo — e il tuo score sta pesando la variabile giusta?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Nel paziente ischemico cronico con FE ridotta, la presenza di aneurisma apicale ed esteso LGE apicale sposta la probabilità pre-test di trombo: contesto in cui la caratterizzazione CMR (o l'imaging con contrasto mirato all'apice) guadagna valore prima di decidere sull'anticoagulazione.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1148/ryct.250480" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Vendor-independent Aortic Valve Calcium Scoring in Patients with Discordant Echocardiographic Criteria of Severe Aortic Stenosis
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      Radiology: Cardiothoracic Imaging · ago 2026 · Dobrolińska MM, van der Werf N, Greuter MJW et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Uno score di calcio valvolare aortico
+      (<details class="inline"><summary><span class="chip">vnAS</span></summary><span class="chip-content">vendor-neutral Agatston Score — calcio valvolare calibrato tra scanner diversi per renderlo confrontabile e indipendente dal sistema CT.</span></details>)
+      calibrato su 7 sistemi CT e validato su 831 pazienti. Nei casi con ecocardiografia discordante per stenosi severa, il vnAS è più alto del calcium score tradizionale e riclassifica 8.5% delle donne e 17.8% degli uomini nel gruppo «severa».
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Quando l'eco esita, conta il calcio.</strong> I gradienti ecocardiografici discordanti (low-flow/low-gradient) dipendono dal flusso; il calcio valvolare quantitativo no — e la calibrazione fra scanner rende il numero confrontabile.
+        <br>❓ Domanda di rottura: nel low-flow/low-gradient stai misurando la severità della valvola o lo stato del ventricolo che la muove?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Il calcium score valvolare è l'arbitro nei casi eco-discordanti. Soglie di severità: <strong>1274 UA nelle donne, 2065 UA negli uomini</strong>. La versione vendor-neutral riduce la variabilità tra apparecchi, utile quando i pazienti sono scansionati su CT diverse.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://www.medrxiv.org/content/10.64898/2026.07.08.26357594v1" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Aficamten reduces eligibility for septal reduction therapy in obstructive HCM: long-term outcomes from FOREST-HCM
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      medRxiv · preprint (non peer-reviewed) · 13 lug 2026 · Masri A, FOREST-HCM Investigators, Meder B
+    </p>
+    <p class="mb-2 text-sm">
+      Nell'estensione open-label FOREST-HCM, tra 104 pazienti con HCM ostruttiva eleggibili a terapia di riduzione settale
+      (<details class="inline"><summary><span class="chip">SRT</span></summary><span class="chip-content">Septal Reduction Therapy — miectomia chirurgica o ablazione alcolica del setto nell'HCM ostruttiva refrattaria e sintomatica.</span></details>),
+      l'aficamten (inibitore della miosina) ha reso non-eleggibili quasi tutti in mediana 42 giorni; a 72 settimane nessuno restava eleggibile. Gradiente LVOT ridotto di −41 mmHg (riposo) e −56 mmHg (Valsalva); 95% migliorato ≥1 classe NYHA, sicurezza favorevole.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Il gradiente prima del bisturi.</strong> La SRT rimuove il muscolo; l'aficamten ne riduce la contrazione — stesso gradiente abbattuto, strada opposta. L'indicazione chirurgica va rivalutata dopo il trial farmacologico.
+        <br>❓ Domanda di rottura: «non più eleggibile a SRT» misura un beneficio duraturo o solo un gradiente abbassato finché il farmaco è a bordo?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <p>Nel candidato a SRT drug-refractory e sintomatico (NYHA III), un ciclo di miosina-inibizione può differire o evitare la procedura invasiva. Cautela: dato da estensione open-label e in preprint; l'eleggibilità dipende dalla persistenza del farmaco, e va monitorata la FE (rari eventi &lt;50%, gestiti con down-titration).</p>
+      </div>
+    </details>
+  </article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>📐</span> Linee guida</h2>
+  <article class="mb-6">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.5694/mja2.70234" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Program Guidelines for the National Lung Cancer Screening Program: Targeted Screening in High-Risk Individuals in Australia
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      Medical Journal of Australia · lug 2026 · Rankin NM, Zosel R, Whop LJ et al.
+    </p>
+    <p class="mb-2 text-sm">
+      L'Australia (terzo grande sistema dopo USA ed Europa) formalizza il suo programma nazionale di screening con LDCT, avviato a luglio 2025: eleggibilità risk-based (MSAC) nei 50-70 anni con storia di fumo, protocollo dedicato di gestione dei noduli e supporto alla cessazione integrato lungo tutto il percorso.
+    </p>
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        <strong>Dal trial al programma.</strong> L'efficacia nei trial (NLST, NELSON) è la premessa; il beneficio reale dipende dalla governance del percorso — aderenza, gestione dei noduli, incidentalomi. Il radiologo è dentro la catena, non a valle.
+        <br>❓ Domanda di rottura: cosa determina il beneficio reale del programma — la sensibilità della LDCT o la governance di ciò che accade dopo la scansione?
+      </p>
+    </div>
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica?</summary>
+      <div class="text-sm">
+        <table>
+          <thead><tr><th>Parametro</th><th>Programma australiano</th></tr></thead>
+          <tbody>
+            <tr><td>Popolazione</td><td>50–70 anni, storia di fumo</td></tr>
+            <tr><td>Eleggibilità</td><td>Risk-based (criteri MSAC)</td></tr>
+            <tr><td>Metodica</td><td>LDCT + protocollo noduli dedicato</td></tr>
+            <tr><td>Integrazione</td><td>Cessazione del fumo lungo il percorso</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+    <details class="deepdive">
+      <summary>🔬 Deep dive — il percorso di screening</summary>
+      <div>
+        <div class="mermaid">
+flowchart TB
+    Elig["Valutazione eleggibilità<br/>risk-based (50-70 aa, fumo)"] --> Reg["Iscrizione al registro"]
+    Reg --> LDCT["LDCT a basse dosi"]
+    LDCT --> Rep{"Protocollo noduli"}
+    Rep -->|"Negativo"| Recall["Round successivo"]
+    Rep -->|"Nodulo"| Manage["Gestione secondo protocollo"]
+    Rep -->|"Reperto incidentale"| Action["Riferimento mirato"]
+    Elig --> Cess["Supporto alla cessazione del fumo"]
+    classDef key fill:#dbeafe,stroke:#1e40af
+    class LDCT,Manage key
+        </div>
+        <p class="mt-3 text-sm text-purple-800"><strong>Schema da ricordare:</strong> lo screening non è la scansione, è il percorso che la circonda.</p>
+      </div>
+    </details>
+  </article>
+</section>
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Quattro lavori di questa settimana convergono su un'unica idea: la <em>quantificazione del tessuto</em> supera il giudizio visivo. Nella SSc-ILD l'HRCT automatica predice il declino dove l'occhio non arriva; nella miosite le misure quantitative (QLF/QILD) predicono la mortalità mentre la presenza «visiva» di ILD no; nella miocardite l'entropia del segnale stratifica il rischio oltre l'estensione del LGE; nella stenosi aortica il calcio valvolare quantitativo riclassifica ciò che l'eco lascia ambiguo.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)La misura batte lo sguardo(
+    Polmone
+      SSc-ILD
+        HRCT automatica predice
+        Visivo no
+      Miosite
+        QLF e QILD e mortalita
+        ILD visiva non predice
+    Cuore
+      Miocardite
+        Entropia oltre il LGE
+      Stenosi aortica
+        Calcio quantitativo
+        Riclassifica l eco discordante
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> il pattern visivo resta il primo gradino, ma la decisione — trattare, anticoagulare, operare — si sposta sempre più sul dato quantitativo e riproducibile. Il rischio speculare: adottare numeri non ancora validati esternamente (vedi i 91 modelli di screening). La misura vince solo se è anche calibrata e trasferibile.
+  </p>
+</section>
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 18 luglio 2026, 17:30 (CEST).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>

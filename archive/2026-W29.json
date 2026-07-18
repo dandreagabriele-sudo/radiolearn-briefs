@@ -1,0 +1,35 @@
+{
+  "brief_id": "2026-W29",
+  "generated_at": "2026-07-18T15:30:00+00:00",
+  "candidates_count": 173,
+  "selected_count": 13,
+  "selected_dois": [
+    "10.1148/radiol.251932",
+    "10.1093/rheumatology/keag346",
+    "10.1016/j.jcin.2026.04.049",
+    "10.1136/bmjresp-2026-004221",
+    "10.1183/16000617.0076-2026",
+    "10.1183/16000617.0295-2025",
+    "10.1183/16000617.0299-2025",
+    "10.64898/2026.06.29.26356713",
+    "10.1080/07853890.2026.2696028",
+    "10.1148/ryct.250480",
+    "10.64898/2026.07.08.26357594",
+    "10.5694/mja2.70234"
+  ],
+  "headline": "La misura batte lo sguardo: imaging che quantifica il rischio",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "ok",
+    "arxiv_cardio_imaging": "ok",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-06-27T13:10:00.137429+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W26.html",
-  "last_brief_item_count": 12,
+  "last_brief_at": "2026-07-18T15:30:00+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W29.html",
+  "last_brief_item_count": 13,
   "processed_dois": [
     "10.1056/NEJMra2415426",
     "10.1183/16000617.0044-2026",
@@ -53,7 +53,19 @@
     "10.1016/j.jacc.2026.03.170",
     "10.1148/ryct.250235",
     "10.1148/radiol.252706",
-    "10.3760/cma.j.cn112148-20251215-00875"
+    "10.3760/cma.j.cn112148-20251215-00875",
+    "10.1148/radiol.251932",
+    "10.1093/rheumatology/keag346",
+    "10.1016/j.jcin.2026.04.049",
+    "10.1136/bmjresp-2026-004221",
+    "10.1183/16000617.0076-2026",
+    "10.1183/16000617.0295-2025",
+    "10.1183/16000617.0299-2025",
+    "10.64898/2026.06.29.26356713",
+    "10.1080/07853890.2026.2696028",
+    "10.1148/ryct.250480",
+    "10.64898/2026.07.08.26357594",
+    "10.5694/mja2.70234"
   ],
   "briefs_archive": [
     {
@@ -83,6 +95,13 @@
       "date": "2026-06-27",
       "items": 12,
       "headline": "Il decimo anno: durabilità e rischio predetto"
+    },
+    {
+      "id": "2026-W29",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W29.html",
+      "date": "2026-07-18",
+      "items": 13,
+      "headline": "La misura batte lo sguardo: imaging che quantifica il rischio"
     }
   ]
 }
