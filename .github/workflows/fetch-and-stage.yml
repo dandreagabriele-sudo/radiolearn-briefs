@@ -22,9 +22,9 @@ jobs:
 
       - name: Run fetch and stage
         env:
-          # Built-in token is authorized for repo contents (permissions.contents: write).
-          # Falls back through GH_PAT only if explicitly provided and non-empty.
-          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          # Built-in GITHUB_TOKEN is authorized for repo contents (permissions.contents: write).
+          # Previously used secrets.GH_PAT, but that PAT expired and returned HTTP 401.
+          GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
