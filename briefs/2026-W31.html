@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 31 (1 agosto 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 31</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Sotto la superficie: meccanismi, bersagli e forme che contano</h1>
+  <p class="ui text-sm text-slate-500 mt-3">1 agosto 2026 · 12 selezionati su 157 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<!-- H1: LTI-03 IPF -->
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1038/s41467-026-75291-3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Inhaled LTI-03 for idiopathic pulmonary fibrosis: a randomized dose escalation study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span> Nature Communications · 31 lug 2026 · Molyneaux PL, Hirani NA, Chia CCK et al.
+  </p>
+  <p class="mb-3">
+    Fase 1b randomizzata (24 pazienti IPF, 14 giorni) su un peptide inalatorio che punta a
+    <span class="anchor-text">tenere vivo l'epitelio alveolare</span> invece di sopprimere il fibroblasto.
+    Ben tollerato e, nelle spazzolature bronchiali profonde, riduce due allarmine epiteliali —
+    <details class="inline"><summary><span class="chip">IL-11</span></summary><span class="chip-content">Interleuchina-11 — citochina profibrotica prodotta dall'epitelio alveolare danneggiato, motore della transizione mesenchimale.</span></details>
+    e
+    <details class="inline"><summary><span class="chip">TSLP</span></summary><span class="chip-content">Thymic Stromal Lymphopoietin — allarmina epiteliale che innesca l'infiammazione di tipo 2 e segnali profibrotici a valle.</span></details>.
+    È un segnale biologico, non un esito clinico.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Sopprimere o mantenere.</strong> Per vent'anni l'antifibrotico ha cercato di spegnere il
+      fibroblasto; qui la leva si sposta a monte, sulla sopravvivenza della cellula epiteliale che, morendo,
+      dà il via alla cascata. In clinica cambia la domanda da "come fermo la cicatrice?" a "come proteggo
+      chi la innesca?".
+      ❓ Domanda di rottura: quale cellula stai davvero cercando di salvare, e in quale momento della cascata fibrotica il tuo bersaglio conta ancora?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — cosa conclude (e cosa no)</summary>
+    <div>
+      <div class="takeaway-card">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Nessuna ricaduta clinica immediata: 24 pazienti, 14 giorni, endpoint di sicurezza.
+        Il valore è la prova di <em>target engagement</em> epiteliale in vivo — la molecola arriva e modula
+        i mediatori giusti. Da seguire nelle fasi 2, non da prescrivere.</p>
+      </div>
+      <table class="mt-3">
+        <thead><tr><th>Aspetto</th><th>Dato</th><th>Lettura</th></tr></thead>
+        <tbody>
+          <tr><td>Popolazione</td><td>24 IPF, 3:1 vs placebo</td><td class="text-slate-600">Coorte minima, esplorativa</td></tr>
+          <tr><td>Endpoint primario</td><td>Eventi avversi (TEAE)</td><td class="text-slate-600">Sicurezza/tollerabilità</td></tr>
+          <tr><td>Segnale biologico</td><td>↓ IL-11, ↓ TSLP</td><td class="text-slate-600">Engagement epiteliale</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive — la logica meccanicistica</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    Drug["LTI-03 inalatorio<br/>(mimetico caveolina-1)"] --> Epi["Sopravvivenza<br/>epitelio alveolare (AEC2)"]
+    Epi --> Alarm["↓ Allarmine epiteliali<br/>IL-11 · TSLP"]
+    Alarm --> Fibro["↓ Segnale profibrotico<br/>a valle"]
+    Fibro --> Scar["Meno transizione<br/>mesenchimale"]
+    classDef key fill:#dbeafe,stroke:#1e40af
+    class Epi,Alarm key
+      </div>
+      <p class="mt-3 text-sm"><strong>Errore da evitare:</strong> scambiare il <em>target engagement</em> di
+      fase 1b per efficacia clinica. Lo studio dimostra che la molecola fa ciò che promette a livello
+      molecolare, non che rallenta la malattia.</p>
+      <p class="mt-2 text-sm">Schema da ricordare: <strong>l'antifibrotico che parte dall'epitelio, non dal fibroblasto.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- H2: SGLT2i CMR post-AMI -->
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1016/j.jcin.2026.04.017" target="_blank" rel="noopener" class="hover:text-blue-700">
+      SGLT2 Inhibitor on Infarct Size and LV Remodeling by CMR in Patients With AMI
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span> JACC: Cardiovascular Interventions · lug 2026 · Choi KH, Lee SH, Kim SM et al.
+  </p>
+  <p class="mb-3">
+    RCT open-label (n=200, 1:1) che assegna empagliflozin 10 mg vs nessun SGLT2i dopo PCI per IMA ad alto
+    rischio di scompenso. L'endpoint primario non è un evento clinico ma un'immagine:
+    <span class="anchor-text">infarct size (% massa VS)</span> alla CMR a 6 mesi, con coprimario la
+    variazione del volume telesistolico (ΔLVESV). Un trial nato per capire <em>perché</em>, non solo <em>se</em>.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Meccanismo vs evento.</strong> I grandi trial hanno già detto che gli SGLT2i post-IMA sono
+      sicuri e utili; qui la CMR fa da microscopio del meccanismo, separando "infarto più piccolo" da
+      "rimodellamento migliore a parità di danno".
+      ❓ Domanda di rottura: se l'infarct size non cambiasse ma il volume telesistolico sì, quale bersaglio del farmaco avresti davvero misurato?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — a chi si applica</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Voce</th><th>Dettaglio</th></tr></thead>
+        <tbody>
+          <tr><td>Popolazione</td><td>IMA post-PCI ad alto rischio di scompenso, ≥18 anni</td></tr>
+          <tr><td>Intervento</td><td>Empagliflozin 10 mg/die vs nessun SGLT2i (open-label)</td></tr>
+          <tr><td>Endpoint imaging</td><td>Infarct size (% massa VS) e ΔLVESV alla CMR, 6 mesi</td></tr>
+          <tr><td>Uso pratico</td><td>Rafforza il razionale meccanicistico, non cambia da solo le linee guida</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive — disegno a endpoint di imaging</summary>
+    <div>
+      <div class="mermaid">
+flowchart LR
+    AMI["IMA + PCI riuscita<br/>(alto rischio HF)"] --> R{"Randomizzazione 1:1"}
+    R -->|"n=100"| E["Empagliflozin 10 mg"]
+    R -->|"n=100"| C["Controllo (no SGLT2i)"]
+    E --> CMR["CMR baseline + 6 mesi"]
+    C --> CMR
+    CMR --> P["Infarct size % · ΔLVESV"]
+    classDef key fill:#dbeafe,stroke:#1e40af
+    class CMR,P key
+      </div>
+      <p class="mt-3 text-sm">Numero che resta: <strong>n=200, endpoint di imaging</strong> — un RCT
+      costruito attorno alla CMR per leggere il meccanismo, non gli eventi.</p>
+      <p class="mt-2 text-sm">Schema da ricordare: <strong>l'immagine come endpoint, non come descrizione.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- H3: LAP shape quantitative CT -->
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1148/ryct.250117" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Low-Attenuation Plaque Shape and Intraplaque Embeddedness on Quantitative CT and Acute Coronary Syndrome
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span> Radiology: Cardiothoracic Imaging · ago 2026 · Malkasian S, Nurmohamed NS, Chang HJ et al.
+  </p>
+  <p class="mb-3">
+    Sottoanalisi dello studio ICONIC (caso-controllo, coorte con ACS incidente dopo coronaro-TC). Oltre al
+    volume, la TC quantitativa misura la <span class="anchor-text">forma</span> della placca a bassa
+    attenuazione (crescente, lobulare, sferica, "a fagiolo") e quanto è incassata nella parete. Una
+    <details class="inline"><summary><span class="chip">ALM</span></summary><span class="chip-content">Adverse LAP Morphology — combinazione di forma e profondità della placca a bassa attenuazione associata alla sindrome coronarica acuta.</span></details>
+    definita dalla geometria si associa alla ACS.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Volume o geometria.</strong> Contiamo la placca da anni; qui il rischio si sposta sulla sua
+      <em>forma</em> e su quanto affonda nella parete — come un iceberg, conta più la parte sommersa che
+      quella emergente.
+      ❓ Domanda di rottura: quale proprietà geometrica stai davvero legando all'instabilità — la superficie di contatto col lume o la profondità nella parete?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — limiti e uso</summary>
+    <div class="text-sm">
+      <div class="takeaway-card">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">La morfologia sfavorevole aggiunge informazione al semplice burden di placca. Ma
+        la classificazione della forma resta in parte visiva: la riproducibilità inter-lettore è il collo
+        di bottiglia prima di portarla al referto.</p>
+      </div>
+      <p class="mt-2"><strong>Quando conta:</strong> placche a bassa attenuazione già identificate, in cui
+      la sola stenosi non spiega il rischio. <strong>Quando NON fidarsi:</strong> senza software di CT
+      quantitativa dedicato e senza controllo di qualità della segmentazione.</p>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive — dalla forma al rischio</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    LAP["Placca a bassa<br/>attenuazione (LAP)"] --> Shape{"Forma"}
+    LAP --> Embed{"Incassata nella parete?"}
+    Shape -->|"crescente / lobulare"| ALM["Morfologia<br/>sfavorevole (ALM)"]
+    Shape -->|"sferica / a fagiolo"| Low["Rischio inferiore"]
+    Embed -->|"270°-360°"| ALM
+    Embed -->|"<90°"| Low
+    ALM --> ACS["Associazione con ACS"]
+    classDef bad fill:#fee2e2,stroke:#991b1b
+    class ALM,ACS bad
+      </div>
+      <p class="mt-3 text-sm">Messaggio che resta: <strong>la forma della placca — non solo il suo volume —
+      porta informazione di rischio.</strong></p>
+      <p class="mt-2 text-sm">Schema da ricordare: <strong>geometria + profondità = instabilità.</strong></p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<!-- P1: ANCA-AAV pulmonary involvement meta-analysis -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1007/s12016-026-09186-y" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Risk Factors for Pulmonary Involvement in ANCA-associated Vasculitis: Systematic Review and Meta-analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span> Clinical Reviews in Allergy &amp; Immunology · 31 lug 2026 · Yang Z, Wu Y, Chen Y et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi di 19 studi (2.944 pazienti) che separa i due volti polmonari della vasculite ANCA: ILD
+    cronica e
+    <details class="inline"><summary><span class="chip">DAH</span></summary><span class="chip-content">Diffuse Alveolar Hemorrhage — emorragia alveolare diffusa, presentazione acuta della vasculite dei piccoli vasi polmonari.</span></details>.
+    Per l'ILD, i fattori indipendenti robusti sono età &gt;65 anni (OR 3,60) e sesso maschile (OR 2,57);
+    la MPO-ANCA è più frequente (OR 2,29). GPA, PR3-ANCA e coinvolgimento ORL vanno nella direzione opposta.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Un anticorpo, due polmoni.</strong> ILD cronica (fenotipo MPO, maschio anziano) e DAH acuta
+      non sono lo stesso quadro con gravità diversa: sono traiettorie distinte che condividono la sierologia.
+      ❓ Domanda di rottura: quando stratifichi il rischio polmonare nell'AAV, stai graduando una malattia o distinguendone due?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Nel paziente AAV, il profilo "maschio, &gt;65 anni, MPO-ANCA positivo" alza la probabilità
+      pre-test di ILD e giustifica un basso sospetto per HRCT precoce.</p>
+      <table class="mt-3">
+        <thead><tr><th>Fattore (ILD)</th><th>OR</th><th>Peso clinico</th></tr></thead>
+        <tbody>
+          <tr><td>Età &gt;65 anni</td><td><strong>3,60</strong></td><td class="text-slate-600">Numero-bandiera</td></tr>
+          <tr><td>Sesso maschile</td><td>2,57</td><td class="text-slate-600">Indipendente</td></tr>
+          <tr><td>MPO-ANCA positiva</td><td>2,29</td><td class="text-slate-600">Fenotipo ILD</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">Numero che resta: <strong>età &gt;65 → OR 3,60 per ILD nell'AAV.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- P2: Treatable traits sarcoidosis -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/bmjresp-2025-003919" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Treatable traits approach for personalised management of sarcoidosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span> BMJ Open Respiratory Research · 29 lug 2026 · Amati F, Stainer A, Morlacchi LC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Review che trasferisce alla sarcoidosi la logica dei "treatable traits" già usata in asma e BPCO:
+    cinque categorie di tratti trattabili — eziologico, stile di vita, polmonare, extrapolmonare
+    (sistemico) e comorbidità — al posto della stadiazione radiologica come guida terapeutica.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Stadio o tratto.</strong> La sarcoidosi è un fenotipo unico solo in apparenza: curare
+      "lo stadio II" dice poco, curare il tratto (ipercalcemia, fatigue, coinvolgimento cardiaco) dice cosa fare.
+      ❓ Domanda di rottura: quando prescrivi steroidi nella sarcoidosi, quale tratto stai trattando — l'infiammazione granulomatosa, la fatigue o l'ansia del referto?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — le cinque categorie</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Categoria TT</th><th>Esempio</th><th>Azione</th></tr></thead>
+        <tbody>
+          <tr><td>Eziologico</td><td>Esposizione antigenica</td><td class="text-slate-600">Rimozione/evitamento</td></tr>
+          <tr><td>Stile di vita</td><td>Fumo, deconditioning</td><td class="text-slate-600">Riabilitazione</td></tr>
+          <tr><td>Polmonare</td><td>Attività / fibrosi</td><td class="text-slate-600">Immunosoppressione mirata</td></tr>
+          <tr><td>Extrapolmonare</td><td>Cardiaco, neuro, cute</td><td class="text-slate-600">Team multidisciplinare</td></tr>
+          <tr><td>Comorbidità</td><td>Ipertensione polmonare, fatigue</td><td class="text-slate-600">Gestione dedicata</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">Messaggio che resta: <strong>nella sarcoidosi curi tratti, non stadi.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- P3: PDE4B scoping review -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1183/16000617.0095-2026" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Selective PDE4B inhibition in fibrotic lung disease: vascular-immune mechanisms and extrapulmonary implications
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span> European Respiratory Review · 22 lug 2026 · Perrotta F, Mariniello DF, Pagliaro R et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Scoping review sui meccanismi di nerandomilast (inibizione preferenziale di PDE4B), che rallenta il
+    declino della FVC in IPF e fibrosi polmonare progressiva. Mappa le vie cAMP-dipendenti endoteliali e
+    immunitarie, chiedendosi se l'effetto sia solo antifibrotico polmonare o abbia una firma
+    vascolare-immune sistemica.
+  </p>
+  <p class="mb-2 text-sm">Messaggio che resta: <strong>nerandomilast agisce su un hub cAMP
+  vascolare-immune; l'effetto extrapolmonare è ipotesi meccanicistica, non indicazione.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>cAMP come hub.</strong> Bloccare PDE4B alza il cAMP dove serve — endotelio e cellule immuni —
+      spiegando perché un antifibrotico possa toccare più di un organo.
+      ❓ Domanda di rottura: quale via — endoteliale o immunitaria — spiega davvero il rallentamento della FVC, e quale invece i suoi effetti fuori dal polmone?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — cosa è mappato, cosa no</summary>
+    <div class="text-sm">
+      <div class="takeaway-card">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">La review non dimostra efficacia extrapolmonare: colloca i dati di nerandomilast in
+        una cornice meccanicistica plausibile. Utile per interpretare gli effetti di classe attesi (e gli
+        avversi), non per estendere le indicazioni oltre gli endpoint dei trial.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<!-- I1: RadAr airway phenotyping -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://www.medrxiv.org/content/10.64898/2026.07.19.26358441v1" target="_blank" rel="noopener" class="hover:text-blue-700">
+      RadAr — Radiomics of the Airway: Multi-Scale Airway Phenotyping on Routine CT
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span> medRxiv (preprint) · 21 lug 2026 · Mutha P, Lee et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Framework automatico che fenotipizza l'albero bronchiale su TC toracica di routine (calibro luminale,
+    tapering, distorsione architetturale, morfologia globale). Nella
+    <details class="inline"><summary><span class="chip">fILD</span></summary><span class="chip-content">fibrotic Interstitial Lung Disease — interstiziopatia polmonare fibrosante, in cui la distorsione architetturale delle vie aeree è marker prognostico.</span></details>
+    (N=147) la distorsione dei lobi inferiori si associa alla mortalità (balanced accuracy 0,65).
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>La via aerea come impronta.</strong> Il rimodellamento bronchiale è comune a fibrosi, COVID e
+      fibrosi cistica: misurarlo su TC di routine trasforma un dettaglio in un fenotipo.
+      ❓ Domanda di rottura: la distorsione bronchiale che misuri è causa, conseguenza o solo co-localizzazione della fibrosi che già vedi?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — attenzione al livello di prova</summary>
+    <div class="text-sm">
+      <p>È un preprint con validazione interna e coorti minime nei sottodomini (PPF N=9, CF N=11), e una
+      accuratezza modesta nella predizione di mortalità fILD. Interessante come direzione (quantificare la
+      via aerea, non solo il parenchima), non come strumento clinico pronto. Da non usare per decisioni
+      individuali finché non arriva validazione esterna.</p>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive — un albero, quattro scale</summary>
+    <div>
+      <div class="mermaid">
+mindmap
+  root)Fenotipo delle vie aeree su TC(
+    Calibro luminale
+      Dilatazione
+      Stenosi
+    Tapering
+      Perdita del rastremamento
+    Distorsione architetturale
+      Lobi inferiori
+      Marker di mortalita fILD
+    Morfologia globale
+      Clustering non supervisionato
+  </div>
+      <p class="mt-3 text-sm">Numero che resta: <strong>distorsione del lobo inferiore → mortalità fILD
+      (balanced accuracy 0,65).</strong></p>
+      <p class="mt-2 text-sm">Schema da ricordare: <strong>un albero, quattro scale di misura.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- I2: TBLC 1.1mm cryoprobe -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1371/journal.pone.0354460" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Diagnostic yield and complication rate of transbronchial lung cryobiopsy using a 1.1 mm probe in ILD
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span> PLoS ONE · 30 lug 2026 · Kypreos MA, Styrvoky KC, Wu S et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte retrospettiva (registro ILD monocentrico) sulla
+    <details class="inline"><summary><span class="chip">TBLC</span></summary><span class="chip-content">Transbronchial Lung Cryobiopsy — criobiopsia polmonare transbronchiale, alternativa meno invasiva alla biopsia chirurgica nella diagnosi di ILD.</span></details>
+    con sonda da 1,1 mm attraverso broncoscopio convenzionale: la resa diagnostica, sommata al BAL, aumenta
+    in modo significativo mantenendo un profilo di sanguinamento favorevole.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Miniaturizzare l'equilibrio.</strong> La criobiopsia vive del compromesso resa/sanguinamento;
+      la sonda da 1,1 mm sposta l'ago della bilancia rendendo la procedura fattibile col broncoscopio di tutti i giorni.
+      ❓ Domanda di rottura: cosa aumenta di più la resa — più tessuto prelevato o la scelta del paziente e del sito giusti?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Candidato ideale: ILD con diagnosi incerta al MDT, dove serve istologia ma la biopsia chirurgica è
+      ad alto rischio. La sonda 1,1 mm abbassa la barriera emorragica; resta essenziale la selezione (funzione
+      respiratoria, comorbidità, pattern radiologico) e la discussione multidisciplinare prima e dopo il prelievo.</p>
+      <p class="mt-2">Messaggio che resta: <strong>la sonda da 1,1 mm porta la criobiopsia nel broncoscopio
+      convenzionale, abbassando il rischio emorragico.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- I3: Lung cancer screening eligibility Korea -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1001/jamanetworkopen.2026.24143" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Screening Eligibility and Survival Among Patients With Lung Cancer in Korea
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span> JAMA Network Open · 1 lug 2026 · Kim YW, Yoon TH, Kwak KI et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte nazionale coreana (2013-2018) che confronta i pazienti con tumore polmonare secondo l'eleggibilità
+    allo screening basata su età e pack-year. Molti casi — inclusi i non fumatori — cadono fuori dai criteri
+    tarati sui forti fumatori occidentali, con implicazioni su chi viene davvero intercettato precocemente.
+  </p>
+  <p class="mb-2 text-sm">Errore da evitare: <strong>applicare criteri di eleggibilità "pack-year" a
+  popolazioni dove molti tumori nascono senza storia di fumo.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Criterio trapiantato.</strong> Una soglia costruita su una popolazione (forti fumatori) perde
+      sensibilità dove l'epidemiologia è diversa: il pack-year è un proxy del rischio, non il rischio.
+      ❓ Domanda di rottura: quando applichi i criteri pack-year, quale variabile stai davvero usando come proxy — l'esposizione al tabacco o la biologia del tumore?
+    </p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<!-- C1: CMR GLS chronic AR -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250239" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Cardiac MRI-derived Global Longitudinal Strain and Clinical Outcomes in Chronic Aortic Regurgitation
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span> Radiology: Cardiothoracic Imaging · ago 2026 · Hashimoto G, Enriquez-Sarano M, Koike H et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Studio multicentrico (175 pazienti, IA cronica moderata-severa isolata) sulla
+    <details class="inline"><summary><span class="chip">GLS</span></summary><span class="chip-content">Global Longitudinal Strain — deformazione longitudinale globale del ventricolo sinistro, marcatore di disfunzione contrattile precoce, meno negativa = peggiore.</span></details>
+    da CMR con feature-tracking. La GLS predice morte o ospedalizzazione per scompenso indipendentemente da
+    età, sesso, sintomi e EuroSCORE II; mediana -14,1%.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>La EF che nasconde.</strong> Nell'IA la frazione d'eiezione resta a lungo "normale" mentre la
+      meccanica longitudinale è già in sofferenza: la GLS vede prima.
+      ❓ Domanda di rottura: quando la GLS peggiora ma la EF è ancora normale, cosa hai davvero misurato — la contrattilità intrinseca o l'effetto del sovraccarico di volume?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Nella IA cronica con EF conservata, una GLS meno negativa identifica un sottogruppo a rischio che
+      potrebbe beneficiare di un timing più precoce dell'AVR. Utile come dato aggiuntivo al board valvolare,
+      non come soglia isolata di intervento.</p>
+      <p class="mt-2">Numero che resta: <strong>GLS mediana -14,1% — la deformazione vede prima della
+      frazione d'eiezione.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- C2: ATTR amyloid SPECT vs CMR ECV -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.25122/jml-2026-0071" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Segmental and global amyloid burden and myocardial mechanics: a multimodality imaging comparison
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span> Journal of Medicine and Life · mag 2026 · Stan C, Neculae G, Onciul S et al.
+  </p>
+  <p class="mb-2 text-sm">
+    In 16 pazienti con ATTR-CM la captazione miocardica di bisfosfonato alla SPECT (segmentaria e globale)
+    viene confrontata con l'
+    <details class="inline"><summary><span class="chip">ECV</span></summary><span class="chip-content">Extracellular Volume — volume extracellulare da CMR con T1 mapping, surrogato quantitativo dell'infiltrazione amiloide interstiziale.</span></details>
+    da CMR e con la meccanica miocardica. Due fisiche diverse per lo stesso deposito, ma su numeri piccoli.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>Due modalità, un substrato.</strong> La SPECT vede l'affinità osteotropa del tracciante,
+      la CMR l'espansione dello spazio extracellulare: convergono sull'amiloide da porte diverse.
+      ❓ Domanda di rottura: la captazione del tracciante misura la quantità di amiloide depositata o l'attività del processo che continua a deporla?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Segnale di coerenza tra SPECT segmentaria ed ECV, ma con 16 pazienti è generazione di ipotesi, non
+      pratica quotidiana. Il messaggio operativo resta: nell'ATTR-CM la multimodalità serve a incrociare
+      quantità (ECV) e affinità (SPECT), non a sostituire l'una con l'altra.</p>
+      <p class="mt-2">Messaggio che resta: <strong>SPECT e CMR-ECV raccontano lo stesso deposito da due
+      fisiche diverse — ma su numeri piccoli.</strong></p>
+    </div>
+  </details>
+</article>
+
+<!-- C3: Preprocedural CT redo TAVR -->
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250200" target="_blank" rel="noopener" class="hover:text-blue-700">
+      The Role of Preprocedural CT in Redo Transcatheter Aortic Valve Replacement
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span> Radiology: Cardiothoracic Imaging · ago 2026 · Jukema RA, Levene E, Khoo JK et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Review dal punto di vista del radiologo sul TAV-in-TAV: quando una valvola transcatetere degenera, la TC
+    definisce il meccanismo di fallimento (strutturale vs non strutturale), guida sizing e scelta della nuova
+    valvola e — soprattutto — stima il rischio di ostruzione coronarica e di accesso coronarico futuro compromesso.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      <strong>La valvola nella valvola.</strong> Impiantare una THV dentro l'altra spinge in alto i lembi
+      della prima, creando un "neoskirt" che può sigillare i seni coronarici: l'eredità geometrica del primo
+      impianto decide il secondo.
+      ❓ Domanda di rottura: nella pianificazione stai valutando la nuova valvola o i vincoli lasciati dall'allineamento commissurale della prima?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — la checklist TC</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Passo</th><th>Cosa valuta la TC</th></tr></thead>
+        <tbody>
+          <tr><td>Meccanismo</td><td>Fallimento strutturale vs non strutturale della THV indice</td></tr>
+          <tr><td>Sizing</td><td>Dimensioni per la nuova THV entro la vecchia</td></tr>
+          <tr><td>Coronarie</td><td>Rischio di ostruzione e altezza del neoskirt</td></tr>
+          <tr><td>Accesso futuro</td><td>Allineamento commissurale, accesso coronarico a valle</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive — il percorso decisionale TC</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    Fail["THV indice degenerata"] --> Mech{"Meccanismo?"}
+    Mech -->|"Strutturale"| Redo["Candidato TAV-in-TAV"]
+    Mech -->|"Non strutturale"| Alt["Rivaluta indicazione"]
+    Redo --> Size["Sizing nuova THV"]
+    Size --> Cor{"Rischio ostruzione<br/>coronarica?"}
+    Cor -->|"Alto"| Prot["Protezione / strategia dedicata"]
+    Cor -->|"Basso"| Access["Verifica accesso coronarico futuro"]
+    classDef warn fill:#fee2e2,stroke:#991b1b
+    class Cor,Prot warn
+  </div>
+      <p class="mt-3 text-sm"><strong>Errore da evitare:</strong> pianificare un TAV-in-TAV senza chiedere
+      alla TC se intrappolerai le coronarie.</p>
+      <p class="mt-2 text-sm">Schema da ricordare: <strong>meccanismo → misura → coronarie → accesso futuro.</strong></p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+
+
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 1 agosto 2026, 14:18 (ora italiana).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+<!-- ──────────────────────────────────────────────────────────────────────
+     REFERENCE: structure of an article (the routine fills these patterns)
+     ────────────────────────────────────────────────────────────────────── -->
+<!--
+
+────────── L1: Always visible (titolo, badge, sintesi, aggancio) ──────────
+────────── L2 (optional): "Posso usarlo?" — applicabilità clinica ─────────
+────────── L3 (optional): Deep dive — dati, diagrammi Mermaid, schemi ────
+
+EXAMPLE — HIGHLIGHT PAPER WITH ALL 3 LEVELS:
+
+<article class="mb-10">
+  <!-- L1: ALWAYS VISIBLE -->
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/EXAMPLE" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Expanding Applications of Pulmonary MRI in the Clinical Evaluation of Lung Disorders
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Fleischner Society Position Paper · 2026 · Hatabu H, Nishino M et al.
+  </p>
+  <p class="mb-3">
+    La Fleischner Society aggiorna le indicazioni per l'imaging RM polmonare, estendendole oltre il
+    dominio pediatrico tradizionale. Tre aree principali: fibrosi cistica, monitoraggio
+    post-trattamento, e <span class="anchor-text">patologie vascolari polmonari</span>.
+  </p>
+
+  <!-- AGGANCIO MULTIDISCIPLINARE: SEMPRE VISIBILE -->
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      La Fleischner Society fa quello che il consesso medievale faceva con i bestiari: espande il
+      catalogo riconoscendo che l'imaging polmonare non è più solo "lesione → pattern radiografico"
+      ma "fenomeno fisiologico → sequenza adatta". Un cambio epistemologico simile a quello di Linneo:
+      tassonomia per funzione, non per apparenza. La MRI come Linneo del polmone fisiologico.
+      I termini specialistici come
+      <details class="inline"><summary><span class="chip">PC-MRA</span></summary><span class="chip-content">Phase-Contrast Magnetic Resonance Angiography — sequenza che mappa il flusso senza mezzo di contrasto.</span></details>
+      diventano accessibili inline.
+    </p>
+  </div>
+
+  <!-- L2: "POSSO USARLO?" — OPTIONAL BASED ON COMPLEXITY -->
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — indicazioni operative</summary>
+    <div>
+      <p class="font-medium text-slate-700 mb-3">Indicazioni proposte dal panel Fleischner:</p>
+      <table>
+        <thead><tr>
+          <th>Scenario</th><th>MRI preferita?</th><th>Razionale</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>CF pediatrica monitoring</td><td><strong>Sì</strong></td><td class="text-slate-600">Evita radiazioni ripetute</td></tr>
+          <tr><td>Vascolarizzazione/perfusione</td><td><strong>Sì</strong></td><td class="text-slate-600">PC-MRA contrast-free</td></tr>
+          <tr><td>ILD diagnosi pattern</td><td>No</td><td class="text-slate-600">HRCT resta gold standard</td></tr>
+          <tr><td>Massa mediastinica</td><td><strong>Sì, complementare a CT</strong></td><td class="text-slate-600">Tissue characterization</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">MRI polmonare non sostituisce HRCT per ILD, ma diventa first-line in casi selezionati
+        (pediatrico, gravidanza, monitoraggio seriale). Implementazione richiede protocolli dedicati.</p>
+      </div>
+    </div>
+  </details>
+
+  <!-- L3: DEEP DIVE — OPTIONAL, REASON: PAPER HA UN FLOWCHART DECISIONALE ESPLICITO -->
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — flowchart decisionale e protocolli</summary>
+    <div>
+      <p class="font-medium mb-2">Flowchart decisionale Fleischner 2026:</p>
+      <div class="mermaid">
+flowchart TB
+    Indication["Indicazione clinica polmonare"] --> Q1{"Radiazione critica?<br/>(età ≤40, CF, gravidanza)"}
+    Q1 -->|Sì| MRI1["MRI prima linea"]
+    Q1 -->|No| Q2{"Pattern parenchimale<br/>o vascolare?"}
+    Q2 -->|Parenchimale| HRCT["HRCT standard"]
+    Q2 -->|Vascolare| Q3{"eGFR > 30?"}
+    Q3 -->|Sì| CTPA["CTPA con mdc iodato"]
+    Q3 -->|No| MRI2["PC-MRA senza mdc"]
+    classDef mri fill:#dbeafe,stroke:#1e40af
+    classDef ct fill:#fee2e2,stroke:#991b1b
+    class MRI1,MRI2 mri
+    class HRCT,CTPA ct
+      </div>
+      <p class="mt-3 text-sm">
+        <strong>Sequenze raccomandate:</strong> T2-HASTE, T1-3D-GRE, PC-MRA, opzionale DCE.
+        Tempo esame target: 25-35 minuti.
+      </p>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 + L2 (no L3 because paper meno tecnico):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Trastuzumab Deruxtecan-Induced Interstitial Lung Disease: Meta-Analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Cancer Control · 9 May 2026 · Güren AK, Demircan NC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi (n studi=27, n pazienti=2840) su ILD/polmonite indotta da T-DXd. Incidenza globale
+    15.2% (IC 95% 12.8-17.9), significativamente più alta nel real-world rispetto ai trial.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Quando il farmaco antitumorale "colpisce" il polmone, l'imaging diventa biomarker di tossicità.
+      È il rovescio della medaglia degli ADC: efficacia mirata, danno collaterale strutturato.
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Ogni follow-up T-DXd merita HRCT con basso sospetto per pattern ground-glass o crazy paving.
+      L'incidenza real-world (15.2%) è circa il doppio di quella riportata nei trial originali —
+      utile per il counseling preventivo del paziente.</p>
+      <table class="mt-3">
+        <thead><tr><th>Tempo</th><th>Pattern HRCT</th><th>Management</th></tr></thead>
+        <tbody>
+          <tr><td>0-12 sett.</td><td>GGO bilaterali</td><td>Sospensione + steroidi</td></tr>
+          <tr><td>>12 sett.</td><td>Crazy paving</td><td>Sospensione + steroidi alti dose</td></tr>
+          <tr><td>Tardivo</td><td>NSIP-like</td><td>Pneumologo + considera permanente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — REGULAR ITEM WITH ONLY L1 (paper di facile assimilazione, niente L2/L3):
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/EXAMPLE3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Acute Myocarditis: 10-year Follow-up Cohort
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Heart Journal · 14 May 2026
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte multicentrica (n=687) con CMR-confirmed myocarditis acuta. A 10 anni: 12% cardiomiopatia
+    dilatativa, 4% morte cardiovascolare. LGE basale persistente predittore indipendente.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il LGE che non scompare è la cicatrice di Pirandello: maschera che diventa volto. L'evento acuto
+      è solo l'incipit narrativo — la prognosi a 10 anni si decide nel pattern di scar che resta.
+    </p>
+  </div>
+</article>
+
+
+───────────────────────────────────────────────────────────────────────────
+EXAMPLE — FILO DELLA SETTIMANA WITH MERMAID MINDMAP:
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di questa settimana convergono su un'idea: la fibrosi polmonare non è più una malattia
+    singola che evolve, ma una <em>convergenza fenotipica</em> di processi eterogenei. PPFE single-nucleus
+    atlas (Sci Adv), IIM-ILD nerandomilast (RMD Open), e SSc sieronegativa (RMD Open) mostrano vie
+    molecolari distinte che producono lo stesso pattern radiologico.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Fibrosi polmonare<br/>come convergenza fenotipica(
+    PPFE
+      Single-nucleus atlas
+      Aberrant basaloid cells
+      Mitocondriopatia genetica
+    IIM-ILD
+      Nerandomilast PDE4B
+      cAMP-PKA-RhoA pathway
+      Anti-MDA5 fenotipo
+    SSc-ILD
+      Sieronegativa subgroup
+      NSIP/UIP overlap
+      Imaging-pattern decision
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> stratificare la fibrosi non solo per pattern HRCT ma per
+    meccanismo molecolare diventa rilevante per la scelta antifibrotic. Il radiologo del board MDT
+    è il primo a vedere il pattern, ma la decisione terapeutica ora richiede il dato sierologico.
+  </p>
+</section>
+-->
+
+</body>
+</html>

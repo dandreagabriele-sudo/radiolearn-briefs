@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-07-18T15:30:00+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W29.html",
-  "last_brief_item_count": 13,
+  "last_brief_at": "2026-08-01T12:18:28+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W31.html",
+  "last_brief_item_count": 12,
   "processed_dois": [
     "10.1056/NEJMra2415426",
     "10.1183/16000617.0044-2026",
@@ -65,7 +65,19 @@
     "10.1080/07853890.2026.2696028",
     "10.1148/ryct.250480",
     "10.64898/2026.07.08.26357594",
-    "10.5694/mja2.70234"
+    "10.5694/mja2.70234",
+    "10.1038/s41467-026-75291-3",
+    "10.1016/j.jcin.2026.04.017",
+    "10.1148/ryct.250117",
+    "10.1007/s12016-026-09186-y",
+    "10.1136/bmjresp-2025-003919",
+    "10.1183/16000617.0095-2026",
+    "10.64898/2026.07.19.26358441",
+    "10.1371/journal.pone.0354460",
+    "10.1001/jamanetworkopen.2026.24143",
+    "10.1148/ryct.250239",
+    "10.25122/jml-2026-0071",
+    "10.1148/ryct.250200"
   ],
   "briefs_archive": [
     {
@@ -102,6 +114,13 @@
       "date": "2026-07-18",
       "items": 13,
       "headline": "La misura batte lo sguardo: imaging che quantifica il rischio"
+    },
+    {
+      "id": "2026-W31",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W31.html",
+      "date": "2026-08-01",
+      "items": 12,
+      "headline": "Sotto la superficie: meccanismi, bersagli e forme che contano"
     }
   ]
 }
