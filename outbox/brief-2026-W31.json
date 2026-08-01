@@ -1,0 +1,14 @@
+{
+  "brief_id": "2026-W31",
+  "created_at": "2026-08-01T12:18:28+00:00",
+  "messages": [
+    {
+      "method": "sendMessage",
+      "params": {
+        "chat_id": "8538175163",
+        "text": "📚 RadioLearn Briefs — Settimana 31 (1 agosto 2026)\n«Sotto la superficie: meccanismi, bersagli e forme che contano»\n\n12 paper selezionati su 157 candidati.\n\n✨ Highlights:\n• LTI-03 inalatorio per l'IPF: target engagement epiteliale (fase 1b)\n• SGLT2i post-IMA con endpoint CMR (infarct size, rimodellamento VS)\n• Forma e profondità della placca a bassa attenuazione e ACS\n\nPolmonologia, imaging toracico e cardio imaging, con diagrammi e domande di rottura per il richiamo attivo.\n\n👉 https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W31.html",
+        "disable_web_page_preview": false
+      }
+    }
+  ]
+}
