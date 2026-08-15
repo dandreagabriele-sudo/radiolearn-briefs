@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 33 (15 agosto 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 33</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Cosa l'immagine predice davvero</h1>
+  <p class="ui text-sm text-slate-500 mt-3">15 agosto 2026 · 12 selezionati su 183 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1161/CIRCULATIONAHA.125.078536" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Left Ventricular Hypertrabeculation and Prognosis in Dilated Cardiomyopathy
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Circulation · 3 ago 2026 · Mora-Ayestarán N, Ramos-Lopez N, Ochoa JP et al.
+  </p>
+  <p class="mb-3">
+    Coorte internazionale di <strong>1160</strong> pazienti con cardiomiopatia dilatativa studiati con
+    <details class="inline"><summary><span class="chip">CMR</span></summary><span class="chip-content">Cardiac Magnetic Resonance — risonanza cardiaca, riferimento per volumi, funzione e caratterizzazione tissutale del miocardio.</span></details>
+    e test genetico (86%). L'ipertrabecolazione (ex-<span class="anchor-text">non compaction</span>), presente nel 30,5%,
+    <strong>non</strong> aumenta il rischio embolico (HR 1,5; IC 0,75–3,00), nemmeno in ritmo sinusale con FE ≤40%.
+    A predire gli eventi restano fibrillazione atriale, bassa FE, genotipo e
+    <details class="inline"><summary><span class="chip">LGE</span></summary><span class="chip-content">Late Gadolinium Enhancement — impregnazione tardiva di gadolinio, marcatore CMR di fibrosi/scar miocardico.</span></details>.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Il pattern non è la prognosi.</strong> L'occhio è catturato dalla trabecolatura vistosa, ma la trabecolatura è
+      un <em>tratto morfologico</em> distribuito lungo i genotipi (58% nei sarcomerici motori, 5% nelle laminopatie),
+      non un motore di rischio. Il rischio vero abita altrove: aritmia atriale, funzione depressa, cicatrice e substrato genetico —
+      cioè ciò che si <em>misura</em>, non ciò che si <em>nota</em>.
+      ❓ Domanda di rottura: quando descrivi "cuore ipertrabecolato", stai misurando un meccanismo di danno o solo un fenotipo che accompagna il genotipo sottostante?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — cosa NON cambiare</summary>
+    <div>
+      <table>
+        <thead><tr><th>Situazione</th><th>Azione basata sull'ipertrabecolazione</th><th>Cosa dice lo studio</th></tr></thead>
+        <tbody>
+          <tr><td>DCM in ritmo sinusale, ipertrabecolazione</td><td>Anticoagulare per il pattern</td><td><strong>No</strong> — nessun eccesso embolico (HR 1,5, non significativo)</td></tr>
+          <tr><td>DCM + fibrillazione atriale</td><td>Valutare anticoagulazione</td><td><strong>Sì</strong> — la FA resta driver embolico indipendente</td></tr>
+          <tr><td>Stratificazione prognostica</td><td>Pesare la trabecolatura</td><td>Pesa invece <strong>genotipo + FE + LGE</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">L'ipertrabecolazione nella DCM è un descrittore morfologico, non un fattore di rischio autonomo:
+        non giustifica da sola anticoagulazione né riclassificazione prognostica. Refertala, ma non farne una decisione.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — cosa predice davvero l'outcome nella DCM</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    DCM["DCM valutata con CMR + genetica"] --> Pattern["Ipertrabecolazione<br/>(30,5%)"]
+    Pattern -.->|"HR 1,5 · non significativo"| NoRisk["Nessun eccesso di rischio<br/>embolico / aritmico / HF"]
+    DCM --> Drivers{"Predittori reali di outcome"}
+    Drivers --> AF["Fibrillazione atriale"]
+    Drivers --> EF["FE ridotta"]
+    Drivers --> Geno["Genotipo"]
+    Drivers --> Scar["LGE (fibrosi)"]
+    AF --> Embolic["Eventi embolici"]
+    EF --> Embolic
+    Geno --> Adverse["Aritmie / HF avanzato"]
+    Scar --> Adverse
+    classDef weak fill:#f1f5f9,stroke:#94a3b8,color:#64748b
+    classDef strong fill:#dbeafe,stroke:#1e40af
+    class Pattern,NoRisk weak
+    class AF,EF,Geno,Scar,Embolic,Adverse strong
+      </div>
+      <p class="mt-3 text-sm">
+        Schema da ricordare: nella DCM il rischio si legge nel <strong>substrato</strong> (genotipo, FE, LGE, FA), non nella <strong>superficie</strong> trabecolare.
+      </p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1371/journal.pmed.1004817" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Cost-effectiveness of pirfenidone for patients with cancer and grade 2 or grade 3 radiation-induced lung injury
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    PLoS Medicine · 5 ago 2026 · Pan QY, Wang YX, Tang XY et al.
+  </p>
+  <p class="mb-3">
+    Modello di Markov costruito sui dati individuali di un RCT di fase II (NCT03902509): pirfenidone + glucocorticoidi
+    vs glucocorticoidi da soli nel
+    <details class="inline"><summary><span class="chip">RILI</span></summary><span class="chip-content">Radiation-Induced Lung Injury — danno polmonare da radioterapia, spettro da polmonite attinica acuta a fibrosi tardiva.</span></details>
+    di grado 2–3. L'aggiunta di pirfenidone costa <strong>$20.956 per QALY</strong> guadagnato, molto sotto la soglia di $100.000/QALY,
+    con probabilità del 99,98% di essere costo-efficace.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>L'antifibrotico esce dall'IPF.</strong> Il RILI è fibrosi indotta: se un farmaco che rallenta la fibrogenesi funziona lì,
+      la domanda non è più solo "funziona?" ma "conviene?". L'analisi economica è il ponte che trasforma un segnale di fase II
+      in una decisione allocativa difendibile.
+      ❓ Domanda di rottura: un ICER favorevole poggia su un effetto clinico ancora di fase II — quale incertezza stai accettando quando usi la costo-efficacia per anticipare una prova di fase III?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — dove regge e dove no</summary>
+    <div class="text-sm">
+      <div class="takeaway-card">
+        <p><span class="takeaway-label">Applicabile</span></p>
+        <p class="mt-1">Paziente oncologico con RILI di grado 2–3 sintomatico: pirfenidone in add-on ai corticosteroidi è
+        economicamente sostenibile (ICER ≈ $21k/QALY), non un lusso.</p>
+      </div>
+      <div class="takeaway-card" style="border-left-color:#b45309">
+        <p><span class="takeaway-label" style="color:#b45309">Limiti</span></p>
+        <p class="mt-1">Efficacia clinica ancora di fase II (n limitato), orizzonte 24 settimane, costi tarati su un contesto
+        specifico. Non estendere a RILI di grado 1 né a profilassi.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — la logica decisionale del modello</summary>
+    <div>
+      <div class="mermaid">
+flowchart LR
+    RILI["RILI post-radioterapia"] --> G{"Grado?"}
+    G -->|"Grado 1"| Obs["Osservazione / supporto"]
+    G -->|"Grado 2-3"| Steroidi["Glucocorticoidi"]
+    Steroidi --> Add{"Aggiungere pirfenidone?"}
+    Add -->|"Sì"| P["+0,028 QALY · +$590<br/>ICER $20.956/QALY"]
+    Add -->|"No"| S["Steroidi da soli"]
+    P --> Dec["Costo-efficace<br/>(soglia $100k/QALY)"]
+    classDef good fill:#dcfce7,stroke:#166534
+    class P,Dec good
+      </div>
+      <p class="mt-3 text-sm">
+        Schema da ricordare: nel RILI di grado 2–3, l'add-on antifibrotico compra QALY a un prezzo basso — la barriera è la forza del dato clinico, non il costo.
+      </p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1002/cncr.70516" target="_blank" rel="noopener" class="hover:text-blue-700">
+      The American Cancer Society National Lung Cancer Roundtable strategic plan: Opportunities in advanced imaging across the lung cancer care continuum
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Cancer · ago 2026 · Sullivan DC, McNitt-Gray M, Aberle DR et al. · ACS National Lung Cancer Roundtable
+  </p>
+  <p class="mb-3">
+    Documento strategico della task force imaging dell'ACS National Lung Cancer Roundtable: <strong>quattro</strong> priorità
+    per l'imaging avanzato lungo tutto il percorso del cancro polmonare — nuove tecnologie di imaging, biomarcatori
+    quantitativi, sistemi di condivisione di immagini/algoritmi e soluzioni di intelligenza artificiale.
+  </p>
+
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      <strong>Dalla singola scansione all'infrastruttura.</strong> Il messaggio non è "una nuova macchina", ma che il valore
+      dell'imaging polmonare oggi si gioca su dati e algoritmi <em>interoperabili</em>: un'immagine isolata vale meno di un
+      biomarcatore quantitativo condivisibile. La roadmap sposta l'attenzione dal pixel al sistema.
+      ❓ Domanda di rottura: se il collo di bottiglia è la condivisione di dati e algoritmi, quale tuo referto quantitativo è oggi riproducibile da un altro centro senza rifare l'esame?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — cosa ne ricava il radiologo</summary>
+    <div class="text-sm">
+      <p>Non è una linea guida operativa ma un orientamento: indica dove convergono investimenti, ricerca e futuri standard.
+      Per la pratica significa privilegiare <strong>output quantitativi e strutturati</strong> (misure riproducibili,
+      biomarcatori d'immagine) rispetto alla sola descrizione qualitativa, e prepararsi a flussi AI-assistiti nello screening
+      e nella sorveglianza dei noduli.</p>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — le quattro priorità</summary>
+    <div>
+      <div class="mermaid">
+mindmap
+  root)Imaging avanzato<br/>nel percorso lung cancer(
+    Nuove tecnologie
+      Oltre la LDCT
+      Nuove modalita
+    Biomarcatori quantitativi
+      Misure riproducibili
+      Endpoint imaging
+    Condivisione
+      Immagini interoperabili
+      Algoritmi portabili
+    Intelligenza artificiale
+      Screening
+      Detection e triage
+      </div>
+      <p class="mt-3 text-sm">
+        Schema da ricordare: quattro leve — <strong>tecnologia, quantificazione, condivisione, AI</strong> — e la più trascurata è la terza.
+      </p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1007/s10549-026-08043-y" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Interstitial lung disease in metastatic breast cancer: a landscape review using SEER-Medicare
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Breast Cancer Res Treat · 10 ago 2026 · Pinheiro LC, An A, Landry CA et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Coorte SEER-Medicare di 14.343 donne/uomini ≥66 anni con carcinoma mammario stadio IV: l'ILD compare nel
+    <strong>12,6%</strong> dopo la diagnosi. Sorpresa: l'esposizione a farmaci con noto rischio di ILD è simile tra chi
+    la sviluppa e chi no (14% vs 12%).
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Se l'ILD non si spiega con i farmaci "sospetti", il colpevole singolo è un'illusione: conta il terreno (età, comorbidità, radioterapia).
+      ❓ Domanda di rottura: davanti a un pattern interstiziale in una paziente con mBC, quale probabilità pre-test stai assegnando alla tossicità da farmaco rispetto alle altre cause, e su quale base?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Una paziente su otto con mBC avanzato svilupperà ILD, ma il monitoraggio nelle linee guida oncologiche è scarso e
+      aspecifico. Pratico: soglia bassa per HRCT davanti a dispnea/tosse nuove, e non escludere l'ILD solo perché il farmaco in
+      corso "non è tra quelli a rischio". Coinvolgere pneumologo e medicina di base migliora l'esito.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1007/s00296-026-06268-0" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Diagnostic methods of rheumatoid arthritis-associated interstitial lung disease: a systematic review
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Rheumatology International · 4 ago 2026 · Lewandowska-Polak A, Brzezińska O, Krawiec P et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Revisione sistematica (36 studi, PRISMA) sui metodi diagnostici della
+    <details class="inline"><summary><span class="chip">RA-ILD</span></summary><span class="chip-content">Interstiziopatia associata ad artrite reumatoide — complicanza extra-articolare che colpisce il 10–60% dei pazienti con AR.</span></details>.
+    L'ecografia polmonare è la più studiata (sensibilità 70–100%), <strong>ma un solo studio</strong> valutava la HRCT — il presunto
+    gold standard è il meno indagato. Tra i biomarcatori, KL-6 promette ma non basta da solo.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La letteratura studia ciò che è facile misurare (ecografia, biomarcatori), non ciò che decide (HRCT, pattern UIP): un bias di disponibilità travestito da evidenza.
+      ❓ Domanda di rottura: quando dici che un test "è validato" per la RA-ILD, stai giudicando la sua accuratezza o solo il numero di studi che lo hanno guardato?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>L'ecografia polmonare è un utile strumento di screening/triage al letto (alta sensibilità), ma non sostituisce la HRCT
+      per definire il pattern e stimare la progressione. KL-6 (sens 61–100%, spec 78–91%) può supportare, non decidere.
+      Messaggio operativo: usa l'ecografia per <em>sospettare</em>, la HRCT per <em>caratterizzare</em>.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1177/17534666261478394" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Prognostic nutritional index predicts nintedanib outcomes in idiopathic pulmonary fibrosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Ther Adv Respir Dis · 12 ago 2026 · Hayakawa E, Kato M, Hirano H et al.
+  </p>
+  <p class="mb-2 text-sm">
+    In 167 pazienti giapponesi con IPF in nintedanib, il
+    <details class="inline"><summary><span class="chip">PNI</span></summary><span class="chip-content">Prognostic Nutritional Index — indice da albumina e linfociti; stima lo stato nutrizionale-immunitario con un semplice prelievo.</span></details>
+    è risultato l'<strong>unico</strong> fattore indipendentemente associato sia alla durata del trattamento sia alla
+    sopravvivenza. Cutoff ottimale <strong>47,3</strong>: sotto, peggior prognosi.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Un indice da due valori di laboratorio predice tolleranza e sopravvivenza meglio di variabili più "nobili": lo stato nutrizionale è un modificatore d'effetto sottovalutato dell'antifibrotico.
+      ❓ Domanda di rottura: quando un IPF interrompe il nintedanib, stai leggendo un'intolleranza al farmaco o un marcatore di malattia sistemica avanzata già scritto nell'albumina?
+    </p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.3348/kjr.2025.1681" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Missed Incidental Lung Cancer on Neck CT: Determinants and Impact on Diagnostic Delay and Stage Shift
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Korean J Radiol · ago 2026 · Park S, Jung JI, Han K et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Su 123 tumori polmonari visibili all'apice in TC del collo, <strong>65% non erano stati refertati</strong>. La mancata
+    detezione ha allungato l'intervallo diagnostico (mediana 27,5 vs 0 mesi) e quadruplicato lo stage shift (47,5% vs 11,6%).
+    La doppia lettura proteggeva (OR 0,16); l'AI-CAD recuperava metà delle lesioni perse.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      L'apice polmonare in una TC "del collo" è fuori dal campo dell'attenzione, non fuori dal campo di vista: il costo dell'angolo cieco è misurato in mesi e in stadio.
+      ❓ Domanda di rottura: nell'ultima TC del collo che hai refertato, hai guardato gli apici con la stessa intenzione con cui guardi ciò per cui l'esame è stato richiesto?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Tre azioni concrete: (1) includere sempre gli apici polmonari nella checklist di refertazione della TC del collo,
+      specie negli studi con angio-TC (OR 3,40 per la miss); (2) valorizzare la doppia lettura dove possibile; (3) l'AI-CAD è
+      utile ma imperfetto (51% di recupero), non un alibi. La lesione senza linfoadenopatia e a margini lisci è quella che
+      sfugge di più.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.64898/2026.08.12.26360292" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Prediction of Subsolid Pulmonary Nodule Evolution from Baseline CT Using Temporal Imaging Models
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    medRxiv (preprint) · 13 ago 2026 · Bondarenko M, Qi K
+  </p>
+  <p class="mb-2 text-sm">
+    Modelli temporali "interval-aware" su 24.946 coppie di scansioni (2.543
+    <details class="inline"><summary><span class="chip">SSN</span></summary><span class="chip-content">Subsolid Nodule — nodulo subsolido (ground-glass o parzialmente solido), spesso spettro dell'adenocarcinoma polmonare.</span></details>)
+    predicono la crescita del nodulo dalla sola TC basale: <strong>AUC 0,772</strong> tenendo conto dell'intervallo variabile
+    di follow-up.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      L'innovazione non è la rete neurale ma il <em>tempo</em> come variabile esplicita: predire "crescerà" senza sapere "tra quanto" è mal posto.
+      ❓ Domanda di rottura: un modello che ignora l'intervallo tra le scansioni sta predicendo la biologia del nodulo o solo il calendario dei controlli?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Preprint monocentrico: non pronto per l'uso clinico. Il segnale interessante è concettuale — la sorveglianza dei SSN
+      potrebbe passare da intervalli fissi (Fleischner) a intervalli personalizzati sul rischio di crescita stimato dalla
+      basale. Sensibilità 80%, specificità 59%: buono per escludere la crescita, debole per confermarla.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/bmjresp-2025-004013" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Diagnostic intervals and imaging use in lung cancer: a national real-world study in England
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    BMJ Open Respir Res · 14 ago 2026 · Mullin ML, Marston XL, Matthews H et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Studio nazionale su 21.052 pazienti: intervallo diagnostico mediano <strong>56 giorni</strong> (un quarto ≥113). Più
+    imaging non significa più veloce: l'imaging multimodale si associava a intervalli più lunghi, e un terzo dei pazienti passava
+    dal pronto soccorso durante il percorso.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Aggiungere una modalità può ridurre l'incertezza del singolo caso ma aumentare il tempo del sistema: più esami, più passaggi, più frammentazione.
+      ❓ Domanda di rottura: quando chiedi "un'altra metodica", stai colmando un vuoto informativo reale o spostando la decisione a valle di un'altra coda?
+    </p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jcmg.2026.05.015" target="_blank" rel="noopener" class="hover:text-blue-700">
+      OCT-Defined Plaque Morphology and Clinical Outcomes After Percutaneous Coronary Intervention: An ILUMIEN IV Substudy
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC Cardiovasc Imaging · ago 2026 · Lopez JJ, Volleberg RHJA, Shin D et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Sottostudio OCT di ILUMIEN IV (n=1233): la morfologia di placca <em>prima</em> della PCI predice l'esito a 2 anni. Le placche
+    predominantemente calcifiche hanno il <strong>fallimento del vaso target del 10,7% vs 4,0%</strong> delle fibrotiche
+    (HR aggiustato 2,20); le lipidiche stanno nel mezzo.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Non tutte le stenosi trattate sono uguali: la calcificazione è un marcatore prognostico, non solo un ostacolo tecnico all'espansione dello stent.
+      ❓ Domanda di rottura: quando l'OCT mostra placca calcifica, stai leggendo una difficoltà procedurale del momento o un rischio di rivascolarizzazione futura che merita follow-up più stretto?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Morfologia predominante (OCT)</th><th>Quota</th><th>TVF a 2 anni</th></tr></thead>
+        <tbody>
+          <tr><td>Calcifica</td><td>27%</td><td><strong>10,7%</strong> (HR agg. 2,20)</td></tr>
+          <tr><td>Lipidica</td><td>33%</td><td>5,6% (intermedio)</td></tr>
+          <tr><td>Fibrotica</td><td>39%</td><td>4,0% (riferimento)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-3">La caratterizzazione OCT pre-procedura aggiunge informazione prognostica indipendente: la placca calcifica
+      identifica un sottogruppo da ottimizzare (preparazione della lesione) e sorvegliare più da vicino.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1111/eci.70246" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Differential Effects of Tafamidis on Cardiac Remodelling in Transthyretin Amyloid Cardiomyopathy: Evidence From Contemporary Imaging Data
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Eur J Clin Invest · ago 2026 · Quader T, Patel K, Sindone J et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi dei dati di imaging seriale nella
+    <details class="inline"><summary><span class="chip">ATTR-CM</span></summary><span class="chip-content">Cardiomiopatia amiloide da transtiretina — accumulo di fibrille di TTR nel miocardio, con ispessimento parietale e disfunzione progressiva.</span></details>:
+    il tafamidis migliora lo <strong>strain di reservoir atriale sinistro</strong> (SMD +0,58) e la funzione sistolica del ventricolo
+    destro, ma <strong>non</strong> i parametri del ventricolo sinistro (FE, GLS, massa, T1 nativo, ECV).
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Se la terapia agisce su atrio e ventricolo destro ma non sul VS, misurare la risposta con i soli parametri del VS è cercare l'effetto dove non c'è.
+      ❓ Domanda di rottura: quale endpoint di imaging stai usando per giudicare che il tafamidis "funziona", e quel parametro è quello che la terapia effettivamente muove?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Per il follow-up dell'ATTR-CM in tafamidis, privilegia parametri sensibili al cambiamento reale: strain di reservoir
+      atriale sinistro (LASr), volume atriale indicizzato (LAVi), FE del ventricolo destro. Un GLS o una FE del VS stabili
+      <em>non</em> significano fallimento terapeutico: quei parametri non sono il bersaglio del rimodellamento indotto.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1186/s41747-026-00774-3" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Photon-counting CT iodine maps for late iodine enhancement: a retrospective feasibility study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Eur Radiol Exp · 10 ago 2026 · Hartung V, Gruschwitz P, Serfling JK et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Studio di fattibilità (29 pazienti): mappe di iodio da
+    <details class="inline"><summary><span class="chip">PCD-CT</span></summary><span class="chip-content">Photon-Counting Detector CT — TC a conteggio di fotoni, con risoluzione spettrale ed energetica superiore e minor rumore.</span></details>
+    acquisite 5 minuti dopo la coronaro-TC mostrano il late iodine enhancement (scar ischemico). La confidenza dei lettori è
+    <strong>alta solo per scar transmurale &gt;50%</strong>; per lo scar sottile resta incerta.
+  </p>
+
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La promessa è "one-stop": coronarie + cicatrice in un solo esame — ma oggi la metodica vede bene solo ciò che è già grande, cioè quando la domanda clinica è meno sottile.
+      ❓ Domanda di rottura: se la PCD-CT è affidabile solo per lo scar transmurale, in quali pazienti aggiunge informazione che la LGE-RM non darebbe già meglio?
+    </p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Fattibilità monocentrica, 29 pazienti, nessun confronto testa-a-testa con la LGE-RM: non è pronto per decidere.
+      Il valore potenziale è nel paziente che fa comunque la coronaro-TC e in cui la RM è controindicata o non disponibile —
+      ma serve validazione prospettica prima di refertare lo scar su mappe di iodio.</p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+
+
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 15 agosto 2026, 14:20 CEST.</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>

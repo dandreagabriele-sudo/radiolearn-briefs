@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-08-01T12:18:28+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W31.html",
+  "last_brief_at": "2026-08-15T12:25:00+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W33.html",
   "last_brief_item_count": 12,
   "processed_dois": [
     "10.1056/NEJMra2415426",
@@ -77,7 +77,19 @@
     "10.1001/jamanetworkopen.2026.24143",
     "10.1148/ryct.250239",
     "10.25122/jml-2026-0071",
-    "10.1148/ryct.250200"
+    "10.1148/ryct.250200",
+    "10.1161/CIRCULATIONAHA.125.078536",
+    "10.1371/journal.pmed.1004817",
+    "10.1002/cncr.70516",
+    "10.1007/s10549-026-08043-y",
+    "10.1007/s00296-026-06268-0",
+    "10.1177/17534666261478394",
+    "10.3348/kjr.2025.1681",
+    "10.64898/2026.08.12.26360292",
+    "10.1136/bmjresp-2025-004013",
+    "10.1016/j.jcmg.2026.05.015",
+    "10.1111/eci.70246",
+    "10.1186/s41747-026-00774-3"
   ],
   "briefs_archive": [
     {
@@ -121,6 +133,13 @@
       "date": "2026-08-01",
       "items": 12,
       "headline": "Sotto la superficie: meccanismi, bersagli e forme che contano"
+    },
+    {
+      "id": "2026-W33",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W33.html",
+      "date": "2026-08-15",
+      "items": 12,
+      "headline": "Cosa l'immagine predice davvero"
     }
   ]
 }
