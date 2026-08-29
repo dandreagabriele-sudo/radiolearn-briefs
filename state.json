@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-08-15T12:25:00+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W33.html",
+  "last_brief_at": "2026-08-29T13:20:00+00:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W35.html",
   "last_brief_item_count": 12,
   "processed_dois": [
     "10.1056/NEJMra2415426",
@@ -89,7 +89,19 @@
     "10.1136/bmjresp-2025-004013",
     "10.1016/j.jcmg.2026.05.015",
     "10.1111/eci.70246",
-    "10.1186/s41747-026-00774-3"
+    "10.1186/s41747-026-00774-3",
+    "10.1148/radiol.253139",
+    "10.1016/j.jacc.2026.06.013",
+    "10.1038/s41590-026-02616-1",
+    "10.1177/17534666261480225",
+    "10.1172/jci.insight.198458",
+    "10.1136/lupus-2026-002101",
+    "10.64898/2026.08.19.26360827",
+    "10.1136/bmjresp-2025-003974",
+    "10.1148/ryct.250464",
+    "10.1016/j.jcin.2026.07.009",
+    "10.4244/EIJ-D-25-01315",
+    "10.1148/ryct.250565"
   ],
   "briefs_archive": [
     {
@@ -140,6 +152,13 @@
       "date": "2026-08-15",
       "items": 12,
       "headline": "Cosa l'immagine predice davvero"
+    },
+    {
+      "id": "2026-W35",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W35.html",
+      "date": "2026-08-29",
+      "items": 12,
+      "headline": "Il surrogato computazionale alla prova del mondo reale"
     }
   ]
 }

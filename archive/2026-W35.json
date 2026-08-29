@@ -1,0 +1,35 @@
+{
+  "brief_id": "2026-W35",
+  "generated_at": "2026-08-29T13:20:00+00:00",
+  "candidates_count": 182,
+  "selected_count": 12,
+  "selected_dois": [
+    "10.1148/radiol.253139",
+    "10.1016/j.jacc.2026.06.013",
+    "10.1038/s41590-026-02616-1",
+    "10.1177/17534666261480225",
+    "10.1172/jci.insight.198458",
+    "10.1136/lupus-2026-002101",
+    "10.64898/2026.08.19.26360827",
+    "10.1136/bmjresp-2025-003974",
+    "10.1148/ryct.250464",
+    "10.1016/j.jcin.2026.07.009",
+    "10.4244/EIJ-D-25-01315",
+    "10.1148/ryct.250565"
+  ],
+  "headline": "Il surrogato computazionale alla prova del mondo reale",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "ok",
+    "arxiv_cardio_imaging": "ok",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}

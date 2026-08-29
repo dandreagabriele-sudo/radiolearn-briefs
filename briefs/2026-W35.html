@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 35 (29 agosto 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 35</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Il surrogato computazionale alla prova del mondo reale</h1>
+  <p class="ui text-sm text-slate-500 mt-3">29 agosto 2026 · 12 selezionati su 182 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1148/radiol.253139" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Growth Patterns and Risk Stratification of Incidental Small Pure Ground-Glass Nodules across Independent Cohorts
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology &middot; agosto 2026 &middot; Liu H, Fu X, Ye M et al.
+  </p>
+  <p class="mb-3">
+    In 1206 piccoli
+    <details class="inline"><summary><span class="chip">pGGN</span></summary><span class="chip-content">Pure ground-glass nodule &mdash; nodulo a vetro smerigliato puro, senza componente solida, spesso a lenta o nulla evoluzione.</span></details>
+    incidentali (&lt;10 mm) seguiti 5 anni in due centri, solo <span class="anchor-text">l'8,6% è cresciuto</span>. Tre segni &mdash;
+    bubble lucency, vessel sign e familiarità per carcinoma polmonare &mdash; identificano in modo riproducibile i pochi che progrediscono.
+  </p>
+  <p class="ui text-sm text-slate-600 mb-1"><span class="font-medium text-slate-700">Numero che resta:</span> solo ~9% dei piccoli pGGN cresce in 5 anni.</p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Prevalenza vista vs probabilità di crescita: il pGGN è frequente sullo schermo ma raramente si muove. Il valore
+      dello studio non è trovare un nuovo marcatore, ma mostrare che gli stessi segni predicono la crescita in una coorte
+      indipendente. In clinica sposta la domanda da "è sospetto?" a "sta cambiando?".
+      ❓ Domanda di rottura: quale meccanismo biologico rende il vessel sign un predittore di crescita, e non solo un correlato radiologico?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? &mdash; chi stringere e chi rilassare</summary>
+    <div>
+      <table>
+        <thead><tr><th>Profilo del pGGN</th><th>Rischio di crescita</th><th>Condotta ragionevole</th></tr></thead>
+        <tbody>
+          <tr><td>Nessun segno morfologico, no familiarità</td><td><strong>Basso</strong></td><td class="text-slate-600">Follow-up diradato; evita l'overcalling</td></tr>
+          <tr><td>Bubble lucency</td><td>Aumentato (HR ~2,4)</td><td class="text-slate-600">Sorveglianza più attenta</td></tr>
+          <tr><td>Vessel sign</td><td>Aumentato (HR ~3,0)</td><td class="text-slate-600">Sorveglianza più attenta</td></tr>
+          <tr><td>Familiarità per K polmone</td><td>Aumentato (HR ~2,8&ndash;3,9)</td><td class="text-slate-600">Abbassa la soglia decisionale</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">La stragrande maggioranza dei piccoli pGGN va sorvegliata, non aggredita. I segni morfologici servono a
+        decidere il ritmo del follow-up, non a giustificare interventi precoci.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli — flowchart di stratificazione</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    N["pGGN incidentale &lt;10 mm"] --> Q1{"Segni: bubble lucency<br/>o vessel sign?"}
+    Q1 -->|No| Q2{"Familiarit&agrave; per<br/>K polmone?"}
+    Q1 -->|S&igrave;| WATCH["Follow-up pi&ugrave; stretto"]
+    Q2 -->|No| RELAX["Sorveglianza diradata"]
+    Q2 -->|S&igrave;| WATCH
+    WATCH --> GROW{"Crescita documentata?"}
+    GROW -->|No| RELAX
+    GROW -->|S&igrave;| ACT["Rivaluta gestione attiva"]
+    classDef ok fill:#dcfce7,stroke:#166534
+    classDef warn fill:#fef3c7,stroke:#92400e
+    class RELAX ok
+    class ACT warn
+      </div>
+      <p class="mt-3 text-sm">Schema da ricordare: nel pGGN il tempo è il miglior contrasto — è la traiettoria, non lo scatto singolo, a decidere.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1016/j.jacc.2026.06.013" target="_blank" rel="noopener" class="hover:text-blue-700">
+      AI-ECG Detection of Structural Heart Disease in the Community Setting: Transportability and Spectrum Effects (PREVUE-VALVE)
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    J Am Coll Cardiol &middot; agosto 2026 &middot; Poterucha TJ, Hughes JW, Brener MI et al.
+  </p>
+  <p class="mb-3">
+    Il modello AI-ECG EchoNext, addestrato in ospedale per rilevare cardiopatia strutturale, è stato testato a domicilio in
+    2402 anziani di comunità. La discriminazione regge, ma il contesto cambia tutto: <span class="anchor-text">prevalenza 43% in ospedale
+    contro 8% in comunità</span>, con fenotipi più lievi. È lo spectrum effect, non un difetto del modello.
+  </p>
+  <p class="ui text-sm text-slate-600 mb-1"><span class="font-medium text-slate-700">Confronto che resta:</span> 43% → 8% di prevalenza (ospedale → comunità).</p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Un AUC alto non è trasportabile: il valore predittivo positivo vive o muore con la prevalenza locale. Lo stesso modello
+      è uno strumento diverso in reparto e sul territorio. In clinica significa che il numero da chiedere non è "quanto è bravo",
+      ma "su chi lo sto usando".
+      ❓ Domanda di rottura: se l'AUC resta stabile mentre il PPV crolla, quale assunzione sulla popolazione stai davvero facendo quando applichi il modello?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? &mdash; leggere una performance AI</summary>
+    <div class="text-sm">
+      <p>Prima di adottare un modello validato altrove, chiediti quale prevalenza aveva la coorte di sviluppo. Un test con AUC
+      identico produce molti più falsi positivi dove la malattia è rara e più lieve: lo screening di comunità è esattamente
+      questo scenario.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">La trasportabilità non si legge nell'AUC. Chiedi sempre PPV e prevalenza <em>nella tua</em> popolazione prima
+        di trasformare un allarme AI in un'ecocardiografia.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli — perché l'AUC inganna</summary>
+    <div>
+      <div class="mermaid">
+flowchart LR
+    M["Modello AI-ECG<br/>addestrato in ospedale"] --> H["Coorte ospedaliera<br/>prevalenza 43%"]
+    M --> C["Comunit&agrave;<br/>prevalenza 8%"]
+    H --> HA["AUC alto<br/>PPV utile"]
+    C --> CA["AUC ~stabile<br/>PPV in caduta"]
+    CA --> DEC["Molti falsi positivi:<br/>conferma con eco mirata"]
+    classDef warn fill:#fee2e2,stroke:#991b1b
+    class CA,DEC warn
+      </div>
+      <p class="mt-3 text-sm">Schema da ricordare: il modello è lo stesso, la popolazione no — e la popolazione decide il PPV.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1038/s41590-026-02616-1" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Collaborative functionality between three types of inflammation in idiopathic pulmonary fibrosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-fulltext">📖 Full text</span>
+    Nature Immunology &middot; 21 agosto 2026 &middot; Fabre T, Wynn TA, Hart KM
+  </p>
+  <p class="mb-3">
+    Questa sintesi riconcettualizza l'infiammazione nell'IPF: non un tipo dominante alla volta, ma <span class="anchor-text">tre
+    programmi infiammatori che si sovrappongono</span> nello spazio e nel tempo dentro un'unica nicchia fibrotica. Un modello che
+    spiega perché gli anti-infiammatori a bersaglio singolo hanno deluso.
+  </p>
+  <p class="ui text-sm text-slate-600 mb-1"><span class="font-medium text-slate-700">Numero che resta:</span> 3 infiammazioni, una sola nicchia.</p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Nicchia unica, tre infiammazioni intrecciate. Il paradigma classico "una risposta immune per volta" non regge nel polmone
+      fibrotico, dove epitelio, immunità e fibroblasti co-abitano lo stesso microambiente. Sposta il bersaglio dalla singola via
+      alla loro cooperazione.
+      ❓ Domanda di rottura: se tre programmi infiammatori sono ridondanti, quale assunzione dei trial anti-infiammatori monobersaglio ne spiega il fallimento?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Perché conta per la clinica e i trial</summary>
+    <div class="text-sm">
+      <p>Il messaggio operativo non è un farmaco, ma un principio: colpire una sola via lascia le altre a sostenere la nicchia.
+      Spiega la storia negativa di molte monoterapie anti-infiammatorie e orienta verso combinazioni o bersagli a monte, condivisi
+      dai tre programmi.</p>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli — la nicchia a tre infiammazioni</summary>
+    <div>
+      <div class="mermaid">
+mindmap
+  root)Nicchia fibrotica IPF(
+    Danno epiteliale
+      Morte alveolare
+      Riparazione aberrante
+    Immunit&agrave; infiltrante
+      Cellule immuni periferiche
+      Mediatori sovrapposti
+    Fibroblasti
+      Differenziazione
+      Collagene fibrillare
+  </div>
+      <p class="mt-3 text-sm">Schema da ricordare: nell'IPF le tre infiammazioni non si alternano, collaborano.</p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1177/17534666261480225" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Tocilizumab for the treatment of acute exacerbation of idiopathic pulmonary fibrosis: A matched case-control study
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Ther Adv Respir Dis &middot; 20 agosto 2026 &middot; Guo B, Huang J, Chen G et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Nell'
+    <details class="inline"><summary><span class="chip">AE-IPF</span></summary><span class="chip-content">Acute exacerbation of IPF &mdash; peggioramento respiratorio acuto non spiegato in fibrosi polmonare idiopatica, con mortalit&agrave; a 3 mesi &gt;50%.</span></details>
+    (n=39, 13 trattati), tocilizumab + steroidi si associa a riduzione del rischio nei sottogruppi ad alto carico infiammatorio.
+    Un carico di GGO score ≥18 predice mortalità (HR 5,0). Segnale, non prova.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il GGO all'HRCT diventa qui il selettore del paziente iper-infiammato che potrebbe rispondere al blocco dell'IL-6. Ma 13
+      trattati sono un'ipotesi, non un verdetto.
+      ❓ Domanda di rottura: il GGO score misura davvero l'infiammazione reversibile, o solo la gravità di un danno già avvenuto?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Nessuna base per adottare tocilizumab nell'AE-IPF fuori da uno studio: disegno retrospettivo, coorte minuscola, effetto
+      significativo solo in modelli aggiustati ed esplorativi. Il dato utile è il GGO score ≥18 come marcatore prognostico e come
+      possibile criterio di arruolamento per un trial controllato.</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="text-amber-700">Errore da evitare:</span> leggere un n=13 come prova d'efficacia.</p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1172/jci.insight.198458" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Clonal hematopoiesis is associated with progression of idiopathic pulmonary fibrosis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    JCI Insight &middot; 24 agosto 2026 &middot; Asarian L, Jia J, Sirokha D et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Le mutazioni da
+    <details class="inline"><summary><span class="chip">CHIP</span></summary><span class="chip-content">Clonal hematopoiesis of indeterminate potential &mdash; espansione clonale di cellule ematopoietiche con mutazioni somatiche, senza citopenia n&eacute; neoplasia manifesta.</span></details>
+    si associano a progressione più rapida e a declino funzionale nell'IPF, indicando un asse midollo-polmone finora trascurato
+    nella stratificazione prognostica.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La fibrosi polmonare letta come malattia sistemica: un midollo che invecchia in modo clonale lascia un'impronta nel polmone
+      che progredisce. Cambia il perimetro della prognosi, dal parenchima al sangue.
+      ❓ Domanda di rottura: la CHIP è un driver della progressione o un marcatore dello stesso invecchiamento che alimenta la fibrosi?
+    </p>
+  </div>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="font-medium text-slate-600">Messaggio che resta:</span> nell'IPF la traiettoria può leggersi anche nel sangue, non solo nell'HRCT.</p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/lupus-2026-002101" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Prevalence and incidence of interstitial lung diseases in systemic lupus erythematosus: systematic review and meta-analyses
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Lupus Sci Med &middot; 20 agosto 2026 &middot; Semmler JK, Davidsen JR, Adelhelm JBH et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Meta-analisi di 98 studi (155.964 pazienti): l'ILD nel LES ha prevalenza aggregata dell'11% (18% con HRCT). Ma il dato
+    dipende da come lo cerchi &mdash; <span class="anchor-text">25% negli studi clinici osservazionali contro 7% nei registri
+    amministrativi</span>.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Sorveglianza attiva vs codifica amministrativa: la stessa malattia appare tre volte più frequente quando la cerchi con
+      l'HRCT invece di leggerla nei codici. Il numero non misura solo la biologia, ma il metodo di rilevazione.
+      ❓ Domanda di rottura: quale definizione operativa di "ILD" separa la vera prevalenza dall'artefatto del modo in cui la cerchi?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Un LES con sintomi respiratori o anticorpi a rischio merita un basso limite per l'HRCT: i registri sottostimano. L'11%
+      aggregato è un promemoria che l'ILD non è rara nel LES, ma l'eterogeneità estrema (I² ~100%) impone cautela nel trasferire
+      un singolo numero al paziente.</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="font-medium text-slate-600">Confronto che resta:</span> 25% (clinica) vs 7% (registri).</p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.64898/2026.08.19.26360827" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Natural History of Fibrotic Interstitial Lung Disease using AI-driven Test-free Assessment of Routine EHR
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    medRxiv (preprint) &middot; 22 agosto 2026 &middot; Onishchenko D, Martinez F et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Da soli dati amministrativi longitudinali (345.918 pazienti con ILD fibrosante, 17.284 IPF), gemelli digitali "test-free"
+    prevedono eventi clinici aggiornati nel tempo. Discriminazione massima per la dipendenza da ossigeno a 30 giorni: AUC 0,91.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Prognosi senza test, dove PFT e imaging mancano: utile per triage e follow-up remoto. Ma un modello su claim vede pattern di
+      cura, non biologia diretta &mdash; e il PPV resta modesto per gli eventi rari.
+      ❓ Domanda di rottura: un modello che usa solo codici amministrativi sta misurando la malattia, o il modo in cui il sistema la tratta?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Preprint, non validato clinicamente: da leggere come proof-of-concept. Il potenziale è identificare precocemente chi si
+      avvia a escalation di ossigeno o ipertensione polmonare in popolazioni prive di dati funzionali; l'AUC alto per l'ossigeno a
+      breve termine non si traduce automaticamente in decisioni individuali (PPV 0,19&ndash;0,71 a seconda dell'evento).</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="font-medium text-slate-600">Numero che resta:</span> AUC 0,91 per la dipendenza da ossigeno a 30 giorni.</p>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/bmjresp-2025-003974" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Automated identification of interstitial lung abnormalities in lung screening using quantitative CT
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    BMJ Open Respir Res &middot; 19 agosto 2026 &middot; Logan N, Desai SR, Bartlett EC et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Su una coorte di screening polmonare, il tool qCT commerciale e-Lung identifica le
+    <details class="inline"><summary><span class="chip">ILA</span></summary><span class="chip-content">Interstitial lung abnormalities &mdash; alterazioni interstiziali incidentali (&ge;5% del polmone) in soggetti senza ILD nota, con rischio evolutivo variabile.</span></details>
+    definite da radiologi esperti con AUC 0,82&ndash;0,88. Standardizza un finding incidentale oggi lasciato al giudizio soggettivo.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Standardizzazione vs giudizio: l'ILA è un reperto a bassa concordanza tra lettori, e un biomarcatore quantitativo rende
+      confrontabile ciò che oggi varia da occhio a occhio. Ma è il radiologo esperto a restare il riferimento, non l'algoritmo.
+      ❓ Domanda di rottura: quale soglia di estensione trasforma un'ILA da rumore incidentale a reperto che cambia il follow-up?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>In un programma di screening ad alto volume, un qCT può fare da pre-lettura per segnalare le CT con ILA sopra soglia
+      (&ge;5% o &gt;10%), concentrando l'attenzione del radiologo. Non sostituisce la lettura esperta: la caratterizzazione del
+      pattern e la decisione clinica restano umane.</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="font-medium text-slate-600">Numero che resta:</span> AUC ~0,85 contro il radiologo esperto.</p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250464" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Radiomic Feature Stability in Low-Dose CT and 3D Segmentation for Pulmonary Nodules: Phantom and Multicenter Evaluation
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology: Cardiothoracic Imaging &middot; agosto 2026 &middot; Zhang B, Zhuo Y, Zhan Y et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Su fantoccio multicentrico, solo una frazione delle feature radiomiche è stabile: 76% ripetibili al test-retest ma appena
+    64% riproducibili tra scanner. Dopo il filtro, restano <span class="anchor-text">466 feature su 2264</span> davvero solide.
+    Spessore di sezione e bassa dose sono i maggiori driver di variabilità.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Performance vs riproducibilità: una feature che cambia col protocollo non può essere un biomarcatore. Prima di costruire
+      modelli "radiomici", va fissato ciò che resta stabile quando cambiano dose, scanner e ricostruzione.
+      ❓ Domanda di rottura: se una feature radiomica varia col solo spessore di sezione, che cosa sta davvero codificando del nodulo?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Chi sviluppa o valuta modelli radiomici dovrebbe standardizzare per primi spessore/intervallo di sezione e dose, i
+      contributori maggiori alla varianza, e lavorare solo sul sottoinsieme stabile. Un modello brillante su feature instabili non
+      generalizzerà tra centri con protocolli diversi.</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="text-amber-700">Errore da evitare:</span> allenare un modello su feature che cambiano col protocollo.</p>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jcin.2026.07.009" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Redo-Transcatheter Aortic Valve Replacement With Self-Expanding Valves: A U.S. Registry Analysis
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC Cardiovasc Interv &middot; agosto 2026 &middot; Rogers T, Bapat VN, Chetcuti SJ et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Registro TVT (n=439 redo-TAVR con valvole autoespandibili Evolut): complicanze basse ed esiti clinici a 30 giorni e 1 anno
+    sovrapponibili al TAVR nativo. Il prezzo emodinamico è modesto ma reale &mdash; <span class="anchor-text">gradiente 11,3 vs 8,2
+    mmHg</span>.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il redo-TAVR è fattibile, ma ogni valvola-nella-valvola alza la barriera al flusso: il gradiente residuo è il prezzo
+      strutturale della strategia. La decisione si sposta a monte, sul planning con imaging del rischio coronarico.
+      ❓ Domanda di rottura: quale parametro anatomico pre-procedurale decide se il redo-TAVR è sicuro, prima ancora del gradiente atteso?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Per il TAVR degenerato, il redo con autoespandibile è un'opzione clinicamente valida. Il nodo non è la fattibilità ma la
+      selezione: la CT pre-procedurale deve valutare rischio di ostruzione coronarica e altezza dei leaflet, perché il gradiente
+      residuo più alto va accettato consapevolmente.</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="font-medium text-slate-600">Confronto che resta:</span> gradiente 11,3 vs 8,2 mmHg (redo vs nativo).</p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.4244/EIJ-D-25-01315" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Computational wireless indices for the assessment of myocardial ischaemia
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    EuroIntervention (ESC) &middot; agosto 2026 &middot; Campo G, Biscaglia S, Erriquez A et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Review sullo stato dell'arte degli indici fisiologici "senza filo": FFR-CT e FFR derivata dall'angiografia stimano l'ischemia
+    senza pressure wire né iperemia. Ridisegnano i percorsi diagnostici, dall'anatomia alla funzione ricavata dall'immagine.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Anatomia vs funzione: il valore aggiunto della fisiologia derivata dall'immagine non è imitare l'FFR invasivo, ma cambiare
+      la probabilità post-test evitando procedure inutili. La domanda passa da "quanto è stretta?" a "quanta ischemia produce?".
+      ❓ Domanda di rottura: quale informazione fisiologica aggiunge la FFR-CT che la sola percentuale di stenosi non può dare?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>La FFR-CT è più utile nella stenosi intermedia, dove raffina il percorso diagnostico e riduce le coronarografie non
+      necessarie; l'angio-FFR porta la fisiologia in sala senza filo. Il limite resta la qualità dell'immagine e la validazione
+      del contesto: non tutti gli indici sono intercambiabili.</p>
+    </div>
+  </details>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="font-medium text-slate-600">Messaggio che resta:</span> la fisiologia coronarica entra nell'immagine, senza filo.</p>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/ryct.250565" target="_blank" rel="noopener" class="hover:text-blue-700">
+      First-Pass Perfusion and T1-weighted Dixon Imaging as Emerging Biomarkers of Pericardial Disease
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Radiology: Cardiothoracic Imaging &middot; agosto 2026 &middot; Vaz A, Ramos DOS, Crusóe JTDR et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Imaging essay: due sequenze diffuse &mdash; first-pass perfusion e T1 Dixon post-contrasto &mdash; migliorano la
+    caratterizzazione tissutale del pericardio, evitando la sovrastima dell'enhancement dovuta al grasso epipericardico adiacente.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Enhancement vero vs artefatto da grasso: il LGE pericardico non fat-suppressed può ingannare, perché il grasso adiacente
+      brilla come infiammazione. La soppressione del grasso col Dixon separa il segnale reale dal falso.
+      ❓ Domanda di rottura: come distingui un enhancement pericardico infiammatorio da un segnale di grasso adiacente non soppresso?
+    </p>
+  </div>
+  <p class="ui text-xs text-slate-500 mt-2"><span class="text-amber-700">Errore da evitare:</span> scambiare il grasso epipericardico per enhancement pericardico patologico.</p>
+</article>
+
+</section>
+
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Diversi paper di focus lontani convergono su un'idea: il <em>surrogato computazionale</em> &mdash; un modello o un indice
+    che stima ciò che prima richiedeva un test dedicato &mdash; sta lasciando il laboratorio per il mondo reale, e lì incontra
+    il suo vero esame. AI-ECG in comunità (JACC), qCT per le ILA in screening (BMJ), prognosi ILD "test-free" da EHR (medRxiv)
+    e FFR senza filo (EuroIntervention) promettono la stessa cosa: sostituire o triare il gold standard. Ma la lezione trasversale
+    è la <strong>validazione nel contesto</strong>: prevalenza, protocollo e riproducibilità decidono se il surrogato regge.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Surrogati computazionali<br/>alla prova del contesto(
+    Cardio
+      AI-ECG in comunit&agrave;
+      Spectrum effect
+      PPV dipende dalla prevalenza
+    Toracico
+      qCT per le ILA
+      Radiomica stabile solo in parte
+      Protocollo come confondente
+    ILD
+      Prognosi test-free da EHR
+      Discriminazione &ne; utilit&agrave;
+    Coronarie
+      FFR senza filo
+      Funzione dall'immagine
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> un numero di performance (AUC, accuratezza) non è trasferibile finché non conosci la
+    popolazione, il protocollo e la riproducibilità locali. Il surrogato non va giudicato in astratto, ma sul <em>tuo</em> paziente.
+  </p>
+</section>
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 29 agosto 2026, 15:20 (ora italiana).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>
