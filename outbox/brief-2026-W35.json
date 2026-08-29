@@ -1,0 +1,14 @@
+{
+  "brief_id": "2026-W35",
+  "created_at": "2026-08-29T13:22:00+00:00",
+  "messages": [
+    {
+      "method": "sendMessage",
+      "params": {
+        "chat_id": "8538175163",
+        "text": "📚 RadioLearn Briefs — Settimana 35 (29 agosto 2026)\n\nIl surrogato computazionale alla prova del mondo reale\n\n12 paper selezionati su 182 candidati.\n\n✨ Highlights:\n• pGGN: solo ~9% cresce in 5 anni, la traiettoria batte lo scatto (Radiology)\n• AI-ECG in comunità: l'AUC regge, il PPV crolla — lo spectrum effect (JACC)\n• IPF: tre infiammazioni, una sola nicchia (Nature Immunology)\n\n🧩 Filo della settimana: i surrogati computazionali (AI-ECG, qCT, FFR-CT) alla prova della validazione nel contesto.\n\n👉 https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W35.html",
+        "disable_web_page_preview": false
+      }
+    }
+  ]
+}
