@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-08-29T13:20:00+00:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W35.html",
+  "last_brief_at": "2026-09-12T14:25:00+02:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W37.html",
   "last_brief_item_count": 12,
   "processed_dois": [
     "10.1056/NEJMra2415426",
@@ -101,7 +101,19 @@
     "10.1148/ryct.250464",
     "10.1016/j.jcin.2026.07.009",
     "10.4244/EIJ-D-25-01315",
-    "10.1148/ryct.250565"
+    "10.1148/ryct.250565",
+    "10.1056/NEJMoa2605373",
+    "10.1148/radiol.260484",
+    "10.1093/rheumatology/keag390",
+    "10.1183/16000617.0098-2026",
+    "10.1177/17534666261485118",
+    "10.1177/17534666261475558",
+    "10.1148/rg.260012",
+    "10.1186/s41747-026-00783-2",
+    "10.1155/carj/3604892",
+    "10.1148/ryct.250318",
+    "10.4244/EIJ-D-25-01383",
+    "10.1186/s12947-026-00381-7"
   ],
   "briefs_archive": [
     {
@@ -159,6 +171,13 @@
       "date": "2026-08-29",
       "items": 12,
       "headline": "Il surrogato computazionale alla prova del mondo reale"
+    },
+    {
+      "id": "2026-W37",
+      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W37.html",
+      "date": "2026-09-12",
+      "items": 12,
+      "headline": "Oltre il pattern: misurare attività, funzione e danno"
     }
   ]
 }

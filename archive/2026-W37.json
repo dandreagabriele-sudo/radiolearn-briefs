@@ -1,0 +1,35 @@
+{
+  "brief_id": "2026-W37",
+  "generated_at": "2026-09-12T14:25:00+02:00",
+  "candidates_count": 162,
+  "selected_count": 12,
+  "selected_dois": [
+    "10.1056/NEJMoa2605373",
+    "10.1148/radiol.260484",
+    "10.1093/rheumatology/keag390",
+    "10.1183/16000617.0098-2026",
+    "10.1177/17534666261485118",
+    "10.1177/17534666261475558",
+    "10.1148/rg.260012",
+    "10.1186/s41747-026-00783-2",
+    "10.1155/carj/3604892",
+    "10.1148/ryct.250318",
+    "10.4244/EIJ-D-25-01383",
+    "10.1186/s12947-026-00381-7"
+  ],
+  "headline": "Oltre il pattern: misurare attività, funzione e danno",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "failed: RuntimeError",
+    "arxiv_cardio_imaging": "failed: RuntimeError",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}

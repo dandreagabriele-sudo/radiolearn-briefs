@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 37 (12 settembre 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 37</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Oltre il pattern: misurare attività, funzione e danno</h1>
+  <p class="ui text-sm text-slate-500 mt-3">12 settembre 2026 · 12 selezionati su 162 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+
+  <article class="mb-10">
+    <h3 class="article-title text-lg mb-1">
+      <a href="https://doi.org/10.1056/NEJMoa2605373" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Complete Revascularization Guided by Functional Coronary Angiography in STEMI
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-3">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      The New England Journal of Medicine · 29 ago 2026 · Biscaglia S, Erriquez A, Colaiori I et al.
+    </p>
+    <p class="mb-3">
+      RCT internazionale (n=1823) nello STEMI multivasale: dopo aver trattato la lesione colpevole, la
+      rivascolarizzazione completa delle lesioni non-culprit guidata dalla <span class="anchor-text">fisiologia</span>
+      batte quella guidata dall'angiografia visiva. Endpoint composito (morte, IM, ictus/TIA, rivascolarizzazione
+      ischemia-driven) <strong>8,9% vs 13,7%</strong> a 17,9 mesi, con meno eventi di sicurezza (danno renale/sanguinamento).
+    </p>
+    <p class="mb-1"><strong>Confronto che resta:</strong> 8,9% vs 13,7% — decidere sulla funzione, non sull'occhio, cambia l'esito duro.</p>
+
+    <div class="anchor-block">
+      <p>
+        <span class="anchor-label">🧠 L'aggancio:</span>
+        <strong>Stenosi o ischemia?</strong> L'angiografia mostra il calibro; la fisiologia misura se quel calibro
+        limita davvero il flusso. Trattare tutto ciò che "sembra stretto" aggiunge stent senza aggiungere beneficio:
+        la funzione seleziona la lesione che conta.
+        ❓ Domanda di rottura: quando marchi una lesione non-culprit come da trattare, stai misurando la geometria del lume o la sua reale capacità di ridurre il flusso a valle?
+      </p>
+    </div>
+
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica clinica? — quando la fisiologia cambia la decisione</summary>
+      <div>
+        <table>
+          <thead><tr><th>Scenario STEMI multivasale</th><th>Strategia sulle non-culprit</th><th>Razionale</th></tr></thead>
+          <tbody>
+            <tr><td>Lesione intermedia (40–70%)</td><td><strong>Guida fisiologica</strong></td><td class="text-slate-600">Qui l'occhio sbaglia di più: la funzione riclassifica</td></tr>
+            <tr><td>Lesione subocclusiva critica</td><td>Trattamento diretto</td><td class="text-slate-600">Significato emodinamico già evidente</td></tr>
+            <tr><td>Rischio contrasto/sanguinamento elevato</td><td><strong>Guida fisiologica</strong></td><td class="text-slate-600">Meno stent non necessari → meno eventi di sicurezza</td></tr>
+          </tbody>
+        </table>
+        <div class="takeaway-card mt-4">
+          <p><span class="takeaway-label">Bottom line</span></p>
+          <p class="mt-1">Nello STEMI multivasale, guidare la rivascolarizzazione completa con la fisiologia riduce sia
+          gli eventi ischemici sia quelli di sicurezza. Il beneficio non è "fare di più", è "fare dove serve".</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="deepdive">
+      <summary>🔬 Dettagli — dove il vantaggio si genera</summary>
+      <div>
+        <div class="mermaid">
+flowchart TB
+    A["STEMI multivasale<br/>culprit già trattata"] --> B{"Lesione non-culprit:<br/>guida della decisione?"}
+    B -->|Fisiologia| C["Tratta solo lesioni<br/>funzionalmente significative"]
+    B -->|Angiografia visiva| D["Tratta per severità<br/>anatomica apparente"]
+    C --> E["Eventi primari 8,9%<br/>HR 0,62 (0,47-0,83)"]
+    D --> F["Eventi primari 13,7%"]
+    C --> G["Meno danno renale<br/>e sanguinamenti"]
+    classDef win fill:#dbeafe,stroke:#1e40af
+    classDef lose fill:#fee2e2,stroke:#991b1b
+    class C,E,G win
+    class D,F lose
+        </div>
+        <p class="mt-3 text-sm">Il segnale è coerente su efficacia e sicurezza: meno stent inutili significa meno
+        carico di contrasto e meno complicanze procedurali, a parità di completezza del razionale.</p>
+        <p class="mt-2 text-sm"><strong>Schema da ricordare:</strong> la fisiologia non aggiunge trattamenti, li seleziona.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-10">
+    <h3 class="article-title text-lg mb-1">
+      <a href="https://doi.org/10.1148/radiol.260484" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Impact of Commercial Artificial Intelligence on Radiologist Reading Time for Pulmonary Nodule Evaluation at Chest CT
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-3">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      Radiology · set 2026 · Paramasamy J, Odink AE, Mulders TA et al.
+    </p>
+    <p class="mb-3">
+      Studio real-world su <strong>39.323 TC del torace</strong> (pre/post introduzione di un software commerciale
+      per i noduli): il tempo mediano di refertazione scende da 21,3 a 18,2 minuti (−14,6%). Ma il guadagno è
+      eterogeneo: massimo per i radiologi toracici (−25%) e le TC ECG-gated (−41%), <span class="anchor-text">negativo in pronto soccorso</span> (+7,1%).
+    </p>
+    <p class="mb-1"><strong>Errore da evitare:</strong> credere che l'AI acceleri chiunque, ovunque. Dove il contesto è già complesso o non selezionato, può rallentare.</p>
+
+    <div class="anchor-block">
+      <p>
+        <span class="anchor-label">🧠 L'aggancio:</span>
+        <strong>Strumento o contesto?</strong> Lo stesso software è un acceleratore per il lettore esperto su esame
+        mirato e una zavorra per il generalista sotto pressione in urgenza. Il tempo risparmiato non è una proprietà
+        dell'AI, ma dell'incontro fra AI e flusso di lavoro.
+        ❓ Domanda di rottura: quando stimi il ROI di un'AI, stai misurando la performance del modello o l'interazione tra modello, lettore e tipo di esame in cui lo inserisci?
+      </p>
+    </div>
+
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica? — dove conviene attivarlo</summary>
+      <div class="text-sm">
+        <table>
+          <thead><tr><th>Contesto di lettura</th><th>Effetto sul tempo</th><th>Lettura operativa</th></tr></thead>
+          <tbody>
+            <tr><td>Radiologo toracico dedicato</td><td><strong>−25%</strong></td><td class="text-slate-600">Massimo ritorno: candidato prioritario</td></tr>
+            <tr><td>TC torace ECG-gated</td><td><strong>−41%</strong></td><td class="text-slate-600">Compito ripetitivo e strutturato = ideale</td></tr>
+            <tr><td>Pronto soccorso</td><td>+7,1%</td><td class="text-slate-600">Contesto non selezionato: verifica prima di estendere</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-3">L'adozione va pilotata per sottogruppo, non a tappeto: misura il tempo reale nel tuo setting
+        prima di dichiarare un risparmio di organico.</p>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-10">
+    <h3 class="article-title text-lg mb-1">
+      <a href="https://doi.org/10.1093/rheumatology/keag390" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Advances in imaging for systemic sclerosis
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-3">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      Rheumatology (Oxford) · set 2026 · Lescoat A, Ross L, Bergmann C et al.
+    </p>
+    <p class="mb-3">
+      Review sull'imaging nella sclerosi sistemica: l'obiettivo non è "vedere di più", ma separare l'<strong>attività</strong>
+      (infiammazione ed early fibrosis, ancora modificabile) dal <strong>danno</strong> (fibrosi e vasculopatia fisse).
+      Tecniche emergenti e nuovi usi di modalità note — <span class="anchor-text">ecografia polmonare</span>, US sinoviale —
+      puntano a definire meglio la finestra terapeutica.
+    </p>
+    <p class="mb-1"><strong>Messaggio che resta:</strong> l'imaging utile in SSc misura la reversibilità, non solo l'estensione.</p>
+
+    <div class="anchor-block">
+      <p>
+        <span class="anchor-label">🧠 L'aggancio:</span>
+        <strong>Attività vs danno.</strong> Come Eraclito distingueva il fiume che scorre dalla pietra sul fondo,
+        l'imaging deve separare il processo ancora in movimento (trattabile) dalla cicatrice ormai ferma. Confondere
+        i due significa trattare troppo tardi o inseguire l'irreversibile.
+        ❓ Domanda di rottura: davanti a un reperto fibrotico in SSc, quale informazione stai cercando — quanta fibrosi c'è, o quanta di essa è ancora in fase attiva e quindi aggredibile?
+      </p>
+    </div>
+
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica? — cosa chiedere all'imaging in SSc</summary>
+      <div class="text-sm">
+        <div class="takeaway-card">
+          <p><span class="takeaway-label">Il punto operativo</span></p>
+          <p class="mt-1">La domanda clinica non è "c'è organo interessato?" ma "l'interessamento è attivo?". Solo la
+          componente attiva risponde all'immunomodulazione precoce; la fibrosi fissa richiede una strategia diversa.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="deepdive">
+      <summary>🔬 Dettagli — la logica attività/danno per organo</summary>
+      <div>
+        <div class="mermaid">
+flowchart LR
+    R["Reperto d'organo<br/>in SSc"] --> Q{"Attività o danno?"}
+    Q -->|Attività:<br/>infiammazione, early fibrosis| A["Finestra terapeutica aperta<br/>immunomodulazione precoce"]
+    Q -->|Danno:<br/>fibrosi/vasculopatia fissa| D["Irreversibile<br/>supporto e monitoraggio"]
+    A --> M["Imaging seriale per<br/>tracciare la risposta"]
+    classDef act fill:#dbeafe,stroke:#1e40af
+    classDef dam fill:#e5e7eb,stroke:#6b7280
+    class A,M act
+    class D dam
+        </div>
+        <p class="mt-3 text-sm"><strong>Schema da ricordare:</strong> l'immagine che cambia il management è quella che
+        stima la reversibilità, non quella che conta i millimetri di fibrosi.</p>
+      </div>
+    </details>
+  </article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1183/16000617.0098-2026" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Comorbidities in clinical cohorts of patients with idiopathic pulmonary fibrosis: a systematic review and meta-analysis
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      European Respiratory Review · 9 set 2026 · Leong MCH, Green S, Guan M et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Meta-analisi imponente (251 studi, n=606.398) sulle comorbidità nell'IPF reale: ipertensione 39%, dislipidemia 30%,
+      <details class="inline"><summary><span class="chip">MRGE</span></summary><span class="chip-content">Malattia da reflusso gastroesofageo — reflusso cronico, possibile cofattore di microaspirazione e danno epiteliale alveolare nell'IPF.</span></details>
+      27%, diabete 21%, cardiopatia ischemica 20%. Ma solo il cancro del polmone si associa in modo consistente a
+      un aumento di mortalità a breve e lungo termine.
+    </p>
+    <p class="mb-2 text-sm"><strong>Numero che resta:</strong> il cancro del polmone è l'unica comorbidità legata in modo coerente alla mortalità nell'IPF.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        Le comorbidità nell'IPF reale sono più frequenti che nei trial: la coorte "pulita" dello studio registrativo
+        non è il paziente che hai davanti. Fra tante, però, una sola cambia davvero la prognosi.
+        ❓ Domanda di rottura: quando trasferisci un dato di sopravvivenza dal trial al tuo paziente, quale assunzione sulla comorbidità stai facendo implicitamente?
+      </p>
+    </div>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1177/17534666261485118" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Prognostic value of baseline serum KL-6 for mortality risk in IPF patients receiving antifibrotic therapy
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      Therapeutic Advances in Respiratory Disease · 31 ago 2026 · He X, Xie S, Tan C et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Coorte retrospettiva (n=126) di IPF in terapia antifibrotica: il
+      <details class="inline"><summary><span class="chip">KL-6</span></summary><span class="chip-content">Krebs von den Lungen-6 — glicoproteina rilasciata dagli pneumociti di tipo II danneggiati; marcatore sierico di injury epiteliale alveolare.</span></details>
+      basale elevato predice la mortalità. Sopra il cut-off di <strong>746 U/mL</strong>, rischio di morte marcatamente
+      maggiore (HR 7,57). Indipendenti anche cardiopatia, linfociti e FVC% pred.
+    </p>
+    <p class="mb-2 text-sm"><strong>Numero che resta:</strong> 746 U/mL — soglia di KL-6 che separa due traiettorie di sopravvivenza sotto antifibrotico.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        Un biomarker di injury epiteliale che pesa più del pattern radiologico: sotto terapia, ciò che il sangue dice
+        sull'attività di danno alveolare aggiunge prognosi rispetto alla sola HRCT. Serie piccola, monocentrica: cut-off da validare.
+        ❓ Domanda di rottura: la soglia 746 U/mL misura un meccanismo (injury alveolare in corso) o solo un'associazione statistica locale che potrebbe non trasferirsi?
+      </p>
+    </div>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1177/17534666261475558" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Patient-reported adverse events and management of antifibrotic therapy in IPF: a multicenter real-world study
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      Therapeutic Advances in Respiratory Disease · 31 ago 2026 · Turan O, Uğurlu E, Oral Tapan Ö et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Survey su 470 pazienti IPF: il 70,6% riferisce almeno un effetto collaterale dell'antifibrotico. I due farmaci
+      hanno profili distinti — nintedanib prevalentemente gastrointestinale (diarrea, calo ponderale), pirfenidone
+      cutaneo/astenico (rash, fotosensibilità, fatigue). Donne e pazienti con comorbidità riportano più eventi.
+    </p>
+    <p class="mb-2 text-sm"><strong>Confronto che resta:</strong> nintedanib = intestino, pirfenidone = cute. Il profilo di tossicità orienta la scelta prima ancora dell'efficacia.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        L'aderenza è un outcome di imaging mancato: il paziente che sospende per diarrea o fotosensibilità perde
+        il beneficio antifibrotico che la TC documenterà mesi dopo. Anticipare l'effetto atteso protegge la terapia.
+        ❓ Domanda di rottura: nella scelta dell'antifibrotico, stai ottimizzando l'efficacia teorica o la probabilità che quel paziente specifico resti in terapia?
+      </p>
+    </div>
+  </article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1148/rg.260012" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Lung Cancer Screening: Beyond Pulmonary Nodules
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      RadioGraphics (RSNA) · ott 2026 · Singh A, El Khoury T, Tannoury E et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Review pratica sui reperti incidentali della LDCT di screening: nel NLST circa <strong>un terzo</strong> degli esami
+      mostrava anomalie diverse dal cancro. Enfisema,
+      <details class="inline"><summary><span class="chip">ILA</span></summary><span class="chip-content">Interstitial Lung Abnormalities — alterazioni interstiziali incidentali in ≥5% di un campo polmonare in soggetti non sospettati di ILD; possibile fase precoce di fibrosi.</span></details>
+      , calcio coronarico, aneurisma aortico, dilatazione dell'arteria polmonare, bassa densità ossea: reperti che,
+      se ignorati, pesano su morbilità e mortalità.
+    </p>
+    <p class="mb-2 text-sm"><strong>Messaggio che resta:</strong> la LDCT è un esame multiorgano a costo zero aggiunto — refertare "solo il nodulo" spreca informazione clinica.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        Screening opportunistico: la stessa dose, già erogata per il cancro, contiene un intero profilo di rischio
+        cardiovascolare e interstiziale. La refertazione strutturata (incluso il modificatore "S" del Lung-RADS)
+        trasforma un sottoprodotto in valore.
+        ❓ Domanda di rottura: quando referti una LDCT di screening, quale definizione operativa di "reperto rilevante" adotti — e chi la usa a valle per il follow-up?
+      </p>
+    </div>
+
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica? — reperti opportunistici e follow-up</summary>
+      <div class="text-sm">
+        <table>
+          <thead><tr><th>Reperto incidentale</th><th>Perché conta</th><th>Azione</th></tr></thead>
+          <tbody>
+            <tr><td>ILA</td><td class="text-slate-600">Possibile ILD precoce</td><td>Caratterizza pattern, valuta follow-up HRCT</td></tr>
+            <tr><td>Calcio coronarico</td><td class="text-slate-600">Rischio CV</td><td>Segnala/quantifica (anche AI), indirizza</td></tr>
+            <tr><td>Enfisema</td><td class="text-slate-600">BPCO, prognosi</td><td>Quantifica ed esplicita nel referto</td></tr>
+            <tr><td>Dilatazione arteria polmonare</td><td class="text-slate-600">Ipertensione polmonare</td><td>Correla con clinica, considera eco</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1186/s41747-026-00783-2" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Next-gen paediatric imaging: ultra-low dose chest photon-counting CT approaching chest radiograph doses
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      European Radiology Experimental · 8 set 2026 · Limantoro I, Torfs K, Binst J et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Studio di fattibilità su TC toracica ultra-low dose con detettore
+      <details class="inline"><summary><span class="chip">PCD-CT</span></summary><span class="chip-content">Photon-Counting Detector CT — TC con detettori che contano i singoli fotoni, migliorando dose, rumore e risoluzione spaziale rispetto ai detettori a integrazione di energia.</span></details>
+      in 24 bambini: dose efficace media <strong>11,6 µSv</strong>, comparabile a una radiografia del torace (8,2 µSv).
+      Tutti gli esami giudicati accettabili, ma per escludere ILD o bronchiectasie i radiologi preferivano un protocollo a dose più alta.
+    </p>
+    <p class="mb-2 text-sm"><strong>Numero che resta:</strong> 11,6 µSv — una TC del torace pediatrica alla dose di una radiografia.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        La dose non è più il vincolo che separa radiografia e TC: il limite si sposta sul quesito clinico. Per l'anatomia
+        grossolana basta l'ultra-low dose; per la trama fine dell'interstizio serve ancora più segnale. Feasibility su 24 casi: non è ancora uno standard.
+        ❓ Domanda di rottura: se la dose smette di essere il fattore limitante, quale diventa la vera domanda che decide il protocollo?
+      </p>
+    </div>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1155/carj/3604892" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Clinical Impact of HRCT UIP Pattern in IPF Patients Undergoing Antifibrotic Treatment
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      Canadian Respiratory Journal · 2026 · Nagaoka S, Hara Y, Fujii H et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Studio multicentrico (n=139, 7 centri giapponesi): in IPF trattati con antifibrotico, il pattern
+      <details class="inline"><summary><span class="chip">UIP</span></summary><span class="chip-content">Usual Interstitial Pneumonia — pattern HRCT definito dall'honeycombing subpleurale/basale; storicamente marcatore di malattia avanzata.</span></details>
+      su HRCT <em>non</em> è risultato associato in modo indipendente alla prognosi a lungo termine, né in generale né
+      stratificando per stadio
+      <details class="inline"><summary><span class="chip">GAP</span></summary><span class="chip-content">Gender-Age-Physiology — indice prognostico nell'IPF basato su sesso, età e funzione polmonare (FVC, DLCO).</span></details>
+      (anche dopo propensity matching).
+    </p>
+    <p class="mb-2 text-sm"><strong>Errore da evitare:</strong> equiparare honeycombing = prognosi peggiore. Sotto antifibrotico, il pattern isolato perde peso predittivo.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        La terapia ridisegna il valore del segno: ciò che era marcatore di gravità nell'era pre-antifibrotica non lo
+        è più allo stesso modo oggi. La prognosi si sposta dal pattern statico al comportamento della malattia (fisiologia, traiettoria). Studio retrospettivo, coorte modesta.
+        ❓ Domanda di rottura: quando usi l'honeycombing come marcatore prognostico, quell'assunzione è ancora valida nel contesto terapeutico attuale, o è ereditata da coorti non trattate?
+      </p>
+    </div>
+  </article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1148/ryct.250318" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Cardiac MRI Strain for Prediction of PET-defined Myocardial Inflammation in Cardiac Sarcoidosis
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-abstract">📄 Solo abstract</span>
+      Radiology: Cardiothoracic Imaging · ott 2026 · Firoozeh N, Shafiei M, Gulhane A et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Studio retrospettivo (n=125) nella
+      <details class="inline"><summary><span class="chip">sarcoidosi cardiaca</span></summary><span class="chip-content">Infiltrazione granulomatosa del miocardio; l'infiammazione attiva si valuta con FDG-PET, il danno con late gadolinium enhancement alla CMR.</span></details>:
+      lo strain feature-tracking alla CMR predice l'infiammazione FDG-PET indipendentemente da
+      <details class="inline"><summary><span class="chip">LGE</span></summary><span class="chip-content">Late Gadolinium Enhancement — ritardato enhancement da gadolinio; marca fibrosi/necrosi miocardica (danno stabilito), non l'attività infiammatoria.</span></details>
+      e T2. Lo strain circonferenziale è più basso nei segmenti infiammati (−14,1% vs −18,4%) e aggiunto alla FE migliora la detection (AUC 0,72 vs 0,63).
+    </p>
+    <p class="mb-2 text-sm"><strong>Confronto che resta:</strong> AUC 0,72 vs 0,63 — lo strain aggiunge alla sola frazione d'eiezione per stanare l'infiammazione.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        Funzione contro cicatrice: LGE mostra il danno fatto, lo strain coglie la disfunzione contrattile del segmento
+        ancora infiammato. Due domande diverse sullo stesso miocardio. Serie retrospettiva monocentrica: la PET resta il riferimento per l'attività.
+        ❓ Domanda di rottura: quando cerchi l'infiammazione attiva alla CMR, quale fenomeno stai davvero misurando con lo strain che LGE e T2 non catturano?
+      </p>
+    </div>
+
+    <details class="practicality">
+      <summary>📋 Posso usarlo nella pratica? — cosa aggiunge lo strain</summary>
+      <div class="text-sm">
+        <div class="takeaway-card">
+          <p><span class="takeaway-label">Bottom line</span></p>
+          <p class="mt-1">Dove la FDG-PET non è disponibile o ripetibile a piacere, lo strain CMR offre un indizio
+          funzionale di attività infiammatoria segmentaria, complementare (non sostitutivo) a PET, LGE e T2.</p>
+        </div>
+      </div>
+    </details>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.4244/EIJ-D-25-01383" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Sex differences in CT-derived fractional flow reserve-guided management of stable CAD: subanalysis of TARGET
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      EuroIntervention · 7 set 2026 · Ding Y, Liu Z, Shan D et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Sottoanalisi del trial TARGET (n=1216) sulla guida con
+      <details class="inline"><summary><span class="chip">CT-FFR</span></summary><span class="chip-content">Fractional Flow Reserve derivata da TC — stima computazionale della significatività funzionale di una stenosi coronarica dai dati della coronaro-TC.</span></details>:
+      negli uomini la CT-FFR riduce le coronarografie senza CAD ostruttiva; nelle donne si associa a meno MACE a 2 anni
+      (HR aggiustato 0,48). Attenzione: l'<strong>interazione sesso×trattamento non è significativa</strong>.
+    </p>
+    <p class="mb-2 text-sm"><strong>Errore da evitare:</strong> leggere "beneficio nelle donne" come effetto sesso-specifico — senza interazione significativa, è generazione d'ipotesi, non prova.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        Le donne hanno spesso malattia meno ostruttiva ma esiti peggiori: la funzione (CT-FFR) può disaccoppiare
+        "quanto è stretto" da "quanto conta". Ma un'analisi per sottogruppi senza interazione significativa è un
+        segnale, non una conclusione.
+        ❓ Domanda di rottura: prima di applicare un risultato di sottogruppo, hai verificato che esista un test d'interazione significativo, o stai scambiando due stime separate per una differenza reale?
+      </p>
+    </div>
+  </article>
+
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+    <h3 class="article-title text-base mb-1">
+      <a href="https://doi.org/10.1186/s12947-026-00381-7" target="_blank" rel="noopener" class="hover:text-blue-700">
+        Moderate aortic stenosis: diagnostic pitfalls and the role of multimodality imaging
+      </a>
+    </h3>
+    <p class="ui text-xs text-slate-500 mb-2">
+      <span class="badge-fulltext">📖 Full text</span>
+      Cardiovascular Ultrasound · 7 set 2026 · Santangelo G, Maloberti A, Tognola C et al.
+    </p>
+    <p class="mb-2 text-sm">
+      Review sulla stenosi aortica moderata, non più "stadio benigno di transito": si associa a morbilità e mortalità
+      rilevanti già prima della progressione a severa. Oltre l'ecocardiografia, calcium score TC, CMR e PET con
+      <sup>18</sup>F-fluoruro di sodio svelano il danno miocardico precoce; una stadiazione che integra ventricolo,
+      atrio e sezioni destre correla con l'esito meglio dei soli parametri valvolari.
+    </p>
+    <p class="mb-2 text-sm"><strong>Messaggio che resta:</strong> nella AS moderata conta lo stadio di danno d'organo, non solo il gradiente valvolare.</p>
+
+    <div class="anchor-block">
+      <p class="text-sm">
+        <span class="anchor-label">🧠 Aggancio:</span>
+        La valvola è la causa, ma la prognosi vive nel miocardio e nelle camere a monte. Misurare solo la valvola è
+        guardare il rubinetto ignorando l'allagamento. Review narrativa: le soglie d'intervento precoce attendono i trial randomizzati in corso.
+        ❓ Domanda di rottura: nella AS moderata, quale variabile predice l'esito — la severità della valvola, o il rimodellamento d'organo che essa ha già prodotto?
+      </p>
+    </div>
+
+    <details class="deepdive">
+      <summary>🔬 Dettagli — la stadiazione multimodale del danno</summary>
+      <div>
+        <div class="mermaid">
+flowchart TB
+    AS["Stenosi aortica moderata"] --> Eco["Ecocardiografia<br/>(gradiente, area)"]
+    Eco --> Q{"Segni di danno<br/>d'organo?"}
+    Q -->|Approfondisci| CT["TC: calcium score valvolare"]
+    Q -->|Approfondisci| CMR["CMR: fibrosi, strain"]
+    Q -->|Approfondisci| PET["PET 18F-NaF:<br/>attività di calcificazione"]
+    CT --> S["Stadiazione integrata:<br/>VS + atrio + sezioni dx"]
+    CMR --> S
+    PET --> S
+    S --> D["Rischio: chi può beneficiare<br/>di trattamento più precoce"]
+    classDef img fill:#dbeafe,stroke:#1e40af
+    class CT,CMR,PET,S img
+        </div>
+        <p class="mt-3 text-sm"><strong>Schema da ricordare:</strong> la valvola stadia la causa; le camere e il
+        miocardio stadiano la prognosi.</p>
+      </div>
+    </details>
+  </article>
+
+</section>
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Tre paper di focus diversi convergono su una domanda che l'immagine da sola non risolve: <em>attività o danno?</em>
+    Nella sclerosi sistemica (Rheumatology) l'imaging cerca di separare l'infiammazione trattabile dalla fibrosi fissa;
+    nell'IPF sotto antifibrotico (Canadian Respiratory Journal) il pattern UIP perde valore prognostico isolato, spostando
+    il peso sul comportamento della malattia; nella stenosi aortica moderata (Cardiovascular Ultrasound) è lo stadio di
+    danno d'organo — non il gradiente valvolare — a predire l'esito. In tutti e tre, il reperto statico conta meno del
+    processo che sta ancora accadendo.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Attività o danno?<br/>Oltre il reperto statico(
+    SSc imaging
+      Attivita vs danno per organo
+      Finestra terapeutica
+      Reversibilita non estensione
+    IPF sotto antifibrotico
+      Pattern UIP non piu prognostico
+      Conta il comportamento
+      Traiettoria oltre l'immagine
+    AS moderata
+      Danno d'organo batte il gradiente
+      Stadiazione multimodale
+      VS atrio sezioni destre
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> per il radiologo del board multidisciplinare, la domanda utile si sposta da
+    "quanto è esteso il reperto?" a "quanta parte è ancora attiva e reversibile?". È l'attività, non la fotografia del
+    danno, a decidere se e quando la terapia può ancora cambiare la traiettoria.
+  </p>
+</section>
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 12 settembre 2026, ore 14:25 (Italia).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>
