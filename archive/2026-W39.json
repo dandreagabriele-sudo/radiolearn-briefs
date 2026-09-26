@@ -1,0 +1,36 @@
+{
+  "brief_id": "2026-W39",
+  "generated_at": "2026-09-26T14:12:58.365140+02:00",
+  "candidates_count": 163,
+  "selected_count": 13,
+  "selected_dois": [
+    "10.1038/s41591-026-04488-2",
+    "10.1136/jitc-2026-015014",
+    "10.1186/s41747-026-00808-w",
+    "10.1136/bmjresp-2026-004356",
+    "10.1136/bmjresp-2025-004048",
+    "10.1080/25310429.2026.2736380",
+    "10.1148/rg.260009",
+    "10.3346/jkms.2026.41.e231",
+    "10.1186/s12890-026-04543-1",
+    "10.1016/j.jcin.2026.06.028",
+    "10.3904/kjim.2026.065",
+    "10.1136/lupus-2026-002066",
+    "10.1016/j.jcin.2026.06.015"
+  ],
+  "headline": "Il modello nella scansione: imaging che predice il rischio",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "failed: RuntimeError",
+    "arxiv_cardio_imaging": "failed: RuntimeError",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}

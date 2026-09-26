@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 39 (26 settembre 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  /* Aggancio multidisciplinare — sempre visibile sotto L1 */
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  /* Progressive disclosure styling */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  /* Level 2 box — "Posso usarlo?" */
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  /* Level 3 box — Deep dive */
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  /* Mermaid diagrams */
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  /* Tables inside L2/L3 boxes */
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  /* Card layout for "key takeaways" in L2 */
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Glossario chip (invariato) */
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  /* Badges */
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  /* Filo della settimana */
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<!-- HEADER -->
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 39</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Il modello nella scansione: imaging che predice il rischio</h1>
+  <p class="ui text-sm text-slate-500 mt-3">26 settembre 2026 · 13 selezionati su 163 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1038/s41591-026-04488-2" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Clinical usability of an explainable AI decision support tool and evaluation of multimodal models in NSCLC
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Nature Medicine · 13 set 2026 · Prelaj A, Miskovic V, Sacco M et al.
+  </p>
+  <p class="mb-3">
+    Lo studio I3LUNG (2.396 pazienti, real-world, internazionale) integra dati clinico-ematici, TC, patologia
+    digitale e genomica per predire la risposta all'immunoterapia nel NSCLC. Il modello sui soli dati
+    <span class="anchor-text">clinico-ematici</span> raggiunge AUC fino a 0.77 e supera PD-L1, ECOG, NLR, LDH e
+    LIPI; l'aggiunta di TC e patologia (multimodale) non porta un beneficio incrementale confermato in test e
+    validazione esterna.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Più dati non è più segnale. Il modello più semplice (solo clinico-ematico) regge quanto quello multimodale:
+      aggiungere l'imaging paga solo se porta informazione indipendente, non ridondante rispetto a ciò che già
+      sai. In clinica sposta la domanda da "quante modalità posso fondere?" a "quale modalità aggiunge un asse
+      che le altre non coprono?".
+      ❓ Domanda di rottura: quando aggiungi la TC a un modello già buono sui dati clinici, stai assumendo che porti informazione indipendente — cosa lo dimostrerebbe, al di là dell'AUC che sale in training?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — cosa cambia per il board</summary>
+    <div>
+      <p class="mb-3">Non è (ancora) uno strumento da ambulatorio: è la prova di concetto più grande su AI multimodale nel NSCLC in immunoterapia.</p>
+      <table>
+        <thead><tr><th>Aspetto</th><th>Dato</th><th>Implicazione</th></tr></thead>
+        <tbody>
+          <tr><td>AUC clinico-ematico</td><td><strong>fino a 0.77</strong></td><td class="text-slate-600">Batte PD-L1 e score clinici</td></tr>
+          <tr><td>Validazione esterna</td><td>AUC 0.55–0.72</td><td class="text-slate-600">Calo per differenze di popolazione</td></tr>
+          <tr><td>Multimodale (+TC +patologia)</td><td>Beneficio incerto</td><td class="text-slate-600">Non replicato in test/EXVAL</td></tr>
+          <tr><td>Usabilità (XAI)</td><td>Migliora esperti e non esperti</td><td class="text-slate-600">L'explainability aiuta la decisione</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Validazione prospettica in corso su &gt;2.000 pazienti. Per ora: promettente come supporto
+        decisionale spiegabile, ma la generalizzabilità (calo in EXVAL) resta il vero collo di bottiglia.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — architetture di fusione</summary>
+    <div>
+      <p class="font-medium mb-2">Due strategie di fusione confrontate:</p>
+      <div class="mermaid">
+flowchart LR
+    CB["Dati clinico-ematici"] --> MLEF["Early fusion (ML)"]
+    CT["TC"] --> MLEF
+    DP["Patologia digitale"] --> MLEF
+    GEN["Genomica"] --> MLEF
+    CB --> DLIF["Intermediate fusion (DL)"]
+    CT --> DLIF
+    MLEF --> OUT["Predizione esito IO"]
+    DLIF --> OUT
+    CBonly["Solo clinico-ematico"] -->|AUC 0.77| OUT
+    classDef win fill:#dbeafe,stroke:#1e40af,stroke-width:2px
+    class CBonly win
+      </div>
+      <p class="mt-3 text-sm">Il path evidenziato (solo clinico-ematico) eguaglia i modelli multimodali più costosi.
+      <br><strong>Schema da ricordare:</strong> la fusione multimodale va giustificata dal guadagno in validazione esterna, non dal numero di modalità.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1136/jitc-2026-015014" target="_blank" rel="noopener" class="hover:text-blue-700">
+      CT-based deep foundation model for predicting immune checkpoint inhibitor-induced pneumonitis risk in lung cancer
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Journal for ImmunoTherapy of Cancer · 18 set 2026 · Muneer A, Showkatian E, Kitsel Y et al.
+  </p>
+  <p class="mb-3">
+    CIPHER è un
+    <details class="inline"><summary><span class="chip">foundation model</span></summary><span class="chip-content">Modello pre-addestrato in auto-supervisione su enormi quantità di dati non etichettati, poi adattato a un compito specifico con pochi casi.</span></details>
+    self-supervised (pretraining su 590.284 slice TC di 2.500 pazienti) che stima dalla sola TC basale il rischio
+    di <span class="anchor-text">polmonite da ICI</span> prima di iniziare l'immunoterapia. AUC 0.83 in validazione
+    esterna indipendente (balanced accuracy 81.7%), superando i modelli radiomici e clinici.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Il rischio è già scritto nel parenchima sano. CIPHER non guarda una lesione: legge la texture del polmone
+      pre-terapia come firma di vulnerabilità. La TC basale smette di essere solo baseline e diventa
+      stratificatore di rischio.
+      ❓ Domanda di rottura: quale proprietà del parenchima pre-trattamento cattura un foundation model che né la radiomica handcrafted né l'occhio esperto estraggono affidabilmente?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — selezione del rischio</summary>
+    <div class="text-sm">
+      <p class="mb-3">Uso ipotizzato: identificare, prima di iniziare l'ICI, chi merita monitoraggio ravvicinato per ICI-P.</p>
+      <table>
+        <thead><tr><th>Elemento</th><th>Dato</th></tr></thead>
+        <tbody>
+          <tr><td>AUC interna</td><td>0.77–0.85</td></tr>
+          <tr><td>AUC head-to-head</td><td>0.83 (batte radiomica ed ensemble)</td></tr>
+          <tr><td>AUC validazione esterna (Johns Hopkins)</td><td><strong>0.83</strong>, bal. accuracy 81.7%</td></tr>
+          <tr><td>Numerosità eventi</td><td>33 (interno) + 20 (esterno) casi ICI-P</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Attenzione</span></p>
+        <p class="mt-1">Eventi assoluti ridotti: performance solida ma va confermata su coorti più grandi prima
+        dell'uso decisionale. Il valore aggiunto è la stratificazione <em>pre-terapia</em>, non la diagnosi di ICI-P conclamata.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — pipeline del modello</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    A["590.284 slice TC · 2.500 NSCLC"] --> B["Pretraining self-supervised<br/>contrastive + masked autoencoder"]
+    B --> C["Fine-tuning · coorte MD Anderson<br/>(254 non-ICI-P)"]
+    C --> D{"Rischio ICI-P<br/>da TC basale"}
+    D --> E["Validazione interna<br/>AUC 0.77–0.85"]
+    D --> F["Validazione esterna Johns Hopkins<br/>AUC 0.83"]
+    classDef key fill:#dbeafe,stroke:#1e40af,stroke-width:2px
+    class D key
+      </div>
+      <p class="mt-3 text-sm"><strong>Schema da ricordare:</strong> pretraining su parenchima eterogeneo → la firma del rischio è nel tessuto basale, non nell'evento.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1">
+    <a href="https://doi.org/10.1186/s41747-026-00808-w" target="_blank" rel="noopener" class="hover:text-blue-700">
+      CT-derived myocardial extracellular volume: current evidence, clinical utility, and the emerging role of photon-counting CT — a systematic review
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-3">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    European Radiology Experimental · 22 set 2026 · D'Argenzio J, Stucchi F, Tambè V et al.
+  </p>
+  <p class="mb-3">
+    Revisione sistematica PRISMA (EuroAIM) su 113 studi di
+    <details class="inline"><summary><span class="chip">ECV</span></summary><span class="chip-content">Extracellular Volume — frazione di volume miocardico extracellulare, marcatore quantitativo di fibrosi interstiziale diffusa; riferimento la CMR.</span></details>
+    miocardico da TC. Campo in rapida espansione (30 studi nel solo 2025), con la
+    <details class="inline"><summary><span class="chip">PCCT</span></summary><span class="chip-content">Photon-Counting CT — TC a conteggio di fotoni, con risoluzione spettrale e spaziale superiore, promettente per la mappatura dell'ECV.</span></details>
+    come piattaforma emergente. Ma solo 38/113 studi riportano un cutoff.
+  </p>
+  <div class="anchor-block">
+    <p>
+      <span class="anchor-label">🧠 L'aggancio:</span>
+      Un biomarker tecnicamente maturo ma orfano di soglia. Misurare l'ECV con la TC è ormai fattibile ovunque;
+      senza un cutoff condiviso, però, il numero non decide nulla al letto del paziente. L'eterogeneità
+      metodologica (energia singola, dual-energy, PCCT) è il vero freno all'adozione.
+      ❓ Domanda di rottura: quale soglia operativa rende un ECV-TC azionabile, e perché la sua assenza — più della fattibilità tecnica — blocca l'ingresso nella pratica?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — quando l'ECV-TC ha senso</summary>
+    <div class="text-sm">
+      <p>Razionale: ottenere una stima di fibrosi diffusa dall'esame TC cardiaco che stai già facendo, quando la CMR
+      non è disponibile o è controindicata.</p>
+      <table class="mt-3">
+        <thead><tr><th>Setting clinico</th><th>Ruolo dell'ECV-TC</th></tr></thead>
+        <tbody>
+          <tr><td>Stenosi aortica pre-TAVI</td><td>Stima fibrosi come marcatore prognostico</td></tr>
+          <tr><td>Amiloidosi cardiaca</td><td>ECV marcatamente elevato</td></tr>
+          <tr><td>Cardio-oncologia / cardiomiopatie</td><td>Sorveglianza del rimodellamento</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Prima di refertare un ECV-TC servono protocolli standardizzati e cutoff condivisi.
+        Oggi è complemento della CMR, non sostituto.</p>
+      </div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Dettagli tecnici — tecnologie usate negli studi</summary>
+    <div>
+      <div class="mermaid">
+pie showData
+    title Tecnologia CT per ECV (113 studi)
+    "Single-energy" : 65
+    "Dual-energy" : 34
+    "Photon-counting" : 14
+      </div>
+      <p class="mt-3 text-sm">10 dei 14 studi PCCT sono del 2025: la crescita è recentissima.
+      <br><strong>Schema da ricordare:</strong> tecnologia in accelerazione, standardizzazione in ritardo.</p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/bmjresp-2026-004356" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Impact of time to diagnosis in patients with progressive fibrotic ILD: a systematic review
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    BMJ Open Respiratory Research · 18 set 2026 · Deng Z, Karrasch S, Alter P et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Revisione sistematica (34 studi, 36.621 pazienti, 41 paesi) sul ritardo diagnostico nelle
+    <details class="inline"><summary><span class="chip">PF-ILD</span></summary><span class="chip-content">Progressive Fibrosing Interstitial Lung Disease — ILD fibrosante che progredisce nonostante terapia, con fibrosi irreversibile e prognosi infausta.</span></details>.
+    Tempo mediano sintomo→diagnosi 6,0–25,2 mesi; il 30–77% attende oltre 12 mesi. Ritardo = malattia più
+    avanzata, peggior sopravvivenza, più ospedalizzazioni. Tra il 21% e l'87% viene inizialmente mal-diagnosticato.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il ritardo non è burocrazia: è misdiagnosi. La dispnea da sforzo dell'anziano con comorbilità finisce
+      trattata come scompenso o BPCO, e l'assenza di imaging precoce e di valutazione multidisciplinare sono
+      predittori diretti del ritardo.
+      ❓ Domanda di rottura: davanti a dispnea e tosse persistenti in un anziano con comorbilità cardiologiche, quale reperto ti farebbe chiedere una HRCT prima di trattare per scompenso?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — chi ritarda la diagnosi</summary>
+    <div class="text-sm">
+      <p class="mb-2">Predittori di ritardo su cui agire:</p>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Età avanzata e comorbilità (mascherano il sospetto)</li>
+        <li>Misdiagnosi come malattia cardiovascolare o altra respiratoria</li>
+        <li>Terapia pregressa per la condizione sbagliata</li>
+        <li><strong>Assenza di imaging precoce o di valutazione MDT</strong></li>
+      </ul>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Errore da evitare</span></p>
+        <p class="mt-1">Attribuire dispnea/tosse a scompenso o BPCO senza HRCT: fino a 25 mesi di ritardo sono associati a esiti peggiori.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/bmjresp-2025-004048" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Portable low-flow nasal oxygen versus ambient air in chronic lung disease and exercise-induced hypoxaemia: a randomised controlled crossover non-inferiority trial
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    BMJ Open Respiratory Research · 21 set 2026 · Lichtblau M, Wick C, Titz A et al.
+  </p>
+  <p class="mb-2 text-sm">
+    RCT crossover (40 pazienti: 20 BPCO, 20 ILD, desaturazione da sforzo &gt;3%). Differenza al
+    <details class="inline"><summary><span class="chip">6MWD</span></summary><span class="chip-content">Six-Minute Walk Distance — distanza percorsa in 6 minuti, misura standard di capacità funzionale nelle pneumopatie.</span></details>
+    tra aria ambiente e ossigeno portatile a basso flusso: 0 m (IC 95% −14 a 13; non-inferiorità dell'aria).
+    L'O₂ però riduce significativamente la dispnea.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La conclusione dipende da cosa misuri. Sulla distanza percorsa l'aria è non-inferiore; sul sintomo (dispnea)
+      l'ossigeno vince. Endpoint diverso, risposta opposta.
+      ❓ Domanda di rottura: quando prescrivi O₂ portatile a un ILD che desatura da sforzo, quale outcome stai davvero cercando di migliorare — la performance di cammino o il sintomo?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — attese realistiche</summary>
+    <div class="text-sm">
+      <p>Margine di non-inferiorità predefinito 35 m. Solo 5/40 pazienti hanno guadagnato &gt;35 m con l'O₂: esistono
+      responder individuali, ma non è la regola. Le preferenze si dividono (49% aria, 51% O₂).</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Messaggio operativo</span></p>
+        <p class="mt-1">L'O₂ portatile a basso flusso migliora il sintomo, non necessariamente la distanza. Serve
+        identificare i responder, non prescrivere a tutti.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1080/25310429.2026.2736380" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Adulthood interstitial lung disease due to variants in surfactant related genes: a systematic review
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    Pulmonology · 24 set 2026 · Tirelli C, Sanduzzi Zamparelli S, Louvrier C et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Revisione sistematica (38 studi, 162 adulti) sulle varianti dei geni del surfactante come causa emergente di
+    ILD/fibrosi nell'adulto. Diagnosi a qualunque età (19–79 anni), 35 nuove varianti. TC spesso indeterminata,
+    <details class="inline"><summary><span class="chip">UIP</span></summary><span class="chip-content">Usual Interstitial Pneumonia — pattern istologico/radiologico con fibrosi a predominanza basale-subpleurica, honeycombing; substrato tipico dell'IPF.</span></details>
+    il pattern istologico prevalente (tranne in malattia da ABCA3).
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Non è una malattia "pediatrica": SFTPA1/2 si associa a ILD familiare e cancro polmonare, NKX2-1 a
+      coinvolgimento tiroideo e neurologico. L'anamnesi familiare e gli indizi extrapolmonari sono il test
+      genetico gratuito che orienta il gene.
+      ❓ Domanda di rottura: in una ILD familiare con imaging indeterminato, quale elemento extrapolmonare orienterebbe verso uno specifico gene del surfactante?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — quando sospettare</summary>
+    <div class="text-sm">
+      <ul class="list-disc pl-5 space-y-1">
+        <li>ILD familiare, specie con storia personale/familiare di cancro polmonare → SFTPA1/2</li>
+        <li>Coinvolgimento tiroideo/neurologico → NKX2-1</li>
+        <li>Restrizione lieve-moderata con DLCO ridotta e TC aspecifica</li>
+        <li>Trapianto polmonare con esito favorevole in casi selezionati</li>
+      </ul>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Errore da evitare</span></p>
+        <p class="mt-1">Escludere una genetica del surfactante solo perché il paziente è adulto o la TC è indeterminata: è probabilmente sotto-riconosciuta.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1148/rg.260009" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Opportunistic CT Screening: Clinical Applications, Technical Foundations, and Best Practices
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    RadioGraphics (RSNA) · ott 2026 · Dogra S, Lew C, Bussey O et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Review RSNA sullo screening opportunistico: estrarre biomarker (densità ossea, steatosi epatica, sarcopenia,
+    adiposità, calcificazioni vascolari) da TC eseguite per altre indicazioni, senza radiazione né tempo
+    aggiuntivi. L'AI ne allarga la fattibilità, ma non tutti i biomarker sono ugualmente azionabili.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Il dato è già dentro l'immagine; il collo di bottiglia è la governance — standardizzazione della misura,
+      quality assurance pre/post-deployment, monitoraggio dell'algoritmo — non la fattibilità tecnica. Refertare
+      in modo indiscriminato genera overdiagnosis.
+      ❓ Domanda di rottura: prima di refertare un biomarker opportunistico, quale prova di azionabilità clinica ti serve per non trasformare un reperto incidentale in un follow-up inutile?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — cosa serve prima</summary>
+    <div class="text-sm">
+      <p>Applicazioni comuni: osteoporosi (densità vertebrale), steatosi epatica, sarcopenia, calcio coronarico/aortico.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Messaggio che resta</span></p>
+        <p class="mt-1">Non tutti i biomarker opportunistici sono equivalenti: refertare solo quelli con azionabilità
+        provata e con QA e standardizzazione in atto.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.3346/jkms.2026.41.e231" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Evaluating Korean Lung-RADS Category 2b: Diagnostic Performance and Interreader Agreement in Lung Cancer Screening
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Journal of Korean Medical Science · 14 set 2026 · Kim YN, You S, Sun JS et al.
+  </p>
+  <p class="mb-2 text-sm">
+    La categoria 2b del Lung-RADS coreano (introdotta in contesto TBC-endemico per ridurre i falsi positivi da
+    granulomi/linfonodi intrapolmonari) migliora la specificità (92,5% vs 90,4%) a sensibilità comparabile. Ma
+    l'accordo inter-lettore nell'assegnarla è solo discreto (Fleiss κ = 0,35).
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Una regola vale solo se riproducibile. Il guadagno di specificità della 2b evapora se tre radiologi toracici
+      la assegnano in modo incoerente: la categoria giusta applicata male non riduce i falsi positivi che promette.
+      ❓ Domanda di rottura: a cosa serve una categoria più specifica se la decisione di attribuirla dipende dal lettore più che dal nodulo?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1186/s12890-026-04543-1" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Lung ultrasound in UIP and NSIP: clinical and functional associations
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    BMC Pulmonary Medicine · 27 lug 2026 · Du G, Li M, Hao D et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Studio su 76 pazienti (42 UIP, 34
+    <details class="inline"><summary><span class="chip">NSIP</span></summary><span class="chip-content">Non-Specific Interstitial Pneumonia — pattern ILD con ground-glass e reticolo a predominanza basale, tipicamente più omogeneo e con miglior prognosi rispetto all'UIP.</span></details>
+    HRCT-confermati): l'ecografia polmonare, soprattutto la valutazione della linea pleurica, distingue UIP da
+    NSIP e correla con la funzione. AUC 0,78 combinando sesso e score pleurico totale; non predice la DLCO.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      Ecografia e HRCT non competono: la prima legge la pleura al letto, senza radiazioni e serialmente; la seconda
+      resta il gold standard del pattern parenchimale. Complemento bedside, non sostituto.
+      ❓ Domanda di rottura: quale vantaggio pratico giustifica l'ecografia della linea pleurica quando la HRCT resta il riferimento del pattern e della prognosi?
+    </p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jcin.2026.06.028" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Impact of Diabetes on Outcomes of Contemporary PCI Guided by OCT vs Angiography: The ILUMIEN IV Trial
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC: Cardiovascular Interventions · set 2026 · Gaede L, Achenbach S, Marwan M et al.
+  </p>
+  <p class="mb-2 text-sm">
+    Analisi ILUMIEN IV (2.487 pazienti): a 2 anni i diabetici mantengono un rischio più alto dopo
+    <details class="inline"><summary><span class="chip">OCT</span></summary><span class="chip-content">Optical Coherence Tomography — imaging intracoronarico ad alta risoluzione per ottimizzare l'impianto dello stent.</span></details>
+    -guided PCI:
+    <details class="inline"><summary><span class="chip">TVF</span></summary><span class="chip-content">Target Vessel Failure — endpoint composito di eventi legati al vaso trattato (morte cardiaca, IM del vaso, rivascolarizzazione).</span></details>
+    9,9% vs 6,3% (HR aggiustato 1,48) e MACE serio 5,3% vs 2,7% (HR 1,77). L'OCT non ha ridotto TVF o MACE.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      L'imaging intracoronarico ottimizza l'impianto, ma il rischio biologico del diabete — soprattutto con lesioni
+      complesse — non è un problema di ottimizzazione procedurale. Perfezionare lo stent non riscrive la biologia.
+      ❓ Domanda di rottura: se l'OCT migliora il risultato procedurale ma non l'esito nel diabetico, quale determinante del rischio stai davvero cercando di modificare?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — chi resta ad alto rischio</summary>
+    <div class="text-sm">
+      <p>Il rischio è consistente con e senza lesioni complesse (P interazione n.s.), ma i tassi più alti sono nei
+      diabetici <em>con</em> lesioni complesse.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Messaggio che resta</span></p>
+        <p class="mt-1">La guida OCT non annulla il rischio del diabete dopo PCI: in questi pazienti conta la terapia
+        medica aggressiva e la sorveglianza, non solo l'ottimizzazione dello stent.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.3904/kjim.2026.065" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Prognostic significance of AI-quantified late gadolinium enhancement on cardiac MRI in hypertrophic cardiomyopathy
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Korean Journal of Internal Medicine · 1 set 2026 · Jeong YS, Park JI, Choi KU et al.
+  </p>
+  <p class="mb-2 text-sm">
+    142 pazienti con cardiomiopatia ipertrofica: la quantificazione AI del
+    <details class="inline"><summary><span class="chip">LGE</span></summary><span class="chip-content">Late Gadolinium Enhancement — enhancement tardivo da gadolinio alla CMR, marcatore di fibrosi/cicatrice miocardica focale.</span></details>
+    sulla CMR è predittore indipendente di morte cardiovascolare/SCD (HR aggiustato 4,67 per LGE ≥15%). Il cutoff
+    ottimale all'analisi ROC è però 8% (AUC 0,82): con LGE ≥8% eventi nel 18,2% vs 0%.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La soglia sposta il post-test. L'AI individua un cutoff (8%) più basso del tradizionale 15% e riclassifica
+      pazienti prima considerati a basso rischio. Ma abbassare la soglia riduce un errore e ne introduce un altro.
+      ❓ Domanda di rottura: quando abbassi la soglia di LGE da 15% a 8%, quale errore riduci e quale rischi di introdurre?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — stratificazione SCD</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Cutoff LGE</th><th>Evento primario</th><th>Nota</th></tr></thead>
+        <tbody>
+          <tr><td>≥15% (alto)</td><td>21,2% vs 4,6%</td><td class="text-slate-600">HR aggiustato 4,67</td></tr>
+          <tr><td><strong>≥8% (ROC-ottimale)</strong></td><td><strong>18,2% vs 0%</strong></td><td class="text-slate-600">AUC 0,82; SCD 13,6% vs 0%</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Attenzione</span></p>
+        <p class="mt-1">Retrospettivo, monocentrico, n=142: il cutoff 8% va validato prospetticamente prima di sostituire la soglia consolidata.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1136/lupus-2026-002066" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Cardiac MRI features of fibrosis and strain for early cardiac dysfunction in SLE and Sjögren's syndrome
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-fulltext">📖 Full text</span>
+    Lupus Science &amp; Medicine · 21 set 2026 · Yang Z, Wang LL, Meng X et al.
+  </p>
+  <p class="mb-2 text-sm">
+    CMR in 36 LES+Sjögren, 36 LES senza Sjögren, 20 controlli. La coesistenza di Sjögren peggiora la funzione
+    subclinica: <details class="inline"><summary><span class="chip">GLS</span></summary><span class="chip-content">Global Longitudinal Strain — deformazione longitudinale globale del ventricolo sinistro; marcatore precoce di disfunzione, più sensibile della FE.</span></details>
+    più basso (−14,2% vs −16,4% vs −17,1%), T1 nativo ed ECV più alti (fibrosi diffusa), con LGE simile tra i gruppi.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La fibrosi diffusa (T1/ECV) e la disfunzione (strain) precedono la cicatrice focale (LGE). Fermarsi al LGE
+      significa perdere la fase precoce del danno miocardico autoimmune.
+      ❓ Domanda di rottura: se il LGE è simile tra i gruppi ma strain ed ECV divergono, quale processo fisiopatologico stai perdendo se ti fermi al LGE?
+    </p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1">
+    <a href="https://doi.org/10.1016/j.jcin.2026.06.015" target="_blank" rel="noopener" class="hover:text-blue-700">
+      Long-Term Outcomes of Contemporary Balloon-Expandable TAVR in Bicuspid Aortic Valve: A Propensity-Matched Comparison to Tricuspid
+    </a>
+  </h3>
+  <p class="ui text-xs text-slate-500 mb-2">
+    <span class="badge-abstract">📄 Solo abstract</span>
+    JACC: Cardiovascular Interventions · set 2026 · Suruga K, Patel V, Shitan H et al.
+  </p>
+  <p class="mb-2 text-sm">
+    3.393 pazienti sottoposti a TAVR con valvole balloon-expandable contemporanee; 515 coppie propensity-matched.
+    A 5 anni nessuna differenza significativa in mortalità totale (13,2% vs 13,7%), reospedalizzazione per
+    scompenso, stroke, reintervento o crescita aortica tra bicuspidi e tricuspidi.
+  </p>
+  <div class="anchor-block">
+    <p class="text-sm">
+      <span class="anchor-label">🧠 Aggancio:</span>
+      La bicuspide, storicamente controindicazione relativa alla TAVR, si allinea alla tricuspide con la tecnologia
+      attuale. Ma è un confronto propensity-matched, non randomizzato: l'assenza di differenza non è prova di equivalenza.
+      ❓ Domanda di rottura: quale bias residuo del propensity matching potrebbe nascondere una differenza reale tra bicuspide e tricuspide?
+    </p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica? — a chi si applica</summary>
+    <div class="text-sm">
+      <p>Coorte selezionata (515 coppie), valvole balloon-expandable contemporanee, follow-up mediano ~1.500 giorni.
+      Emodinamica (gradiente medio 12,0 vs 11,5 mmHg) e leak paravalvolare non differiscono.</p>
+      <div class="takeaway-card mt-3">
+        <p><span class="takeaway-label">Messaggio che resta</span></p>
+        <p class="mt-1">Con le valvole attuali la morfologia bicuspide non penalizza l'esito TAVR a 5 anni — ma serve conferma randomizzata.</p>
+      </div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2">
+    <span>🧩</span> Il filo della settimana
+  </h2>
+  <p class="text-purple-900 mb-4">
+    Quattro paper convergono su un'idea: l'immagine sta passando da <em>descrittiva</em> a <em>biomarcatore
+    predittivo</em>. Un modello sui dati clinici che batte il PD-L1 (I3LUNG), un foundation model che legge il
+    rischio di polmonite nella TC basale (CIPHER), l'AI che ricava una soglia prognostica di LGE nell'HCM,
+    l'ECV miocardico da TC. Ma il valore non sta nella complessità del modello: sta nella <strong>soglia</strong>
+    e nella <strong>validazione esterna</strong>.
+  </p>
+  <div class="mermaid">
+mindmap
+  root)Dall'immagine descrittiva<br/>al biomarcatore predittivo(
+    Oncologia toracica
+      I3LUNG NSCLC
+      Clinico-ematico batte PD-L1
+      Multimodale senza guadagno certo
+    ILD e tossicita
+      CIPHER foundation model
+      Rischio da TC basale
+      AUC 0.83 validazione esterna
+    Cardio imaging
+      AI-LGE HCM cutoff 8%
+      ECV-TC senza cutoff condiviso
+    Il vincolo comune
+      La soglia decide il post-test
+      Validazione esterna
+      Riproducibilita tra lettori
+  </div>
+  <p class="mt-4 text-purple-900 text-sm">
+    <strong>Implicazione clinica:</strong> il radiologo non valuta più solo "cosa vedo" ma "cosa predice questo
+    numero e con quale soglia". Il collo di bottiglia dell'AI in imaging non è la potenza del modello, ma il cutoff
+    azionabile e la tenuta fuori dal centro che l'ha addestrato.
+  </p>
+</section>
+
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 26 Sep 2026, 14:12 (ora italiana).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>
