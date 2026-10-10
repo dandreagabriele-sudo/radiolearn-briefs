@@ -1,0 +1,34 @@
+{
+  "brief_id": "2026-W41",
+  "generated_at": "2026-10-10T14:05:00+02:00",
+  "candidates_count": 173,
+  "selected_count": 11,
+  "selected_dois": [
+    "10.1148/radiol.260703",
+    "10.1148/radiol.253791",
+    "10.1016/j.jcmg.2026.07.013",
+    "10.3760/cma.j.cn112147-20260524-00302",
+    "10.36416/1806-3756/e20250336",
+    "10.1136/bmjresp-2025-003667",
+    "10.1007/s00296-026-06297-9",
+    "10.1186/s41747-026-00791-2",
+    "10.1016/j.jcin.2026.06.018",
+    "10.1016/j.jcin.2026.06.034",
+    "10.4244/EIJ-D-26-00413"
+  ],
+  "headline": "Quando la definizione cambia il verdetto clinico",
+  "sources_status": {
+    "pubmed_ild_clinica": "ok",
+    "pubmed_ild_imaging": "ok",
+    "pubmed_cardio_imaging": "ok",
+    "arxiv_ild_imaging": "ok",
+    "arxiv_cardio_imaging": "ok",
+    "medrxiv": "ok",
+    "rss_AJRCCM (Oxford)": "ok",
+    "rss_European Respiratory Journal": "ok",
+    "rss_Chest": "ok",
+    "rss_Insights into Imaging": "ok",
+    "guidelines": "ok",
+    "industry": "ok"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "last_brief_at": "2026-09-26T14:12:58.365140+02:00",
-  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W39.html",
-  "last_brief_item_count": 13,
+  "last_brief_at": "2026-10-10T14:05:00+02:00",
+  "last_brief_url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W41.html",
+  "last_brief_item_count": 11,
   "processed_dois": [
     "10.1056/NEJMra2415426",
     "10.1183/16000617.0044-2026",
@@ -126,78 +126,30 @@
     "10.1016/j.jcin.2026.06.028",
     "10.3904/kjim.2026.065",
     "10.1136/lupus-2026-002066",
-    "10.1016/j.jcin.2026.06.015"
+    "10.1016/j.jcin.2026.06.015",
+    "10.1148/radiol.260703",
+    "10.1148/radiol.253791",
+    "10.1016/j.jcmg.2026.07.013",
+    "10.3760/cma.j.cn112147-20260524-00302",
+    "10.36416/1806-3756/e20250336",
+    "10.1136/bmjresp-2025-003667",
+    "10.1007/s00296-026-06297-9",
+    "10.1186/s41747-026-00791-2",
+    "10.1016/j.jcin.2026.06.018",
+    "10.1016/j.jcin.2026.06.034",
+    "10.4244/EIJ-D-26-00413"
   ],
   "briefs_archive": [
-    {
-      "id": "2026-W20",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W20.html",
-      "date": "2026-05-17",
-      "items": 14,
-      "headline": "MRI polmonare, biopsie e la biologia del fibroblasto"
-    },
-    {
-      "id": "2026-W22",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W22.html",
-      "date": "2026-05-30",
-      "items": 10,
-      "headline": "Funzione oltre la forma: imaging che misura, non solo descrive"
-    },
-    {
-      "id": "2026-W24",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W24.html",
-      "date": "2026-06-13",
-      "items": 14,
-      "headline": "Quando la complessità si guadagna il posto"
-    },
-    {
-      "id": "2026-W26",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W26.html",
-      "date": "2026-06-27",
-      "items": 12,
-      "headline": "Il decimo anno: durabilità e rischio predetto"
-    },
-    {
-      "id": "2026-W29",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W29.html",
-      "date": "2026-07-18",
-      "items": 13,
-      "headline": "La misura batte lo sguardo: imaging che quantifica il rischio"
-    },
-    {
-      "id": "2026-W31",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W31.html",
-      "date": "2026-08-01",
-      "items": 12,
-      "headline": "Sotto la superficie: meccanismi, bersagli e forme che contano"
-    },
-    {
-      "id": "2026-W33",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W33.html",
-      "date": "2026-08-15",
-      "items": 12,
-      "headline": "Cosa l'immagine predice davvero"
-    },
-    {
-      "id": "2026-W35",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W35.html",
-      "date": "2026-08-29",
-      "items": 12,
-      "headline": "Il surrogato computazionale alla prova del mondo reale"
-    },
-    {
-      "id": "2026-W37",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W37.html",
-      "date": "2026-09-12",
-      "items": 12,
-      "headline": "Oltre il pattern: misurare attività, funzione e danno"
-    },
-    {
-      "id": "2026-W39",
-      "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W39.html",
-      "date": "2026-09-26",
-      "items": 13,
-      "headline": "Il modello nella scansione: imaging che predice il rischio"
-    }
+    {"id": "2026-W20", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W20.html", "date": "2026-05-17", "items": 14, "headline": "MRI polmonare, biopsie e la biologia del fibroblasto"},
+    {"id": "2026-W22", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W22.html", "date": "2026-05-30", "items": 10, "headline": "Funzione oltre la forma: imaging che misura, non solo descrive"},
+    {"id": "2026-W24", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W24.html", "date": "2026-06-13", "items": 14, "headline": "Quando la complessità si guadagna il posto"},
+    {"id": "2026-W26", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W26.html", "date": "2026-06-27", "items": 12, "headline": "Il decimo anno: durabilità e rischio predetto"},
+    {"id": "2026-W29", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W29.html", "date": "2026-07-18", "items": 13, "headline": "La misura batte lo sguardo: imaging che quantifica il rischio"},
+    {"id": "2026-W31", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W31.html", "date": "2026-08-01", "items": 12, "headline": "Sotto la superficie: meccanismi, bersagli e forme che contano"},
+    {"id": "2026-W33", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W33.html", "date": "2026-08-15", "items": 12, "headline": "Cosa l'immagine predice davvero"},
+    {"id": "2026-W35", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W35.html", "date": "2026-08-29", "items": 12, "headline": "Il surrogato computazionale alla prova del mondo reale"},
+    {"id": "2026-W37", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W37.html", "date": "2026-09-12", "items": 12, "headline": "Oltre il pattern: misurare attività, funzione e danno"},
+    {"id": "2026-W39", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W39.html", "date": "2026-09-26", "items": 13, "headline": "Il modello nella scansione: imaging che predice il rischio"},
+    {"id": "2026-W41", "url": "https://dandreagabriele-sudo.github.io/radiolearn-briefs/briefs/2026-W41.html", "date": "2026-10-10", "items": 11, "headline": "Quando la definizione cambia il verdetto clinico"}
   ]
 }
