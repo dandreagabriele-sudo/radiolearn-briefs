@@ -1,0 +1,9 @@
+{
+ "brief_id": "2026-W43",
+ "generated_at": "2026-10-24T14:20:00+02:00",
+ "candidates_count": 189,
+ "selected_count": 13,
+ "selected_dois": ["10.1001/jamanetworkopen.2026.39926","10.1183/16000617.0108-2026","10.1007/s00408-026-00952-5","10.1007/s00408-026-00955-2","10.1186/s12931-026-03957-z","10.1177/17534666261488263","10.1186/s12931-026-03816-x","10.1186/s40644-026-01140-7","10.1148/rycan.250617","10.1016/j.jcin.2026.08.007","10.1016/j.jcin.2026.06.040","10.1148/ryct.260148","10.64898/2026.10.10.26365208"],
+ "headline": "Come misuri decide chi tratti",
+ "sources_status": {"pubmed_ild_clinica":"ok","pubmed_ild_imaging":"ok","pubmed_cardio_imaging":"ok","arxiv_ild_imaging":"ok","arxiv_cardio_imaging":"ok","medrxiv":"ok","rss_AJRCCM (Oxford)":"ok","rss_European Respiratory Journal":"ok","rss_Chest":"ok","rss_Insights into Imaging":"ok","guidelines":"ok","industry":"ok"}
+}

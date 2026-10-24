@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 43 (24 ottobre 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 43</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Come misuri decide chi tratti</h1>
+  <p class="ui text-sm text-slate-500 mt-3">24 ottobre 2026 · 13 selezionati su 189 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  <article class="mb-10">
+  <h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1001/jamanetworkopen.2026.39926" target="_blank" rel="noopener" class="hover:text-blue-700">Quantitative Flow Ratio- vs Angiography-Guided Percutaneous Coronary Intervention: A Secondary Analysis of the FAVOR III China Trial</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> JAMA network open · 1 ott 2026 · Zhang H, Shi Y, Guan C et al.</p>
+  <p class="mb-2">Analisi secondaria prespecificata di FAVOR III China (3825 pazienti): nella malattia multivasale la PCI guidata da <details class="inline"><summary><span class="chip">QFR</span></summary><span class="chip-content">Quantitative Flow Ratio — indice di riserva di flusso coronarico calcolato da ricostruzione 3D dell'angiografia, senza filo di pressione né adenosina.</span></details> riduce i MACE a 3 anni rispetto alla guida angiografica (12,1% vs 18,1%), con beneficio trainato da meno infarti e meno rivascolarizzazioni. Senza malattia multivasale la differenza non è significativa.</p>
+  <p class="mb-2"><strong>Numero che resta: HR 0,65 (IC 95% 0,52-0,81) nella malattia multivasale.</strong></p>
+  <div class="anchor-block">
+    <p class=""><span class="anchor-label">🧠 L'aggancio:</span> Lesione o stenosi? Più vasi significano più occasioni di stentare una stenosi che l'occhio giudica severa ma che non limita il flusso. In clinica la fisiologia pesa di più dove le decisioni sono più numerose.<br>❓ Domanda di rottura: in un paziente multivasale, quale informazione fisiologica separa la lesione da trattare da quella che solo "sembra" severa, e perché l'angiografia da sola non può fornirla?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>Sottogruppo</th><th>MACE QFR</th><th>MACE angio</th><th>HR (IC 95%)</th></tr></thead><tbody><tr><td>Multivasale (n=2066)</td><td>12,1%</td><td>18,1%</td><td><strong>0,65 (0,52-0,81)</strong></td></tr><tr><td>Non multivasale (n=1759)</td><td>8,6%</td><td>11,0%</td><td>0,77 (0,57-1,04), p=0,09</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Il vantaggio a 3 anni è chiaro dove ci sono più lesioni da scegliere. È un sottogruppo secondario di un trial cinese: nel monovasale non si può dire che il beneficio manchi, solo che non è dimostrato.</p></div><p class="mt-2"><strong>Quando NON usarlo:</strong> come prova che QFR sia inutile nel monovasale, o come sostituto del giudizio clinico su sintomi e ischemia.</p>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive</summary>
+    <div>
+<p class="font-medium mb-2">Logica del percorso guidato da QFR:</p><div class="mermaid">
+flowchart LR
+    A["Lesione 50-90%<br/>in vaso ≥2,5 mm"] --> B["QFR calcolata<br/>dall'angiografia"]
+    B --> C{"QFR sotto<br/>soglia?"}
+    C -->|Sì| D["PCI della lesione"]
+    C -->|No| E["Differire,<br/>terapia medica"]
+    D --> F["Multivasale:<br/>MACE 12,1% vs 18,1%"]
+    classDef win fill:#dbeafe,stroke:#1e40af
+    class F win
+</div><p class="mt-2 text-sm">Schema da ricordare: più lesioni da decidere, più valore ha misurare il flusso invece di stimare la stenosi.</p>
+    </div>
+  </details>
+</article>
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1183/16000617.0108-2026" target="_blank" rel="noopener" class="hover:text-blue-700">Interventions to increase participation in lung cancer screening programmes: a systematic review and meta-analysis</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> European respiratory review : an official journal of the European Respiratory Society · 21 ott 2026 · Djuric O, Guida A, Bononi F et al.</p>
+  <p class="mb-2">Revisione sistematica e meta-analisi (14 studi completati) sulle strategie per aumentare l'adesione allo screening con <details class="inline"><summary><span class="chip">LDCT</span></summary><span class="chip-content">Low-Dose CT — TC del torace a bassa dose di radiazioni, usata nello screening del carcinoma polmonare in soggetti ad alto rischio.</span></details>. Funziona ciò che combina componenti: informare da solo non sposta l'adesione, navigazione e outreach sì. La ricerca arriva solo a marzo 2023.</p>
+  <p class="mb-2"><strong>Confronto che resta: interventi multicomponente OR 2,64 vs interventi a singola componente OR 1,00.</strong></p>
+  <div class="anchor-block">
+    <p class=""><span class="anchor-label">🧠 L'aggancio:</span> Informare o rendere possibile? Capire il beneficio dello screening non basta se manca la strada per arrivare alla TC. In clinica la barriera è spesso logistica, non cognitiva.<br>❓ Domanda di rottura: se informazione e decisione condivisa da sole non muovono l'adesione, quale barriera reale all'esame l'intervento non sta toccando?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>Intervento</th><th>OR esecuzione LDCT (IC 95%)</th></tr></thead><tbody><tr><td>Decisione condivisa + navigazione</td><td><strong>4,34 (2,50-7,54)</strong></td></tr><tr><td>Outreach + navigazione</td><td><strong>2,20 (1,70-2,84)</strong></td></tr><tr><td>Multicomponente</td><td>2,64 (1,79-3,90)</td></tr><tr><td>Solo educazione/informazione</td><td>1,03 (0,89-1,19)</td></tr><tr><td>Solo decisione condivisa</td><td>1,15 (0,57-2,32)</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Per un programma di screening conta più la navigazione del paziente che il materiale informativo. Quasi tutti gli interventi studiati sono rivolti al paziente: livello provider e sistema restano poco esplorati.</p></div>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive</summary>
+    <div>
+<div class="mermaid">
+flowchart TB
+    A["Persona eleggibile<br/>allo screening"] --> B["Informazione"]
+    A --> C["Decisione condivisa"]
+    A --> D["Navigazione / outreach"]
+    B --> B1["OR 1,03: nessun effetto"]
+    C --> C1["OR 1,15: nessun effetto"]
+    D --> D1["OR 2,20-4,34: più LDCT"]
+    classDef ok fill:#dbeafe,stroke:#1e40af
+    class D1 ok
+</div><p class="mt-2 text-sm">Schema da ricordare: l'adesione si guadagna rimuovendo ostacoli, non aggiungendo spiegazioni.</p>
+    </div>
+  </details>
+</article>
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1007/s00408-026-00952-5" target="_blank" rel="noopener" class="hover:text-blue-700">Phase 3 Antifibrotic-Directed Therapy Outcomes in Idiopathic Pulmonary Fibrosis: Beyond FVC Decline</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> Lung · 22 ott 2026 · Kashizaki F, Watanabe S, Orii R et al.</p>
+  <p class="mb-2">Revisione sistematica di 10 trial di fase 3 controllati con placebo nell'IPF (5386 pazienti). Pirfenidone e nintedanib riducono in modo consistente il declino di FVC; treprostinil inalato mostra segnale favorevole soprattutto come add-on. Nintedanib e treprostinil hanno più sospensioni del trattamento; solo pirfenidone ha una riduzione di mortalità (dati pooled pubblicati, non head-to-head).</p>
+  <p class="mb-2"><strong>Errore da evitare: leggere la differenza di FVC come classifica tra farmaci.</strong></p>
+  <div class="anchor-block">
+    <p class=""><span class="anchor-label">🧠 L'aggancio:</span> Endpoint o paziente? L'FVC è ciò che il trial misura; continuare la terapia e sopravvivere è ciò che vive il paziente. In clinica gli stessi trial raccontano storie diverse se cambi l'asse di lettura.<br>❓ Domanda di rottura: quale assunzione fai quando usi la riduzione del declino di FVC come proxy di beneficio clinico, e in quale scenario quell'assunzione smette di valere?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>Terapia</th><th>Sospensione vs placebo (OR)</th><th>Mortalità vs placebo (OR)</th></tr></thead><tbody><tr><td>Nintedanib</td><td><strong>1,39 (1,02-1,88)</strong></td><td>non ridotta</td></tr><tr><td>Treprostinil inalato</td><td><strong>1,39 (1,08-1,78)</strong></td><td>non ridotta</td></tr><tr><td>Pirfenidone</td><td>non più alta</td><td><strong>0,50 (0,31-0,83)</strong></td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Nessun confronto diretto esiste. Il dato di mortalità del pirfenidone viene da dati pooled pubblicati e dal trial giapponese: ipotesi, non prova di superiorità.</p></div><p class="mt-2"><strong>Quando NON usarlo:</strong> per scegliere il farmaco in un singolo paziente senza considerare tollerabilità, terapia di fondo e comorbilità.</p>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive</summary>
+    <div>
+<div class="mermaid">
+flowchart TB
+    A["Nuovo trial IPF"] --> B["1. Effetto FVC<br/>a 48-52 settimane"]
+    B --> C["2. Terapia antifibrotica<br/>di fondo?"]
+    C --> D["3. Sospensioni<br/>del trattamento"]
+    D --> E["4. Mortalità"]
+    E --> F["Lettura prudente<br/>e contestuale"]
+    classDef win fill:#dbeafe,stroke:#1e40af
+    class F win
+</div><p class="mt-2 text-sm">Schema da ricordare: quattro domande in ordine, FVC, fondo, sospensioni, mortalità, prima di dire che un farmaco è meglio.</p>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1007/s00408-026-00955-2" target="_blank" rel="noopener" class="hover:text-blue-700">Indirect Echocardiographic Signs of Increased Right-sided Afterload in Progressive Pulmonary Fibrosis: Insights from a Multicentre Italian Study</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> Lung · 18 ott 2026 · Cefalo J, Baccelli A, Varone F et al.</p>
+  <p class="mb-2 text-sm">Coorte retrospettiva multicentrica italiana su 158 pazienti con <details class="inline"><summary><span class="chip">PPF</span></summary><span class="chip-content">Progressive Pulmonary Fibrosis — fibrosi polmonare non IPF con peggioramento clinico, funzionale o radiologico documentato in un anno.</span></details> prima dell'antifibrotico: il 19% (30 pazienti) mostra almeno un segno ecocardiografico indiretto di postcarico destro, più spesso RVOT acceleration time &lt;105 ms (12,7%). Il segno si associa a esacerbazione acuta e ricovero più precoci, a prescindere dalla traiettoria dell'FVC.</p>
+  <p class="mb-2 text-sm"><strong>Numero che resta: 19% con almeno un segno di postcarico destro.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Polmone o circolo? Nella fibrosi la spirometria guarda il parenchima, l'eco guarda cosa sta pagando il ventricolo destro. In clinica un segno eco può indicare chi seguire più da vicino.<br>❓ Domanda di rottura: quale informazione sul circolo polmonare porta l'ecocardiogramma che l'FVC non vede, e perché potrebbe predire le esacerbazioni?</p>
+  </div>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1186/s12931-026-03957-z" target="_blank" rel="noopener" class="hover:text-blue-700">Safety and diagnostic yield of transbronchial lung cryobiopsy in patients with interstitial lung disease and severe pulmonary function impairment</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> Respiratory research · 13 ott 2026 · Lederer C, Polke M, Reinhard J et al.</p>
+  <p class="mb-2 text-sm">Coorte retrospettiva monocentrica (Heidelberg, 396 pazienti): la <details class="inline"><summary><span class="chip">TBLC</span></summary><span class="chip-content">Crio-biopsia polmonare transbronchiale — prelievo di parenchima con criosonda per via broncoscopica, più ampio della biopsia tradizionale, usato nella diagnosi di ILD.</span></details> in ILD con compromissione funzionale severa (FVC &lt;50% e/o DLCO &lt;35%, n=43) ha pneumotorace simile ai meno compromessi (11,6% vs 14,7%) e resa diagnostica dopo MDD analoga. Il sanguinamento severo è alto in entrambi i gruppi.</p>
+  <p class="mb-2 text-sm"><strong>Confronto che resta: diagnosi dopo MDD 81% vs 80% (severi vs meno compromessi).</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Rischio o rendimento? Escludere i pazienti gravi per principio protegge dal danno ma può togliere la diagnosi proprio a chi ne ha più bisogno. In clinica la domanda è se il risultato cambierebbe la terapia.<br>❓ Domanda di rottura: cosa aumenta davvero il valore della biopsia in un paziente già grave, più tessuto o la probabilità che l'esito cambi la decisione terapeutica?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th></th><th>ILD severa (n=43)</th><th>ILD meno compromessa</th></tr></thead><tbody><tr><td>Pneumotorace</td><td>11,6%</td><td>14,7% (p=0,818)</td></tr><tr><td>Sanguinamento con emostasi endoscopica</td><td>25,6%</td><td>17,8% (p=0,218)</td></tr><tr><td>Diagnosi finale dopo MDD</td><td>81%</td><td>80%</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Valutabile in centri esperti, dopo MDD e bilancio rischio-beneficio. Numeri piccoli e disegno retrospettivo: non è un via libera generalizzato.</p></div>
+    </div>
+  </details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1177/17534666261488263" target="_blank" rel="noopener" class="hover:text-blue-700">Nintedanib in progressive fibrosing hypersensitivity pneumonitis: Real-world effects on lung function and survival</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> Therapeutic advances in respiratory disease · 14 ott 2026 · Carvalho I, Ribeiro M, Sá P et al.</p>
+  <p class="mb-2 text-sm">Coorte retrospettiva monocentrica su 106 pazienti con <details class="inline"><summary><span class="chip">f-HP</span></summary><span class="chip-content">Polmonite da ipersensibilità fibrotica — ILD da esposizione antigenica con fibrosi, spesso progressiva nonostante evitamento dell'antigene.</span></details> progressiva (INBUILD): nintedanib più immunosoppressione vs sola immunosoppressione (controllo storico). FVC e DLCO a 24 mesi non differiscono in modo significativo, ma la sopravvivenza mediana dalla progressione è 178 vs 78 mesi (p=0,001). Sospensioni per intolleranza: 7,4%.</p>
+  <p class="mb-2 text-sm"><strong>Errore da evitare: leggere 178 vs 78 mesi come effetto causale di nintedanib.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Controllo storico. Quando il confronto è con un'altra epoca, cambiano diagnosi, imaging e gestione, non solo il farmaco. In clinica una sopravvivenza così diversa con funzione sovrapponibile merita sospetto.<br>❓ Domanda di rottura: se FVC e DLCO non cambiano, quali altre differenze tra i due gruppi potrebbero produrre 100 mesi di sopravvivenza?</p>
+  </div>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1186/s12931-026-03816-x" target="_blank" rel="noopener" class="hover:text-blue-700">Exosomal KL-6 surpasses total plasma KL-6 in the diagnosis of Interstitial Lung Disease (ILD)</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> Respiratory research · 28 lug 2026 · Huang H, Lai R, Li J et al.</p>
+  <p class="mb-2 text-sm">Coorte multicentrica (223 soggetti, 167 ILD) con rianalisi single-cell: nei pazienti CTD-ILD con <details class="inline"><summary><span class="chip">KL-6</span></summary><span class="chip-content">Krebs von den Lungen-6 — mucina MUC1 degli pneumociti di tipo II, biomarcatore sierico di danno e fibrosi alveolare.</span></details> plasmatico negativo, il KL-6 esosomiale distingue meglio dalle CTD senza ILD (AUC 0,782, sens. 90%, spec. 77,3%) rispetto al plasmatico (AUC 0,705, sens. 65%, spec. 81,8%). Dati esplorativi: 22 CTD senza ILD, 10 pazienti seguiti nel tempo.</p>
+  <p class="mb-2 text-sm"><strong>Confronto che resta: AUC 0,782 (esosomiale) vs 0,705 (plasmatico).</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Dove sta il segnale? Un biomarcatore negativo può essere assente o solo diluito nel compartimento sbagliato. In clinica un KL-6 normale non esclude ILD in una CTD.<br>❓ Domanda di rottura: se il KL-6 plasmatico è negativo, il segnale manca davvero o è mascherato dal compartimento in cui lo misuri?</p>
+  </div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1186/s40644-026-01140-7" target="_blank" rel="noopener" class="hover:text-blue-700">ACR lung-RADS: updates and future directions</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> Cancer imaging : the official publication of the International Cancer Imaging Society · 21 ott 2026 · Petranović M, Prosper AE, Hunsaker AR et al.</p>
+  <p class="mb-2 text-sm">Review sugli aggiornamenti di <details class="inline"><summary><span class="chip">Lung-RADS</span></summary><span class="chip-content">Sistema ACR di classificazione e gestione dei noduli rilevati nello screening con TC a bassa dose, con categorie da 0 a 4.</span></details> e sui temi aperti del comitato ACR: volumetria vs diametro, noduli subsolidi, nuova Category 0 per reperti infettivi/infiammatori, nodi iuxtapleurici, incidentalomi e atlante. Prospettive: approccio basato sul rischio, AI, armonizzazione internazionale.</p>
+  <p class="mb-2 text-sm"><strong>Messaggio che resta: Lung-RADS è un sistema in evoluzione, e volume e noduli subsolidi sono i fronti più aperti.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Diametro o volume? Misurare un nodulo con il righello o con il software cambia categoria e follow-up. In clinica conta quale grandezza descrive meglio la crescita reale.<br>❓ Domanda di rottura: quando misuri un nodulo di screening, quale grandezza riflette meglio il comportamento biologico e quale errore sistematico introduce l'altra?</p>
+  </div>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1148/rycan.250617" target="_blank" rel="noopener" class="hover:text-blue-700">Multimodal Transformer Integrating CT and Pathology for Postoperative Risk Stratification in Stage I Non-Small Cell Lung Cancer</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> Radiology. Imaging cancer · nov 2026 · Wang L, Zong Y, Li X et al.</p>
+  <p class="mb-2 text-sm">Studio multicentrico retrospettivo (1073 pazienti con NSCLC stadio I, 5 centri): il modello DLRTransformer fonde CT 2.5D, radiomica, variabili cliniche e report patologici via LLM. Sui dataset esterni predice la sopravvivenza libera da malattia meglio della stratificazione da linee guida. Nei pazienti ad alto rischio la terapia adiuvante migliora la DFS (HR 0,30; IC 0,11-0,84).</p>
+  <p class="mb-2 text-sm"><strong>Confronto che resta: C-index 0,77-0,78 (modello) vs 0,60-0,65 (linee guida).</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Prognosi o beneficio? Sapere chi recidiva non dice chi trae vantaggio dalla terapia. In clinica serve la prova di un'interazione trattamento-rischio.<br>❓ Domanda di rottura: quale analisi distingue un modello che predice la prognosi da uno che predice il beneficio del trattamento, e perché l'HR di interazione 0,14 è l'asse del paper?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>Gruppo (propensity-matched)</th><th>HR adiuvante per DFS (IC 95%)</th></tr></thead><tbody><tr><td>Alto rischio</td><td><strong>0,30 (0,11-0,84)</strong></td></tr><tr><td>Basso rischio</td><td>1,70 (0,97-2,99)</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Promettente ma retrospettivo: serve una validazione prospettica prima di spostare l'indicazione alla terapia adiuvante.</p></div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1016/j.jcin.2026.08.007" target="_blank" rel="noopener" class="hover:text-blue-700">Frequency and Prognosis of Alternative Definitions of Occlusion Myocardial Infarction Across the Whole Spectrum of Acute Coronary Syndromes</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> JACC. Cardiovascular interventions · ott 2026 · Milzi A, Zito A, Landi A et al.</p>
+  <p class="mb-2 text-sm">Su 6558 pazienti con ACS del trial MATRIX, la frequenza di <details class="inline"><summary><span class="chip">OMI</span></summary><span class="chip-content">Occlusion Myocardial Infarction — infarto da occlusione coronarica completa o quasi completa, anche senza sopraslivellamento ST diagnostico all'ECG.</span></details> varia da 37,8% (TIMI 0) a 76,1% (TIMI 0-2 o troponina &gt;30× il limite) secondo la definizione. Le definizioni basate sul flusso (1-3) migliorano la discriminazione rispetto a STEMI/NSTE-ACS, e nei NSTE-ACS con OMI la mortalità a 1 anno è simile a quella dello STEMI.</p>
+  <p class="mb-2 text-sm"><strong>Errore da evitare: parlare di OMI senza dire quale definizione, perché la frequenza va dal 37,8% al 76,1%.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Etichetta o occlusione? Il nome di una categoria vale quanto la sua definizione operativa. In clinica "STEMI sì/no" non coincide con "arteria occlusa sì/no".<br>❓ Domanda di rottura: quale definizione operativa separa davvero l'occlusione da un'ischemia non occlusiva, e cosa perdi se la soglia ricade sulla troponina?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>Definizione OMI</th><th>Frequenza</th><th>HR mortalità 1 anno</th></tr></thead><tbody><tr><td>1. TIMI 0</td><td>37,8%</td><td>2,08 (1,56-2,78)</td></tr><tr><td>2. TIMI 0-1</td><td>—</td><td>1,97 (1,47-2,63)</td></tr><tr><td>3. TIMI 0-2</td><td>—</td><td>1,70 (1,25-2,32)</td></tr><tr><td>4. TIMI 0-2 o TIMI 3 e troponina &gt;30×</td><td>76,1%</td><td>1,47 (1,01-2,12)</td></tr><tr><td>5. come la 4, troponina &gt;100×</td><td>—</td><td>1,26 (0,90-1,75), n.s.</td></tr></tbody></table>
+    </div>
+  </details>
+  <details class="deepdive">
+    <summary>🔬 Deep dive</summary>
+    <div>
+<div class="mermaid">
+flowchart LR
+    A["TIMI 0<br/>HR 2,08"] --> B["TIMI 0-1<br/>HR 1,97"]
+    B --> C["TIMI 0-2<br/>HR 1,70"]
+    C --> D["+ troponina &gt;30×<br/>HR 1,47"]
+    D --> E["+ troponina &gt;100×<br/>HR 1,26 n.s."]
+    classDef win fill:#dbeafe,stroke:#1e40af
+    class A win
+</div><p class="mt-2 text-sm">Schema da ricordare: più la definizione si allarga, più diluisce il segnale prognostico.</p>
+    </div>
+  </details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1016/j.jcin.2026.06.040" target="_blank" rel="noopener" class="hover:text-blue-700">Occlusion-Focused Triage vs Very-High-Risk NSTEMI Criteria: A DIFOCCULT-3 Substudy</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> JACC. Cardiovascular interventions · ott 2026 · Aslanger EK, Aggül B, Yıldırımtürk Ö et al.</p>
+  <p class="mb-2 text-sm">Sottostudio di DIFOCCULT-3 (cluster-randomizzato, 4398 pazienti senza STE diagnostico): l'approccio OMI/NOMI seleziona più pazienti per gestione invasiva immediata rispetto al percorso STEMI/NSTEMI (45,4% vs 13,6%) e identifica più occlusioni nelle prime 2 ore (35,1% vs 16,7%), senza ridurre la resa angiografica. I criteri guideline di NSTEMI a rischio molto alto selezionano poco.</p>
+  <p class="mb-2 text-sm"><strong>Confronto che resta: invasiva immediata 45,4% vs 13,6%.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Selezione o volume? Più cateterismi precoci non sono automaticamente meglio. In clinica conta se i cateterismi in più trovano occlusioni vere. Qui la resa non cala, ma l'esito è di processo, non di mortalità.<br>❓ Domanda di rottura: quale dato distingue una selezione migliore dei pazienti da un semplice aumento di angiografie precoci?</p>
+  </div>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1148/ryct.260148" target="_blank" rel="noopener" class="hover:text-blue-700">Opportunistic Detection of Hepatic Steatosis Using Postcontrast Liver Attenuation at Coronary CT Angiography</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> Radiology. Cardiothoracic imaging · ott 2026 · Karahacioglu D, Cural Kula G, Kula S et al.</p>
+  <p class="mb-2 text-sm">Studio retrospettivo su 300 pazienti con CCTA e Agatston senza mezzo di contrasto: l'attenuazione epatica post-contrasto rileva la steatosi moderato-severa (&lt;40 HU nativo; prevalenza 36,3%) con AUC 0,88, 0,95 e 0,89 a 100, 120 e 140 kVp. Le soglie ottimali scendono con il kVp: 54, 47 e 40 HU.</p>
+  <p class="mb-2 text-sm"><strong>Errore da evitare: applicare una soglia unica di HU a tutti i kVp.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> La misura dipende dalla macchina. L'attenuazione di un organo non è una proprietà fissa: cambia con l'energia del fascio e con il contrasto. In clinica un numero senza protocollo non è un numero.<br>❓ Domanda di rottura: perché la soglia di attenuazione epatica post-contrasto cala all'aumentare del kVp, e cosa implica per il cut-off che usi nel tuo reparto?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>kVp</th><th>Soglia ottimale (HU)</th><th>AUC</th></tr></thead><tbody><tr><td>100</td><td>54</td><td>0,88</td></tr><tr><td>120</td><td><strong>47</strong></td><td><strong>0,95</strong></td></tr><tr><td>140</td><td>40</td><td>0,89</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Un reperto incidentale utile in CCTA, senza scansione aggiuntiva. Studio retrospettivo di un solo set di protocolli: validare le soglie sul proprio scanner.</p></div>
+    </div>
+  </details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://www.medrxiv.org/content/10.64898/2026.10.10.26365208v1?rss=1" target="_blank" rel="noopener" class="hover:text-blue-700">Efficacy of Disease-Modifying Treatments in Transthyretin Amyloid Cardiomyopathy: A Systematic Review and Meta-Analysis of Five Phase III Randomized Controlled Trials</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-fulltext">📖 Full text</span> medRxiv (Cardiovascular Medicine) · 12 ott 2026 · Hung, Y.-H., Tsai et al. · <em>preprint non peer-reviewed</em></p>
+  <p class="mb-2 text-sm">Meta-analisi di 5 trial di fase III (N=3497) su terapie modificanti la malattia nella <details class="inline"><summary><span class="chip">ATTR-CM</span></summary><span class="chip-content">Cardiomiopatia amiloidotica da transtiretina — deposizione miocardica di amiloide TTR, con ispessimento ventricolare e scompenso a frazione preservata.</span></details>: mortalità RR 0,76 (IC 95% 0,66-0,87; I²=0%), con miglioramento di 6MWD, KCCQ-OS e NT-proBNP. L'effetto su mortalità è simile con o senza stabilizzatore di fondo; gli effetti funzionali sono minori con lo stabilizzatore (analisi esplorativa).</p>
+  <p class="mb-2 text-sm"><strong>Numero che resta: mortalità RR 0,76 (0,66-0,87).</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 L'aggancio:</span> Effetto marginale. Quando il background cambia tra i trial, l'effetto aggiunto non è quello isolato. In clinica "aggiungere" non vale "sostituire".<br>❓ Domanda di rottura: se la mortalità resta simile con lo stabilizzatore ma 6MWD e KCCQ calano, cosa dice il confronto tra trial con background diversi sul meccanismo e sui suoi limiti?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+<table><thead><tr><th>Endpoint</th><th>Monoterapia</th><th>Con stabilizzatore</th></tr></thead><tbody><tr><td>Mortalità (RR)</td><td>0,77</td><td>0,71 (p interazione 0,59)</td></tr><tr><td>6MWD (SMD)</td><td>0,49</td><td>0,14 (p=0,012)</td></tr><tr><td>KCCQ-OS (SMD)</td><td>0,44</td><td>0,07 (p&lt;0,001)</td></tr><tr><td>NT-proBNP (SMD)</td><td>-0,65</td><td>-0,13 (p=0,029)</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Preprint non ancora revisionato; confronto indiretto tra trial. Da trattare come ipotesi finché non è pubblicato.</p></div>
+    </div>
+  </details>
+</article>
+
+</section>
+
+
+
+<section class="filo mb-10">
+  <h2 class="ui text-xl font-semibold text-purple-900 mb-3 flex items-center gap-2"><span>🧩</span> Il filo della settimana</h2>
+  <p class="text-purple-900 mb-4">Quattro paper, tre aree diverse, la stessa idea: <em>il modo in cui misuri decide chi tratti</em>. La fisiologia (QFR), la definizione (OMI), il rischio calcolato (DLRTransformer) e l'unità di misura del nodulo (Lung-RADS) spostano il confine tra chi riceve l'intervento e chi no.</p>
+  <div class="mermaid">
+mindmap
+  root((Come misuri decide chi tratti))
+    QFR
+      Multivasale HR 0,65
+      Stenosi vs flusso
+    OMI
+      Frequenza 37,8% vs 76,1%
+      Occlusione vs ST
+    DLRTransformer
+      Alto rischio HR 0,30
+      Prognosi vs beneficio
+    Lung-RADS
+      Diametro vs volume
+      Categoria e follow-up
+  </div>
+  <p class="mt-4 text-purple-900 text-sm"><strong>Implicazione clinica:</strong> prima di adottare un nuovo test o una nuova soglia, chiediti quale popolazione sposta da una parte all'altra della decisione e con quale esito dimostrato.</p>
+</section>
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 24 ottobre 2026, ore 14:20.</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>
