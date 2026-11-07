@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 45 (7 novembre 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 45</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Dopo l'immagine: rischio, coda e fenotipo</h1>
+  <p class="ui text-sm text-slate-500 mt-3">7 novembre 2026 · 10 selezionati su 223 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+  <article class="mb-10">
+<h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1148/radiol.260323" target="_blank" rel="noopener" class="hover:text-blue-700">Automated Opportunistic Bone Mineral Density Assessment at Low-Dose CT Lung Cancer Screening: Incident Vertebral Fractures and Mortality</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Radiology · ott 2026 · Löffler MT, Rühling S, Sollmann N et al.</p>
+<p class="mb-2">Analisi secondaria dell'NLST (21.856 forti fumatori, 55-74 anni): la vBMD misurata in automatico sulla LDCT di screening predice le fratture vertebrali incidenti. A 2 anni la frattura compare nello 0,9% con osso normale, nel 2,0% con bassa massa ossea e nel <strong>5,9% con osteoporosi</strong>, sopra la soglia di trattamento del 5%. Negli uomini la vBMD osteoporotica si associa anche a mortalità (HR 1,24).</p>
+<p class="mb-2"><strong>Numero che resta: 5,9% di fratture vertebrali a 2 anni nell'osteoporosi da LDCT.</strong></p>
+<div class="anchor-block">
+<p class=""><span class="anchor-label">🧠 L'aggancio: Lo screening ha due referti.</span> Il radiologo cerca il nodulo, ma la stessa acquisizione contiene lo scheletro: due domande poste agli stessi voxel. Clinicamente, l'esame già fatto diventa un test di rischio per un'altra malattia.<br><strong>❓ Domanda di rottura:</strong> se la vBMD è «gratis» nella LDCT, cosa serve davvero perché misurarla cambi l'outcome del paziente: il numero, la soglia o un percorso che lo prende in carico?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — chi, quando, quando no</summary>
+<div class="text-sm"><table><thead><tr><th>vBMD (mg/cm³)</th><th>Fratture a 2 anni</th><th>RR aggiustato</th></tr></thead><tbody><tr><td>Normale ≥120</td><td>0,9%</td><td>—</td></tr><tr><td>Bassa massa 80–&lt;120</td><td>2,0%</td><td>2,07 (1,70-2,53)</td></tr><tr><td>Osteoporosi &lt;80</td><td><strong>5,9%</strong></td><td>3,40 (2,69-4,30)</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Applicabile a fumatori ≥30 pack-years in screening, con software dedicato (SpineQ). Non dimostra che trattare in base a questo dato riduca le fratture: è un test prognostico, non un trial terapeutico. Mortalità: segnale solo nei maschi.</p></div></div></details>
+<details class="deepdive"><summary>🔬 Deep dive — il percorso opportunistico</summary>
+<div class="text-sm"><div class="mermaid">
+flowchart LR
+    A["LDCT di screening polmonare"] --> B["Misura automatica vBMD"]
+    B --> C{"Categoria"}
+    C -->|"≥120"| D["Nessuna azione"]
+    C -->|"80-120"| E["Rischio intermedio: 2,0%"]
+    C -->|"&lt;80"| F["Osteoporosi: 5,9% a 2 anni"]
+    F --> G["Segnala e avvia valutazione ossea"]
+    classDef hot fill:#fee2e2,stroke:#991b1b
+    class F,G hot
+</div><p class="mt-2"><strong>Schema da ricordare:</strong> un esame, due rischi — il polmone si legge, lo scheletro si misura.</p></div></details>
+</article>
+<article class="mb-10">
+<h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1056/AIcs2500539" target="_blank" rel="noopener" class="hover:text-blue-700">Early Clinical Evaluation of AI Triage of Chest Radiographs: Time to Diagnosis for Suspected Cancer and Number of Urgent CT Referrals</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> NEJM AI · 18 dic 2025 · Storey M, Packer J, Grandal NS et al.</p>
+<p class="mb-2">Valutazione pre/post in 5 ospedali NHS (56.257 radiografie, 3 anni): un'AI a 14 feature smista le RX sospette verso una TC same-day gestita dai radiografi. Il tempo dalla RX al referto TC per sospetto cancro polmonare scende da <strong>6,0 a 3,6 giorni</strong>, senza aumento significativo della quota di TC. Il modello ha sensibilità 82,5%, specificità 90,5%, VPP 14,6%, VPN 99,6%.</p>
+<p class="mb-2"><strong>Numero che resta: 6,0 → 3,6 giorni dalla RX al referto TC.</strong></p>
+<div class="anchor-block">
+<p class=""><span class="anchor-label">🧠 L'aggancio: Ordinare la coda, non diagnosticare.</span> L'AI qui non legge meglio di te: decide chi passa avanti nella fila. Il suo valore sta nel tempo guadagnato sui veri positivi, non nell'accuratezza della singola immagine.<br><strong>❓ Domanda di rottura:</strong> con un VPP del 14,6%, cosa rende accettabile il costo dei falsi positivi: la sicurezza del VPN 99,6% o la velocità recuperata sui casi veri?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — dove funziona e dove no</summary>
+<div class="text-sm"><table><thead><tr><th>Aspetto</th><th>Dato</th></tr></thead><tbody><tr><td>Setting migliore</td><td>Centri con RX e TC co-locate</td></tr><tr><td>Resa diagnostica maggiore</td><td>Masse polmonari e mediastiniche</td></tr><tr><td>Più falsi positivi</td><td>Opacità aerea focale, nodulo singolo</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Il guadagno dipende dal percorso a valle (TC same-day disponibile), non solo dall'algoritmo. Disegno before/after non randomizzato: non esclude effetti di calendario. Senza TC rapida il triage non accorcia nulla.</p></div></div></details>
+<details class="deepdive"><summary>🔬 Deep dive — il percorso triage</summary>
+<div class="text-sm"><div class="mermaid">
+flowchart TB
+    A["Radiografia del torace"] --> B["AI triage a 14 feature"]
+    B -->|"Sospetto"| C["TC same-day guidata dal radiografo"]
+    B -->|"Non sospetto"| D["Percorso standard"]
+    C --> E["Referto TC: 3,6 giorni dalla RX"]
+    D --> F["Referto RX di routine"]
+    classDef hot fill:#dbeafe,stroke:#1e40af
+    class C,E hot
+</div><p class="mt-2"><strong>Schema da ricordare:</strong> l'AI sposta il paziente nella fila giusta; il beneficio si realizza nella TC rapida.</p></div></details>
+</article>
+<article class="mb-10">
+<h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1183/16000617.0153-2026" target="_blank" rel="noopener" class="hover:text-blue-700">From silicosis to sarcoid-like reaction: a continuum model of silica-induced lung disease</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> European Respiratory Review · 4 nov 2026 · Akgün M, Aksakal A, Kar Kurt O</p>
+<p class="mb-2">Review ERS che propone un continuum della malattia da silice: fenotipo fibrotico (silicosi classica), fenotipo granulomatoso (reazione sarcoid-like da silice, SISLR) e fenotipo misto. Come per la beriliosi, un trigger riconosciuto sposta un quadro «idiopatico» verso una definizione eziologica. Il test linfoproliferativo alla silice è proposto ma non standardizzato.</p>
+<p class="mb-2"><strong>Messaggio che resta: silicosi e sarcoidosi con esposizione a silice possono essere estremi dello stesso spettro.</strong></p>
+<div class="anchor-block">
+<p class=""><span class="anchor-label">🧠 L'aggancio: Stesso trigger, due risposte.</span> La silice attiva <details class="inline"><summary><span class="chip">NLRP3</span></summary><span class="chip-content">Inflammasoma intracellulare che attiva IL-1β; è la via innata comune a silicosi e reazione granulomatosa da silice.</span></details> in entrambi i casi; ciò che cambia è la risposta dell'ospite: TGF-β1 e fibrosi da un lato, Th17.1 e granuloma dall'altro. In clinica l'anamnesi espositiva può cambiare il nome della diagnosi.<br><strong>❓ Domanda di rottura:</strong> quale informazione anamnestica trasforma una sarcoidosi «idiopatica» in una malattia eziologica, e cosa cambierebbe nel tuo MDT?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — uso e limiti</summary>
+<div class="text-sm"><table><thead><tr><th>Elemento</th><th>Stato</th></tr></thead><tbody><tr><td>SISLR</td><td>Classificazione di lavoro, non criterio validato</td></tr><tr><td>Si-LPT</td><td>Positivo in un sottogruppo di sarcoidosi; non standardizzato</td></tr><tr><td>Analogia CBD</td><td>Utile ma meccanismi diversi (adattivo vs innato)</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Usalo per ampliare l'anamnesi occupazionale nei granulomi toracici. Non usare il Si-LPT come test diagnostico di routine né rinominare i casi sulla sola base di questa proposta.</p></div></div></details>
+<details class="deepdive"><summary>🔬 Deep dive — il continuum</summary>
+<div class="text-sm"><div class="mermaid">
+mindmap
+  root((Silice cristallina))
+    Fibrotico
+      Silicosi classica
+      NLRP3 e TGF-β1
+    Misto
+      Fibrosi e granulomi insieme
+    Granulomatoso
+      SISLR
+      NLRP3, IL-1β, Th17.1
+</div><p class="mt-2"><strong>Schema da ricordare:</strong> un trigger, uno spettro che va dalla cicatrice al granuloma.</p></div></details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1111/1759-7714.70408" target="_blank" rel="noopener" class="hover:text-blue-700">Perioperative Antifibrotic Treatment and Early Postoperative Outcomes in Patients With Idiopathic Pulmonary Fibrosis Undergoing Lung Cancer Surgery: A Systematic Review and Meta-Analysis</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> Thoracic Cancer · ott 2026 · Sanagawa A, Kato H, Fujimoto H et al.</p>
+<p class="mb-2 text-sm">Meta-analisi di 5 coorti retrospettive (prevalentemente pirfenidone) in IPF operata per carcinoma polmonare. L'antifibrotico perioperatorio si associa a meno <details class="inline"><summary><span class="chip">AE-IPF</span></summary><span class="chip-content">Acute exacerbation of IPF — peggioramento acuto della fibrosi con nuovi opacamenti bilaterali, spesso fatale, specie dopo chirurgia.</span></details> a 30 giorni (RR 0,24; IC 0,07-0,76) e a 90 giorni (RR 0,23), senza eterogeneità (I²=0%). Per nintedanib solo una piccola serie di casi.</p>
+<p class="mb-2 text-sm"><strong>Errore da evitare: leggere RR 0,24 da 5 coorti retrospettive come effetto protettivo provato.</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: Associazione, non protezione.</span> Chi riceve l'antifibrotico prima dell'intervento è spesso il paziente seguito meglio e selezionato meglio. Il segnale è coerente ma il confondimento da indicazione resta il vero avversario.<br><strong>❓ Domanda di rottura:</strong> quale caratteristica del paziente che il chirurgo sceglie di trattare potrebbe spiegare da sola meno AE-IPF, indipendentemente dal farmaco?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — chi è applicabile</summary>
+<div class="text-sm"><table><thead><tr><th>Outcome</th><th>RR (IC 95%)</th></tr></thead><tbody><tr><td>AE-IPF 30 gg</td><td>0,24 (0,07-0,76)</td></tr><tr><td>AE-IPF 90 gg</td><td>0,23 (0,09-0,57)</td></tr><tr><td>Mortalità 30 gg</td><td>0,12 (0,02-0,91)</td></tr><tr><td>Mortalità 90 gg</td><td>0,13 (0,02-0,76)</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Rafforza la discussione MDT su pirfenidone perioperatorio in IPF candidata a chirurgia oncologica. Non sostituisce un trial: gli IC larghi e il piccolo numero di eventi limitano la stima puntuale; l'effetto si attenua nell'analisi su database nazionale.</p></div></div></details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.3390/arm94050073" target="_blank" rel="noopener" class="hover:text-blue-700">Efficacy and Safety of Inhaled Treprostinil in Idiopathic Pulmonary Fibrosis: A Systematic Review and Meta-Analysis</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> Advances in Respiratory Medicine · 8 ott 2026 · Bajpai J, Pradhan A, Manek G et al.</p>
+<p class="mb-2 text-sm">Meta-analisi dei due RCT diretti in IPF (TETON-1 e TETON-2): la treprostinil inalatoria preserva la funzione polmonare, con <strong>+111 mL di FVC a 52 settimane</strong> (IC 78-145) e meno peggioramento clinico (HR 0,69). Le riacutizzazioni diminuiscono (HR 0,52), ma la mortalità per tutte le cause non differisce in modo significativo (HR 0,70; IC 0,47-1,05).</p>
+<p class="mb-2 text-sm"><strong>Numero che resta: +111 mL di FVC a 52 settimane, ma mortalità non significativa.</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: Funzione senza sopravvivenza.</span> La FVC è un surrogato che qui si muove nella direzione giusta, mentre l'endpoint duro non raggiunge la significatività. Il valore clinico dipende da quanto ti fidi del surrogato.<br><strong>❓ Domanda di rottura:</strong> quale endpoint dovrebbe confermare che un guadagno di FVC rappresenta un beneficio per il paziente e non solo un numero migliore?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — tollerabilità</summary>
+<div class="text-sm"><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Più sospensioni per eventi avversi, tosse e cefalea con il farmaco. Meta-analisi di soli due RCT dello stesso programma: aggiunge poco oltre i trial originali. Utile per il counseling, non per cambiare da sola la prescrizione.</p></div></div></details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1186/s12931-026-03839-4" target="_blank" rel="noopener" class="hover:text-blue-700">Tocilizumab in refractory anti-synthetase syndrome-associated interstitial lung disease: a phenotype-stratified cohort study</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> Respiratory Research · 3 ago 2026 · Yang H, Ge Y, Li S et al.</p>
+<p class="mb-2 text-sm">Coorte retrospettiva di 32 pazienti con ASyS-ILD refrattaria trattati con tocilizumab, stratificati per fenotipo. Nei glucocorticoid-dipendenti 7/8 scalano il prednisone a ≤10 mg/die; nei resistenti 16/18 (88,9%) rispondono. Nei 6 con fibrosi progressiva la funzione polmonare aggregata non migliora.</p>
+<p class="mb-2 text-sm"><strong>Messaggio che resta: l'anti-IL-6 funziona dove c'è infiammazione, non è dimostrato dove c'è già fibrosi progressiva.</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: Infiammazione o cicatrice?</span> Lo stesso nome di malattia raccoglie polmoni che bruciano e polmoni che si sono cicatrizzati. Stratificare per fenotipo evita di giudicare un farmaco antinfiammatorio sul tessuto fibrotico.<br><strong>❓ Domanda di rottura:</strong> quale misura separerebbe un polmone infiammato che risponde da un polmone fibrotico che rallenta soltanto, quando FVC e DLCO migliorano entrambi?</p>
+</div>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1148/ryct.260087" target="_blank" rel="noopener" class="hover:text-blue-700">Comparison of Two Deep Learning Models and Their Combination for 1-year Lung Cancer Detection in Two Screening Cohorts</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Radiology: Cardiothoracic Imaging · dic 2026 · Reeves AP, Mozafary M, Hashemi A et al.</p>
+<p class="mb-2 text-sm">Su 5.110 LDCT basali (NLST e P-IELCAP, 65 tumori a 1 anno), Sybil raggiunge AUC 0,93 in entrambe le coorti; il modello a noduli MONAI scende da 0,90 a 0,79 nella coorte europea. Il modello composito OR con regola di sicurezza (nodulo &gt;6 mm, confidenza &gt;0,95) perde 2 tumori su 65.</p>
+<p class="mb-2 text-sm"><strong>Confronto che resta: sensibilità 96,9% vs VPP 2,7%.</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: La rete di sicurezza ha un prezzo.</span> Combinare due modelli in OR è come chiedere un secondo parere che non può mai tranquillizzare: recupera i casi persi ma moltiplica gli allarmi.<br><strong>❓ Domanda di rottura:</strong> quando metti due modelli in OR, quale errore compri in meno e quale paghi in più, e chi in screening ne sopporta il costo?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — limiti di applicabilità</summary>
+<div class="text-sm"><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Solo 65 tumori: gli IC sono larghi. Il composito classifica correttamente come negativo il 55,0% degli esami senza tumore. Validazione retrospettiva su esami basali a 1 anno: non dice nulla su incrementali o su impatto sul work-up.</p></div></div></details>
+</article>
+
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+  <article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.4244/EIJ-D-26-00575" target="_blank" rel="noopener" class="hover:text-blue-700">Prediction of coronary events by computed tomography-derived Murray law-based quantitative flow ratio</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> EuroIntervention · 2 nov 2026 · Gim DH, Lee SH, Ding D et al.</p>
+<p class="mb-2 text-sm">In 885 vasi di 312 pazienti con CCTA precedente, sia <details class="inline"><summary><span class="chip">CT-μFR</span></summary><span class="chip-content">Rapporto di flusso quantitativo ricavato dalla CCTA con legge di Murray; stima non invasiva dell'ischemia a livello di singolo vaso.</span></details> ≤0,80 (HR 6,87) sia il gradiente di CT-μFR lungo la lesione ≥0,004/mm (HR 4,08) predicono gli eventi coronarici a 3 anni. Aggiungere il gradiente porta il C-index da 0,700 a 0,755.</p>
+<p class="mb-2 text-sm"><strong>Numero che resta: C-index 0,700 → 0,755 aggiungendo il gradiente.</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: Quanto è basso vs dove cade.</span> Il valore assoluto dice quanto è ridotto il flusso a valle; il gradiente dice dove la pressione crolla. Due vasi con lo stesso CT-μFR possono avere lesioni molto diverse.<br><strong>❓ Domanda di rottura:</strong> perché un vaso con CT-μFR &gt;0,80 può comunque dare eventi: quale fenomeno locale il valore distale non vede?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — quando serve il gradiente</summary>
+<div class="text-sm"><table><thead><tr><th>Sottogruppo</th><th>Risultato</th></tr></thead><tbody><tr><td>CT-μFR &gt;0,80, gradiente ≥0,004/mm</td><td>aHR 2,59 (1,63-4,11)</td></tr><tr><td>C-index nel sottogruppo CT-μFR &gt;0,80</td><td>0,575 → 0,655</td></tr></tbody></table><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">Il gradiente aggiunge informazione soprattutto nei vasi «negativi» per CT-μFR. Pazienti già avviati a angiografia con CCTA 6 mesi-3 anni prima: popolazione selezionata, non uno screening.</p></div></div></details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1186/s12880-026-02623-6" target="_blank" rel="noopener" class="hover:text-blue-700">Prognostic value of cardiovascular magnetic resonance in acute myocarditis: a systematic literature review and meta-analysis of late gadolinium enhancement and narrative literature review of parametric mapping</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> BMC Medical Imaging · 31 lug 2026 · Gaizauskiene K, Skorniakov V, Silinskiene D et al.</p>
+<p class="mb-2 text-sm">Meta-analisi di 13 studi (16 in revisione): la presenza di <details class="inline"><summary><span class="chip">LGE</span></summary><span class="chip-content">Late gadolinium enhancement — accumulo tardivo di gadolinio in RM cardiaca, marcatore di fibrosi o danno miocardico focale.</span></details> nella miocardite acuta si associa a più eventi (OR 3,02; IC 1,40-6,51), ma con eterogeneità molto alta (I²=82%). Il mapping parametrico è trattato solo in modo narrativo (5 studi).</p>
+<p class="mb-2 text-sm"><strong>Errore da evitare: trattare l'OR 3,02 come stima precisa quando l'I² è 82% e gli endpoint sono compositi diversi.</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: Endpoint che si mescolano.</span> Dentro il composito convivono morte, scompenso, trapianto e recidive: eventi con significato prognostico molto diverso. Un OR unico nasconde quale di essi muove il risultato.<br><strong>❓ Domanda di rottura:</strong> quando LGE predice un composito con ricoveri e recidive, quale componente sta davvero guidando l'OR e cambierebbe la tua gestione?</p>
+</div>
+<details class="practicality"><summary>📋 Posso usarlo? — uso pratico</summary>
+<div class="text-sm"><div class="takeaway-card mt-3"><p><span class="takeaway-label">Bottom line</span></p><p class="mt-1">LGE positiva = segnale di prognosi peggiore, utile per stratificare e programmare follow-up. Gli autori hanno rianalizzato 8 studi con solo MACE come endpoint per ridurre l'eterogeneità. Per il mapping non esistono ancora soglie utilizzabili da questo lavoro.</p></div></div></details>
+</article>
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+<h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1161/JAHA.126.053485" target="_blank" rel="noopener" class="hover:text-blue-700">Combined Prognostic Value of Cardiac Magnetic Resonance-Derived Myocardial Extracellular Volume and the Fibrosis-4 Index in Patients With Heart Failure With Preserved Ejection Fraction</a></h3>
+<p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Journal of the American Heart Association · 23 ott 2026 · Huang CY, Lin YL, Lin TT et al.</p>
+<p class="mb-2 text-sm">In 250 pazienti con HFpEF (75 eventi, follow-up mediano 1190 giorni) sia ECV da CMR (HR 1,13) sia FIB-4 (HR 1,12) predicono morte cardiovascolare o ospedalizzazione. L'ECV discrimina meglio; il FIB-4 aggiunto all'ECV migliora la riclassificazione ma non la discriminazione.</p>
+<p class="mb-2 text-sm"><strong>Confronto che resta: C-index 0,732 (ECV) vs 0,663 (FIB-4).</strong></p>
+<div class="anchor-block">
+<p class="text-sm"><span class="anchor-label">🧠 L'aggancio: Cuore e fegato, un solo circolo.</span> Nell'HFpEF il miocardio fibrotico e il fegato congesto sono due finestre su uno stesso sistema venoso e metabolico. Il fegato, però, può riflettere pressione e non solo fibrosi.<br><strong>❓ Domanda di rottura:</strong> il FIB-4 misura fibrosi epatica o congestione venosa cronica, e quale delle due risposte cambierebbe come lo interpreti nell'HFpEF?</p>
+</div>
+</article>
+
+</section>
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 7 novembre 2026, 14:30 (CET).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>
