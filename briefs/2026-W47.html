@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RadioLearn Briefs — Settimana 47 (21 novembre 2026)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; color: #1f2937; background: #fafaf9; }
+  h1, h2, h3, .ui { font-family: 'Inter', system-ui, sans-serif; }
+  .article-title { font-weight: 600; color: #1e3a5f; }
+  .anchor-text { background: linear-gradient(180deg, transparent 0%, transparent 90%, #fef3c7 90%, #fef3c7 100%); padding: 0 2px; }
+  .anchor-block { margin-top: 12px; padding: 12px 16px; background: #fffbeb; border-left: 3px solid #f59e0b; border-radius: 4px; }
+  .anchor-block .anchor-label { font-family: 'Inter', sans-serif; font-weight: 600; color: #92400e; font-size: 0.92em; margin-right: 6px; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details.practicality { margin-top: 14px; }
+  details.practicality > summary { padding: 8px 14px; background: #eff6ff; color: #1e40af; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.practicality > summary:hover { background: #dbeafe; }
+  details.practicality[open] > summary { background: #1e40af; color: white; border-radius: 6px 6px 0 0; }
+  details.practicality > div { padding: 16px 18px; background: #eff6ff; border-radius: 0 0 6px 6px; border: 1px solid #dbeafe; border-top: 0; }
+  details.deepdive { margin-top: 8px; }
+  details.deepdive > summary { padding: 8px 14px; background: #f5f3ff; color: #6d28d9; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9em; transition: background 0.15s; }
+  details.deepdive > summary:hover { background: #ede9fe; }
+  details.deepdive[open] > summary { background: #6d28d9; color: white; border-radius: 6px 6px 0 0; }
+  details.deepdive > div { padding: 16px 18px; background: #f5f3ff; border-radius: 0 0 6px 6px; border: 1px solid #ede9fe; border-top: 0; }
+  .mermaid { margin: 16px 0; padding: 16px; background: white; border-radius: 6px; text-align: center; }
+  details table { width: 100%; font-size: 0.9em; font-family: 'Inter', sans-serif; }
+  details thead th { text-align: left; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; font-weight: 600; color: #475569; }
+  details tbody td { padding: 8px 4px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  details tbody tr:last-child td { border-bottom: 0; }
+  .takeaway-card { padding: 12px 14px; background: white; border-left: 3px solid #1e40af; border-radius: 4px; margin: 8px 0; }
+  .takeaway-card .takeaway-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85em; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; background: #e0e7ff; color: #3730a3; border-radius: 9999px; font-size: 0.82em; font-weight: 500; cursor: help; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+  .chip:hover { background: #c7d2fe; }
+  .chip-content { display: block; margin-top: 6px; padding: 10px 14px; background: #fef9e7; border-left: 3px solid #d97706; border-radius: 4px; font-size: 0.92em; color: #1f2937; font-family: 'Source Serif 4', serif; }
+  details[open] > summary .chip { background: #fde68a; color: #92400e; }
+  details.inline { display: inline; }
+  .badge-abstract { background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .badge-fulltext { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; font-weight: 500; font-family: 'Inter', sans-serif; }
+  .filo { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border-left: 4px solid #7c3aed; padding: 24px; border-radius: 6px; }
+</style>
+</head>
+<body class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+
+<header class="border-b border-slate-200 pb-6 mb-10">
+  <p class="ui text-xs uppercase tracking-widest text-slate-500 mb-2">RadioLearn Briefs · Settimana 47</p>
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 leading-tight">Chi domina decide: fenotipi, soglie e rimodellamento</h1>
+  <p class="ui text-sm text-slate-500 mt-3">21 novembre 2026 · 12 selezionati su 236 candidati · finestra 14 giorni</p>
+</header>
+
+<section class="mb-12">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-6 flex items-center gap-2"><span>✨</span> Highlights</h2>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1148/radiol.253493" target="_blank" rel="noopener" class="hover:text-blue-700">Quantitative CT Phenotypes and Prognosis in Combined Pulmonary Fibrosis and Emphysema</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> Radiology · novembre 2026 · Wang H, Ni Y, Deng Y et al.</p>
+  <p class="mb-3">Su 1583 pazienti con
+    <details class="inline"><summary><span class="chip">CPFE</span></summary><span class="chip-content">Combined Pulmonary Fibrosis and Emphysema — sindrome con enfisema dei lobi superiori e fibrosi basale, spesso con volumi preservati e DLCO ridotta.</span></details>
+    una workstation AI commerciale ha separato un fenotipo a prevalenza fibrotica (52%) da uno a prevalenza enfisematosa (48%) in base a quale percentuale TC fosse maggiore. La prevalenza di fibrosi, non la semplice coesistenza, sposta la prognosi.</p>
+  <p class="mb-3"><strong>Numero che resta: HR 1,36 (IC 95% 1,13-1,62) di mortalità per il fenotipo fibrosi-dominante.</strong></p>
+
+  <div class="anchor-block">
+    <p><span class="anchor-label">🧠 L'aggancio: Chi domina decide.</span>
+    Non basta elencare due lesioni nello stesso polmone: va stabilito quale componente guida la traiettoria. In refertazione significa passare da "fibrosi + enfisema" a "quale dei due pesa di più sul destino del paziente".</p>
+    <p class="mt-2">❓ Domanda di rottura: se le mediane di enfisema differiscono solo di un punto percentuale (7% vs 6%), cosa sta davvero separando i due gruppi, e quanto regge una soglia basata sul confronto tra le due percentuali?</p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — a chi si applica</summary>
+    <div>
+      <table>
+        <thead><tr><th>Aspetto</th><th>Dato</th><th>Implicazione</th></tr></thead>
+        <tbody>
+          <tr><td>Popolazione</td><td>CPFE, coorte prospettica multicentrica 2017-2024</td><td>Non estrapolare a fibrosi o enfisema isolati</td></tr>
+          <tr><td>Follow-up</td><td>Mediana 2,59 anni; 513 decessi</td><td>Prognosi a medio termine, non a lungo termine</td></tr>
+          <tr><td>Strumento</td><td>Workstation AI commerciale fissa</td><td>Soglie non trasferibili ad altri software senza verifica</td></tr>
+          <tr><td>Disegno</td><td>Analisi secondaria, osservazionale</td><td>Stratifica il rischio, non dimostra che trattare cambi l'esito</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Nel referto CPFE conviene indicare quale componente prevale. Con fibrosi ≥ enfisema il rischio di morte è più alto: utile per monitoraggio ravvicinato e discussione in MDT.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — come si assegna il fenotipo</summary>
+    <div>
+      <div class="mermaid">
+flowchart TB
+    A["HRCT in CPFE"] --> B["Segmentazione AI: % fibrosi e % enfisema"]
+    B --> C{"Fibrosi ≥ enfisema?"}
+    C -->|Sì| D["Fibrosi-dominante: 52%"]
+    C -->|No| E["Enfisema-dominante: 48%"]
+    D --> F["HR mortalità 1,36"]
+    E --> G["Riferimento"]
+    classDef bad fill:#fee2e2,stroke:#991b1b
+    class D,F bad
+      </div>
+      <p class="mt-3 text-sm">Schema da ricordare: una sola regola binaria, fibrosi ≥ enfisema, divide la coorte in due prognosi.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1148/radiol.253678" target="_blank" rel="noopener" class="hover:text-blue-700">Low-Dose CT Lung-RADS 2022 for the Management of Screening- and Non-Screening-detected Lung Cancer Associated with Cystic Airspaces</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> Radiology · novembre 2026 · Mascalchi M, Cavigli E, Puliti D et al.</p>
+  <p class="mb-3">Rianalisi di NLST, ITALUNG e LUSI: 73 tumori associati a spazi aerei cistici su 1258 (circa 6% sia tra i cancri da screening che non da screening). La sopravvivenza a 5 anni cancro-specifica è sovrapponibile ai tumori non cistici (51,4% vs 53,2%). I multiloculari sono più avanzati degli uniloculari (12/24 vs 15/49).</p>
+  <p class="mb-3"><strong>Errore da evitare: etichettare come benigna una cisti a parete spessa o multiloculata solo perché non è un nodulo solido.</strong></p>
+
+  <div class="anchor-block">
+    <p><span class="anchor-label">🧠 L'aggancio: Il travestimento cistico.</span>
+    Il tumore non cambia natura, cambia forma: l'aria ne maschera la solidità. Clinicamente, la domanda passa da "c'è un nodulo?" a "questa parete sta crescendo?".</p>
+    <p class="mt-2">❓ Domanda di rottura: quale caratteristica della parete o dei loculi distingue una cisti in evoluzione da una stabile, e perché il solo diametro non basta?</p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — quando agire</summary>
+    <div>
+      <table>
+        <thead><tr><th>Scenario</th><th>Cosa fare</th><th>Perché</th></tr></thead>
+        <tbody>
+          <tr><td>Cisti con parete ispessita o crescente</td><td>Applicare i criteri Lung-RADS 2022 per cisti atipiche</td><td>Rischio di diagnosi tardiva</td></tr>
+          <tr><td>Morfologia multiloculare</td><td>Soglia di sospetto più bassa</td><td>Stadio più avanzato alla diagnosi</td></tr>
+          <tr><td>Cisti unica stabile, parete sottile</td><td>Follow-up secondo protocollo</td><td>Il dato non supporta un'escalation generalizzata</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Il testo disponibile (abstract troncato) non riporta l'impatto stimato di Lung-RADS 2022 sull'anticipo diagnostico: verificare il full text prima di cambiare i protocolli.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — dove nascono i 73 casi</summary>
+    <div>
+      <div class="mermaid">
+pie title Tumori con spazi aerei cistici (73)
+    "Da screening (44)" : 44
+    "Non da screening (29)" : 29
+      </div>
+      <p class="mt-3 text-sm">Schema da ricordare: circa 1 tumore su 17 porta una cisti, e la forma multiloculare segnala lo stadio peggiore.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-10">
+  <h3 class="article-title text-lg mb-1"><a href="https://doi.org/10.1016/j.jcin.2026.08.016" target="_blank" rel="noopener" class="hover:text-blue-700">Prevalence and Consequences of Guideline-Directed Indications for Aortic Valve Replacement in the EARLY TAVR Trial</a></h3>
+  <p class="ui text-xs text-slate-500 mb-3"><span class="badge-abstract">📄 Solo abstract</span> JACC: Cardiovascular Interventions · novembre 2026 · Madhavan MV, Schwartz A, Lindman BR et al.</p>
+  <p class="mb-3">In EARLY TAVR (901 pazienti con
+    <details class="inline"><summary><span class="chip">AS severa</span></summary><span class="chip-content">Stenosi aortica severa — restringimento valvolare emodinamicamente significativo; qui asintomatica, cioè senza indicazione di Classe I alla sostituzione.</span></details>
+    asintomatica) il 29,4% aveva già un'indicazione di Classe II ad AVR. Chi la aveva ha avuto più eventi con sorveglianza (24,5% vs 14,5%), ma il beneficio relativo di TAVR precoce è risultato simile con o senza indicazione di Classe II.</p>
+  <p class="mb-3"><strong>Confronto che resta: HR 0,62 con indicazione di Classe II vs HR 0,61 senza (P interazione 0,96).</strong></p>
+
+  <div class="anchor-block">
+    <p><span class="anchor-label">🧠 L'aggancio: Il rischio non seleziona il beneficio.</span>
+    Un marcatore di rischio alto non è un predittore di risposta al trattamento: i due gruppi partono da rischi diversi, ma ricavano lo stesso vantaggio relativo. Il rischio assoluto più alto, però, rende più evidente il guadagno assoluto.</p>
+    <p class="mt-2">❓ Domanda di rottura: se il beneficio relativo non cambia con il sottogruppo, su quale base una linea guida dovrebbe distinguere indicazioni di Classe I e II?</p>
+  </div>
+
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica clinica? — quando conta</summary>
+    <div>
+      <table>
+        <thead><tr><th>Gruppo</th><th>Evento primario (sorveglianza)</th><th>HR TAVR vs sorveglianza</th></tr></thead>
+        <tbody>
+          <tr><td>Nessuna raccomandazione (70,6%)</td><td>14,5%</td><td>0,61 (0,40-0,92)</td></tr>
+          <tr><td>≥1 Classe II (29,4%)</td><td>24,5%</td><td>0,62 (0,37-1,02)</td></tr>
+        </tbody>
+      </table>
+      <div class="takeaway-card mt-4">
+        <p><span class="takeaway-label">Bottom line</span></p>
+        <p class="mt-1">Nella stenosi aortica asintomatica, le indicazioni di Classe II (inclusi biomarcatori e parametri eco/TC) identificano chi è a rischio più alto, ma non cambiano l'effetto relativo di TAVR precoce. Analisi post hoc: ipotesi, non prova.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="deepdive">
+    <summary>🔬 Deep dive — il percorso nel trial</summary>
+    <div>
+      <div class="mermaid">
+flowchart LR
+    A["AS severa asintomatica: 901"] --> B{"Classe II presente?"}
+    B -->|No: 636| C["Eventi 14,5% — HR 0,61"]
+    B -->|Sì: 265| D["Eventi 24,5% — HR 0,62"]
+    C --> E["TAVR precoce vs sorveglianza"]
+    D --> E
+      </div>
+      <p class="mt-3 text-sm">Schema da ricordare: due basi di rischio diverse, un solo rapporto di rischio.</p>
+    </div>
+  </details>
+</article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁</span> Polmonologia clinica</h2>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1007/s00408-026-00966-z" target="_blank" rel="noopener" class="hover:text-blue-700">Effect of Nerandomilast in US Patients with Progressive Pulmonary Fibrosis: A Subgroup Analysis of the FIBRONEER-ILD Trial</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-fulltext">📖 Full text</span> Lung · 20 novembre 2026 · Nathan SD, Maher TM, Assassi S et al. (gemello IPF: <a href="https://doi.org/10.1007/s00408-026-00965-0" target="_blank" rel="noopener" class="underline">Oldham JM et al.</a>)</p>
+  <p class="mb-2 text-sm">Sottogruppi USA di FIBRONEER. In
+    <details class="inline"><summary><span class="chip">PPF</span></summary><span class="chip-content">Progressive Pulmonary Fibrosis — fibrosi polmonare non IPF con peggioramento clinico, funzionale o radiologico documentato in 12 mesi.</span></details>
+    (n=139) 18 mg bid riduce il declino di FVC di 107 mL a 52 settimane (IC 6-208); la dose 9 mg non è significativa (45 mL). In IPF (n=196) 18 mg bid: +132 mL (IC 34-230); 9 mg: +105 mL (IC 13-197). Eventi clinici solo numericamente ridotti.</p>
+  <p class="mb-2 text-sm"><strong>Numero che resta: +107 mL di FVC con 18 mg bid in PPF USA.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Il sottogruppo conferma, non dimostra.</span>
+    Un sottogruppo coerente con il trial principale rassicura sulla trasferibilità, ma gli intervalli ampi ricordano quanto pochi pazienti reggano la conclusione.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: cosa ti permette di dire che due intervalli di confidenza ampi e sovrapposti mostrano un effetto "coerente" e non semplicemente un effetto non escluso?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Popolazione USA</th><th>Δ FVC 18 mg vs placebo</th><th>HR evento composito 18 mg</th></tr></thead>
+        <tbody>
+          <tr><td>PPF (n=139)</td><td>+107,0 mL (6,2-207,9)</td><td>0,52 (0,23-1,18)</td></tr>
+          <tr><td>IPF (n=196)</td><td>+131,7 mL (33,8-229,6)</td><td>0,60 (0,30-1,22)</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">Sospensioni per eventi avversi: placebo 14,0-17,1%, 18 mg 8,9-10,7%. Uso: counseling su dose e tollerabilità, non su endpoint clinici.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1159/000551084" target="_blank" rel="noopener" class="hover:text-blue-700">Long-Term Prognosis and Transition Period until Progression in Fibrotic Hypersensitivity Pneumonitis</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Respiration · novembre 2026 · Pilia MF, Espejo D, Sansano I et al.</p>
+  <p class="mb-2 text-sm">Coorte monocentrica retrospettiva (191 HP, 153 fibrotiche). Il 49,7% delle
+    <details class="inline"><summary><span class="chip">fHP</span></summary><span class="chip-content">Polmonite da ipersensibilità fibrotica — ILD da esposizione antigenica con fibrosi in HRCT o istologia e rischio di progressione.</span></details>
+    ha sviluppato PPF dopo una mediana di 3,2 anni; sopravvivenza 4,8 vs 6,3 anni, e solo 1,6 anni dall'esordio di PPF a morte o trapianto. Predittori: FVC bassa, LDH alta, focolai fibroblastici, honeycombing microscopico.</p>
+  <p class="mb-2 text-sm"><strong>Numero che resta: circa 1 fHP su 2 progredisce entro ~3 anni.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Finestra, non destino.</span>
+    Tra diagnosi e PPF c'è un tempo utile; dopo l'esordio di PPF il margine si accorcia.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: quale dei quattro predittori è disponibile senza biopsia, e cosa cambia nel timing dell'antifibrotico se manca l'istologia?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Campione monocentrico retrospettivo con PPF definita da criteri ATS/ERS/JRS/ALAT 2022: utile per ripianificare i controlli (FVC, LDH) nei primi 3 anni, ma non valida un trattamento precoce.</p>
+    </div>
+  </details>
+</article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>🫁🖥️</span> Imaging toracico</h2>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1148/rg.250193" target="_blank" rel="noopener" class="hover:text-blue-700">Imaging in Systemic Sclerosis (Scleroderma)</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> RadioGraphics · dicembre 2026 · Aswani Y, Nasirul Islam GM, Scholz FJ et al.</p>
+  <p class="mb-2 text-sm">Review multi-organo: la diagnosi di sclerodermia è clinica; l'imaging serve a definire pattern, gravità e complicanze (HRCT polmonare, eco/RM cardiaca per PAH e cuore, enterografia, US cutanea). Segni relativamente specifici: intestino "hidebound" o la combinazione di sfintere esofageo patulo, fibrosi polmonare, ispessimento cutaneo e Raynaud.</p>
+  <p class="mb-2 text-sm"><strong>Messaggio che resta: nella SSc l'imaging stadia e monitora, non fa la diagnosi.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Una malattia, molti organi.</span>
+    La fisiopatologia è la stessa ovunque (vasculopatia, infiammazione, fibrosi); cambia solo la finestra d'imaging.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: davanti a una HRCT con fibrosi in una SSc, quali altri due organi richiedono una domanda d'imaging mirata prima del prossimo controllo?</p>
+  </div>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1111/echo.70671" target="_blank" rel="noopener" class="hover:text-blue-700">Coronary Artery Calcium Scoring From Contrast-Enhanced Photon-Counting CT in Pre-TAVI Patients: PURE Calcium vs Virtual Non-Contrast</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Echocardiography · novembre 2026 · Busselot T, Muscogiuri E, Dedda ED et al.</p>
+  <p class="mb-2 text-sm">Su 61 pazienti pre-TAVI, il calcium score da TC a conteggio di fotoni con ricostruzione PURE Calcium (ECG-gated) concorda quasi perfettamente con la TC senza contrasto (ICC 0,99, bias −73). Le ricostruzioni virtual non-contrast sottostimano molto (bias −615/−687; ICC 0,62/0,54).</p>
+  <p class="mb-2 text-sm"><strong>Confronto che resta: PURE Calcium ICC 0,99 vs VNC ICC 0,62.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Sottrarre non è misurare.</span>
+    Due algoritmi fanno sparire il contrasto, ma solo uno conserva il calcio.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: quale assunzione sul segnale del calcio rende un algoritmo di sottrazione affidabile per una categoria di rischio e un altro no?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Concordanza di categoria (κ): PURE Calcium 0,83 (gated) e 0,80 (non-gated); VNC 0,41 e 0,33. Studio monocentrico (n=61) con CACS mediano 659: i risultati in carichi calcifici bassi non sono dimostrati.</p>
+    </div>
+  </details>
+</article>
+</section>
+
+<section class="mb-10">
+  <h2 class="ui text-xl font-semibold text-slate-700 mb-5 flex items-center gap-2"><span>❤️🖥️</span> Cardio imaging</h2>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1016/j.jcin.2026.07.030" target="_blank" rel="noopener" class="hover:text-blue-700">Cardiac Damage and Clinical Outcomes in Symptomatic Severe Aortic Stenosis Undergoing TAVR</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> JACC: Cardiovascular Interventions · novembre 2026 · Tobe A, Gallazzi M, van Royen N et al.</p>
+  <p class="mb-2 text-sm">Analisi post hoc di LANDMARK (596 pazienti valutabili) con staging eco del danno cardiaco aggiornato (include la probabilità di ipertensione polmonare). Mortalità a 1 anno: 0%, 1,1%, 4,7%, 7,2% e 20,4% dagli stadi 0 a 4.</p>
+  <p class="mb-2 text-sm"><strong>Numero che resta: 20,4% di mortalità a 1 anno nello stadio 4 (danno ventricolare destro).</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: La valvola è l'inizio, il cuore a valle è il conto.</span>
+    Lo stadio dice quanto lontano è arrivato il danno oltre la valvola: sinistra, poi destra.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: perché la mortalità sale di colpo nello stadio con coinvolgimento del ventricolo destro, e cosa misuri in eco per vederlo prima?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <table>
+        <thead><tr><th>Stadio</th><th>Danno</th><th>Mortalità 1 anno</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>Nessuno</td><td>0%</td></tr>
+          <tr><td>1</td><td>Ventricolo sinistro</td><td>1,1%</td></tr>
+          <tr><td>2</td><td>Atrio sinistro / mitrale</td><td>4,7%</td></tr>
+          <tr><td>3</td><td>Arteria polmonare / tricuspide</td><td>7,2%</td></tr>
+          <tr><td>4</td><td>Ventricolo destro</td><td>20,4%</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-2">AUC 0,739: discrimina in modo moderato. Lo stadio 0 conta solo 36 pazienti.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1161/JAHA.126.049819" target="_blank" rel="noopener" class="hover:text-blue-700">Prognostic Value of Right Ventricular-Pulmonary Artery Coupling in Mitral Valve Surgery and Impact of Concomitant Tricuspid Valve Repair</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Journal of the American Heart Association · 12 novembre 2026 · Kahrovic A, Herkner H, Gangl C et al.</p>
+  <p class="mb-2 text-sm">In 214 pazienti con rigurgito tricuspidale moderato sottoposti a chirurgia mitralica, il 52% aveva accoppiamento ventricolo destro-arteria polmonare compromesso: HR aggiustato 2,60 per mortalità o ospedalizzazione per scompenso. La riparazione tricuspidale concomitante si associa a HR 0,45.</p>
+  <p class="mb-2 text-sm"><strong>Domanda giusta: l'accoppiamento VD-AP compromesso indica chi ha più bisogno della riparazione tricuspidale, o solo chi è più a rischio?</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Il motore e il carico.</span>
+    L'accoppiamento misura se il ventricolo destro regge il carico polmonare, non solo quanto si contrae.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: quale rapporto tra due misure eco descrive l'accoppiamento, e perché una frazione di accorciamento normale può ingannare?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Studio osservazionale monocentrico (n=214): l'associazione con la riparazione tricuspidale (HR 0,45) non è randomizzata e può riflettere selezione. Utile per riflettere sul rischio pre-operatorio, non per decidere da solo l'intervento.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1161/JAHA.125.048944" target="_blank" rel="noopener" class="hover:text-blue-700">Effects of Transcatheter Tricuspid Edge-to-Edge Repair on Right Heart Dimension and Function</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Journal of the American Heart Association · 12 novembre 2026 · Brunner S, Stolz L, Kresoja KP et al.</p>
+  <p class="mb-2 text-sm">Registro EuroTR, 699 pazienti con eco di controllo (mediana 407 giorni): diametro medioventricolare del VD da 40,2 a 37,1 mm e area telediastolica da 28,7 a 26,2 cm². Il successo procedurale si associa al rimodellamento positivo (OR 1,82). TAPSE scende da 17,4 a 16,6 mm e FAC da 37,8% a 33,3%.</p>
+  <p class="mb-2 text-sm"><strong>Messaggio che resta: dopo T-TEER il VD si riduce e la funzione apparente cala, probabilmente per scarico di volume.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Più piccolo non vuol dire più debole.</span>
+    Dopo la riduzione del rigurgito, FAC e TAPSE calano perché il ventricolo non lavora più sul volume extra.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: come distingui una caduta di funzione da normalizzazione dopo scarico di volume, e quale confronto basale la renderebbe interpretabile?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Solo i sopravvissuti con eco ≥90 giorni sono inclusi: possibile bias di sopravvivenza. L'interpretazione della funzione deve considerare il nuovo carico, non confrontare solo i valori assoluti.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1016/j.jcin.2026.07.047" target="_blank" rel="noopener" class="hover:text-blue-700">Transcatheter vs Surgical Aortic Valve Replacement for Isolated Native Aortic Regurgitation: National Propensity-Matched Analysis</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> JACC: Cardiovascular Interventions · novembre 2026 · Kobayashi Y, Kodesh A, Alu MC et al.</p>
+  <p class="mb-2 text-sm">Medicare 2017-2023: 1742 coppie appaiate di TAVR (off-label) vs SAVR per insufficienza aortica pura nativa. TAVR: degenza più breve (OR 0,33) e mortalità ospedaliera più bassa (OR 0,62), ma più pacemaker a 30 giorni (OR 1,73) e più re-intervento (SHR 2,04). Mortalità a lungo termine simile (HR 1,14).</p>
+  <p class="mb-2 text-sm"><strong>Errore da evitare: leggere "sopravvivenza simile" come equivalenza, ignorando il costo di pacemaker e re-intervento.</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Facile oggi, riprendere domani.</span>
+    Il vantaggio è iniziale, il conto arriva dopo: conduzione e durabilità.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: quale caratteristica anatomica dell'insufficienza aortica pura (assenza di calcio di ancoraggio) spiega il maggior tasso di re-intervento?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Database amministrativo di pazienti ≥65 anni, mediana di follow-up 2,58 anni: non cattura anatomia, grado di AR né dispositivo. Serve un'indicazione selezionata dal heart team, non una scelta generale.</p>
+    </div>
+  </details>
+</article>
+
+<article class="mb-6 pb-6 border-b border-slate-100 last:border-0">
+  <h3 class="article-title text-base mb-1"><a href="https://doi.org/10.1161/CIRCULATIONAHA.126.082486" target="_blank" rel="noopener" class="hover:text-blue-700">Transapical Beating-Heart Septal Myectomy for Symptomatic Nonobstructive Hypertrophic Cardiomyopathy: Initial Clinical Experience</a></h3>
+  <p class="ui text-xs text-slate-500 mb-2"><span class="badge-abstract">📄 Solo abstract</span> Circulation · 16 novembre 2026 · Fang J, Chen Y, Zhou W et al.</p>
+  <p class="mb-2 text-sm">Serie prospettica monocentrica (97 pazienti, 2023-2025) di miectomia settale transapicale a cuore battente in
+    <details class="inline"><summary><span class="chip">nHCM</span></summary><span class="chip-content">Cardiomiopatia ipertrofica non ostruttiva — ipertrofia senza ostruzione del tratto di efflusso, con sintomi da cavità ridotta e disfunzione diastolica.</span></details>
+    sintomatica. Successo procedurale a 6-12 mesi nell'87,6%; KCCQ da 64 a 87; volume sistolico da 53,5 a 70,8 mL.</p>
+  <p class="mb-2 text-sm"><strong>Domanda giusta: senza gruppo di controllo, quanto del miglioramento è effetto della miectomia e quanto selezione o aspettative?</strong></p>
+  <div class="anchor-block">
+    <p class="text-sm"><span class="anchor-label">🧠 Aggancio: Allargare la cavità.</span>
+    Nella nHCM l'ostruzione non è nel tratto di efflusso ma nella cavità obliterata in sistole: la chirurgia cambia la geometria, non solo il gradiente.</p>
+    <p class="text-sm mt-2">❓ Domanda di rottura: quale misura di imaging dimostrerebbe che la cavità è stata davvero ampliata, e perché il solo gradiente non basta nella nHCM?</p>
+  </div>
+  <details class="practicality">
+    <summary>📋 Posso usarlo nella pratica?</summary>
+    <div class="text-sm">
+      <p>Serie senza braccio di controllo, centro ad alto volume, con endpoint composito sia soggettivo (NYHA, KCCQ) sia emodinamico. Per ora esperienza iniziale, non indicazione.</p>
+    </div>
+  </details>
+</article>
+</section>
+
+<footer class="mt-16 pt-6 border-t border-slate-200 text-sm text-slate-500 ui">
+  <p>Brief generato automaticamente da RadioLearn Briefs il 21 novembre 2026, 14:30 (ora italiana).</p>
+  <p class="mt-2">Sorgenti: PubMed (NCBI), arXiv, medRxiv, Oxford Academic, Fleischner Society, industria radiologica.</p>
+  
+  <p class="mt-4"><a href="../index.html" class="text-blue-700 hover:underline">← Archivio brief</a></p>
+</footer>
+
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose', fontFamily: 'Inter, system-ui, sans-serif' });
+</script>
+
+</body>
+</html>
